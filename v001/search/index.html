@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Jekyll + lunrjs 测试站</title>
+  <title>Search</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
   <link rel="stylesheet" href="/help-doc/v001/css/main.css">
-  <link rel="canonical" href="/help-doc/v001/">
-  <link rel="alternate" type="application/rss+xml" title="Jekyll + lunrjs 测试站" href="/help-doc/v001/feed.xml" />
+  <link rel="canonical" href="/help-doc/v001/search/">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/help-doc/v001/feed.xml" />
 </head>
 
 
@@ -22,7 +22,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/help-doc/v001/">Jekyll + lunrjs 测试站</a>
+    <a class="site-title" href="/help-doc/v001/">Your awesome title</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -59,22 +59,24 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">Search</h1>
+  </header>
 
-  <div id="search">
+  <article class="post-content">
+    <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v001 前缀 -->
+<div id="search">
   <form action="/help-doc/v001/search" method="get">
     <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
   </form>
 </div>
-
 <section id="search-results" style="display: none;">
   <p>Search results</p>
   <div class="entries">
   </div>
 </section>
-
 
 <script id="search-results-template" type="text/mustache">
   {{#entries}}
@@ -102,35 +104,7 @@
 </script>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jun 25, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/help-doc/v001/jekyll/update/2015/06/25/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 21, 2007</span>
-
-        <h2>
-          <a class="post-link" href="/help-doc/v001/2007/02/21/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%9C%B0%E4%BD%BF%E7%94%A8%E7%94%B5%E8%84%91%E5%92%8C%E7%BD%91%E7%BB%9C.html">如何高效地使用电脑和网络</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 30, 2006</span>
-
-        <h2>
-          <a class="post-link" href="/help-doc/v001/2006/05/30/note-taking-software-i-used.html">我用过的笔记管理软件</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/help-doc/v001/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 
@@ -141,12 +115,12 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">Jekyll + lunrjs 测试站</h2>
+    <h2 class="footer-heading">Your awesome title</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
-          <li>Jekyll + lunrjs 测试站</li>
+          <li>Your awesome title</li>
           <li><a href="mailto:your-email@domain.com">your-email@domain.com</a></li>
         </ul>
       </div>

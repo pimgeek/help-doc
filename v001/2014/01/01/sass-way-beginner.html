@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>如何高效地使用电脑和网络</title>
-  <meta name="description" content="随着信息时代的来临，电脑和互联网正在改变人们的生活方式，它们使得信息的发布、获取和传播逐渐变得更加便利，而包罗万象的信息也已经像自来水一样成为众多普通家庭的基础设施。然而，电脑这个自来水龙头并不像想象中那么简单，许多熟练掌握电脑的人并未使其成为方便自己生活和工作的工具，却常常成为海量信息的奴隶——视频和图片网站、...">
+  <title>文章翻译：Sass 的方式-初学者部分</title>
+  <meta name="description" content="原文地址： http://thesassway.com/beginner初学者部分关于 Sass 和 Compass 的初学者入门 &amp; 辅导教程选择好的变量名有了 Sass 中的变量，我们更容易重复利用那些常用属性值了。但是，如果你在为变量命名时不够小心谨慎，那么这些变量名就会急剧扩散达到失控的地步。现在...">
 
   <link rel="stylesheet" href="/help-doc/v001/css/main.css">
-  <link rel="canonical" href="/help-doc/v001/2007/02/21/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%9C%B0%E4%BD%BF%E7%94%A8%E7%94%B5%E8%84%91%E5%92%8C%E7%BD%91%E7%BB%9C.html">
-  <link rel="alternate" type="application/rss+xml" title="Jekyll + lunrjs 测试站" href="/help-doc/v001/feed.xml" />
+  <link rel="canonical" href="/help-doc/v001/2014/01/01/sass-way-beginner.html">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/help-doc/v001/feed.xml" />
 </head>
 
 
@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/help-doc/v001/">Jekyll + lunrjs 测试站</a>
+    <a class="site-title" href="/help-doc/v001/">Your awesome title</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -61,30 +61,24 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">如何高效地使用电脑和网络</h1>
-    <p class="post-meta">Feb 21, 2007</p>
+    <h1 class="post-title">文章翻译：Sass 的方式-初学者部分</h1>
+    <p class="post-meta">Jan 1, 2014</p>
   </header>
 
   <article class="post-content">
-    <p>随着信息时代的来临，电脑和互联网正在改变人们的生活方式，它们使得信息的发布、获取和传播逐渐变得更加便利，而包罗万象的信息也已经像自来水一样成为众多普通家庭的基础设施。然而，电脑这个自来水龙头并不像想象中那么简单，许多熟练掌握电脑的人并未使其成为方便自己生活和工作的工具，却常常成为海量信息的奴隶——视频和图片网站、网络游戏、即时聊天、在线论坛等网络设施极力促使用户上网成瘾，部分商家却从所谓的”眼球经济”中大发横财。</p>
+    <p>原文地址： http://thesassway.com/beginner</p>
 
-<p>在这种情况下，我们不得不认真面对”如何高效地使用电脑和网络”的问题，相信对这个问题的深入思考能够使每位频繁使用电脑和网络的读者受益。下面是我个人的一些经验，仅供参考。</p>
+<h1 id="section">初学者部分</h1>
 
-<ol>
-  <li>不要把熟练操纵电脑或在网络上任意驰骋当作根本目的，想想自己面临的首要问题是什么，电脑和互联网能为问题的解决做多大贡献，漫无目的地使用电脑与网络，使用越熟练越容易成瘾。</li>
-  <li>用电脑工作前应循序思考下面几个问题：下一步工作是什么，当前面临的首要问题是什么，有助于问题的解决但尚未完成的工作有哪些，已经完成的有哪些。在电脑上可以做的工作太多了，不把这些问题放在心上就会很快忘记主要工作。</li>
-  <li>在电脑旁放上一张纸，一支笔。想问题时先在纸上简单勾画一番，形成大体思路后再录入电脑。无须担心好的想法会转瞬即逝，真正有价值的想法是长期思考积累得来，必将在头脑中反复出现并逐渐清晰。</li>
-  <li>使用网络前先将需要了解的主题列成清单，上网时优先搜索清单上的内容而非其它无关信息。记住无关信息永远多得超出想象，而商家是非常希望您浏览那些无关信息的。</li>
-  <li>浏览网页时尽量不要点击与主题无关链接，读完一篇文章并获得主要信息之前不要过多地点击页内链接。最糟糕的不仅是被无关信息干扰，还包括被海量的相关信息弄迷糊。要避免这种情况发生，就不要随意打断自己的思路。</li>
-  <li>有问题，找 Google。问题比较复杂时，将其分解为子问题后再用 Google 搜索。</li>
-  <li>电脑和网络的作用是加工和传播信息，但它们并不能代替人成为思考工具。信息和知识管理软件可帮助人们发现更多文档间的内在联系，但只有亲自阅读才能进入头脑成为可用的知识。</li>
-</ol>
+<h2 id="sass--compass---">关于 Sass 和 Compass 的初学者入门 &amp; 辅导教程</h2>
 
-<p>参考阅读：</p>
+<h3 id="section-1">选择好的变量名</h3>
 
-<ul>
-  <li>“软瘾”就这样吞噬着我们</li>
-</ul>
+<p>有了 Sass 中的变量，我们更容易重复利用那些常用属性值了。但是，如果你在为变量命名时不够小心谨慎，那么这些变量名就会急剧扩散达到失控的地步。现在，Frank S 在 <strong>Sass 的方式</strong> 发布了首篇文章，在文章中他给出了一些关于为变量命名的有用的建议。【阅读详细内容…】</p>
+
+<h3 id="sass-">如何安排一个 Sass 项目的目录结构</h3>
+
+<p>借助 Sass 加工 CSS 代码的方法有很多好处，其中最棒的一点就是：你可以构建一个目录结构，并用它把你的各类组件放在正确的位置上。<strong>但是</strong>，问题来了 … 哪里才是正确的位置？有没有一种用来安排 Sass 项目的文件结构到的标准方法？【阅读详细内容…】</p>
 
   </article>
 
@@ -97,12 +91,12 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">Jekyll + lunrjs 测试站</h2>
+    <h2 class="footer-heading">Your awesome title</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
-          <li>Jekyll + lunrjs 测试站</li>
+          <li>Your awesome title</li>
           <li><a href="mailto:your-email@domain.com">your-email@domain.com</a></li>
         </ul>
       </div>
