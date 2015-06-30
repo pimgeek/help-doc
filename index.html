@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {% include search.html %}
+  
+  {% for cat in site.categories %}
+    {% assign cat_str = cat[0] %}
+
+  <div style="padding-bottom:5px;margin-bottom:10px;border-bottom:1px solid gray" class="page-heading"><a style="color:dimgray;text-decoration:none" href="categories/{{ cat_str | downcase | replace:' ','-'}}">{{ cat_str | capitalize }}</a></div>
+
+  <ul>
+    {% for post in site.categories[cat_str] %}
+      <li>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <ul>
+          {% for coll in site.collections %}
+            {% assign coll-id = coll[0] | downcase %}
+            {% assign post-id = post.title | replace:' ','-' | downcase %}
+            {% if coll-id == post-id %}
+              {% assign article_coll = site.creating-a-new-organization-account %}
+              {% include sub_articles.html article=article_coll %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% endfor %}
+<!--
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+-->
+</div>

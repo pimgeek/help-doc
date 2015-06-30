@@ -1,0 +1,25 @@
+# Site settings
+title: GitHub Help
+email: support@github.com
+description: > # this means to ignore newlines until "baseurl:"
+  The GitHub Logo © 2015 GitHub Inc. All rights reserved.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://pimgeek.github.io/help-doc/v003" # the base hostname & protocol for your site
+twitter_username: github
+github_username:  github
+
+# Build settings
+markdown: kramdown
+
+gems: ['jekyll-lunr-js-search']
+
+encoding: UTF-8
+
+collections:
+  categories:
+    output: true
+    permalink: /categories/:path/
+  creating-a-new-organization-account:
+    output: true
+
+permalink: /articles/:title.html

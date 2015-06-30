@@ -1,0 +1,5 @@
+<ul>
+  {% for post in include.article %}
+    <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
