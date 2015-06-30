@@ -10,7 +10,7 @@
   <meta name="description" content="The GitHub Logo © 2015 GitHub Inc. All rights reserved.
 ">
 
-  <link rel="stylesheet" href="/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="http://pimgeek.github.io/help-doc/v003/css/main.css">
   <link rel="canonical" href="http://pimgeek.github.io/help-doc/v003/search/">
   <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>
@@ -22,7 +22,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">GitHub Help</a>
+    <a class="site-title" href="/help-doc/v003/">GitHub Help</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -36,7 +36,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/help-doc/v003/about/">About</a>
           
         
           
@@ -44,7 +44,7 @@
           
         
           
-          <a class="page-link" href="/search/index.html">Search</a>
+          <a class="page-link" href="/help-doc/v003/search/index.html">Search</a>
           
         
           
@@ -66,10 +66,10 @@
   </header>
 
   <article class="post-content">
-    <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 http://pimgeek.github.io/help-doc/v003 前缀 -->
+    <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v003 前缀 -->
 <div id="search">
   <h2>
-  <form action="/search" method="get">
+  <form action="/help-doc/v003/search" method="get">
     <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
   </form>
   </h2>
@@ -85,17 +85,17 @@
     <article>
       <h3>
         {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-        <a href="{{url}}">{{title}}</a>
+        <a href="/help-doc/v003{{url}}">{{title}}</a>
       </h3>
     </article>
   {{/entries}}
 </script>
 
-<script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/help-doc/v003/js/search.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   $(function() {
     $('#search-query').lunrSearch({
-      indexUrl: '/js/index.json',   // Url for the .json file containing search index data
+      indexUrl: '/help-doc/v003/js/index.json',   // Url for the .json file containing search index data
       results : '#search-results',  // selector for containing search results element
       entries : '.entries',         // selector for search entries containing element (contained within results above)
       template: '#search-results-template'  // selector for Mustache.js template

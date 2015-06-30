@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>文章翻译：开始使用 Sass 和 Compass</title>
+  <meta name="description" content="原文地址  - http://thesassway.com/beginner/getting-started-with-sass-and-compass开始使用 Sass 和 Compass看起来，你的朋友，同事，网上好友或某些别的人已经向你讲过关于 Sass 或 Compass 的事了 … 甚至是两样东西同时讲...">
+
+  <link rel="stylesheet" href="/help-doc/v001/css/main.css">
+  <link rel="canonical" href="/help-doc/v001/2014/01/01/use-sass-and-compass.html">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/help-doc/v001/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/help-doc/v001/">Your awesome title</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/help-doc/v001/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/help-doc/v001/search/index.html">Search</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">文章翻译：开始使用 Sass 和 Compass</h1>
+    <p class="post-meta">Jan 1, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>原文地址  - http://thesassway.com/beginner/getting-started-with-sass-and-compass</p>
+
+<h1 id="sass--compass">开始使用 Sass 和 Compass</h1>
+
+<p>看起来，你的朋友，同事，网上好友或某些别的人已经向你讲过关于 Sass 或 Compass 的事了 … 甚至是两样东西同时讲的。很好！但接下来该做些什么？在这篇针对初学者的入门指南中，我们将引导你完成上手使用 Sass 和 Compass 的头几步。具体说来，我们将助你完成工具安装，测试项目创建，编译第一段 Sass 与 Compass 代码等任务，甚至稍稍 “混杂” 一些 Sass 的历史。</p>
+
+<h2 id="sass--compass-1">安装 Sass 和 Compass</h2>
+
+<p>Sass 和 Compass 是通过 Ruby gem 的方式安装的，所以，你首先需要在自己的机器上安装 Ruby。</p>
+
+<p>如果你在 Windows 系统中，可以运行 <a href="http://rubyinstaller.org/">Ruby Installer</a>。如果你在 Linux 系统中，那么 <a href="https://github.com/joshfng/railsready">Rails Ready</a> 为你提供了许多 Ruby 的基本组件。如果你在 OS X 中，那么默认情况下 Ruby 应该已经安装好了，直接使用就 OK。</p>
+
+<p>让 Ruby 正常工作并不在本文的主要讨论范围内。所以，如果你碰到了任何障碍，请访问 <a href="http://groups.google.com/group/sass-lang">Sass 相关的邮件列表</a>，找到对路的资源，让 Ruby 在你的机器上正常工作。</p>
+
+<h3 id="sass">安装 Sass</h3>
+
+<p>OK，让我们开始安装 Sass 吧！首先打开你的命令控制台 / 虚拟终端 (比如 <a href="http://en.wikipedia.org/wiki/Apple_Terminal">Terminal.app</a>) 并敲入以下命令：</p>
+
+<h4 id="windows">Windows:</h4>
+
+<p><code>
+gem install compass
+</code></p>
+
+<h4 id="linux--os-x">Linux / OS X:</h4>
+
+<p><code>
+sudo gem install compass
+</code></p>
+
+<p>对于 Linux 和 OS X 的朋友而言，是否要以 <code>sudo</code> 用户安装 gem 取决于你的具体情况。比如说，如果你正在使用 <a href="https://rvm.io/">RVM</a>，就不需要以 <code>sudo</code> 用户安装 gem。</p>
+
+<p>OK，我了解你在想什么。先前说过我们要安装 Sass，但从前面的命令行看来，我们实际上在安装 Compass。为什么呢？情况是这样：Compass 依赖于 Sass （译者注：所以会自动安装 Sass），在运行这条命令时，你将会看到类似于下面的屏幕显示：</p>
+
+<p><code>
+$ sudo gem install compass
+Fetching: sass-3.1.3.gem (100%)
+Fetching: compass-0.11.3.gem (100%)
+Successfully installed sass-3.1.3
+Successfully installed chunky_png-1.2.0
+Successfully installed fssm-0.2.7
+Successfully installed compass-0.11.3
+4 gems installed
+</code></p>
+
+<p>如果运行命令之后，你看到的不是类似上面这样的输出，那么你机器上的 Ruby 或者 Ruby Gems 可能并没有正确安装。有关安装问题的过多细节在这里不便展开，不然就会超出本文的讨论范围。总之，遇到这种问题，还是建议你去 <a href="http://groups.google.com/group/sass-lang">Sass 相关的邮件列表</a> 寻求帮助。</p>
+
+<p>如果你感觉自己被 <a href="http://en.wikipedia.org/wiki/Command-line_interface">命令行操作</a> 给吓住了，不必紧张。<a href="http://twitter.com/johnwlong">John Long</a> 写过一篇非常棒的入门文章，标题是：<a href="http://wiseheartdesign.com/articles/2010/11/12/the-designers-guide-to-the-osx-command-prompt/">“写给设计师的 OS X 命令行提示符操作入门”</a>，这篇文章将帮你跟上本文的节奏。</p>
+
+<p>作为参考，我还在下面列出了两款专门针对 Sass / Compass 的基于图形界面的 App。但在这篇入门文章中，我们将假设你正在使用命令行方式进行操作。</p>
+
+<ul>
+  <li><a href="http://mhs.github.com/scout-app/">Scout</a> (跨平台) 由 <a href="http://mutuallyhuman.com/">Mutually Human</a> 开发</li>
+  <li><a href="http://compass.handlino.com/">Compass.app</a> (Windows/Linux/Mac OS X) 由 Handlino 开发.</li>
+</ul>
+
+<h3 id="css-parser-css-">CSS Parser (译者注：CSS 解析器)</h3>
+
+<p>我还愿意安装 <a href="http://rubygems.org/gems/css_parser">css_parser</a> 以便充分利用其 <code>compass stats</code> 的所有功能：输出关于我的 Sass 样式表的各种统计数据。具体说来，它将会输出一个报告，其中包括 Sass 的规则、属性、mixin 定义以及 CSS 规则与属性的条数。</p>
+
+<blockquote>
+  <p>It outputs a report that gives a count of the Sass rules, properties, mixins defined and mixins used as well as the CSS rules and properties that get output from your Sass-stylesheets. (这句话需要咨询 @ben7th 才能正常译出)</p>
+</blockquote>
+
+<p>运行以下命令即可安装 <code>css_parser</code></p>
+
+<p><code>
+gem install css_parser
+</code></p>
+
+<p>现在，准备工作已经就绪，你可以开始一些实质性的 Sass 和 Compass 行动了！</p>
+
+<h2 id="section">创建一个测试项目</h2>
+
+<p>开始学习某种新事物的最佳方法，就是直接投入到具体操作中去。话说到此，现在就定位到你平时存放开发代码的位置吧（或者你打算存放这个测试项目的具体位置），然后运行下面这条命令：</p>
+
+<p><code>
+compass create sass-test
+</code></p>
+
+<p>另一种可选方案是，直接用下面的命令从 GitHub 上的 <a href="https://github.com/thesassway/sass-test">the test project</a> 项目直接抓取源码目录到自己选定的存储位置：</p>
+
+<p><code>
+git clone https://github.com/thesassway/sass-test.git
+</code></p>
+
+<p>但我们不建议你这样做，不然就会完全破坏我们的学习目的——如何自行完成整个操作过程。</p>
+
+<p>OK，让我们继续前进。利用 (<a href="http://en.wikipedia.org/wiki/Cd_(command)">cd</a>) 命令，把当前所在位置改变到最新创建的 <code>/sass-test</code> 目录下方，然后用你最喜欢的编辑器打开它。我使用 <a href="http://macromates.com/">TextMate</a>，但我一直在考虑试一试 <a href="http://www.vim.org/">Vim</a> 或 <a href="http://www.sublimetext.com/2">Sublime Text 2</a>。我们在 Changelog 网站上对 Vim 编辑器做了大量介绍，所以如果你对 Vim 感兴趣，可以看一眼 <a href="http://search.aol.com/aol/search?s_it=topsearchbox.nrf&amp;v_t=na&amp;q=vim+site%3Athechangelog.com">Changelog 站内关于 Vim 的网页搜索结果</a> 以便深入研究。</p>
+
+<h2 id="sass--css">把 Sass 编译为 CSS</h2>
+
+<p>这是最简单的部分。所有艰难的工作都由 Sass 和 Compass 来完成，你只要运行下面的命令，让 Compass 做它该做的事就可以了。</p>
+
+<p><code>
+compass watch
+</code></p>
+
+<p>如果前面的准备工作都没问题，你应当看到类似于下面这样的屏幕显示：</p>
+
+<p><code>
+$ sass-test git:(master) compass watch
+FSSM -&gt; An optimized backend is available for this platform!
+FSSM -&gt;     gem install rb-fsevent
+&gt;&gt;&gt; Compass is polling for changes. Press Ctrl-C to Stop.
+</code></p>
+
+<p>如果这就是你屏幕上实际显示的内容，那么你可以大喊一声“耶”来祝贺自己了。因为现在各项准备都以就绪，你可以开始用 Sass 的方式编写 CSS 啦！</p>
+
+<p><code>compass watch</code> 这条命令所做的事情，正是你预想的那样——它会监测你的 Sass 文件内容变化（只监测文件被保存之后的内容变化）并把你的 Sass 代码自动编译为 CSS。那么，它怎么知道你的 Sass 代码在什么位置？又怎么知道编译生成的 CSS 文件又该放在哪里呢？这问题问得很好，未来我们将在另一篇标题为《配置 Compass》文章中详细讨论。</p>
+
+<p>与此同时，让我们看看位于 <code>sass-test</code> 项目根目录下的 <code>config.rb</code> 文件（译者注：可参考 <a href="https://github.com/thesassway/sass-test/blob/master/config.rb">config.rb</a>）。这就是 <a href="http://compass-style.org/help/tutorials/configuration-reference/">Compass 的配置文件</a>，基本上可以把它看做 Compass 的大脑，其中定义了一系列的变量名。有了这些变量，Compass 才能知道你的 Sass，CSS，图片文件以及 JavaScript 文件都放在什么位置，需要调用哪些扩展组件，你所偏好的语法格式和输出格式是什么样的等等，不一而足。</p>
+
+<h2 id="sass-">写一些 Sass 代码</h2>
+
+<p>在我们真正动手写 Sass 代码之前，了解一些关于它的历史是很重要的。事实上，关于 Sass 最难理解的就是它有两套 <a href="http://en.wikipedia.org/wiki/Syntax">语法</a> ——初学 Sass 的朋友们通常会为此感到困惑或者畏惧，甚至碰上这种情况就打消了继续尝试的念头。为什么我了解这一点？因为我自己就曾忍痛啃过这块众所周知的硬骨头，我当时的感受与这些人如出一辙。但现在为了避免偏题，我们还是言归正传吧。</p>
+
+<p>Sass 就像 CSS 一样。好吧，这么说有点误导。Sass <strong>在某些方面可以像</strong> CSS 一样。前文提到过，Sass 有一些历史，它曾有过不止一套语法。其中的一套语法甚至也叫做 “Sass”，这就更叫人困惑了。现在我澄清一下，主要的一套语法被称作 “SCSS”（这个缩写表示 “Sassy CSS”），它是在 Sass 3 推出后开始使用的新语法。而早一些的语法（我曾提到的那段历史的一部分）被称作 <strong>缩进式语法</strong>（或者简称 “Sass”）。 – 此处需要 @ben7th 确认.</p>
+
+<p>既然我们已经简要介绍了 Sass 的历史，也说明了它有两套语法的事实，那么接下来我相信你已经做好写 Sass 代码的准备了。其实，我应该说 SCSS ——因为 SCSS 与 CSS 很相似，它的语法是作为 CSS3 样式表的语法扩展而被设计出来的。这意味着每个合法的 CSS3 样式表同时也是一个合法的 SCSS 样式表。实际上，你可以把某个 CSS 文件的内容复制粘贴到一个 SCSS 文件中，经过编译之后，仍然能够得到干净的 CSS。</p>
+
+<p>下面让我们测试一下上述“理论”，把我们的博客网站正在使用的 <a href="http://thesassway.com/css/master.css">css 文件</a> 复制粘贴到我们的测试项目中的 <code>sass-test/sass/screen.scss</code> 文件内（译者注：可参考 <a href="https://github.com/thesassway/sass-test/blob/scss-is-like-css/sass/screen.scss">screen.scss</a>），保存后运行 <code>compass compile</code> 命令。此后，再仔细看一看 <code>sass-test/stylesheets/screen.css</code> 这个文件（译者注：可参考 <a href="https://github.com/thesassway/sass-test/blob/scss-is-like-css/stylesheets/screen.css">screen.css</a>），就会发现 Sass 与 Compass 已经把经过压缩的不可读的 CSS 内容编译过了，形成了一份可读的，完美地缩进过的 CSS 文件。而且，还伴随着原始代码文件中包含的用于排除故障而写的代码注释。</p>
+
+<h2 id="section-1">结论和接下来的步骤</h2>
+
+<p>很显然，这里给出的例子并不是最实用的，而且严格说来我们根本没写任何代码。我想通过这个例子证明的是：从编写 CSS 代码转换到编写 Sass 代码，在某些情况下可以说几乎是零成本的，因为你刚才就已经亲自实现了这种转换。</p>
+
+<p>接下来的步骤就是充分了解  <a href="http://sass-lang.com/tutorial.html#features">Sass</a> 和 <a href="http://compass-style.org/">Compass</a> 的各种特性，在需要的时候选择其中的一部分为自己所用。这是转换到 Sass 的最有利的一点——你可以循序渐进地触及 Sass 和 Compass 为你提供的诸多好处，而不必抱有畏难情绪，担心你需要花上“个把星期”才能学会它……</p>
+
+<p>开始行动吧，现在立刻开始。</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Your awesome title</li>
+          <li><a href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/jekyll">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">jekyll</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/jekyllrb">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">jekyllrb</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
