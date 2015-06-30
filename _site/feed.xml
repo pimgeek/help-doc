@@ -4,10 +4,10 @@
     <title>GitHub Help</title>
     <description>The GitHub Logo © 2015 GitHub Inc. All rights reserved.
 </description>
-    <link>http://pimgeek.github.io/help-doc/v003/</link>
-    <atom:link href="http://pimgeek.github.io/help-doc/v003/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 Jun 2015 23:32:21 +0800</pubDate>
-    <lastBuildDate>Tue, 30 Jun 2015 23:32:21 +0800</lastBuildDate>
+    <link>/help-doc/v003/</link>
+    <atom:link href="/help-doc/v003/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 30 Jun 2015 23:36:39 +0800</pubDate>
+    <lastBuildDate>Tue, 30 Jun 2015 23:36:39 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -24,8 +24,8 @@
 
 </description>
         <pubDate>Tue, 10 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://pimgeek.github.io/help-doc/v003/articles/creating-a-new-organization-account.html</link>
-        <guid isPermaLink="true">http://pimgeek.github.io/help-doc/v003/articles/creating-a-new-organization-account.html</guid>
+        <link>/help-doc/v003/articles/creating-a-new-organization-account.html</link>
+        <guid isPermaLink="true">/help-doc/v003/articles/creating-a-new-organization-account.html</guid>
         
         
         <category>setting up and managing organizations and teams</category>
@@ -110,8 +110,8 @@ comes with your OS called the command line.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 10 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://pimgeek.github.io/help-doc/v003/articles/set-up-git.html</link>
-        <guid isPermaLink="true">http://pimgeek.github.io/help-doc/v003/articles/set-up-git.html</guid>
+        <link>/help-doc/v003/articles/set-up-git.html</link>
+        <guid isPermaLink="true">/help-doc/v003/articles/set-up-git.html</guid>
         
         
         <category>bootcamp</category>
@@ -175,8 +175,8 @@ comes with your OS called the command line.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 09 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://pimgeek.github.io/help-doc/v003/articles/create-a-repo.html</link>
-        <guid isPermaLink="true">http://pimgeek.github.io/help-doc/v003/articles/create-a-repo.html</guid>
+        <link>/help-doc/v003/articles/create-a-repo.html</link>
+        <guid isPermaLink="true">/help-doc/v003/articles/create-a-repo.html</guid>
         
         
         <category>bootcamp</category>
