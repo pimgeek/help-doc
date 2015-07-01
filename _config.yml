@@ -15,7 +15,7 @@ gems: ['jekyll-lunr-js-search']
 
 encoding: UTF-8
 
-exclude: ['v001','v002','v003','v004']
+#exclude: ['v001','v002','v003','v004']
 
 collections:
   categories:
