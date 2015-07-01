@@ -18,10 +18,10 @@ layout: default
         <ul>
           {% for coll in site.collections %}
             {% assign coll-id = coll[0] | downcase %}
-            {% assign post-id = post.title | replace:' ','-' | downcase %}
+            {% assign post-id = post.title | replace:' ','_' | downcase %}
             {% if coll-id == post-id %}
-              {% assign article_coll = site.creating-a-new-organization-account %}
-              {% include sub_articles.html article=article_coll %}
+              {% assign coll-obj = site.creating_a_new_organization_account %}
+              {% include sub_articles.html which-coll=coll-obj %}
             {% endif %}
           {% endfor %}
         </ul>

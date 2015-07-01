@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Search</title>
+  <title>Creating a new organization from scratch</title>
   <meta name="description" content="The GitHub Logo © 2015 GitHub Inc. All rights reserved.
 ">
 
   <link rel="stylesheet" href="/help-doc/v004/css/main.css">
-  <link rel="canonical" href="/help-doc/v004/search/">
+  <link rel="canonical" href="/help-doc/v004/articles/creating-a-new-organization-from-scratch.html">
   <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>
 
@@ -62,47 +62,33 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Search</h1>
+    <h1 class="post-title">Creating a new organization from scratch</h1>
+    <p class="post-meta"></p>
   </header>
 
   <article class="post-content">
-    <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v004 前缀 -->
-<div id="search">
-  <h2>
-  <form action="/help-doc/v004/search" method="get">
-    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
-  </form>
-  </h2>
-</div>
-<section id="search-results" style="display: none;">
-  <h3>Search results</h3>
-  <div class="entries">
-  </div>
-</section>
+    <p>Create an organization to apply fine-grained access permissions to repositories.</p>
 
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article>
-      <h3>
-        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-        <a href="/help-doc/v004{{url}}">{{title}}</a>
-      </h3>
-    </article>
-  {{/entries}}
-</script>
+<p>When you create a new organization from scratch, it doesn’t have any repositories associated with it. At any time, <a href="/articles/permission-levels-for-an-organization-repository">members of the organization’s Owners or Admin teams can add new repositories</a>, or transfer existing repositories. For more information, see <a href="/articles/transferring-a-repository#transferring-between-organizations">How to transfer a repository</a>.</p>
 
-<script src="/help-doc/v004/js/search.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/help-doc/v004/js/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-  });
-</script>
+<ol>
+  <li><img src="/assets/images/help/settings/userbar-account-settings.png" alt="Settings icon in the user bar" />In the top right corner of any page, click your profile photo, then click <strong>Settings</strong>.</li>
+  <li><img src="/assets/images/help/settings/settings-user-orgs.png" alt="User settings for organizations" />In your user settings sidebar, click <strong>Organizations</strong>.</li>
+  <li><img src="/assets/images/help/settings/new-org-button.png" alt="New organization button" />In the “Organizations” section, click <strong>New organization</strong>.</li>
+  <li><img src="/assets/images/help/organizations/new-org-name.png" alt="New organization name" />Under “Organization name”, give the organization a name.</li>
+  <li><img src="/assets/images/help/organizations/new-org-billing-email.png" alt="New organization billing email" />Under “Billing email”, type the email where receipts for your organization plan should be sent.</li>
+  <li><img src="/assets/images/help/organizations/org-billing-plans.png" alt="Organization billing plans" />Under “Choose the organization’s plan”, decide on a billing plan and click <strong>Choose</strong>.</li>
+  <li><img src="/assets/images/help/organizations/new-org-create.png" alt="Create organization button" />Below the list of plans, click <strong>Create organization</strong>.</li>
+  <li>Under “Contact email,” type the email address of a person who can be contacted for more information about the organization.</li>
+  <li>Click <strong>Create organization</strong>.</li>
+</ol>
 
+<h3 id="further-reading">[]<a href="#further-reading">6</a>Further reading</h3>
+
+<ul>
+  <li>“<a href="/articles/setting-your-organization-s-billing-email">Setting your organization’s billing email</a>”</li>
+  <li>“<a href="/articles/monthly-and-yearly-billing">Monthly and yearly billing</a>”</li>
+</ul>
 
 
   </article>
