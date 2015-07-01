@@ -3,18 +3,30 @@
 
   {% include head.html %}
 
-  <body>
+  <body class='app'>
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+    <div class='container'>
+      <div class='row'>
+        <div class='sidebar col-pad-3'> 
+          {% include sidebar.html %}
+        </div>
+        <div class='main col-pad-9'>
+
+          {% include search.html %}
+
+          {{ content }}
+
+        </div>
+
+      </div>
+      <div class='row'>
+
+        {% include footer.html %}
+
       </div>
     </div>
 
-    {% include footer.html %}
-
   </body>
-
 </html>

@@ -2,35 +2,18 @@
 layout: default
 ---
 
-<div class="home">
+<h1>这是一个模板</h1>
+<h2>模板的用途是什么？</h2>
+<p>我们正在准备建立 MINDPIN TEAM 的在线帮助文档和技术参考页面。这个模板将被用于这个页面的展现。</p>
+<h2>模板的组成部分</h2>
+<p>模板由下面这几部分构成：</p>
+<ul>
+  <li>页头</li>
+  <li>左侧导航栏</li>
+  <li>文章区域</li>
+  <li>页脚</li>
+</ul>
+<h2>特定要素</h2>
+<p>模板包含一些特定要素，每种要素都有固定的样式：</p>
+<ul>
 
-  {% include search.html %}
-  
-  {% for cat in site.categories %}
-    {% assign cat_str = cat[0] %}
-
-  <div style="padding-bottom:5px;margin-bottom:10px;border-bottom:1px solid gray" class="page-heading"><a style="color:dimgray;text-decoration:none" href="categories/{{ cat_str | downcase | replace:' ','-'}}">{{ cat_str | capitalize }}</a></div>
-
-  <ul>
-    {% for post in site.categories[cat_str] %}
-      <li>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        <ul>
-          {% for coll in site.collections %}
-            {% assign coll-id = coll[0] | downcase %}
-            {% assign post-id = post.title | replace:' ','_' | downcase %}
-            {% if coll-id == post-id %}
-              {% assign coll-obj = site.creating_a_new_organization_account %}
-              {% include sub-articles.html which-coll=coll-obj %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
-  </ul>
-
-  {% endfor %}
-<!--
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
--->
-</div>

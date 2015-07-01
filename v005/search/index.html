@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <title>Search</title>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <meta name="description" content="© 2015 GitHub Inc. All rights reserved.
+">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="/help-doc/v004/css/ui.css">
+  <link rel="canonical" href="/help-doc/v004/search/">
+  <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+</head>
+
+
+  <body class='app'>
+
+    <div class='header'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-pad-12'>
+        <div class='site'>
+          <a href="/help-doc/v004/">
+            <span class='s0'>GitHub Help</span>
+            <span class='s1'>Center</span>
+          </a> 
+<!--
+          <div class="wrapper">
+
+            <nav class="site-nav">
+              <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                  <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                  <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                  <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+              </a>
+
+              <div class="trigger">
+                
+                  
+                  <a class="page-link" href="/help-doc/v004/about/">About</a>
+                  
+                
+                  
+                
+                  
+                
+                  
+                  <a class="page-link" href="/help-doc/v004/search/index.html">Search</a>
+                  
+                
+                  
+                
+              </div>
+            </nav>
+
+          </div>
+-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class='container'>
+      <div class='row'>
+        <div class='sidebar col-pad-3'> 
+          
+  
+  <div class='category'>
+    <div class='name'>
+      <a href="/help-doc/v004/categories/bootcamp">Bootcamp</a>
+    </div>
+    <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v004/articles/set-up-git.html">Set Up Git</a>
+        <ul>
+          
+            
+            
+            
+          
+            
+            
+            
+          
+        </ul>
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v004/articles/create-a-repo.html">Create A Repo</a>
+        <ul>
+          
+            
+            
+            
+          
+            
+            
+            
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+
+  
+  <div class='category'>
+    <div class='name'>
+      <a href="/help-doc/v004/categories/setting-up-and-managing-organizations-and-teams">Setting up and managing organizations and teams</a>
+    </div>
+    <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v004/articles/creating-a-new-organization-account.html">Creating a new organization account</a>
+        <ul>
+          
+            
+            
+            
+          
+            
+            
+            
+              
+              <ul>
+  
+    <li><a class="post-link" href="/help-doc/v004/articles/creating-a-new-organization-from-scratch.html">Creating a new organization from scratch</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v004/articles/about-organizations.html">About Organizations</a></li>
+  
+</ul>
+
+            
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+        </div>
+        <div class='main col-pad-9'>
+
+          <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v004 前缀 -->
+<div id="search">
+  <h2>
+  <form action="/help-doc/v004/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+  </form>
+  </h2>
+</div>
+<section id="search-results" style="display: none;">
+  <h3>Search results</h3>
+  <div class="entries">
+  </div>
+</section>
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="/help-doc/v004{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
+<script src="/help-doc/v004/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/help-doc/v004/js/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
+
+
+          <h1>Search</h1>
+
+<!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v004 前缀 -->
+<div id="search">
+  <h2>
+  <form action="/help-doc/v004/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+  </form>
+  </h2>
+</div>
+<section id="search-results" style="display: none;">
+  <h3>Search results</h3>
+  <div class="entries">
+  </div>
+</section>
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="/help-doc/v004{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
+<script src="/help-doc/v004/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/help-doc/v004/js/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
+
+
+
+
+
+
+        </div>
+
+      </div>
+      <div class='row'>
+
+        <div class='team'>GitHub Help</div>
+<a class='link' href='mailto:support@github.com' target='_blank'>support@github.com</a>
+<div class="footer-col  footer-col-3">
+  <p class="text">© 2015 GitHub Inc. All rights reserved.
+</p>
+</div>
+
+
+      </div>
+    </div>
+
+  </body>
+</html>
