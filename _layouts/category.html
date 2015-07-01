@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="post">
+
+  <header class="post-header">
+    {% assign page-title-array=page.url | split:'/' %}
+    {% assign page-title=page-title-array[2] | replace:'-',' ' | capitalize %}
+    <h1 class="post-title">Category / {{ page-title }}</h1>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>
