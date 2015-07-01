@@ -21,7 +21,7 @@ layout: default
             {% assign post-id = post.title | replace:' ','_' | downcase %}
             {% if coll-id == post-id %}
               {% assign coll-obj = site.creating_a_new_organization_account %}
-              {% include sub_articles.html which-coll=coll-obj %}
+              {% include sub-articles.html which-coll=coll-obj %}
             {% endif %}
           {% endfor %}
         </ul>
