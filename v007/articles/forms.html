@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <title>Forms</title>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <meta name="description" content="Form components such as &lt;input&gt;, &lt;textarea&gt;, and &lt;option&gt; differ from other native components because they can be mutated via user interact...">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="/help-doc/v006/css/ui.css">
+  <link rel="canonical" href="/help-doc/v006/articles/forms.html">
+  <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+</head>
+
+
+  <body class='app'>
+
+    <div class='header'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-pad-12'>
+        <div class='site'>
+          <a href="/help-doc/v006/">
+            <span class='s0'>GitHub Help</span>
+            <span class='s1'>Center</span>
+          </a> 
+<!--
+          <div class="wrapper">
+
+            <nav class="site-nav">
+              <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                  <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                  <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                  <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+              </a>
+
+              <div class="trigger">
+                
+                  
+                  <a class="page-link" href="/help-doc/v006/about/">About</a>
+                  
+                
+                  
+                
+                  
+                
+                  
+                  <a class="page-link" href="/help-doc/v006/search/index.html">Search</a>
+                  
+                
+                  
+                
+              </div>
+            </nav>
+
+          </div>
+-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class='container'>
+      <div class='row'>
+        <div class='sidebar col-pad-3'> 
+          
+  
+  <div class='category'>
+    <div class='name'>
+      <a href="/help-doc/v006/categories/guides">Guides</a>
+    </div>
+    <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/why-react.html">Why React?</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/displaying-data.html">Displaying Data</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/jsx-in-depth.html">JSX in Depth</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/jsx-spread.html">JSX Spread</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/jsx-gotchas.html">JSX Gotchas</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/multiple-components.html">Multiple Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/reusable-components.html">Reusable Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/transferring-props.html">Transferring Props</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/forms.html">Forms</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/working-with-the-browser.html">Working with the Browser</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/more-about-refs.html">More About Refs</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/tooling-integration.html">Tooling Integration</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/addons.html">Addons</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/animation.html">Animation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/class-name-manipulation.html">Class Name Manipulation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/test-utilities.html">Test Utilities</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/cloning-reactelements.html">Cloning ReactElements</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/keyed-fragments.html">Keyed Fragments</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/immutability-helpers.html">Immutability Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/pure-render-mixin.html">Pure Render Mixin</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/performance-tools.html">Performance Tools</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/advanced-performance.html">Advanced Performance</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+    </div>
+  </div>
+
+
+        </div>
+        <div class='main col-pad-9'>
+
+          <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v006 前缀 -->
+<div id="search">
+  <h2>
+  <form action="/help-doc/v006/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+  </form>
+  </h2>
+</div>
+<section id="search-results" style="display: none;">
+  <h3>Search results</h3>
+  <div class="entries">
+  </div>
+</section>
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
+<script src="/help-doc/v006/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/help-doc/v006/js/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
+
+
+          <h1>Forms</h1>
+<p></p>
+
+<p>Form components such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;option&gt;</code> differ from other native components because they can be mutated via user interactions. These components provide interfaces that make it easier to manage forms in response to user interactions.</p>
+
+<p>For information on events on <code>&lt;form&gt;</code> see <a href="/react/docs/events.html#form-events">Form Events</a>.</p>
+
+<h2 id="interactive-props">Interactive Props</h2>
+
+<p>Form components support a few props that are affected via user interactions:</p>
+
+<ul>
+  <li><code>value</code>, supported by <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> components.</li>
+  <li><code>checked</code>, supported by <code>&lt;input&gt;</code> components of type <code>checkbox</code> or <code>radio</code>.</li>
+  <li><code>selected</code>, supported by <code>&lt;option&gt;</code> components.</li>
+</ul>
+
+<p>In HTML, the value of <code>&lt;textarea&gt;</code> is set via children. In React, you should use <code>value</code> instead.</p>
+
+<p>Form components allow listening for changes by setting a callback to the <code>onChange</code> prop. The <code>onChange</code> prop works across browsers to fire in response to user interactions when:</p>
+
+<ul>
+  <li>The <code>value</code> of <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code> changes.</li>
+  <li>The <code>checked</code> state of <code>&lt;input&gt;</code> changes.</li>
+  <li>The <code>selected</code> state of <code>&lt;option&gt;</code> changes.</li>
+</ul>
+
+<p>Like all DOM events, the <code>onChange</code> prop is supported on all native components and can be used to listen to bubbled change events.</p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>For <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code>, <code>onChange</code> supersedes — and should generally be used instead of — the DOM’s built-in <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput"><code>oninput</code></a> event handler.</p>
+</blockquote>
+
+<h2 id="controlled-components">Controlled Components</h2>
+
+<p>An <code>&lt;input&gt;</code> with <code>value</code> set is a <em>controlled</em> component. In a controlled <code>&lt;input&gt;</code>, the value of the rendered element will always reflect the <code>value</code> prop. For example:</p>
+
+<p><code>javascript
+  render: function() {
+    return &lt;input type="text" value="Hello!" /&gt;;
+  }
+</code></p>
+
+<p>This will render an input that always has a value of <code>Hello!</code>. Any user input will have no effect on the rendered element because React has declared the value to be <code>Hello!</code>. If you wanted to update the value in response to user input, you could use the <code>onChange</code> event:</p>
+
+<p><code>javascript
+  getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function() {
+    var value = this.state.value;
+    return &lt;input type="text" value={value} onChange={this.handleChange} /&gt;;
+  }
+</code></p>
+
+<p>In this example, we are simply accepting the newest value provided by the user and updating the <code>value</code> prop of the <code>&lt;input&gt;</code> component. This pattern makes it easy to implement interfaces that respond to or validate user interactions. For example:</p>
+
+<p><code>javascript
+  handleChange: function(event) {
+    this.setState({value: event.target.value.substr(0, 140)});
+  }
+</code></p>
+
+<p>This would accept user input but truncate the value to the first 140 characters.</p>
+
+<h2 id="uncontrolled-components">Uncontrolled Components</h2>
+
+<p>An <code>&lt;input&gt;</code> that does not supply a <code>value</code> (or sets it to <code>null</code>) is an <em>uncontrolled</em> component. In an uncontrolled <code>&lt;input&gt;</code>, the value of the rendered element will reflect the user’s input. For example:</p>
+
+<p><code>javascript
+  render: function() {
+    return &lt;input type="text" /&gt;;
+  }
+</code></p>
+
+<p>This will render an input that starts off with an empty value. Any user input will be immediately reflected by the rendered element. If you wanted to listen to updates to the value, you could use the <code>onChange</code> event just like you can with controlled components.</p>
+
+<p>If you want to initialize the component with a non-empty value, you can supply a <code>defaultValue</code> prop. For example:</p>
+
+<p><code>javascript
+  render: function() {
+    return &lt;input type="text" defaultValue="Hello!" /&gt;;
+  }
+</code></p>
+
+<p>This example will function much like the <strong>Controlled Components</strong> example above.</p>
+
+<p>Likewise, <code>&lt;input&gt;</code> supports <code>defaultChecked</code> and <code>&lt;select&gt;</code> supports <code>defaultValue</code>.</p>
+
+<h2 id="advanced-topics">Advanced Topics</h2>
+
+<h3 id="why-controlled-components">Why Controlled Components?</h3>
+
+<p>Using form components such as <code>&lt;input&gt;</code> in React presents a challenge that is absent when writing traditional form HTML. For example, in HTML:</p>
+
+<p><code>html
+  &lt;input type="text" name="title" value="Untitled" /&gt;
+</code></p>
+
+<p>This renders an input <em>initialized</em> with the value, <code>Untitled</code>. When the user updates the input, the node’s value <em>property</em> will change. However, <code>node.getAttribute('value')</code> will still return the value used at initialization time, <code>Untitled</code>.</p>
+
+<p>Unlike HTML, React components must represent the state of the view at any point in time and not only at initialization time. For example, in React:</p>
+
+<p><code>javascript
+  render: function() {
+    return &lt;input type="text" name="title" value="Untitled" /&gt;;
+  }
+</code></p>
+
+<p>Since this method describes the view at any point in time, the value of the text input should <em>always</em> be <code>Untitled</code>.</p>
+
+<h3 id="why-textarea-value">Why Textarea Value?</h3>
+
+<p>In HTML, the value of <code>&lt;textarea&gt;</code> is usually set using its children:</p>
+
+<p>```html
+  <!-- counterexample: DO NOT DO THIS! --></p>
+<textarea name="description">This is the description.</textarea>
+<p>```</p>
+
+<p>For HTML, this easily allows developers to supply multiline values. However, since React is JavaScript, we do not have string limitations and can use <code>\n</code> if we want newlines. In a world where we have <code>value</code> and <code>defaultValue</code>, it is ambiguous what role children play. For this reason, you should not use children when setting <code>&lt;textarea&gt;</code> values:</p>
+
+<p>```javascript</p>
+<textarea name="description" value="This is a description." />
+
+<p>```</p>
+
+<p>If you <em>do</em> decide to use children, they will behave like <code>defaultValue</code>.</p>
+
+<h3 id="why-select-value">Why Select Value?</h3>
+
+<p>The selected <code>&lt;option&gt;</code> in an HTML <code>&lt;select&gt;</code> is normally specified through that option’s <code>selected</code> attribute. In React, in order to make components easier to manipulate, the following format is adopted instead:</p>
+
+<p><code>javascript
+  &lt;select value="B"&gt;
+    &lt;option value="A"&gt;Apple&lt;/option&gt;
+    &lt;option value="B"&gt;Banana&lt;/option&gt;
+    &lt;option value="C"&gt;Cranberry&lt;/option&gt;
+  &lt;/select&gt;
+</code></p>
+
+<p>To make an uncontrolled component, <code>defaultValue</code> is used instead.</p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>You can pass an array into the <code>value</code> attribute, allowing you to select multiple options in a <code>select</code> tag: <code>&lt;select multiple={true} value={['B', 'C']}&gt;</code>.</p>
+</blockquote>
+
+
+
+  
+  <h2>
+    prev post: <a href='/help-doc/v006/articles/transferring-props.html'>transferring-props.html</a>
+  </h2>
+
+
+  
+  <h2>
+    next post: <a href='/help-doc/v006/articles/working-with-the-browser.html'>working-with-the-browser.html</a>
+  </h2>
+
+
+
+
+        </div>
+
+      </div>
+      <div class='row'>
+
+        <div class='team'>GitHub Help</div>
+<a class='link' href='mailto:support@github.com' target='_blank'>support@github.com</a>
+<div class="footer-col  footer-col-3">
+  <p class="text">© 2015 GitHub Inc. All rights reserved.
+</p>
+</div>
+
+
+      </div>
+    </div>
+
+  </body>
+</html>
