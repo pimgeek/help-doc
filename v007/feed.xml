@@ -4,10 +4,10 @@
     <title>GitHub Help</title>
     <description>© 2015 GitHub Inc. All rights reserved.
 </description>
-    <link>/help-doc/v006/</link>
-    <atom:link href="/help-doc/v006/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Jul 2015 01:04:26 +0800</pubDate>
-    <lastBuildDate>Fri, 03 Jul 2015 01:04:26 +0800</lastBuildDate>
+    <link>/help-doc/v007/</link>
+    <atom:link href="/help-doc/v007/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 03 Jul 2015 01:10:04 +0800</pubDate>
+    <lastBuildDate>Fri, 03 Jul 2015 01:10:04 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -216,8 +216,8 @@ this.messages = this.messages.push(new Message({
 &lt;p&gt;On the React side, if we also use immutable-js data structures to hold the components’ state, we could mix &lt;code&gt;PureRenderMixin&lt;/code&gt; into all our components and short circuit the re-rendering process.&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Jan 3011 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/advanced-performance.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/advanced-performance.html</guid>
+        <link>/help-doc/v007/articles/advanced-performance.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/advanced-performance.html</guid>
         
         
         <category>guides</category>
@@ -254,8 +254,8 @@ this.messages = this.messages.push(new Message({
 
 </description>
         <pubDate>Mon, 01 Jan 3010 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/addons.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/addons.html</guid>
+        <link>/help-doc/v007/articles/addons.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/addons.html</guid>
         
         
         <category>guides</category>
@@ -301,8 +301,8 @@ this.messages = this.messages.push(new Message({
 &lt;p&gt;The open-source community has built tools that integrate JSX with several editors and build systems. See &lt;a href=&quot;https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations&quot;&gt;JSX integrations&lt;/a&gt; for the full list.&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Jan 3009 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/tooling-integration.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/tooling-integration.html</guid>
+        <link>/help-doc/v007/articles/tooling-integration.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/tooling-integration.html</guid>
         
         
         <category>guides</category>
@@ -465,8 +465,8 @@ Currently a handler to this event is ignored on IE8.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 01 Jan 3008 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/working-with-the-browser.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/working-with-the-browser.html</guid>
+        <link>/help-doc/v007/articles/working-with-the-browser.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/working-with-the-browser.html</guid>
         
         
         <category>guides</category>
@@ -627,8 +627,8 @@ Currently a handler to this event is ignored on IE8.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Thu, 01 Jan 3007 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/forms.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/forms.html</guid>
+        <link>/help-doc/v007/articles/forms.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/forms.html</guid>
         
         
         <category>guides</category>
@@ -802,8 +802,8 @@ var FancyCheckbox = React.createClass({
 &lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Jan 3006 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/transferring-props.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/transferring-props.html</guid>
+        <link>/help-doc/v007/articles/transferring-props.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/transferring-props.html</guid>
         
         
         <category>guides</category>
@@ -1036,8 +1036,8 @@ Counter.defaultProps = { initialCount: 0 };
 &lt;p&gt;Unfortunately ES6 launched without any mixin support. Therefore, there is no support for mixins when you use React with ES6 classes. Instead, we’re working on making it easier to support such use cases without resorting to mixins.&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Jan 3005 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/reusable-components.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/reusable-components.html</guid>
+        <link>/help-doc/v007/articles/reusable-components.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/reusable-components.html</guid>
         
         
         <category>guides</category>
@@ -1224,8 +1224,8 @@ var MyComponent = React.createClass({
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sun, 01 Jan 3004 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/multiple-components.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/multiple-components.html</guid>
+        <link>/help-doc/v007/articles/multiple-components.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/multiple-components.html</guid>
         
         
         <category>guides</category>
@@ -1308,8 +1308,8 @@ var LikeButton = React.createClass({
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 01 Jan 3003 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/interactivity-and-dynamic-uis.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/interactivity-and-dynamic-uis.html</guid>
+        <link>/help-doc/v007/articles/interactivity-and-dynamic-uis.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/interactivity-and-dynamic-uis.html</guid>
         
         
         <category>guides</category>
@@ -1441,8 +1441,8 @@ var root = React.DOM.ul({ className: &#39;my-list&#39; },
 
 </description>
         <pubDate>Fri, 01 Jan 3002 00:00:00 +0800</pubDate>
-        <link>/help-doc/v006/articles/displaying-data.html</link>
-        <guid isPermaLink="true">/help-doc/v006/articles/displaying-data.html</guid>
+        <link>/help-doc/v007/articles/displaying-data.html</link>
+        <guid isPermaLink="true">/help-doc/v007/articles/displaying-data.html</guid>
         
         
         <category>guides</category>
