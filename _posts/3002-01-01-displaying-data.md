@@ -1,8 +1,9 @@
 ---
 layout: post
 categories: ['guides']
-prev: why-react
-next: jsx-in-depth
+title: Displaying Data
+prev-post: why-react
+next-post: jsx-in-depth
 ---
 
 The most basic thing you can do with a UI is display some data. React makes it easy to display data and automatically keeps the interface up-to-date when the data changes.

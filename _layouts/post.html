@@ -6,3 +6,17 @@ layout: default
 <p>{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 
 {{ content }}
+
+{% if page.prev-post %}
+  {% assign prev-url=page.prev-post | prepend:'/articles/' | prepend: site.baseurl %}
+  <h2>
+    prev post: <a href='{{ prev-url }}'>{{ page.prev-post }}</a>
+  </h2>
+{% endif %}
+{% if page.next-post %}
+  {% assign next-url=page.next-post | prepend:'/articles/' | prepend: site.baseurl %}
+  <h2>
+    next post: <a href='{{ next-url }}'>{{ page.next-post }}</a>
+  </h2>
+{% endif %}
+

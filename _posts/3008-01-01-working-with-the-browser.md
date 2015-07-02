@@ -1,8 +1,9 @@
 ---
 layout: post
 categories: ['guides']
-prev: forms
-next: more-about-refs
+title: Working with the Browser
+prev-post: forms.html
+next-post: more-about-refs.html
 ---
 
 React provides powerful abstractions that free you from touching the DOM directly in most cases, but sometimes you simply need to access the underlying API, perhaps to work with a third-party library or existing code.

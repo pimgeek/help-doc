@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <title>JSX in Depth</title>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <meta name="description" content="© 2015 GitHub Inc. All rights reserved.
+">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="/help-doc/v006/css/ui.css">
+  <link rel="canonical" href="/help-doc/v006/articles/jsx-in-depth.html">
+  <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+</head>
+
+
+  <body class='app'>
+
+    <div class='header'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-pad-12'>
+        <div class='site'>
+          <a href="/help-doc/v006/">
+            <span class='s0'>GitHub Help</span>
+            <span class='s1'>Center</span>
+          </a> 
+<!--
+          <div class="wrapper">
+
+            <nav class="site-nav">
+              <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                  <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                  <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                  <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+              </a>
+
+              <div class="trigger">
+                
+                  
+                  <a class="page-link" href="/help-doc/v006/about/">About</a>
+                  
+                
+                  
+                
+                  
+                
+                  
+                  <a class="page-link" href="/help-doc/v006/search/index.html">Search</a>
+                  
+                
+                  
+                
+              </div>
+            </nav>
+
+          </div>
+-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class='container'>
+      <div class='row'>
+        <div class='sidebar col-pad-3'> 
+          
+  
+  <div class='category'>
+    <div class='name'>
+      <a href="/help-doc/v006/categories/guides">Guides</a>
+    </div>
+    <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/why-react.html">Why React?</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/displaying-data.html">Displaying Data</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/jsx-in-depth.html">JSX in Depth</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/jsx-spread.html">JSX Spread</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/jsx-gotchas.html">JSX Gotchas</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/multiple-components.html">Multiple Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/reusable-components.html">Reusable Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/transferring-props.html">Transferring Props</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/forms.html">Forms</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/working-with-the-browser.html">Working with the Browser</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/more-about-refs.html">More About Refs</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/tooling-integration.html">Tooling Integration</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/addons.html">Addons</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/animation.html">Animation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/class-name-manipulation.html">Class Name Manipulation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/test-utilities.html">Test Utilities</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/cloning-reactelements.html">Cloning ReactElements</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/keyed-fragments.html">Keyed Fragments</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/immutability-helpers.html">Immutability Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/pure-render-mixin.html">Pure Render Mixin</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v006/articles/performance-tools.html">Performance Tools</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v006/articles/advanced-performance.html">Advanced Performance</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+    </div>
+  </div>
+
+
+        </div>
+        <div class='main col-pad-9'>
+
+          <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v006 前缀 -->
+<div id="search">
+  <h2>
+  <form action="/help-doc/v006/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+  </form>
+  </h2>
+</div>
+<section id="search-results" style="display: none;">
+  <h3>Search results</h3>
+  <div class="entries">
+  </div>
+</section>
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
+<script src="/help-doc/v006/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/help-doc/v006/js/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
+
+
+          <h1>JSX in Depth</h1>
+<p></p>
+
+<p><a href="https://facebook.github.io/jsx/">JSX</a> is a JavaScript syntax extension that looks similar to XML. You can use a simple JSX syntactic transform with React.</p>
+
+<h2 id="why-jsx">Why JSX?</h2>
+
+<p>You don’t have to use JSX with React. You can just use plain JS. However, we recommend using JSX because it is a concise and familiar syntax for defining tree structures with attributes.</p>
+
+<p>It’s more familiar for casual developers such as designers.</p>
+
+<p>XML has the benefit of balanced opening and closing tags. This helps make large trees easier to read than function calls or object literals.</p>
+
+<p>It doesn’t alter the semantics of JavaScript.</p>
+
+<h2 id="html-tags-vs-react-components">HTML Tags vs. React Components</h2>
+
+<p>React can either render HTML tags (strings) or React components (classes).</p>
+
+<p>To render a HTML tag, just use lower-case tag names in JSX:</p>
+
+<p><code>javascript
+var myDivElement = &lt;div className="foo" /&gt;;
+React.render(myDivElement, document.getElementById('example'));
+</code></p>
+
+<p>To render a React Component, just create a local variable that starts with an upper-case letter:</p>
+
+<p><code>javascript
+var MyComponent = React.createClass({/*...*/});
+var myElement = &lt;MyComponent someProperty={true} /&gt;;
+React.render(myElement, document.getElementById('example'));
+</code></p>
+
+<p>React’s JSX uses the upper vs. lower case convention to distinguish between local component classes and HTML tags.</p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>Since JSX is JavaScript, identifiers such as <code>class</code> and <code>for</code> are discouraged
+as XML attribute names. Instead, React DOM components expect DOM property
+names like <code>className</code> and <code>htmlFor</code>, respectively.</p>
+</blockquote>
+
+<h2 id="the-transform">The Transform</h2>
+
+<p>React JSX transforms from an XML-like syntax into native JavaScript. XML elements, attributes and children are transformed into arguments that are passed to <code>React.createElement</code>.</p>
+
+<p><code>javascript
+var Nav;
+// Input (JSX):
+var app = &lt;Nav color="blue" /&gt;;
+// Output (JS):
+var app = React.createElement(Nav, {color:"blue"});
+</code></p>
+
+<p>Notice that in order to use <code>&lt;Nav /&gt;</code>, the <code>Nav</code> variable must be in scope.</p>
+
+<p>JSX also allows specifying children using XML syntax:</p>
+
+<p><code>javascript
+var Nav, Profile;
+// Input (JSX):
+var app = &lt;Nav color="blue"&gt;&lt;Profile&gt;click&lt;/Profile&gt;&lt;/Nav&gt;;
+// Output (JS):
+var app = React.createElement(
+  Nav,
+  {color:"blue"},
+  React.createElement(Profile, null, "click")
+);
+</code></p>
+
+<p>JSX will infer the class’s <a href="/react/docs/component-specs.html#displayname">displayName</a> from the variable assignment when the displayName is undefined:</p>
+
+<p><code>javascript
+// Input (JSX):
+var Nav = React.createClass({ });
+// Output (JS):
+var Nav = React.createClass({displayName: "Nav", });
+</code></p>
+
+<p>Use the <a href="/react/jsx-compiler.html">JSX Compiler</a> to try out JSX and see how it
+desugars into native JavaScript, and the
+<a href="/react/html-jsx.html">HTML to JSX converter</a> to convert your existing HTML to
+JSX.</p>
+
+<p>If you want to use JSX, the <a href="/react/docs/getting-started.html">Getting Started</a> guide shows how to setup compilation.</p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>The JSX expression always evaluates to a ReactElement. The actual
+implementation details may vary. An optimized mode could inline the
+ReactElement as an object literal to bypass the validation code in
+<code>React.createElement</code>.</p>
+</blockquote>
+
+<h2 id="namespaced-components">Namespaced Components</h2>
+
+<p>If you are building a component that has many children, like a form, you might end up with something with a lot of variable declarations:</p>
+
+<p>```javascript
+// Awkward block of variable declarations
+var Form = MyFormComponent;
+var FormRow = Form.Row;
+var FormLabel = Form.Label;
+var FormInput = Form.Input;</p>
+
+<p>var App = (</p>
+<form>
+    <formrow>
+      <formlabel />
+      <forminput />
+    </formrow>
+  </form>
+<p>);
+```</p>
+
+<p>To make it simpler and easier, <em>namespaced components</em> let you use one component that has other components as attributes:</p>
+
+<p>```javascript
+var Form = MyFormComponent;</p>
+
+<p>var App = (</p>
+<form>
+    <form.row>
+      <form.label />
+      <form.input />
+    </form.row>
+  </form>
+<p>);
+```</p>
+
+<p>To do this, you just need to create your <em>“sub-components”</em> as attributes of the main component:</p>
+
+<p>```javascript
+var MyFormComponent = React.createClass({ … });</p>
+
+<p>MyFormComponent.Row = React.createClass({ … });
+MyFormComponent.Label = React.createClass({ … });
+MyFormComponent.Input = React.createClass({ … });
+```</p>
+
+<p>JSX will handle this properly when compiling your code.</p>
+
+<p><code>javascript
+var App = (
+  React.createElement(Form, null,
+    React.createElement(Form.Row, null,
+      React.createElement(Form.Label, null),
+      React.createElement(Form.Input, null)
+    )
+  )
+);
+</code></p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>This feature is available in <a href="/react/blog/2014/07/17/react-v0.11.html#jsx">v0.11</a> and above.</p>
+</blockquote>
+
+<h2 id="javascript-expressions">JavaScript Expressions</h2>
+
+<h3 id="attribute-expressions">Attribute Expressions</h3>
+
+<p>To use a JavaScript expression as an attribute value, wrap the expression in a
+pair of curly braces (<code>{}</code>) instead of quotes (<code>""</code>).</p>
+
+<p><code>javascript
+// Input (JSX):
+var person = &lt;Person name={window.isLoggedIn ? window.name : ''} /&gt;;
+// Output (JS):
+var person = React.createElement(
+  Person,
+  {name: window.isLoggedIn ? window.name : ''}
+);
+</code></p>
+
+<h3 id="boolean-attributes">Boolean Attributes</h3>
+
+<p>Omitting the value of an attribute causes JSX to treat it as <code>true</code>. To pass <code>false</code> an attribute expression must be used. This often comes up when using HTML form elements, with attributes like <code>disabled</code>, <code>required</code>, <code>checked</code> and <code>readOnly</code>.</p>
+
+<p>```javascript
+// These two are equivalent in JSX for disabling a button
+<input type="button" disabled="" />;
+&lt;input type=”button” disabled={true} /&gt;;</p>
+
+<p>// And these two are equivalent in JSX for not disabling a button
+<input type="button" />;
+&lt;input type=”button” disabled={false} /&gt;;
+```</p>
+
+<h3 id="child-expressions">Child Expressions</h3>
+
+<p>Likewise, JavaScript expressions may be used to express children:</p>
+
+<p><code>javascript
+// Input (JSX):
+var content = &lt;Container&gt;{window.isLoggedIn ? &lt;Nav /&gt; : &lt;Login /&gt;}&lt;/Container&gt;;
+// Output (JS):
+var content = React.createElement(
+  Container,
+  null,
+  window.isLoggedIn ? React.createElement(Nav) : React.createElement(Login)
+);
+</code></p>
+
+<h3 id="comments">Comments</h3>
+
+<p>It’s easy to add comments within your JSX; they’re just JS expressions. You just need to be careful to put <code>{}</code> around the comments when you are within the children section of a tag.</p>
+
+<p>```javascript
+var content = (</p>
+<nav>
+    {/* child comment, put {} around */}
+    &lt;Person
+      /* multi
+         line
+         comment */
+      name={window.isLoggedIn ? window.name : ''} // end of line comment
+    /&gt;
+  </nav>
+<p>);
+```</p>
+
+<blockquote>
+  <p>NOTE:</p>
+
+  <p>JSX is similar to HTML, but not exactly the same. See <a href="/react/docs/jsx-gotchas.html">JSX gotchas</a> for some key differences.</p>
+</blockquote>
+
+
+
+  
+  <h2>
+    prev post: <a href='/help-doc/v006/articles/displaying-data.html'>displaying-data.html</a>
+  </h2>
+
+
+  
+  <h2>
+    next post: <a href='/help-doc/v006/articles/jsx-spread.html'>jsx-spread.html</a>
+  </h2>
+
+
+
+
+        </div>
+
+      </div>
+      <div class='row'>
+
+        <div class='team'>GitHub Help</div>
+<a class='link' href='mailto:support@github.com' target='_blank'>support@github.com</a>
+<div class="footer-col  footer-col-3">
+  <p class="text">© 2015 GitHub Inc. All rights reserved.
+</p>
+</div>
+
+
+      </div>
+    </div>
+
+  </body>
+</html>

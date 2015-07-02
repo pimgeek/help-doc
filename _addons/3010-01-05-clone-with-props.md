@@ -1,0 +1,34 @@
+---
+layout: post
+categories: ['guides']
+title: Cloning ReactElements
+prev-post: test-utils.html
+next-post: create-fragment.html
+---
+
+> Note:
+> `cloneWithProps` is deprecated. Use [React.cloneElement](top-level-api.html#react.cloneelement) instead.
+
+In rare situations, you may want to create a copy of a React element with different props from those of the original element. One example is cloning the elements passed into `this.props.children` and rendering them with different props:
+
+```js
+var _makeBlue = function(element) {
+  return React.addons.cloneWithProps(element, {style: {color: 'blue'}});
+};
+
+var Blue = React.createClass({
+  render: function() {
+    var blueChildren = React.Children.map(this.props.children, _makeBlue);
+    return <div>{blueChildren}</div>;
+  }
+});
+
+React.render(
+  <Blue>
+    <p>This text is blue.</p>
+  </Blue>,
+  document.getElementById('container')
+);
+```
+
+`cloneWithProps` does not transfer `key` or `ref` to the cloned element. `className` and `style` props are automatically merged.
