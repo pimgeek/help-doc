@@ -1,11 +1,11 @@
-{% for cat in site.categories %}
+{% for cat in site.categories reversed %}
   {% assign cat_str = cat[0] %}
   <div class='category'>
     <div class='name'>
       <a href="{{ cat_str | downcase | replace:' ','-' | prepend:'/categories/' | prepend: site.baseurl | prepend: site.url}}">{{ cat_str | capitalize }}</a>
     </div>
     <div class='articles'>
-      {% for post in site.categories[cat_str] %}
+      {% for post in site.categories[cat_str] reversed %}
       <div class='article'>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         <ul>

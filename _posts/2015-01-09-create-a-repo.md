@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: page
 title: Create A Repo
-categories: Bootcamp
+categories: ['Bootcamp']
 ---
 
 To put your project up on GitHub, you'll need a repository for it to live in. Let's create one!
@@ -10,7 +10,7 @@ On GitHub, you can store all kinds of projects in _[repositories][4]_. Personal 
 
 ### [*][6]Create a new repository on GitHub
 
-1. ![New repository menu](/assets/images/help/repository/repo-create.png)In the upper-right corner of any page, click , and then click **New repository**.
+{{ site.data.conrefs.repositories.create-new }}
 2. 
 ![Repository name field](/assets/images/help/repository/create-repository-name.png)Create a short, memorable name for your repository. For example, "hello-world".
 3. ![Repository description](/assets/images/help/repository/create-repository-desc.png)Optionally, add a description of your repository. For example, "My first repository on GitHub."

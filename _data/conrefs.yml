@@ -1,0 +1,8 @@
+repositories:
+  create-new:
+    1. In the upper-right corner of any page, click {{ octicon-plus }}, and then click **New repository**.
+      ![New repository menu](https://help.github.com/assets/images/help/repository/repo-create.png)
+
+wiki:
+  click-profile:
+    1. ![Profile photo](/assets/images/help/profile/top_right_avatar.png)In the top right corner of any page, click your profile photo, then click **Your profile**.                    

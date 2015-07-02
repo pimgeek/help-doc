@@ -2,7 +2,7 @@
 <html>
 
   <head>
-  <title>Search</title>
+  <title>GitHub Help</title>
   <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <meta name="description" content="© 2015 GitHub Inc. All rights reserved.
@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="stylesheet" href="/help-doc/v005/css/ui.css">
-  <link rel="canonical" href="/help-doc/v005/search/">
+  <link rel="canonical" href="/help-doc/v005/categories/wiki/">
   <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>
 
@@ -188,44 +188,15 @@
 </script>
 
 
-          <h1>Search</h1>
+          
 
-<!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v005 前缀 -->
-<div id="search">
-  <h2>
-  <form action="/help-doc/v005/search" method="get">
-    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
-  </form>
-  </h2>
-</div>
-<section id="search-results" style="display: none;">
-  <h3>Search results</h3>
-  <div class="entries">
-  </div>
-</section>
 
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article>
-      <h3>
-        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
-      </h3>
-    </article>
-  {{/entries}}
-</script>
+<h1>Category / Wiki</h1>
 
-<script src="/help-doc/v005/js/search.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/help-doc/v005/js/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-  });
-</script>
 
+<ul>
+  
+</ul>
 
 
 

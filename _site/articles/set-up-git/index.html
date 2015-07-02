@@ -2,16 +2,15 @@
 <html>
 
   <head>
-  <title>Search</title>
+  <title>Set Up Git</title>
   <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-  <meta name="description" content="© 2015 GitHub Inc. All rights reserved.
-">
+  <meta name="description" content="难以 clone 多页签分别呈现的效果 - [BEGIN]">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="stylesheet" href="/help-doc/v005/css/ui.css">
-  <link rel="canonical" href="/help-doc/v005/search/">
+  <link rel="canonical" href="/help-doc/v005/articles/set-up-git/">
   <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>
 
@@ -188,45 +187,82 @@
 </script>
 
 
-          <h1>Search</h1>
+          <h1>Set Up Git</h1>
+<p></p>
 
-<!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v005 前缀 -->
-<div id="search">
-  <h2>
-  <form action="/help-doc/v005/search" method="get">
-    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
-  </form>
-  </h2>
-</div>
-<section id="search-results" style="display: none;">
-  <h3>Search results</h3>
-  <div class="entries">
-  </div>
-</section>
+<h4 id="clone----begin">难以 clone 多页签分别呈现的效果 - [BEGIN]</h4>
 
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article>
-      <h3>
-        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
-      </h3>
-    </article>
-  {{/entries}}
-</script>
+<p><strong>Tips:</strong></p>
 
-<script src="/help-doc/v005/js/search.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/help-doc/v005/js/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-  });
-</script>
+<ul>
+  <li>GitHub has a <a href="https://windows.github.com/">Windows</a> client! You can use it without ever touching the command line.</li>
+  <li>To learn more about Git, see “<a href="http://git-scm.com/book/en/Getting-Started-Git-Basics">Getting Started - Git Basics</a>” on the <a href="http://git-scm.com/">git-scm</a> website.</li>
+</ul>
 
+<h4 id="clone----end">难以 clone 多页签分别呈现的效果 - [END]</h4>
 
+<h4 id="clone----begin-1">难以 clone 可折叠内容呈现的效果 - [BEGIN]</h4>
+
+<h4 id="input4"><a href="#input">*</a><a href="#">Input</a></h4>
+
+<p>Code blocks like those on this page are part of a scripting language called Bash. To use Bash scripts, we need to use an application that
+comes with your Mac called Terminal, usually found at /Applications/Utilities. <img src="https://github.s3.amazonaws.com/docs/bootcamp_1_mac_terminal.jpg" alt="Open Terminal" />
+was installed with Git called Git Bash. Git Bash can be found in the start menu under “Git”.<img src="https://github.s3.amazonaws.com/docs/bootcamp_1_win_gitbash.jpg" alt="Open Git Bash" />
+comes with Linux called Terminal. <img src="https://github.s3.amazonaws.com/docs/bootcamp_1_linux_terminal.jpg" alt="Open the terminal" />
+comes with your OS called the command line.</p>
+
+<pre><code>echo 'This is input text'
+# This tooltip tells you what's going on.
+</code></pre>
+
+<p>A line that begins with the dollar sign ($) indicates a line of Bash script you need to type. To enter it, type the text that follows the $, hitting the return key at the end of each line. You can hover your mouse over each line for an explanation of what the script is doing.</p>
+
+<h4 id="output"><a href="#output">*</a>Output</h4>
+
+<pre><code># This is output text.
+</code></pre>
+
+<p>A line that does not begin with a $ is output text that is intended to give you information or tell you what to do next. We’ve colored output text green in these bootcamp tutorials.</p>
+
+<h4 id="user-specific-input"><a href="#user-specific-input">*</a>User Specific Input</h4>
+
+<pre><code>echo '_username_'
+# Outputs the text in the quotation marks.
+</code></pre>
+
+<p>Areas of yellow text represent your own personal info, repos, etc. If it is part of an input ($) line, you should replace it with your own info when you type it. If it is part of output text, it is just for your reference. It will automatically show your own info in TerminalTerminalGit Bashthe command line.</p>
+
+<blockquote>
+  <p>Good to know: There will be times when you type code, hit return, and all you are given is another prompt. Some actions that you execute in TerminalTerminalGit Bashthe command line don’t have any output. Don’t worry, if there is ever a problem with your code, TerminalTerminalGit Bashthe command line will let you know.</p>
+
+  <p>For security reasons, TerminalTerminalGit Bashthe command line will not display what you type when entering passwords. Just type your password and hit the return key.</p>
+
+</blockquote>
+
+<h4 id="clone----end-1">难以 clone 可折叠内容呈现的效果 - [END]</h4>
+
+<h3 id="next-steps-authenticating-with-github-from-git"><a href="#next-steps-authenticating-with-github-from-git">*</a>Next steps: Authenticating with GitHub from Git</h3>
+
+<p>When you connect to a GitHub repository from Git, you’ll need to authenticate with GitHub using either HTTPS or SSH.</p>
+
+<h4 id="connecting-over-https-recommended"><a href="#connecting-over-https-recommended">*</a>Connecting over HTTPS (recommended)</h4>
+
+<p>If you <a href="/articles/which-remote-url-should-i-use#cloning-with-https-recommended">clone with HTTPS</a>, you can <a href="/articles/caching-your-github-password-in-git">cache your GitHub password in Git</a> using a credential helper.</p>
+
+<h4 id="connecting-over-ssh"><a href="#connecting-over-ssh">*</a>Connecting over SSH</h4>
+
+<p>If you <a href="/articles/which-remote-url-should-i-use#cloning-with-ssh">clone with SSH</a>, you must <a href="/articles/generating-ssh-keys">generate SSH keys</a> on each computer you use to push or pull from GitHub.</p>
+
+<h3 id="celebrate"><a href="#celebrate">*</a>Celebrate</h3>
+
+<p>Congratulations, you now have Git and GitHub all set up! What do you want to do next?</p>
+
+<ul>
+  <li><strong>Set Up Git</strong></li>
+  <li><a href="/articles/create-a-repo">Create A Repository</a></li>
+  <li><a href="/articles/fork-a-repo">Fork A Repository</a></li>
+  <li><a href="/articles/be-social">Be Social</a></li>
+</ul>
 
 
 

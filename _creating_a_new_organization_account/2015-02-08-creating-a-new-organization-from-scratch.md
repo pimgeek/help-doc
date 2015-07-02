@@ -24,7 +24,7 @@ When you create a new organization from scratch, it doesn't have any repositorie
 Under "Contact email," type the email address of a person who can be contacted for more information about the organization.
 9. Click **Create organization**.
 
-### [][6]Further reading
+### [*][6]Further reading
 
 * "[Setting your organization's billing email][7]"
 * "[Monthly and yearly billing][8]"

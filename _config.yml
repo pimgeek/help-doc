@@ -15,7 +15,7 @@ gems: ['jekyll-lunr-js-search']
 
 encoding: UTF-8
 
-#exclude: ['v001','v002','v003','v004','v005']
+exclude: ['v001','v002','v003','v004','v005']
 
 collections:
   categories:
@@ -23,6 +23,6 @@ collections:
     permalink: /categories/:path/
   creating_a_new_organization_account:
     output: true
-    permalink: /articles/:title.html
+    permalink: /articles/:title/
 
-permalink: /articles/:title.html
+permalink: /articles/:title/

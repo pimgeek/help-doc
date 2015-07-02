@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GitHub Help</title>
-    <description>The GitHub Logo © 2015 GitHub Inc. All rights reserved.
+    <description>© 2015 GitHub Inc. All rights reserved.
 </description>
-    <link>/help-doc/v004/</link>
-    <atom:link href="/help-doc/v004/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jul 2015 14:46:21 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Jul 2015 14:46:21 +0800</lastBuildDate>
+    <link>/help-doc/v005/</link>
+    <atom:link href="/help-doc/v005/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 02 Jul 2015 17:48:19 +0800</pubDate>
+    <lastBuildDate>Thu, 02 Jul 2015 17:48:19 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Creating a new organization account</title>
+        <title>Creating A New Organization Account</title>
         <description>&lt;p&gt;You can create a new organization by either setting up a new organization or converting an existing personal account into an organization.&lt;/p&gt;
 
 &lt;ul&gt;
   
-    &lt;li&gt;&lt;a class=&quot;post-link&quot; href=&quot;/help-doc/v004/articles/creating-a-new-organization-from-scratch.html&quot;&gt;Creating a new organization from scratch&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;post-link&quot; href=&quot;/help-doc/v005/articles/creating-a-new-organization-from-scratch/&quot;&gt;Creating a new organization from scratch&lt;/a&gt;&lt;/li&gt;
   
-    &lt;li&gt;&lt;a class=&quot;post-link&quot; href=&quot;/help-doc/v004/articles/about-organizations.html&quot;&gt;About Organizations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;post-link&quot; href=&quot;/help-doc/v005/articles/about-organizations/&quot;&gt;About Organizations&lt;/a&gt;&lt;/li&gt;
   
 &lt;/ul&gt;
 
 </description>
         <pubDate>Tue, 10 Feb 2015 00:00:00 +0800</pubDate>
-        <link>/help-doc/v004/articles/creating-a-new-organization-account.html</link>
-        <guid isPermaLink="true">/help-doc/v004/articles/creating-a-new-organization-account.html</guid>
+        <link>/help-doc/v005/articles/creating-a-new-organization-account/</link>
+        <guid isPermaLink="true">/help-doc/v005/articles/creating-a-new-organization-account/</guid>
         
         
         <category>setting up and managing organizations and teams</category>
@@ -110,8 +110,8 @@ comes with your OS called the command line.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 10 Jan 2015 00:00:00 +0800</pubDate>
-        <link>/help-doc/v004/articles/set-up-git.html</link>
-        <guid isPermaLink="true">/help-doc/v004/articles/set-up-git.html</guid>
+        <link>/help-doc/v005/articles/set-up-git/</link>
+        <guid isPermaLink="true">/help-doc/v005/articles/set-up-git/</guid>
         
         
         <category>bootcamp</category>
@@ -127,7 +127,7 @@ comes with your OS called the command line.&lt;/p&gt;
 &lt;h3 id=&quot;create-a-new-repository-on-github&quot;&gt;&lt;a href=&quot;#create-a-new-repository-on-github&quot;&gt;*&lt;/a&gt;Create a new repository on GitHub&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;img src=&quot;/assets/images/help/repository/repo-create.png&quot; alt=&quot;New repository menu&quot; /&gt;In the upper-right corner of any page, click , and then click &lt;strong&gt;New repository&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;In the upper-right corner of any page, click {{ octicon-plus }}, and then click &lt;strong&gt;New repository&lt;/strong&gt;. &lt;img src=&quot;https://help.github.com/assets/images/help/repository/repo-create.png&quot; alt=&quot;New repository menu&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;&lt;img src=&quot;/assets/images/help/repository/create-repository-name.png&quot; alt=&quot;Repository name field&quot; /&gt;Create a short, memorable name for your repository. For example, “hello-world”.&lt;/li&gt;
   &lt;li&gt;&lt;img src=&quot;/assets/images/help/repository/create-repository-desc.png&quot; alt=&quot;Repository description&quot; /&gt;Optionally, add a description of your repository. For example, “My first repository on GitHub.”&lt;/li&gt;
   &lt;li&gt;Choose between creating a &lt;em&gt;public&lt;/em&gt; or &lt;em&gt;private&lt;/em&gt; repository.
@@ -175,8 +175,8 @@ comes with your OS called the command line.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 09 Jan 2015 00:00:00 +0800</pubDate>
-        <link>/help-doc/v004/articles/create-a-repo.html</link>
-        <guid isPermaLink="true">/help-doc/v004/articles/create-a-repo.html</guid>
+        <link>/help-doc/v005/articles/create-a-repo/</link>
+        <guid isPermaLink="true">/help-doc/v005/articles/create-a-repo/</guid>
         
         
         <category>bootcamp</category>

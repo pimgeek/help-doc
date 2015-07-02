@@ -2,16 +2,12 @@
   {% for post in include.which-cat %}
     <li>
       <a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-      <ul>
-        {% for coll in site.collections %}
-          {% assign coll-id = coll[0] | downcase %}
-          {% assign post-id = post.title | replace:' ','_' | downcase %}
-          {% if coll-id == post-id %}
-            {% assign coll-obj = site.creating_a_new_organization_account %}
-            {% include sub-articles.html which-coll=coll-obj %}
-          {% endif %}
-        {% endfor %}
-      </ul>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        {% assign post-id = post.title | replace:' ','_' | downcase %}
+        {% if site.collections[post-id].label == post-id %}
+          {% assign coll-obj = site.collections[post-id].docs %}
+          {% include sub-articles.html which-coll=coll-obj %}
+        {% endif %}
     </li>
   {% endfor %}
 </ul>
