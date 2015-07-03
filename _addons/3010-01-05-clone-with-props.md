@@ -1,8 +1,8 @@
 ---
 layout: post
 categories: ['guides']
-title: Cloning ReactElements
-prev-post: test-utils.html
+title: Clone with Props
+prev-post: test-utilities.html
 next-post: create-fragment.html
 ---
 

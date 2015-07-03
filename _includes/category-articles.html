@@ -7,7 +7,7 @@
         {% if site.collections[post-id].label == post-id %}
           {% assign coll-obj = site.collections[post-id].docs %}
           {% include sub-articles.html which-coll=coll-obj %}
-        {% endif %}
+        {% endif %} 
     </li>
   {% endfor %}
 </ul>

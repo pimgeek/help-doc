@@ -3,7 +3,7 @@ layout: post
 categories: ['guides']
 title: Class Name Manipulation
 prev-post: two-way-binding-helpers.html
-next-post: test-utils.html
+next-post: test-utilities.html
 ---
 
 > NOTE:

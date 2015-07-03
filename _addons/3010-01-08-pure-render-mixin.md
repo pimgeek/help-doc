@@ -2,7 +2,7 @@
 layout: post
 categories: ['guides']
 title: Pure Render Mixin
-prev-post: update.html
+prev-post: immutability-helpers.html
 next-post: perf.html
 ---
 

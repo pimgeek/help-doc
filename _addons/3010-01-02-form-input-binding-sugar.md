@@ -3,7 +3,7 @@ layout: post
 categories: ['guides']
 title: Two-Way Binding Helpers
 prev-post: animation.html
-next-post: test-utils.html
+next-post: class-name-manipulation.html
 ---
 
 `ReactLink` is an easy way to express two-way binding with React.

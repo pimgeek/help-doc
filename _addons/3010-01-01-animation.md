@@ -20,38 +20,39 @@ React provides a `ReactTransitionGroup` addon component as a low-level API for a
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var TodoList = React.createClass({
-  getInitialState: function() {
-    return {items: ['hello', 'world', 'click', 'me']};
-  },
-  handleAdd: function() {
-    var newItems =
-      this.state.items.concat([prompt('Enter some text')]);
-    this.setState({items: newItems});
-  },
-  handleRemove: function(i) {
-    var newItems = this.state.items;
-    newItems.splice(i, 1);
-    this.setState({items: newItems});
-  },
-  render: function() {
-    var items = this.state.items.map(function(item, i) {
-      return (
-        <div key={item} onClick={this.handleRemove.bind(this, i)}>
-          {item}
-        </div>
-      );
-    }.bind(this));
-    return (
-      <div>
-        <button onClick={this.handleAdd}>Add Item</button>
-        <ReactCSSTransitionGroup transitionName="example">
-          {items}
-        </ReactCSSTransitionGroup>
-      </div>
-    );
-  }
+getInitialState: function() {
+return {items: ['hello', 'world', 'click', 'me']};
+},
+handleAdd: function() {
+var newItems =
+  this.state.items.concat([prompt('Enter some text')]);
+this.setState({items: newItems});
+},
+handleRemove: function(i) {
+var newItems = this.state.items;
+newItems.splice(i, 1);
+this.setState({items: newItems});
+},
+render: function() {
+var items = this.state.items.map(function(item, i) {
+  return (
+    <div key={item} onClick={this.handleRemove.bind(this, i)}>
+      {item}
+    </div>
+  );
+}.bind(this));
+return (
+  <div>
+    <button onClick={this.handleAdd}>Add Item</button>
+    <ReactCSSTransitionGroup transitionName="example">
+      {items}
+    </ReactCSSTransitionGroup>
+  </div>
+);
+}
 });
 ```
+
 > Note:
 >
 > You must provide [the `key` attribute](/react/docs/multiple-components.html#dynamic-children) for all children of `ReactCSSTransitionGroup`, even if rendering a single item. This is how React will determine which children have entered, left, or stayed.
@@ -62,12 +63,12 @@ You can use these classes to trigger a CSS animation or transition. For example,
 
 ```css
 .example-enter {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
+opacity: 0.01;
+transition: opacity .5s ease-in;
 }
 
 .example-enter.example-enter-active {
-  opacity: 1;
+opacity: 1;
 }
 ```
 
@@ -75,12 +76,12 @@ You'll notice that when you try to remove an item `ReactCSSTransitionGroup` keep
 
 ```css
 .example-leave {
-  opacity: 1;
-  transition: opacity .5s ease-in;
+opacity: 1;
+transition: opacity .5s ease-in;
 }
 
 .example-leave.example-leave-active {
-  opacity: 0.01;
+opacity: 0.01;
 }
 ```
 
@@ -89,25 +90,25 @@ You'll notice that when you try to remove an item `ReactCSSTransitionGroup` keep
 `ReactCSSTransitionGroup` provides the optional prop `transitionAppear`, to add an extra transition phase at the initial mount of the component. There is generally no transition phase at the initial mount as the default value of `transitionAppear` is `false`. Following an example which passes the prop `transitionAppear` with the value `true`.
 
 ```javascript{3-5}
-  render: function() {
-    return (
-      <ReactCSSTransitionGroup transitionName="example" transitionAppear={true}>
-        <h1>Fading at Initial Mount</h1>
-      </ReactCSSTransitionGroup>
-    );
-  }
+render: function() {
+return (
+  <ReactCSSTransitionGroup transitionName="example" transitionAppear={true}>
+    <h1>Fading at Initial Mount</h1>
+  </ReactCSSTransitionGroup>
+);
+}
 ```
 
 During the initial mount `ReactCSSTransitionGroup` will get the `example-appear` CSS class and the `example-appear-active` CSS class added in the next tick.
 
 ```css
 .example-appear {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
+opacity: 0.01;
+transition: opacity .5s ease-in;
 }
 
 .example-appear.example-appear-active {
-  opacity: 1;
+opacity: 1;
 }
 ```
 
@@ -122,23 +123,23 @@ At the initial mount, all children of the `ReactCSSTransitionGroup` will `appear
 In order for it to apply transitions to its children, the `ReactCSSTransitionGroup` must already be mounted in the DOM or the prop `transitionAppear` must be set to `true`. The example below would not work, because the `ReactCSSTransitionGroup` is being mounted along with the new item, instead of the new item being mounted within it. Compare this to the [Getting Started](#getting-started) section above to see the difference.
 
 ```javascript{12-15}
-  render: function() {
-    var items = this.state.items.map(function(item, i) {
-      return (
-        <div key={item} onClick={this.handleRemove.bind(this, i)}>
-          <ReactCSSTransitionGroup transitionName="example">
-            {item}
-          </ReactCSSTransitionGroup>
-        </div>
-      );
-    }, this);
-    return (
-      <div>
-        <button onClick={this.handleAdd}>Add Item</button>
-        {items}
-      </div>
-    );
-  }
+render: function() {
+var items = this.state.items.map(function(item, i) {
+  return (
+    <div key={item} onClick={this.handleRemove.bind(this, i)}>
+      <ReactCSSTransitionGroup transitionName="example">
+        {item}
+      </ReactCSSTransitionGroup>
+    </div>
+  );
+}, this);
+return (
+  <div>
+    <button onClick={this.handleAdd}>Add Item</button>
+    {items}
+  </div>
+);
+}
 ```
 
 ### Animating One or Zero Items
@@ -149,18 +150,18 @@ In the example above, we rendered a list of items into `ReactCSSTransitionGroup`
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var ImageCarousel = React.createClass({
-  propTypes: {
-    imageSrc: React.PropTypes.string.isRequired
-  },
-  render: function() {
-    return (
-      <div>
-        <ReactCSSTransitionGroup transitionName="carousel">
-          <img src={this.props.imageSrc} key={this.props.imageSrc} />
-        </ReactCSSTransitionGroup>
-      </div>
-    );
-  }
+propTypes: {
+imageSrc: React.PropTypes.string.isRequired
+},
+render: function() {
+return (
+  <div>
+    <ReactCSSTransitionGroup transitionName="carousel">
+      <img src={this.props.imageSrc} key={this.props.imageSrc} />
+    </ReactCSSTransitionGroup>
+  </div>
+);
+}
 });
 ```
 
@@ -206,7 +207,7 @@ By default `ReactTransitionGroup` renders as a `span`. You can change this behav
 
 ```javascript{1}
 <ReactTransitionGroup component="ul">
-  ...
+...
 </ReactTransitionGroup>
 ```
 
@@ -220,6 +221,6 @@ Any additional, user-defined, properties will become properties of the rendered 
 
 ```javascript{1}
 <ReactTransitionGroup component="ul" className="animated-list">
-  ...
+...
 </ReactTransitionGroup>
 ```

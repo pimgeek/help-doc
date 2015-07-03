@@ -10,12 +10,14 @@ github_username:  github
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 
 gems: ['jekyll-lunr-js-search']
 
 encoding: UTF-8
 
-#exclude: ['v001','v002','v003','v004','v005','v006','v007']
+#exclude: ['v001','v002','v003','v004','v005','v006','v007', 'v008']
 
 collections:
   categories:

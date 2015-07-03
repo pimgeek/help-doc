@@ -2,7 +2,7 @@
 layout: post
 categories: ['guides']
 title: Test Utilities
-prev-post: two-way-binding-helpers.html
+prev-post: class-name-manipulation.html
 next-post: clone-with-props.html
 ---
 

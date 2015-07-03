@@ -2,8 +2,8 @@
 layout: post
 categories: ['guides']
 title: Displaying Data
-prev-post: why-react
-next-post: jsx-in-depth
+prev-post: why-react.html
+next-post: jsx-in-depth.html
 ---
 
 The most basic thing you can do with a UI is display some data. React makes it easy to display data and automatically keeps the interface up-to-date when the data changes.
@@ -117,8 +117,8 @@ var Factory = React.createFactory(ComponentClass);
 var root = Factory({ custom: 'prop' });
 React.render(root, document.getElementById('example'));
 ```
-
-React already has built-in factories for common HTML tags:
+ 
+ React already has built-in factories for common HTML tags:
 
 ```javascript
 var root = React.DOM.ul({ className: 'my-list' },

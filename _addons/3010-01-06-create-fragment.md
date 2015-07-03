@@ -1,9 +1,9 @@
 ---
 layout: post
 categories: ['guides']
-title: Keyed Fragments
+title: Create Fragment
 prev-post: clone-with-props.html
-next-post: update.html
+next-post: immutability-helpers.html
 ---
 
 In most cases, you can use the `key` prop to specify keys on the elements you're returning from `render`. However, this breaks down in one situation: if you have two sets of children that you need to reorder, there's no way to put a key on each set without adding a wrapper element.
