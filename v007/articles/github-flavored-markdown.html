@@ -2,16 +2,15 @@
 <html>
 
   <head>
-  <title>GitHub Help</title>
+  <title>GFM</title>
   <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-  <meta name="description" content="© 2015 GitHub Inc. All rights reserved.
-">
+  <meta name="description" content="jekyll + lunrjs 的调通方法已经在 #2 中描述过，所以这里只讲实现 github help 站点文档结构的步骤。">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="stylesheet" href="/help-doc/v007/css/ui.css">
-  <link rel="canonical" href="/help-doc/v007/categories/guides/">
+  <link rel="canonical" href="/help-doc/v007/articles/github-flavored-markdown.html">
   <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>
 
@@ -289,169 +288,226 @@
 </script>
 
 
-          
+          <h1>GFM</h1>
+<p></p>
 
+<p>jekyll + lunrjs 的调通方法已经在 #2 中描述过，所以这里只讲实现 github help 站点文档结构的步骤。</p>
 
-<h1>Category / Guides</h1>
+<h3 id="jekyll-">jekyll 环境说明</h3>
 
+<ul>
+  <li>若无特别说明，所有形如 <code>YYYY-MM-DD-article-title.md</code> 文档的 Front Matter 中均含有 <code>title: Article Title</code>，而且 Front Matter 中的 title 与 <em>.md 文件名中的 title 严格对应（不区分大小写），</em>.md 中的 <code>-</code> 严格替换为 ` `。</li>
+  <li>我使用的 jekyll 文件夹名为 <code>help-doc</code></li>
+  <li>我使用的 jekyll 模板结构大概如下图所示<br />
+<code>
+help-doc/
+├── _categories
+│   ├── bootcamp.md
+│   └── setting-up-and-managing-organizations-and-teams.md
+├── _creating_a_new_organization_account
+│   ├── 2015-02-08-creating-a-new-organization-from-scratch.md
+│   └── 2015-02-09-about-organizations.md
+├── css
+│   └── ...
+├── _data
+│   └── conrefs.yml
+├── fonts
+│   └── ...
+├── _includes
+│   ├── category-articles.html
+│   ├── footer.html
+│   ├── header.html
+│   ├── head.html
+│   ├── search.html
+│   ├── sidebar.html
+│   └── sub-articles.html
+├── _layouts
+│   ├── category.html
+│   ├── default.html
+│   ├── page.html
+│   └── post.html
+├── _posts
+│   ├── 2015-02-10-creating-a-new-organization-account.md
+│   ├── 2015-01-01-set-up-git.md
+│   └── 2015-01-02-create-a-repo.md
+├── _sass
+│   └── ...
+├── search
+│   └── index.html
+├── about.md
+├── _config.yml
+├── feed.xml
+└── index.html
+</code></li>
+</ul>
+
+<h3 id="jekyll--github-help-">利用 jekyll 构建 github help 站点文档结构的步骤描述</h3>
+
+<ul>
+  <li>帮助文档的 markdown 源码要放在哪里，才能通过 Jekyll 输出到前端？<br />
+先编写文档内容，然后按照 YYYY-MM-DD-help-topic.md 的文件格式命名，最后根据实际情况放进以下两个位置：
+    <ul>
+      <li>对于独立的帮助文档，直接放在 <code>_posts</code> 目录下</li>
+      <li>对于“隶属于”某个独立父帮助文档的“子文档”，根据子文档的实际分类，放在形如 <code>_category_name</code> 这样的目录下</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>如何让 Jekyll 输出类似 https://help.github.com/articles/set-up-git/ 这样的网址？<br />
+编辑 _config.yml 文档，增加/修改这一行：<br />
+<code>permalink: /articles/:title/</code></li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>如何让 Jekyll 输出类似 https://help.github.com/categories/bootcamp/ 这样的分类索引页？<br />
+分多个步骤实现：
+    <ul>
+      <li>在已有的，属于 bootcamp 这一类的帮助文档的 markdown 源码 Front Matter 中增加这段内容：<br />
+<code>categories: ['bootcamp']</code><br />
+至少要有一篇属于 bootcamp 分类的帮助文档，才能在首页上列出相关的分类。分类名称支持大写字母、小写字母、空格等，但真正存储到 Jekyll 模板系统的内存中时，<strong>貌似</strong>都会变为小写。</li>
+      <li>编辑 _config.yml 文档，在其中增加这段定义 collection 的内容：<br />
+<code>yml
+collections:
+categories:
+  output: true
+  permalink: /categories/:path/
+</code><br />
+如果不定义这个，仅仅能在首页看到分类索引页的链接，但无法打开目标网页。</li>
+      <li>在 <code>_categories</code> 目录下创建一个名为 <code>bootcamp.md</code> 的文件（文件名采用大写字母还是小写会造成不同效果，要注意），其内容如下：<br />
+```markdown<br />
+—<br />
+layout: category<br />
+—</li>
+    </ul>
+  </li>
+</ul>
 
 <ul>
   
+</ul>
+
+<pre><code>  如果不定义这个，或者文件名与分类名不一致，仍然会出现导航中有分类索引页的链接，但实际点不开的情况。如果想定义别的分类，比如 ```manage-organization``` 分类，仍然按这个步骤来做，文件内容不变，只有文件名需要改为 ```manage-organization.md``` 
+  - 在 ```_layouts``` 目录下创建一个名为 ```category.html``` 的网页布局文件，其内容如下：
+  ```html
+---
+layout: default
+---
+
+{% assign page-title-array=page.url | split:'/' %}
+{% assign page-title=page-title-array[2] | replace:'-',' ' | capitalize %}
+
+&lt;h1&gt;Category / {{ page-title}}&lt;/h1&gt;
+
+{{ content}}
+</code></pre>
+<p>单个分类索引网页需要引用这个网页布局文件。<br />
+  - 在 <code>_include</code> 目录下创建一个名为 <code>category-articles.html</code> 的包含文件，其内容如下：<br />
+  ```html</p>
+<ul>
+  {% for post in include.which-cat%}
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/advanced-performance.html">Advanced Performance</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title}}</a>
     </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/addons.html">Addons</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-        
-          
-          <ul>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/animation.html">Animation</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/class-name-manipulation.html">Class Name Manipulation</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/test-utilities.html">Test Utilities</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/immutability-helpers.html">Immutability Helpers</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/pure-render-mixin.html">Pure Render Mixin</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/performance-tools.html">Performance Tools</a>
-    </li>
+  {% endfor%}
+</ul>
+<pre><code>  单个分类索引网页需要引用这个网页包含文件。
+  关于 ```{% include tmpl.html var-name=sth%}``` 和 ```{{ include.var-name}}``` 这种特殊语法的介绍，请参考 http://jekyllrb.com/docs/templates/ 中的 **ProTip：Use variables as file name**
+
+----
+
+- 如何利用 Jekyll 输出类似于 https://help.github.com/articles/creating-a-new-organization-account/ 这样的 “子文档列表”？
+  首先要在 ```_posts``` 目录下创建一个独立的父帮助文档：```2015-02-10-creating-a-new-organization-account.md```，然后进行下列操作步骤：
+  - 修改 ```_config.yml``` 文件内容，增加一个对应的 collection：
+  ```yml
+collections:
+  categories:
+    output: true
+    permalink: /categories/:path/
+  creating_a_new_organization_account:  # 这里是新增加的 collection，单词之间必须用 ```_``` 分隔
+    output: true
+    permalink: /articles/:title/  # 子文档的超链接，以 /articles/xxx-xxx-xxx/ 的方式输出
+</code></pre>
+<ul>
+  <li>在独立帮助文档 <code>2015-02-10-creating-a-new-organization-account.md</code> 的 markdown 源码末尾处增加一段获取子文档列表的代码：<br />
+  ```markdown<br />
+—<br />
+layout: post<br />
+categories: [‘Setting up and managing organizations and teams’]<br />
+—</li>
+</ul>
+
+<p>You can create a new organization by either setting up a new organization or converting an existing personal account into an organization.</p>
+
+<ul>
   
 </ul>
 
-         
-    </li>
+<pre><code>  - 在 jekyll 的根目录下创建一个新的 collection 目录： ```_creating_a_new_organization_account``` ，这里单词之间必须用 ```_``` 分隔。
+  - 在新创建的 collection 目录下增加一系列子文档，均以 markdown 文档方式给出。
+  ```
+help-doc/
+├── _creating_a_new_organization_account
+│   ├── 2015-02-08-creating-a-new-organization-from-scratch.md
+│   └── 2015-02-09-about-organizations.md
+</code></pre>
+<ul>
+  <li>在分类索引页的包含文件 <code>_include/category-articles.html</code> 中增加下列内容<br />
+  ```html</li>
+</ul>
+<ul>
   
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/tooling-integration.html">Tooling Integration</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/working-with-the-browser.html">Working with the Browser</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-        
-          
-          <ul>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/more-about-refs.html">More About Refs</a>
-    </li>
-  
+</ul>
+<pre><code>  - 在 ```_include``` 目录下增加一个名为 ```sub-articles.html``` 的包含文件，其内容如下
+  ```html
+&lt;ul&gt;
+  {% for post in include.which-coll%}
+    &lt;li&gt;&lt;a class='post-link' href='{{ post.url | prepend: site.baseurl | prepend: site.url}}'&gt;{{ post.title}}&lt;/a&gt;&lt;/li&gt;
+  {% endfor%}
+&lt;/ul&gt;
+</code></pre>
+<p>分类索引文件和独立的父文档文件都需要引用这个包含文件。</p>
+
+<hr />
+
+<ul>
+  <li>如何实现 github help 文档中的 <code>conrefs</code> 内容复用？
+    <ul>
+      <li>首先在 jekyll 的源码目录下创建一个 <code>_data</code> 目录</li>
+      <li>在 <code>_data</code> 目录下创建 <code>conrefs.yml</code> 文件，其内容根据实际需要而定<br />
+```yml<br />
+repositories:<br />
+create-new:
+        <ol>
+          <li>In the upper-right corner of any page, click {{ octicon-plus}}, and then click <strong>New repository</strong>.<br />
+  <img src="https://help.github.com/assets/images/help/repository/repo-create.png" alt="New repository menu" /></li>
+        </ol>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/forms.html">Forms</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/transferring-props.html">Transferring Props</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/reusable-components.html">Reusable Components</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/multiple-components.html">Multiple Components</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/displaying-data.html">Displaying Data</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-        
-          
-          <ul>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/jsx-in-depth.html">JSX in Depth</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/jsx-spread.html">JSX Spread</a>
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/jsx-gotchas.html">JSX Gotchas</a>
-    </li>
-  
-</ul>
+<p>wiki:<br />
+  click-profile:<br />
+    1. <img src="/assets/images/help/profile/top_right_avatar.png" alt="Profile photo" />In the top right corner of any page, click your profile photo, then click <strong>Your profile</strong>.           <br />
+<code>
+  这些就是未来将会被复用的内容片段，只要修改</code>conrefs.yml<code>文件，并且用 jekyll 重新 build 全站文档，就可以做到一处修改多处生效。
+  - 在实际的帮助文档的 markdown 源码中引用这些片段：
+ </code>markdown<br />
+### Create a new repository on GitHub                                                                 <br />
+1. In the upper-right corner of any page, click {{ octicon-plus }}, and then click <strong>New repository</strong>. <img src="https://help.github.com/assets/images/help/repository/repo-create.png" alt="New repository menu" /><br />
+2. <br />
+<img src="/assets/images/help/repository/create-repository-name.png" alt="Repository name field" />Create a short, memorable name for your repository. For example, “hello-world”.                                                     <br />
+```<br />
+将会被替换为下图所示的样子<br />
+<img src="http://i.teamkn.com/i/qhSuTgON.png" alt="" /></p>
 
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-    <li>
-      <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
-        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
-        
-         
-    </li>
-  
-</ul>
+
+
 
 
 

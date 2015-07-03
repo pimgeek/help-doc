@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -288,132 +296,164 @@
 
 <h3 id="simulate">Simulate</h3>
 
-<p><code>javascript
-Simulate.{eventName}(DOMElement element, object eventData)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Simulate.{eventName}(DOMElement element, object eventData)
+</pre></div>
+</div>
+</div>
 
 <p>Simulate an event dispatch on a DOM node with optional <code>eventData</code> event data. <strong>This is possibly the single most useful utility in <code>ReactTestUtils</code>.</strong></p>
 
 <p>Example usage:</p>
 
-<p><code>javascript
-var node = React.findDOMNode(this.refs.input);
-React.addons.TestUtils.Simulate.click(node);
-React.addons.TestUtils.Simulate.change(node, {target: {value: 'Hello, world'}});
-React.addons.TestUtils.Simulate.keyDown(node, {key: "Enter"});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> node = React.findDOMNode(<span style="color:#950">this</span>.refs.input);
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>React.addons.TestUtils.Simulate.click(node);
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>React.addons.TestUtils.Simulate.change(node, {<span style="color:#606">target</span>: {<span style="color:#606">value</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello, world</span><span style="color:#710">'</span></span>}});
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>React.addons.TestUtils.Simulate.keyDown(node, {<span style="color:#606">key</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Enter</span><span style="color:#710">&quot;</span></span>});
+</pre></div>
+</div>
+</div>
 
 <p><code>Simulate</code> has a method for every event that React understands.</p>
 
 <h3 id="renderintodocument">renderIntoDocument</h3>
 
-<p><code>javascript
-ReactComponent renderIntoDocument(ReactElement instance)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>ReactComponent renderIntoDocument(ReactElement instance)
+</pre></div>
+</div>
+</div>
 
 <p>Render a component into a detached DOM node in the document. <strong>This function requires a DOM.</strong></p>
 
 <h3 id="mockcomponent">mockComponent</h3>
 
-<p><code>javascript
-object mockComponent(function componentClass, string? mockTagName)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>object mockComponent(<span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">componentClass</span>, string? mockTagName)
+</pre></div>
+</div>
+</div>
 
 <p>Pass a mocked component module to this method to augment it with useful methods that allow it to be used as a dummy React component. Instead of rendering as usual, the component will become a simple <code>&lt;div&gt;</code> (or other tag if <code>mockTagName</code> is provided) containing any provided children.</p>
 
 <h3 id="iselement">isElement</h3>
 
-<p><code>javascript
-boolean isElement(ReactElement element)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">boolean</span> isElement(ReactElement element)
+</pre></div>
+</div>
+</div>
 
 <p>Returns true if <code>element</code> is any ReactElement.</p>
 
 <h3 id="iselementoftype">isElementOfType</h3>
 
-<p><code>javascript
-boolean isElementOfType(ReactElement element, function componentClass)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">boolean</span> isElementOfType(ReactElement element, <span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">componentClass</span>)
+</pre></div>
+</div>
+</div>
 
 <p>Returns true if <code>element</code> is a ReactElement whose type is of a React <code>componentClass</code>.</p>
 
 <h3 id="isdomcomponent">isDOMComponent</h3>
 
-<p><code>javascript
-boolean isDOMComponent(ReactComponent instance)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">boolean</span> isDOMComponent(ReactComponent instance)
+</pre></div>
+</div>
+</div>
 
 <p>Returns true if <code>instance</code> is a DOM component (such as a <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>).</p>
 
 <h3 id="iscompositecomponent">isCompositeComponent</h3>
 
-<p><code>javascript
-boolean isCompositeComponent(ReactComponent instance)`
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">boolean</span> isCompositeComponent(ReactComponent instance)<span style="color:#F00;background-color:#FAA">`</span>
+</pre></div>
+</div>
+</div>
 
 <p>Returns true if <code>instance</code> is a composite component (created with <code>React.createClass()</code>)</p>
 
 <h3 id="iscompositecomponentwithtype">isCompositeComponentWithType</h3>
 
-<p><code>javascript
-boolean isCompositeComponentWithType(ReactComponent instance, function componentClass)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">boolean</span> isCompositeComponentWithType(ReactComponent instance, <span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">componentClass</span>)
+</pre></div>
+</div>
+</div>
 
 <p>Returns true if <code>instance</code> is a composite component (created with <code>React.createClass()</code>) whose type is of a React <code>componentClass</code>.</p>
 
 <h3 id="findallinrenderedtree">findAllInRenderedTree</h3>
 
-<p><code>javascript
-array findAllInRenderedTree(ReactComponent tree, function test)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>array findAllInRenderedTree(ReactComponent tree, <span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">test</span>)
+</pre></div>
+</div>
+</div>
 
 <p>Traverse all components in <code>tree</code> and accumulate all components where <code>test(component)</code> is true. This is not that useful on its own, but it’s used as a primitive for other test utils.</p>
 
 <h3 id="scryrendereddomcomponentswithclass">scryRenderedDOMComponentsWithClass</h3>
 
-<p><code>javascript
-array scryRenderedDOMComponentsWithClass(ReactComponent tree, string className)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>array scryRenderedDOMComponentsWithClass(ReactComponent tree, string className)
+</pre></div>
+</div>
+</div>
 
 <p>Finds all instances of components in the rendered tree that are DOM components with the class name matching <code>className</code>.</p>
 
 <h3 id="findrendereddomcomponentwithclass">findRenderedDOMComponentWithClass</h3>
 
-<p><code>javascript
-ReactComponent findRenderedDOMComponentWithClass(ReactComponent tree, string className)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>ReactComponent findRenderedDOMComponentWithClass(ReactComponent tree, string className)
+</pre></div>
+</div>
+</div>
 
 <p>Like <code>scryRenderedDOMComponentsWithClass()</code> but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.</p>
 
 <h3 id="scryrendereddomcomponentswithtag">scryRenderedDOMComponentsWithTag</h3>
 
-<p><code>javascript
-array scryRenderedDOMComponentsWithTag(ReactComponent tree, string tagName)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>array scryRenderedDOMComponentsWithTag(ReactComponent tree, string tagName)
+</pre></div>
+</div>
+</div>
 
 <p>Finds all instances of components in the rendered tree that are DOM components with the tag name matching <code>tagName</code>.</p>
 
 <h3 id="findrendereddomcomponentwithtag">findRenderedDOMComponentWithTag</h3>
 
-<p><code>javascript
-ReactComponent findRenderedDOMComponentWithTag(ReactComponent tree, string tagName)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>ReactComponent findRenderedDOMComponentWithTag(ReactComponent tree, string tagName)
+</pre></div>
+</div>
+</div>
 
 <p>Like <code>scryRenderedDOMComponentsWithTag()</code> but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.</p>
 
 <h3 id="scryrenderedcomponentswithtype">scryRenderedComponentsWithType</h3>
 
-<p><code>javascript
-array scryRenderedComponentsWithType(ReactComponent tree, function componentClass)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>array scryRenderedComponentsWithType(ReactComponent tree, <span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">componentClass</span>)
+</pre></div>
+</div>
+</div>
 
 <p>Finds all instances of components with type equal to <code>componentClass</code>.</p>
 
 <h3 id="findrenderedcomponentwithtype">findRenderedComponentWithType</h3>
 
-<p><code>javascript
-ReactComponent findRenderedComponentWithType(ReactComponent tree, function componentClass)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>ReactComponent findRenderedComponentWithType(ReactComponent tree, <span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">componentClass</span>)
+</pre></div>
+</div>
+</div>
 
 <p>Same as <code>scryRenderedComponentsWithType()</code> but expects there to be one result and returns that one result, or throws exception if there is any other number of matches besides one.</p>
 
@@ -421,42 +461,51 @@ ReactComponent findRenderedComponentWithType(ReactComponent tree, function compo
 
 <p>Shallow rendering is an experimental feature that lets you render a component “one level deep” and assert facts about what its render method returns, without worrying about the behavior of child components, which are not instantiated or rendered. This does not require a DOM.</p>
 
-<p><code>javascript
-ReactShallowRenderer createRenderer()
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>ReactShallowRenderer createRenderer()
+</pre></div>
+</div>
+</div>
 
 <p>Call this in your tests to create a shallow renderer. You can think of this as a “place” to render the component you’re testing, where it can respond to events and update itself.</p>
 
-<p><code>javascript
-shallowRenderer.render(ReactElement element)
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>shallowRenderer.render(ReactElement element)
+</pre></div>
+</div>
+</div>
 
 <p>Similar to <code>React.render</code>.</p>
 
-<p><code>javascript
-ReactComponent shallowRenderer.getRenderOutput()
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>ReactComponent shallowRenderer.getRenderOutput()
+</pre></div>
+</div>
+</div>
 
 <p>After render has been called, returns shallowly rendered output. You can then begin to assert facts about the output. For example, if your component’s render method returns:</p>
 
-<p>```javascript</p>
-<div>
-  <span classname="heading">Title</span>
-  <subcomponent foo="bar" />
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#070;font-weight:bold">&lt;span</span> <span style="color:#b48">className</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">heading</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Title<span style="color:#070;font-weight:bold">&lt;/span&gt;</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span style="color:#070;font-weight:bold">&lt;Subcomponent</span> <span style="color:#b48">foo</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bar</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
 </div>
-<p>```</p>
+</div>
 
 <p>Then you can assert:</p>
 
-<p>```javascript
-result = renderer.getRenderOutput();
-expect(result.type).toBe(‘div’);
-expect(result.props.children).toEqual([
-  <span classname="heading">Title</span>,</p>
-<subcomponent foo="bar" />
-
-<p>]);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>result = renderer.getRenderOutput();
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>expect(result.type).toBe(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">div</span><span style="color:#710">'</span></span>);
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>expect(result.props.children).toEqual([
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#070;font-weight:bold">&lt;span</span> <span style="color:#b48">className</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">heading</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Title<span style="color:#070;font-weight:bold">&lt;/span&gt;</span>,
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span style="color:#070;font-weight:bold">&lt;Subcomponent</span> <span style="color:#b48">foo</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bar</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]);
+</pre></div>
+</div>
+</div>
 
 <p>Shallow testing currently has some limitations, namely not supporting refs. We’re releasing this feature early and would appreciate the React community’s feedback on how it should evolve.</p>
 
@@ -464,7 +513,7 @@ expect(result.props.children).toEqual([
 
   
   <h2>
-    prev post: <a href='/help-doc/v007/articles/two-way-binding-helpers.html'>two-way-binding-helpers.html</a>
+    prev post: <a href='/help-doc/v007/articles/class-name-manipulation.html'>class-name-manipulation.html</a>
   </h2>
 
 

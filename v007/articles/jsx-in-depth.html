@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -302,26 +310,30 @@
 
 <p>To render a HTML tag, just use lower-case tag names in JSX:</p>
 
-<p><code>javascript
-var myDivElement = &lt;div className="foo" /&gt;;
-React.render(myDivElement, document.getElementById('example'));
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> myDivElement = <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">className</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">foo</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>React.render(myDivElement, document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>));
+</pre></div>
+</div>
+</div>
 
 <p>To render a React Component, just create a local variable that starts with an upper-case letter:</p>
 
-<p><code>javascript
-var MyComponent = React.createClass({/*...*/});
-var myElement = &lt;MyComponent someProperty={true} /&gt;;
-React.render(myElement, document.getElementById('example'));
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> MyComponent = React.createClass({<span style="color:#777">/*...*/</span>});
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> myElement = <span style="color:#070;font-weight:bold">&lt;MyComponent</span> <span style="color:#b48">someProperty</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">true</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>React.render(myElement, document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>));
+</pre></div>
+</div>
+</div>
 
 <p>React’s JSX uses the upper vs. lower case convention to distinguish between local component classes and HTML tags.</p>
 
 <blockquote>
   <p>Note:</p>
 
-  <p>Since JSX is JavaScript, identifiers such as <code>class</code> and <code>for</code> are discouraged
-as XML attribute names. Instead, React DOM components expect DOM property
+  <p>Since JSX is JavaScript, identifiers such as <code>class</code> and <code>for</code> are discouraged<br />
+as XML attribute names. Instead, React DOM components expect DOM property<br />
 names like <code>className</code> and <code>htmlFor</code>, respectively.</p>
 </blockquote>
 
@@ -329,42 +341,48 @@ names like <code>className</code> and <code>htmlFor</code>, respectively.</p>
 
 <p>React JSX transforms from an XML-like syntax into native JavaScript. XML elements, attributes and children are transformed into arguments that are passed to <code>React.createElement</code>.</p>
 
-<p><code>javascript
-var Nav;
-// Input (JSX):
-var app = &lt;Nav color="blue" /&gt;;
-// Output (JS):
-var app = React.createElement(Nav, {color:"blue"});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> Nav;
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#777">// Input (JSX):</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">var</span> app = <span style="color:#070;font-weight:bold">&lt;Nav</span> <span style="color:#b48">color</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">blue</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#777">// Output (JS):</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">var</span> app = React.createElement(Nav, {<span style="color:#606">color</span>:<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">blue</span><span style="color:#710">&quot;</span></span>});
+</pre></div>
+</div>
+</div>
 
 <p>Notice that in order to use <code>&lt;Nav /&gt;</code>, the <code>Nav</code> variable must be in scope.</p>
 
 <p>JSX also allows specifying children using XML syntax:</p>
 
-<p><code>javascript
-var Nav, Profile;
-// Input (JSX):
-var app = &lt;Nav color="blue"&gt;&lt;Profile&gt;click&lt;/Profile&gt;&lt;/Nav&gt;;
-// Output (JS):
-var app = React.createElement(
-  Nav,
-  {color:"blue"},
-  React.createElement(Profile, null, "click")
-);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> Nav, Profile;
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777">// Input (JSX):</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">var</span> app = <span style="color:#070;font-weight:bold">&lt;Nav</span> <span style="color:#b48">color</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">blue</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;Profile&gt;</span>click<span style="color:#070;font-weight:bold">&lt;/Profile&gt;</span><span style="color:#070;font-weight:bold">&lt;/Nav&gt;</span>;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#777">// Output (JS):</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">var</span> app = React.createElement(
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  Nav,
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  {<span style="color:#606">color</span>:<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">blue</span><span style="color:#710">&quot;</span></span>},
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  React.createElement(Profile, <span style="color:#069">null</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">click</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>);
+</pre></div>
+</div>
+</div>
 
 <p>JSX will infer the class’s <a href="/react/docs/component-specs.html#displayname">displayName</a> from the variable assignment when the displayName is undefined:</p>
 
-<p><code>javascript
-// Input (JSX):
-var Nav = React.createClass({ });
-// Output (JS):
-var Nav = React.createClass({displayName: "Nav", });
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777">// Input (JSX):</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> Nav = React.createClass({ });
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// Output (JS):</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">var</span> Nav = React.createClass({<span style="color:#606">displayName</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Nav</span><span style="color:#710">&quot;</span></span>, });
+</pre></div>
+</div>
+</div>
 
-<p>Use the <a href="/react/jsx-compiler.html">JSX Compiler</a> to try out JSX and see how it
-desugars into native JavaScript, and the
-<a href="/react/html-jsx.html">HTML to JSX converter</a> to convert your existing HTML to
+<p>Use the <a href="/react/jsx-compiler.html">JSX Compiler</a> to try out JSX and see how it<br />
+desugars into native JavaScript, and the<br />
+<a href="/react/html-jsx.html">HTML to JSX converter</a> to convert your existing HTML to<br />
 JSX.</p>
 
 <p>If you want to use JSX, the <a href="/react/docs/getting-started.html">Getting Started</a> guide shows how to setup compilation.</p>
@@ -372,9 +390,9 @@ JSX.</p>
 <blockquote>
   <p>Note:</p>
 
-  <p>The JSX expression always evaluates to a ReactElement. The actual
-implementation details may vary. An optimized mode could inline the
-ReactElement as an object literal to bypass the validation code in
+  <p>The JSX expression always evaluates to a ReactElement. The actual<br />
+implementation details may vary. An optimized mode could inline the<br />
+ReactElement as an object literal to bypass the validation code in<br />
 <code>React.createElement</code>.</p>
 </blockquote>
 
@@ -382,60 +400,68 @@ ReactElement as an object literal to bypass the validation code in
 
 <p>If you are building a component that has many children, like a form, you might end up with something with a lot of variable declarations:</p>
 
-<p>```javascript
-// Awkward block of variable declarations
-var Form = MyFormComponent;
-var FormRow = Form.Row;
-var FormLabel = Form.Label;
-var FormInput = Form.Input;</p>
-
-<p>var App = (</p>
-<form>
-    <formrow>
-      <formlabel />
-      <forminput />
-    </formrow>
-  </form>
-<p>);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777">// Awkward block of variable declarations</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> Form = MyFormComponent;
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">var</span> FormRow = Form.Row;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">var</span> FormLabel = Form.Label;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">var</span> FormInput = Form.Input;
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">var</span> App = (
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#070;font-weight:bold">&lt;Form&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#070;font-weight:bold">&lt;FormRow&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      <span style="color:#070;font-weight:bold">&lt;FormLabel</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span style="color:#070;font-weight:bold">&lt;FormInput</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#070;font-weight:bold">&lt;/FormRow&gt;</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  <span style="color:#070;font-weight:bold">&lt;/Form&gt;</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>);
+</pre></div>
+</div>
+</div>
 
 <p>To make it simpler and easier, <em>namespaced components</em> let you use one component that has other components as attributes:</p>
 
-<p>```javascript
-var Form = MyFormComponent;</p>
-
-<p>var App = (</p>
-<form>
-    <form.row>
-      <form.label />
-      <form.input />
-    </form.row>
-  </form>
-<p>);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> Form = MyFormComponent;
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">var</span> App = (
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#070;font-weight:bold">&lt;Form&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#070;font-weight:bold">&lt;Form.Row&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#070;font-weight:bold">&lt;Form.Label</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#070;font-weight:bold">&lt;Form.Input</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#070;font-weight:bold">&lt;/Form.Row&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#070;font-weight:bold">&lt;/Form&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>);
+</pre></div>
+</div>
+</div>
 
 <p>To do this, you just need to create your <em>“sub-components”</em> as attributes of the main component:</p>
 
-<p>```javascript
-var MyFormComponent = React.createClass({ … });</p>
-
-<p>MyFormComponent.Row = React.createClass({ … });
-MyFormComponent.Label = React.createClass({ … });
-MyFormComponent.Input = React.createClass({ … });
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> MyFormComponent = React.createClass({ ... });
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>MyFormComponent.Row = React.createClass({ ... });
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>MyFormComponent.Label = React.createClass({ ... });
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>MyFormComponent.Input = React.createClass({ ... });
+</pre></div>
+</div>
+</div>
 
 <p>JSX will handle this properly when compiling your code.</p>
 
-<p><code>javascript
-var App = (
-  React.createElement(Form, null,
-    React.createElement(Form.Row, null,
-      React.createElement(Form.Label, null),
-      React.createElement(Form.Input, null)
-    )
-  )
-);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> App = (
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  React.createElement(Form, <span style="color:#069">null</span>,
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    React.createElement(Form.Row, <span style="color:#069">null</span>,
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>      React.createElement(Form.Label, <span style="color:#069">null</span>),
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>      React.createElement(Form.Input, <span style="color:#069">null</span>)
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>    )
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  )
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>);
+</pre></div>
+</div>
+</div>
 
 <blockquote>
   <p>Note:</p>
@@ -447,65 +473,73 @@ var App = (
 
 <h3 id="attribute-expressions">Attribute Expressions</h3>
 
-<p>To use a JavaScript expression as an attribute value, wrap the expression in a
+<p>To use a JavaScript expression as an attribute value, wrap the expression in a<br />
 pair of curly braces (<code>{}</code>) instead of quotes (<code>""</code>).</p>
 
-<p><code>javascript
-// Input (JSX):
-var person = &lt;Person name={window.isLoggedIn ? window.name : ''} /&gt;;
-// Output (JS):
-var person = React.createElement(
-  Person,
-  {name: window.isLoggedIn ? window.name : ''}
-);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777">// Input (JSX):</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> person = <span style="color:#070;font-weight:bold">&lt;Person</span> <span style="color:#b48">name</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">window.isLoggedIn</span> <span style="color:#F00;background-color:#FAA">?</span> <span style="color:#b48">window.name</span> <span style="color:#b48">:</span> <span style="color:#F00;background-color:#FAA">'</span><span style="color:#F00;background-color:#FAA">'</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// Output (JS):</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">var</span> person = React.createElement(
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  Person,
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  {<span style="color:#606">name</span>: window.isLoggedIn ? window.name : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#710">'</span></span>}
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>);
+</pre></div>
+</div>
+</div>
 
 <h3 id="boolean-attributes">Boolean Attributes</h3>
 
 <p>Omitting the value of an attribute causes JSX to treat it as <code>true</code>. To pass <code>false</code> an attribute expression must be used. This often comes up when using HTML form elements, with attributes like <code>disabled</code>, <code>required</code>, <code>checked</code> and <code>readOnly</code>.</p>
 
-<p>```javascript
-// These two are equivalent in JSX for disabling a button
-<input type="button" disabled="" />;
-&lt;input type=”button” disabled={true} /&gt;;</p>
-
-<p>// And these two are equivalent in JSX for not disabling a button
-<input type="button" />;
-&lt;input type=”button” disabled={false} /&gt;;
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777">// These two are equivalent in JSX for disabling a button</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">button</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">disabled</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">button</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">disabled</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">true</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#777">// And these two are equivalent in JSX for not disabling a button</span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">button</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">button</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">disabled</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">false</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+</pre></div>
+</div>
+</div>
 
 <h3 id="child-expressions">Child Expressions</h3>
 
 <p>Likewise, JavaScript expressions may be used to express children:</p>
 
-<p><code>javascript
-// Input (JSX):
-var content = &lt;Container&gt;{window.isLoggedIn ? &lt;Nav /&gt; : &lt;Login /&gt;}&lt;/Container&gt;;
-// Output (JS):
-var content = React.createElement(
-  Container,
-  null,
-  window.isLoggedIn ? React.createElement(Nav) : React.createElement(Login)
-);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777">// Input (JSX):</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> content = <span style="color:#070;font-weight:bold">&lt;Container&gt;</span>{window.isLoggedIn ? <span style="color:#070;font-weight:bold">&lt;Nav</span> <span style="color:#070;font-weight:bold">/&gt;</span> : <span style="color:#070;font-weight:bold">&lt;Login</span> <span style="color:#070;font-weight:bold">/&gt;</span>}<span style="color:#070;font-weight:bold">&lt;/Container&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// Output (JS):</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">var</span> content = React.createElement(
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  Container,
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  <span style="color:#069">null</span>,
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  window.isLoggedIn ? React.createElement(Nav) : React.createElement(Login)
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>);
+</pre></div>
+</div>
+</div>
 
 <h3 id="comments">Comments</h3>
 
 <p>It’s easy to add comments within your JSX; they’re just JS expressions. You just need to be careful to put <code>{}</code> around the comments when you are within the children section of a tag.</p>
 
-<p>```javascript
-var content = (</p>
-<nav>
-    {/* child comment, put {} around */}
-    &lt;Person
-      /* multi
-         line
-         comment */
-      name={window.isLoggedIn ? window.name : ''} // end of line comment
-    /&gt;
-  </nav>
-<p>);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> content = (
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#070;font-weight:bold">&lt;Nav&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    {/* child comment, put {} around */}
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#070;font-weight:bold">&lt;Person</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>      <span style="color:#F00;background-color:#FAA">/</span><span style="color:#F00;background-color:#FAA">*</span> <span style="color:#b48">multi</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>         <span style="color:#b48">line</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>         <span style="color:#b48">comment</span> <span style="color:#F00;background-color:#FAA">*</span><span style="color:#F00;background-color:#FAA">/</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span style="color:#b48">name</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">window.isLoggedIn</span> <span style="color:#F00;background-color:#FAA">?</span> <span style="color:#b48">window.name</span> <span style="color:#b48">:</span> <span style="color:#F00;background-color:#FAA">'</span><span style="color:#F00;background-color:#FAA">'</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#F00;background-color:#FAA">/</span><span style="color:#F00;background-color:#FAA">/</span> <span style="color:#b48">end</span> <span style="color:#b48">of</span> <span style="color:#b48">line</span> <span style="color:#b48">comment</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#070;font-weight:bold">&lt;/Nav&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>);
+</pre></div>
+</div>
+</div>
 
 <blockquote>
   <p>NOTE:</p>

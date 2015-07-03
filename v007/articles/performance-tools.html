@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -331,25 +339,27 @@
 <h3 id="perfgetlastmeasurements"><code>Perf.getLastMeasurements()</code></h3>
 <p>Get the measurements array from the last start-stop session. The array contains objects, each of which looks like this:</p>
 
-<p><code>js
-{
-  // The term "inclusive" and "exclusive" are explained below
-  "exclusive": {},
-  // '.0.0' is the React ID of the node
-  "inclusive": {".0.0": 0.0670000008540228, ".0": 0.3259999939473346},
-  "render": {".0": 0.036999990697950125, ".0.0": 0.010000003385357559},
-  // Number of instances
-  "counts": {".0": 1, ".0.0": 1},
-  // DOM touches
-  "writes": {},
-  // Extra debugging info
-  "displayNames": {
-    ".0": {"current": "App", "owner": "&lt;root&gt;"},
-    ".0.0": {"current": "Box", "owner": "App"}
-  },
-  "totalTime": 0.48499999684281647
-}
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>{
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#777">// The term &quot;inclusive&quot; and &quot;exclusive&quot; are explained below</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>exclusive</span><span style="color:#404">&quot;</span></span>: {},
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#777">// '.0.0' is the React ID of the node</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>inclusive</span><span style="color:#404">&quot;</span></span>: {<span style="color:#606"><span style="color:#404">&quot;</span><span>.0.0</span><span style="color:#404">&quot;</span></span>: <span style="color:#60E">0.0670000008540228</span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>.0</span><span style="color:#404">&quot;</span></span>: <span style="color:#60E">0.3259999939473346</span>},
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>render</span><span style="color:#404">&quot;</span></span>: {<span style="color:#606"><span style="color:#404">&quot;</span><span>.0</span><span style="color:#404">&quot;</span></span>: <span style="color:#60E">0.036999990697950125</span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>.0.0</span><span style="color:#404">&quot;</span></span>: <span style="color:#60E">0.010000003385357559</span>},
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#777">// Number of instances</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>counts</span><span style="color:#404">&quot;</span></span>: {<span style="color:#606"><span style="color:#404">&quot;</span><span>.0</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>.0.0</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>},
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#777">// DOM touches</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>writes</span><span style="color:#404">&quot;</span></span>: {},
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span style="color:#777">// Extra debugging info</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>displayNames</span><span style="color:#404">&quot;</span></span>: {
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#606"><span style="color:#404">&quot;</span><span>.0</span><span style="color:#404">&quot;</span></span>: {<span style="color:#606"><span style="color:#404">&quot;</span><span>current</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">App</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>owner</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;root&gt;</span><span style="color:#710">&quot;</span></span>},
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#606"><span style="color:#404">&quot;</span><span>.0.0</span><span style="color:#404">&quot;</span></span>: {<span style="color:#606"><span style="color:#404">&quot;</span><span>current</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Box</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>owner</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">App</span><span style="color:#710">&quot;</span></span>}
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  },
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>totalTime</span><span style="color:#404">&quot;</span></span>: <span style="color:#60E">0.48499999684281647</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>}
+</pre></div>
+</div>
+</div>
 
 
 

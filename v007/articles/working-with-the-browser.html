@@ -79,6 +79,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -203,11 +211,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -305,34 +313,35 @@
 
 <p>In order to get a reference to a React component, you can either use <code>this</code> to get the current React component, or you can use refs to refer to a component you own. They work like this:</p>
 
-<p>```javascript
-var MyComponent = React.createClass({
-  handleClick: function() {
-    // Explicitly focus the text input using the raw DOM API.
-    React.findDOMNode(this.refs.myTextInput).focus();
-  },
-  render: function() {
-    // The ref attribute adds a reference to the component to
-    // this.refs when the component is mounted.
-    return (
-      &lt;div&gt;
-        <input type="text" ref="myTextInput" />
-        &lt;input
-          type=”button”
-          value=”Focus the text input”
-          onClick={this.handleClick}
-        /&gt;
-      &lt;/div&gt;
-    );
-  }
-});</p>
-
-<p>React.render(</p>
-<mycomponent />
-<p>,
-  document.getElementById(‘example’)
-);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> MyComponent = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">handleClick</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#777">// Explicitly focus the text input using the raw DOM API.</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    React.findDOMNode(<span style="color:#950">this</span>.refs.myTextInput).focus();
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  },
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#777">// The ref attribute adds a reference to the component to</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#777">// this.refs when the component is mounted.</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      <span style="color:#070;font-weight:bold">&lt;div&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>        <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">ref</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">myTextInput</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>        <span style="color:#070;font-weight:bold">&lt;input</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>          <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">button</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>          <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Focus the text input</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>          <span style="color:#b48">onClick</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.handleClick</span><span style="color:#F00;background-color:#FAA">}</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>        <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      <span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>    );
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>  }
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>});
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>React.render(
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  <span style="color:#070;font-weight:bold">&lt;MyComponent</span> <span style="color:#070;font-weight:bold">/&gt;</span>,
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>);
+</pre></div>
+</div>
+</div>
 
 <h2 id="more-about-refs">More About Refs</h2>
 
@@ -426,7 +435,7 @@ var MyComponent = React.createClass({
 
 <h4 id="onscroll-event-on-ie8">onScroll event on IE8</h4>
 
-<p>On IE8 the <code>onScroll</code> event doesn’t bubble and IE8 doesn’t have an API to define handlers to the capturing phase of an event, meaning there is no way for React to listen to these events.
+<p>On IE8 the <code>onScroll</code> event doesn’t bubble and IE8 doesn’t have an API to define handlers to the capturing phase of an event, meaning there is no way for React to listen to these events.<br />
 Currently a handler to this event is ignored on IE8.</p>
 
 <p>See the <a href="https://github.com/facebook/react/issues/631">onScroll doesn’t work in IE8</a> GitHub issue for more information.</p>

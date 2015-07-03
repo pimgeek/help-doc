@@ -79,6 +79,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -203,11 +211,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -287,30 +295,31 @@
 
 <h2 id="a-simple-example">A Simple Example</h2>
 
-<p>```javascript
-var LikeButton = React.createClass({
-  getInitialState: function() {
-    return {liked: false};
-  },
-  handleClick: function(event) {
-    this.setState({liked: !this.state.liked});
-  },
-  render: function() {
-    var text = this.state.liked ? ‘like’ : ‘haven't liked’;
-    return (
-      &lt;p onClick={this.handleClick}&gt;
-        You {text} this. Click to toggle.
-      &lt;/p&gt;
-    );
-  }
-});</p>
-
-<p>React.render(</p>
-<likebutton />
-<p>,
-  document.getElementById(‘example’)
-);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> LikeButton = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">getInitialState</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> {<span style="color:#606">liked</span>: <span style="color:#069">false</span>};
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  },
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#06B;font-weight:bold">handleClick</span>: <span style="color:#080;font-weight:bold">function</span>(event) {
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#950">this</span>.setState({<span style="color:#606">liked</span>: !<span style="color:#950">this</span>.state.liked});
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  },
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#080;font-weight:bold">var</span> text = <span style="color:#950">this</span>.state.liked ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">like</span><span style="color:#710">'</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">haven</span><span style="color:#b0b">\'</span><span style="color:#D20">t liked</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span style="color:#070;font-weight:bold">&lt;p</span> <span style="color:#b48">onClick</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.handleClick</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>        You {text} this. Click to toggle.
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>      <span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    );
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  }
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>});
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>React.render(
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>  <span style="color:#070;font-weight:bold">&lt;LikeButton</span> <span style="color:#070;font-weight:bold">/&gt;</span>,
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>);
+</pre></div>
+</div>
+</div>
 
 <h2 id="event-handling-and-synthetic-events">Event Handling and Synthetic Events</h2>
 

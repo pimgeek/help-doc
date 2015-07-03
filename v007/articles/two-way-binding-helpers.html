@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -310,20 +318,22 @@
 
 <p>Here’s a simple form example without using <code>ReactLink</code>:</p>
 
-<p><code>javascript
-var NoLink = React.createClass({
-  getInitialState: function() {
-    return {message: 'Hello!'};
-  },
-  handleChange: function(event) {
-    this.setState({message: event.target.value});
-  },
-  render: function() {
-    var message = this.state.message;
-    return &lt;input type="text" value={message} onChange={this.handleChange} /&gt;;
-  }
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> NoLink = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">getInitialState</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> {<span style="color:#606">message</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello!</span><span style="color:#710">'</span></span>};
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  },
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#06B;font-weight:bold">handleChange</span>: <span style="color:#080;font-weight:bold">function</span>(event) {
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#950">this</span>.setState({<span style="color:#606">message</span>: event.target.value});
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  },
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#080;font-weight:bold">var</span> message = <span style="color:#950">this</span>.state.message;
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">value</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">message</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">onChange</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.handleChange</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  }
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>});
+</pre></div>
+</div>
+</div>
 
 <p>This works really well and it’s very clear how data is flowing, however, with a lot of form fields it could get a bit verbose. Let’s use <code>ReactLink</code> to save us some typing:</p>
 
@@ -343,7 +353,7 @@ var WithLink = React.createClass({
 
 <p><code>ReactLink</code> objects can be passed up and down the tree as props, so it’s easy (and explicit) to set up two-way binding between a component deep in the hierarchy and state that lives higher in the hierarchy.</p>
 
-<p>Note that checkboxes have a special behavior regarding their <code>value</code> attribute, which is the value that will be sent on form submit if the checkbox is checked (defaults to <code>on</code>). The <code>value</code> attribute is not updated when the checkbox is checked or unchecked. For checkboxes, you should use <code>checkedLink</code> instead of <code>valueLink</code>:
+<p>Note that checkboxes have a special behavior regarding their <code>value</code> attribute, which is the value that will be sent on form submit if the checkbox is checked (defaults to <code>on</code>). The <code>value</code> attribute is not updated when the checkbox is checked or unchecked. For checkboxes, you should use <code>checkedLink</code> instead of <code>valueLink</code>:<br />
 <code>
 &lt;input type="checkbox" checkedLink={this.linkState('booleanValue')} /&gt;
 </code></p>
@@ -376,21 +386,23 @@ var WithoutMixin = React.createClass({
 
 <h3 id="reactlink-without-valuelink">ReactLink Without valueLink</h3>
 
-<p><code>javascript
-var WithoutLink = React.createClass({
-  mixins: [React.addons.LinkedStateMixin],
-  getInitialState: function() {
-    return {message: 'Hello!'};
-  },
-  render: function() {
-    var valueLink = this.linkState('message');
-    var handleChange = function(e) {
-      valueLink.requestChange(e.target.value);
-    };
-    return &lt;input type="text" value={valueLink.value} onChange={handleChange} /&gt;;
-  }
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> WithoutLink = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#606">mixins</span>: [React.addons.LinkedStateMixin],
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#06B;font-weight:bold">getInitialState</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">return</span> {<span style="color:#606">message</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello!</span><span style="color:#710">'</span></span>};
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  },
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#080;font-weight:bold">var</span> valueLink = <span style="color:#950">this</span>.linkState(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">message</span><span style="color:#710">'</span></span>);
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">var</span> <span style="color:#06B;font-weight:bold">handleChange</span> = <span style="color:#080;font-weight:bold">function</span>(e) {
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>      valueLink.requestChange(e.target.value);
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    };
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">value</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">valueLink.value</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">onChange</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">handleChange</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  }
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>});
+</pre></div>
+</div>
+</div>
 
 <p>The <code>valueLink</code> prop is also quite simple. It simply handles the <code>onChange</code> event and calls <code>this.props.valueLink.requestChange()</code> and also uses <code>this.props.valueLink.value</code> instead of <code>this.props.value</code>. That’s it!</p>
 
@@ -404,7 +416,7 @@ var WithoutLink = React.createClass({
 
   
   <h2>
-    next post: <a href='/help-doc/v007/articles/test-utils.html'>test-utils.html</a>
+    next post: <a href='/help-doc/v007/articles/class-name-manipulation.html'>class-name-manipulation.html</a>
   </h2>
 
 

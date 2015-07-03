@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -296,56 +304,71 @@
 
 <p>You can insert HTML entities within literal text in JSX:</p>
 
-<p>```javascript</p>
-<div>First &middot; Second</div>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div&gt;</span>First <span style="color:#800;font-weight:bold">&amp;middot;</span> Second<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>If you want to display an HTML entity within dynamic content, you will run into double escaping issues as React escapes all the strings you are displaying in order to prevent a wide range of XSS attacks by default.</p>
 
-<p>```javascript
-// Bad: It displays “First · Second”</p>
-<div>{'First &middot; Second'}</div>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777">// Bad: It displays &quot;First &amp;middot; Second&quot;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#070;font-weight:bold">&lt;div&gt;</span>{'First <span style="color:#800;font-weight:bold">&amp;middot;</span> Second'}<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>There are various ways to work-around this issue. The easiest one is to write unicode character directly in JavaScript. You need to make sure that the file is saved as UTF-8 and that the proper UTF-8 directives are set so the browser will display it correctly.</p>
 
-<p>```javascript</p>
-<div>{'First · Second'}</div>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div&gt;</span>{'First · Second'}<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>A safer alternative is to find the <a href="http://www.fileformat.info/info/unicode/char/b7/index.htm">unicode number corresponding to the entity</a> and use it inside of a JavaScript string.</p>
 
-<p>```javascript</p>
-<div>{'First \u00b7 Second'}</div>
-<div>{'First ' + String.fromCharCode(183) + ' Second'}</div>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div&gt;</span>{'First \u00b7 Second'}<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#070;font-weight:bold">&lt;div&gt;</span>{'First ' + String.fromCharCode(183) + ' Second'}<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>You can use mixed arrays with strings and JSX elements.</p>
 
-<p>```javascript</p>
-<div>{['First ', <span>&middot;</span>, ' Second']}</div>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div&gt;</span>{['First ', <span style="color:#070;font-weight:bold">&lt;span&gt;</span><span style="color:#800;font-weight:bold">&amp;middot;</span><span style="color:#070;font-weight:bold">&lt;/span&gt;</span>, ' Second']}<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>As a last resort, you always have the ability to <a href="/react/tips/dangerously-set-inner-html.html">insert raw HTML</a>.</p>
 
-<p><code>javascript
-&lt;div dangerouslySetInnerHTML={{__html: 'First &amp;middot; Second'}} /&gt;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">dangerouslySetInnerHTML</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">__html:</span> <span style="color:#F00;background-color:#FAA">'</span><span style="color:#b48">First</span> <span style="color:#F00;background-color:#FAA">&amp;</span><span style="color:#b48">middot</span><span style="color:#F00;background-color:#FAA">;</span> <span style="color:#b48">Second</span><span style="color:#F00;background-color:#FAA">'</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <h2 id="custom-html-attributes">Custom HTML Attributes</h2>
 
 <p>If you pass properties to native HTML elements that do not exist in the HTML specification, React will not render them. If you want to use a custom attribute, you should prefix it with <code>data-</code>.</p>
 
-<p>```javascript</p>
-<div data-custom-attribute="foo" />
-
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">data-custom-attribute</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">foo</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p><a href="http://www.w3.org/WAI/intro/aria">Web Accessibility</a> attributes starting with <code>aria-</code> will be rendered properly.</p>
 
-<p><code>javascript
-&lt;div aria-hidden={true} /&gt;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">aria-hidden</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">true</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+</pre></div>
+</div>
+</div>
 
 
 

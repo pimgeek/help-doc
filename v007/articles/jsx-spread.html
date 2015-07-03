@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -286,19 +294,23 @@
 
 <p>If you know all the properties that you want to place on a component ahead of time, it is easy to use JSX:</p>
 
-<p><code>javascript
-  var component = &lt;Component foo={x} bar={y} /&gt;;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#080;font-weight:bold">var</span> component = <span style="color:#070;font-weight:bold">&lt;Component</span> <span style="color:#b48">foo</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">x</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">bar</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">y</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+</pre></div>
+</div>
+</div>
 
 <h2 id="mutating-props-is-bad-mkay">Mutating Props is Bad, mkay</h2>
 
 <p>If you don’t know which properties you want to set, you might be tempted to add them onto the object later:</p>
 
-<p><code>javascript
-  var component = &lt;Component /&gt;;
-  component.props.foo = x; // bad
-  component.props.bar = y; // also bad
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#080;font-weight:bold">var</span> component = <span style="color:#070;font-weight:bold">&lt;Component</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  component.props.foo = x; <span style="color:#777">// bad</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  component.props.bar = y; <span style="color:#777">// also bad</span>
+</pre></div>
+</div>
+</div>
 
 <p>This is an anti-pattern because it means that we can’t help you check the right propTypes until way later. This means that your propTypes errors end up with a cryptic stack trace.</p>
 
@@ -308,22 +320,26 @@
 
 <p>Now you can use a new feature of JSX called spread attributes:</p>
 
-<p><code>javascript
-  var props = {};
-  props.foo = x;
-  props.bar = y;
-  var component = &lt;Component {...props} /&gt;;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#080;font-weight:bold">var</span> props = {};
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  props.foo = x;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  props.bar = y;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">var</span> component = <span style="color:#070;font-weight:bold">&lt;Component</span> <span style="color:#F00;background-color:#FAA">{</span><span style="color:#b48">...props</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+</pre></div>
+</div>
+</div>
 
 <p>The properties of the object that you pass in are copied onto the component’s props.</p>
 
 <p>You can use this multiple times or combine it with other attributes. The specification order is important. Later attributes override previous ones.</p>
 
-<p><code>javascript
-  var props = { foo: 'default' };
-  var component = &lt;Component {...props} foo={'override'} /&gt;;
-  console.log(component.props.foo); // 'override'
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#080;font-weight:bold">var</span> props = { <span style="color:#606">foo</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">default</span><span style="color:#710">'</span></span> };
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">var</span> component = <span style="color:#070;font-weight:bold">&lt;Component</span> <span style="color:#F00;background-color:#FAA">{</span><span style="color:#b48">...props</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">foo</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">override</span><span style="color:#710">'</span></span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  console.log(component.props.foo); <span style="color:#777">// 'override'</span>
+</pre></div>
+</div>
+</div>
 
 <h2 id="whats-with-the-weird--notation">What’s with the weird <code>...</code> notation?</h2>
 

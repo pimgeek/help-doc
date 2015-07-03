@@ -79,6 +79,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -203,11 +211,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -319,34 +327,40 @@
 
 <p>An <code>&lt;input&gt;</code> with <code>value</code> set is a <em>controlled</em> component. In a controlled <code>&lt;input&gt;</code>, the value of the rendered element will always reflect the <code>value</code> prop. For example:</p>
 
-<p><code>javascript
-  render: function() {
-    return &lt;input type="text" value="Hello!" /&gt;;
-  }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello!</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  }
+</pre></div>
+</div>
+</div>
 
 <p>This will render an input that always has a value of <code>Hello!</code>. Any user input will have no effect on the rendered element because React has declared the value to be <code>Hello!</code>. If you wanted to update the value in response to user input, you could use the <code>onChange</code> event:</p>
 
-<p><code>javascript
-  getInitialState: function() {
-    return {value: 'Hello!'};
-  },
-  handleChange: function(event) {
-    this.setState({value: event.target.value});
-  },
-  render: function() {
-    var value = this.state.value;
-    return &lt;input type="text" value={value} onChange={this.handleChange} /&gt;;
-  }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>  <span style="color:#06B;font-weight:bold">getInitialState</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">return</span> {<span style="color:#606">value</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello!</span><span style="color:#710">'</span></span>};
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  },
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#06B;font-weight:bold">handleChange</span>: <span style="color:#080;font-weight:bold">function</span>(event) {
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#950">this</span>.setState({<span style="color:#606">value</span>: event.target.value});
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  },
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">var</span> value = <span style="color:#950">this</span>.state.value;
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">value</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">value</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">onChange</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.handleChange</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  }
+</pre></div>
+</div>
+</div>
 
 <p>In this example, we are simply accepting the newest value provided by the user and updating the <code>value</code> prop of the <code>&lt;input&gt;</code> component. This pattern makes it easy to implement interfaces that respond to or validate user interactions. For example:</p>
 
-<p><code>javascript
-  handleChange: function(event) {
-    this.setState({value: event.target.value.substr(0, 140)});
-  }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#06B;font-weight:bold">handleChange</span>: <span style="color:#080;font-weight:bold">function</span>(event) {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#950">this</span>.setState({<span style="color:#606">value</span>: event.target.value.substr(<span style="color:#00D">0</span>, <span style="color:#00D">140</span>)});
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  }
+</pre></div>
+</div>
+</div>
 
 <p>This would accept user input but truncate the value to the first 140 characters.</p>
 
@@ -354,21 +368,25 @@
 
 <p>An <code>&lt;input&gt;</code> that does not supply a <code>value</code> (or sets it to <code>null</code>) is an <em>uncontrolled</em> component. In an uncontrolled <code>&lt;input&gt;</code>, the value of the rendered element will reflect the user’s input. For example:</p>
 
-<p><code>javascript
-  render: function() {
-    return &lt;input type="text" /&gt;;
-  }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  }
+</pre></div>
+</div>
+</div>
 
 <p>This will render an input that starts off with an empty value. Any user input will be immediately reflected by the rendered element. If you wanted to listen to updates to the value, you could use the <code>onChange</code> event just like you can with controlled components.</p>
 
 <p>If you want to initialize the component with a non-empty value, you can supply a <code>defaultValue</code> prop. For example:</p>
 
-<p><code>javascript
-  render: function() {
-    return &lt;input type="text" defaultValue="Hello!" /&gt;;
-  }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">defaultValue</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello!</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  }
+</pre></div>
+</div>
+</div>
 
 <p>This example will function much like the <strong>Controlled Components</strong> example above.</p>
 
@@ -380,19 +398,23 @@
 
 <p>Using form components such as <code>&lt;input&gt;</code> in React presents a challenge that is absent when writing traditional form HTML. For example, in HTML:</p>
 
-<p><code>html
-  &lt;input type="text" name="title" value="Untitled" /&gt;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">name</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">title</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Untitled</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>This renders an input <em>initialized</em> with the value, <code>Untitled</code>. When the user updates the input, the node’s value <em>property</em> will change. However, <code>node.getAttribute('value')</code> will still return the value used at initialization time, <code>Untitled</code>.</p>
 
 <p>Unlike HTML, React components must represent the state of the view at any point in time and not only at initialization time. For example, in React:</p>
 
-<p><code>javascript
-  render: function() {
-    return &lt;input type="text" name="title" value="Untitled" /&gt;;
-  }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">name</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">title</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Untitled</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  }
+</pre></div>
+</div>
+</div>
 
 <p>Since this method describes the view at any point in time, the value of the text input should <em>always</em> be <code>Untitled</code>.</p>
 
@@ -400,17 +422,20 @@
 
 <p>In HTML, the value of <code>&lt;textarea&gt;</code> is usually set using its children:</p>
 
-<p>```html
-  <!-- counterexample: DO NOT DO THIS! --></p>
-<textarea name="description">This is the description.</textarea>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#777">&lt;!-- counterexample: DO NOT DO THIS! --&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#070;font-weight:bold">&lt;textarea</span> <span style="color:#b48">name</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">description</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>This is the description.<span style="color:#070;font-weight:bold">&lt;/textarea&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>For HTML, this easily allows developers to supply multiline values. However, since React is JavaScript, we do not have string limitations and can use <code>\n</code> if we want newlines. In a world where we have <code>value</code> and <code>defaultValue</code>, it is ambiguous what role children play. For this reason, you should not use children when setting <code>&lt;textarea&gt;</code> values:</p>
 
-<p>```javascript</p>
-<textarea name="description" value="This is a description." />
-
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#070;font-weight:bold">&lt;textarea</span> <span style="color:#b48">name</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">description</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">This is a description.</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>If you <em>do</em> decide to use children, they will behave like <code>defaultValue</code>.</p>
 
@@ -418,13 +443,15 @@
 
 <p>The selected <code>&lt;option&gt;</code> in an HTML <code>&lt;select&gt;</code> is normally specified through that option’s <code>selected</code> attribute. In React, in order to make components easier to manipulate, the following format is adopted instead:</p>
 
-<p><code>javascript
-  &lt;select value="B"&gt;
-    &lt;option value="A"&gt;Apple&lt;/option&gt;
-    &lt;option value="B"&gt;Banana&lt;/option&gt;
-    &lt;option value="C"&gt;Cranberry&lt;/option&gt;
-  &lt;/select&gt;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>  <span style="color:#070;font-weight:bold">&lt;select</span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">B</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#070;font-weight:bold">&lt;option</span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Apple<span style="color:#070;font-weight:bold">&lt;/option&gt;</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#070;font-weight:bold">&lt;option</span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">B</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Banana<span style="color:#070;font-weight:bold">&lt;/option&gt;</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>    <span style="color:#070;font-weight:bold">&lt;option</span> <span style="color:#b48">value</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Cranberry<span style="color:#070;font-weight:bold">&lt;/option&gt;</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span style="color:#070;font-weight:bold">&lt;/select&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>To make an uncontrolled component, <code>defaultValue</code> is used instead.</p>
 

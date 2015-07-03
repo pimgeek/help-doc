@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -292,41 +300,49 @@
 
 <p>If you mutate data like this:</p>
 
-<p><code>js
-myData.x.y.z = 7;
-// or...
-myData.a.b.push(9);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>myData.x.y.z = <span style="color:#00D">7</span>;
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#777">// or...</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>myData.a.b.push(<span style="color:#00D">9</span>);
+</pre></div>
+</div>
+</div>
 
 <p>you have no way of determining which data has changed since the previous copy has been overwritten. Instead, you need to create a new copy of <code>myData</code> and change only the parts of it that need to be changed. Then you can compare the old copy of <code>myData</code> with the new one in <code>shouldComponentUpdate()</code> using triple-equals:</p>
 
-<p><code>js
-var newData = deepCopy(myData);
-newData.x.y.z = 7;
-newData.a.b.push(9);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> newData = deepCopy(myData);
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>newData.x.y.z = <span style="color:#00D">7</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>newData.a.b.push(<span style="color:#00D">9</span>);
+</pre></div>
+</div>
+</div>
 
 <p>Unfortunately, deep copies are expensive, and sometimes impossible. You can alleviate this by only copying objects that need to be changed and by reusing the objects that haven’t changed. Unfortunately, in today’s JavaScript this can be cumbersome:</p>
 
-<p><code>js
-var newData = extend(myData, {
-  x: extend(myData.x, {
-    y: extend(myData.x.y, {z: 7}),
-  }),
-  a: extend(myData.a, {b: myData.a.b.concat(9)})
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> newData = extend(myData, {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#606">x</span>: extend(myData.x, {
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#606">y</span>: extend(myData.x.y, {<span style="color:#606">z</span>: <span style="color:#00D">7</span>}),
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>}),
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#606">a</span>: extend(myData.a, {<span style="color:#606">b</span>: myData.a.b.concat(<span style="color:#00D">9</span>)})
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>});
+</pre></div>
+</div>
+</div>
 
 <p>While this is fairly performant (since it only makes a shallow copy of <code>log n</code> objects and reuses the rest), it’s a big pain to write. Look at all the repetition! This is not only annoying, but also provides a large surface area for bugs.</p>
 
 <p><code>update()</code> provides simple syntactic sugar around this pattern to make writing this code easier. This code becomes:</p>
 
-<p><code>js
-var newData = React.addons.update(myData, {
-  x: {y: {z: {$set: 7}}},
-  a: {b: {$push: [9]}}
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> newData = React.addons.update(myData, {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#606">x</span>: {<span style="color:#606">y</span>: {<span style="color:#606">z</span>: {<span style="color:#369;font-weight:bold">$set</span>: <span style="color:#00D">7</span>}}},
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#606">a</span>: {<span style="color:#606">b</span>: {<span style="color:#369;font-weight:bold">$push</span>: [<span style="color:#00D">9</span>]}}
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>});
+</pre></div>
+</div>
+</div>
 
 <p>While the syntax takes a little getting used to (though it’s inspired by <a href="http://docs.mongodb.org/manual/core/crud-introduction/#query">MongoDB’s query language</a>) there’s no redundancy, it’s statically analyzable and it’s not much more typing than the mutative version.</p>
 
@@ -347,37 +363,47 @@ var newData = React.addons.update(myData, {
 
 <h3 id="simple-push">Simple push</h3>
 
-<p><code>js
-var initialArray = [1, 2, 3];
-var newArray = update(initialArray, {$push: [4]}); // =&gt; [1, 2, 3, 4]
-</code>
-<code>initialArray</code> is still <code>[1, 2, 3]</code>.</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> initialArray = [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, <span style="color:#00D">3</span>];
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> newArray = update(initialArray, {<span style="color:#369;font-weight:bold">$push</span>: [<span style="color:#00D">4</span>]}); <span style="color:#777">// =&gt; [1, 2, 3, 4]</span>
+</pre></div>
+</div>
+</div>
+
+<p><code>initialArray</code> is still <code>[1, 2, 3]</code>.</p>
 
 <h3 id="nested-collections">Nested collections</h3>
 
-<p><code>js
-var collection = [1, 2, {a: [12, 17, 15]}];
-var newCollection = update(collection, {2: {a: {$splice: [[1, 1, 13, 14]]}}});
-// =&gt; [1, 2, {a: [12, 13, 14, 15]}]
-</code>
-This accesses <code>collection</code>’s index <code>2</code>, key <code>a</code>, and does a splice of one item starting from index <code>1</code> (to remove <code>17</code>) while inserting <code>13</code> and <code>14</code>.</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> collection = [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, {<span style="color:#606">a</span>: [<span style="color:#00D">12</span>, <span style="color:#00D">17</span>, <span style="color:#00D">15</span>]}];
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> newCollection = update(collection, {<span style="color:#00D">2</span>: {<span style="color:#606">a</span>: {<span style="color:#369;font-weight:bold">$splice</span>: [[<span style="color:#00D">1</span>, <span style="color:#00D">1</span>, <span style="color:#00D">13</span>, <span style="color:#00D">14</span>]]}}});
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// =&gt; [1, 2, {a: [12, 13, 14, 15]}]</span>
+</pre></div>
+</div>
+</div>
+
+<p>This accesses <code>collection</code>’s index <code>2</code>, key <code>a</code>, and does a splice of one item starting from index <code>1</code> (to remove <code>17</code>) while inserting <code>13</code> and <code>14</code>.</p>
 
 <h3 id="updating-a-value-based-on-its-current-one">Updating a value based on its current one</h3>
 
-<p><code>js
-var obj = {a: 5, b: 3};
-var newObj = update(obj, {b: {$apply: function(x) {return x * 2;}}});
-// =&gt; {a: 5, b: 6}
-// This is equivalent, but gets verbose for deeply nested collections:
-var newObj2 = update(obj, {b: {$set: obj.b * 2}});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> obj = {<span style="color:#606">a</span>: <span style="color:#00D">5</span>, <span style="color:#606">b</span>: <span style="color:#00D">3</span>};
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> newObj = update(obj, {<span style="color:#606">b</span>: {<span style="color:#369;font-weight:bold">$apply</span>: <span style="color:#080;font-weight:bold">function</span>(x) {<span style="color:#080;font-weight:bold">return</span> x * <span style="color:#00D">2</span>;}}});
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// =&gt; {a: 5, b: 6}</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#777">// This is equivalent, but gets verbose for deeply nested collections:</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">var</span> newObj2 = update(obj, {<span style="color:#606">b</span>: {<span style="color:#369;font-weight:bold">$set</span>: obj.b * <span style="color:#00D">2</span>}});
+</pre></div>
+</div>
+</div>
 
 <h3 id="shallow-merge">(Shallow) merge</h3>
 
-<p><code>js
-var obj = {a: 5, b: 3};
-var newObj = update(obj, {$merge: {b: 6, c: 7}}); // =&gt; {a: 5, b: 6, c: 7}
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> obj = {<span style="color:#606">a</span>: <span style="color:#00D">5</span>, <span style="color:#606">b</span>: <span style="color:#00D">3</span>};
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> newObj = update(obj, {<span style="color:#369;font-weight:bold">$merge</span>: {<span style="color:#606">b</span>: <span style="color:#00D">6</span>, <span style="color:#606">c</span>: <span style="color:#00D">7</span>}}); <span style="color:#777">// =&gt; {a: 5, b: 6, c: 7}</span>
+</pre></div>
+</div>
+</div>
 
 
 

@@ -79,6 +79,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -203,11 +211,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -289,83 +297,90 @@
 
 <p>As your app grows it’s helpful to ensure that your components are used correctly. We do this by allowing you to specify <code>propTypes</code>. <code>React.PropTypes</code> exports a range of validators that can be used to make sure the data you receive is valid. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. Note that for performance reasons <code>propTypes</code> is only checked in development mode. Here is an example documenting the different validators provided:</p>
 
-<p>```javascript
-React.createClass({
-  propTypes: {
-    // You can declare that a prop is a specific JS primitive. By default, these
-    // are all optional.
-    optionalArray: React.PropTypes.array,
-    optionalBool: React.PropTypes.bool,
-    optionalFunc: React.PropTypes.func,
-    optionalNumber: React.PropTypes.number,
-    optionalObject: React.PropTypes.object,
-    optionalString: React.PropTypes.string,</p>
-
-<pre><code>// Anything that can be rendered: numbers, strings, elements or an array
-// (or fragment) containing these types.
-optionalNode: React.PropTypes.node,
-
-// A React element.
-optionalElement: React.PropTypes.element,
-
-// You can also declare that a prop is an instance of a class. This uses
-// JS's instanceof operator.
-optionalMessage: React.PropTypes.instanceOf(Message),
-
-// You can ensure that your prop is limited to specific values by treating
-// it as an enum.
-optionalEnum: React.PropTypes.oneOf(['News', 'Photos']),
-
-// An object that could be one of many types
-optionalUnion: React.PropTypes.oneOfType([
-  React.PropTypes.string,
-  React.PropTypes.number,
-  React.PropTypes.instanceOf(Message)
-]),
-
-// An array of a certain type
-optionalArrayOf: React.PropTypes.arrayOf(React.PropTypes.number),
-
-// An object with property values of a certain type
-optionalObjectOf: React.PropTypes.objectOf(React.PropTypes.number),
-
-// An object taking on a particular shape
-optionalObjectWithShape: React.PropTypes.shape({
-  color: React.PropTypes.string,
-  fontSize: React.PropTypes.number
-}),
-
-// You can chain any of the above with `isRequired` to make sure a warning
-// is shown if the prop isn't provided.
-requiredFunc: React.PropTypes.func.isRequired,
-
-// A value of any data type
-requiredAny: React.PropTypes.any.isRequired,
-
-// You can also specify a custom validator. It should return an Error
-// object if the validation fails. Don't `console.warn` or throw, as this
-// won't work inside `oneOfType`.
-customProp: function(props, propName, componentName) {
-  if (!/matchme/.test(props[propName])) {
-    return new Error('Validation failed!');
-  }
-}   },   /* ... */ }); ```
-</code></pre>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#606">propTypes</span>: {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#777">// You can declare that a prop is a specific JS primitive. By default, these</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#777">// are all optional.</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#606">optionalArray</span>: React.PropTypes.array,
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#606">optionalBool</span>: React.PropTypes.bool,
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#606">optionalFunc</span>: React.PropTypes.func,
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#606">optionalNumber</span>: React.PropTypes.number,
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#606">optionalObject</span>: React.PropTypes.object,
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#606">optionalString</span>: React.PropTypes.string,
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#777">// Anything that can be rendered: numbers, strings, elements or an array</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#777">// (or fragment) containing these types.</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#606">optionalNode</span>: React.PropTypes.node,
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#777">// A React element.</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span style="color:#606">optionalElement</span>: React.PropTypes.element,
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>    <span style="color:#777">// You can also declare that a prop is an instance of a class. This uses</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>    <span style="color:#777">// JS's instanceof operator.</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>    <span style="color:#606">optionalMessage</span>: React.PropTypes.instanceOf(Message),
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>    <span style="color:#777">// You can ensure that your prop is limited to specific values by treating</span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>    <span style="color:#777">// it as an enum.</span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>    <span style="color:#606">optionalEnum</span>: React.PropTypes.oneOf([<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">News</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Photos</span><span style="color:#710">'</span></span>]),
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>    <span style="color:#777">// An object that could be one of many types</span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>    <span style="color:#606">optionalUnion</span>: React.PropTypes.oneOfType([
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>      React.PropTypes.string,
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>      React.PropTypes.number,
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>      React.PropTypes.instanceOf(Message)
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>    ]),
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>    <span style="color:#777">// An array of a certain type</span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>    <span style="color:#606">optionalArrayOf</span>: React.PropTypes.arrayOf(React.PropTypes.number),
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>    <span style="color:#777">// An object with property values of a certain type</span>
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>    <span style="color:#606">optionalObjectOf</span>: React.PropTypes.objectOf(React.PropTypes.number),
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>    <span style="color:#777">// An object taking on a particular shape</span>
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>    <span style="color:#606">optionalObjectWithShape</span>: React.PropTypes.shape({
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>      <span style="color:#606">color</span>: React.PropTypes.string,
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span>      <span style="color:#606">fontSize</span>: React.PropTypes.number
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>    }),
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>    <span style="color:#777">// You can chain any of the above with `isRequired` to make sure a warning</span>
+<span class="line-numbers"><a href="#n47" name="n47">47</a></span>    <span style="color:#777">// is shown if the prop isn't provided.</span>
+<span class="line-numbers"><a href="#n48" name="n48">48</a></span>    <span style="color:#606">requiredFunc</span>: React.PropTypes.func.isRequired,
+<span class="line-numbers"><a href="#n49" name="n49">49</a></span>
+<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span>    <span style="color:#777">// A value of any data type</span>
+<span class="line-numbers"><a href="#n51" name="n51">51</a></span>    <span style="color:#606">requiredAny</span>: React.PropTypes.any.isRequired,
+<span class="line-numbers"><a href="#n52" name="n52">52</a></span>
+<span class="line-numbers"><a href="#n53" name="n53">53</a></span>    <span style="color:#777">// You can also specify a custom validator. It should return an Error</span>
+<span class="line-numbers"><a href="#n54" name="n54">54</a></span>    <span style="color:#777">// object if the validation fails. Don't `console.warn` or throw, as this</span>
+<span class="line-numbers"><a href="#n55" name="n55">55</a></span>    <span style="color:#777">// won't work inside `oneOfType`.</span>
+<span class="line-numbers"><a href="#n56" name="n56">56</a></span>    <span style="color:#06B;font-weight:bold">customProp</span>: <span style="color:#080;font-weight:bold">function</span>(props, propName, componentName) {
+<span class="line-numbers"><a href="#n57" name="n57">57</a></span>      <span style="color:#080;font-weight:bold">if</span> (!<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">matchme</span><span style="color:#404">/</span></span>.test(props[propName])) {
+<span class="line-numbers"><a href="#n58" name="n58">58</a></span>        <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">new</span> Error(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Validation failed!</span><span style="color:#710">'</span></span>);
+<span class="line-numbers"><a href="#n59" name="n59">59</a></span>      }
+<span class="line-numbers"><strong><a href="#n60" name="n60">60</a></strong></span>    }
+<span class="line-numbers"><a href="#n61" name="n61">61</a></span>  },
+<span class="line-numbers"><a href="#n62" name="n62">62</a></span>  <span style="color:#777">/* ... */</span>
+<span class="line-numbers"><a href="#n63" name="n63">63</a></span>});
+</pre></div>
+</div>
+</div>
 
 <h2 id="default-prop-values">Default Prop Values</h2>
 
 <p>React lets you define default values for your <code>props</code> in a very declarative way:</p>
 
-<p><code>javascript
-var ComponentWithDefaultProps = React.createClass({
-  getDefaultProps: function() {
-    return {
-      value: 'default value'
-    };
-  }
-  /* ... */
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> ComponentWithDefaultProps = React.createClass({
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">getDefaultProps</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> {
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>      <span style="color:#606">value</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">default value</span><span style="color:#710">'</span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    };
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  }
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span style="color:#777">/* ... */</span>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>});
+</pre></div>
+</div>
+</div>
 
 <p>The result of <code>getDefaultProps()</code> will be cached and used to ensure that <code>this.props.value</code> will have a value if it was not specified by the parent component. This allows you to safely just use your props without having to write repetitive and fragile code to handle that yourself.</p>
 
@@ -373,44 +388,47 @@ var ComponentWithDefaultProps = React.createClass({
 
 <p>A common type of React component is one that extends a basic HTML element in a simple way. Often you’ll want to copy any HTML attributes passed to your component to the underlying HTML element to save typing. You can use the JSX <em>spread</em> syntax to achieve this:</p>
 
-<p>```javascript
-var CheckLink = React.createClass({
-  render: function() {
-    // This takes any props passed to CheckLink and copies them to <a>
-    return &lt;a {…this.props}&gt;{‘√ ‘}{this.props.children}</a>;
-  }
-});</p>
-
-<p>React.render(</p>
-<checklink href="/checked.html">
-    Click here!
-  </checklink>
-<p>,
-  document.getElementById(‘example’)
-);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> CheckLink = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#777">// This takes any props passed to CheckLink and copies them to &lt;a&gt;</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;a</span> <span style="color:#F00;background-color:#FAA">{</span><span style="color:#b48">...this.props</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>{'√ '}{this.props.children}<span style="color:#070;font-weight:bold">&lt;/a&gt;</span>;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  }
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>});
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>React.render(
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#070;font-weight:bold">&lt;CheckLink</span> <span style="color:#b48">href</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/checked.html</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    Click here!
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span style="color:#070;font-weight:bold">&lt;/CheckLink&gt;</span>,
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>);
+</pre></div>
+</div>
+</div>
 
 <h2 id="single-child">Single Child</h2>
 
-<p>With <code>React.PropTypes.element</code> you can specify that only a single child can be passed to
+<p>With <code>React.PropTypes.element</code> you can specify that only a single child can be passed to<br />
 a component as children.</p>
 
-<p>```javascript
-var MyComponent = React.createClass({
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },</p>
-
-<p>render: function() {
-    return (
-      &lt;div&gt;
-        {this.props.children} // This must be exactly one element or it will throw.
-      &lt;/div&gt;
-    );
-  }</p>
-
-<p>});
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> MyComponent = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#606">propTypes</span>: {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#606">children</span>: React.PropTypes.element.isRequired
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  },
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span style="color:#070;font-weight:bold">&lt;div&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>        {this.props.children} // This must be exactly one element or it will throw.
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      <span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    );
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  }
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>});
+</pre></div>
+</div>
+</div>
 
 <h2 id="mixins">Mixins</h2>
 
@@ -418,45 +436,46 @@ var MyComponent = React.createClass({
 
 <p>One common use case is a component wanting to update itself on a time interval. It’s easy to use <code>setInterval()</code>, but it’s important to cancel your interval when you don’t need it anymore to save memory. React provides <a href="/react/docs/working-with-the-browser.html#component-lifecycle">lifecycle methods</a> that let you know when a component is about to be created or destroyed. Let’s create a simple mixin that uses these methods to provide an easy <code>setInterval()</code> function that will automatically get cleaned up when your component is destroyed.</p>
 
-<p>```javascript
-var SetIntervalMixin = {
-  componentWillMount: function() {
-    this.intervals = [];
-  },
-  setInterval: function() {
-    this.intervals.push(setInterval.apply(null, arguments));
-  },
-  componentWillUnmount: function() {
-    this.intervals.forEach(clearInterval);
-  }
-};</p>
-
-<p>var TickTock = React.createClass({
-  mixins: [SetIntervalMixin], // Use the mixin
-  getInitialState: function() {
-    return {seconds: 0};
-  },
-  componentDidMount: function() {
-    this.setInterval(this.tick, 1000); // Call a method on the mixin
-  },
-  tick: function() {
-    this.setState({seconds: this.state.seconds + 1});
-  },
-  render: function() {
-    return (
-      &lt;p&gt;
-        React has been running for {this.state.seconds} seconds.
-      &lt;/p&gt;
-    );
-  }
-});</p>
-
-<p>React.render(</p>
-<ticktock />
-<p>,
-  document.getElementById(‘example’)
-);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> SetIntervalMixin = {
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">componentWillMount</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#950">this</span>.intervals = [];
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  },
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#06B;font-weight:bold">setInterval</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#950">this</span>.intervals.push(setInterval.apply(<span style="color:#069">null</span>, <span style="color:#950">arguments</span>));
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  },
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#06B;font-weight:bold">componentWillUnmount</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#950">this</span>.intervals.forEach(clearInterval);
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  }
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>};
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">var</span> TickTock = React.createClass({
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#606">mixins</span>: [SetIntervalMixin], <span style="color:#777">// Use the mixin</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#06B;font-weight:bold">getInitialState</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#080;font-weight:bold">return</span> {<span style="color:#606">seconds</span>: <span style="color:#00D">0</span>};
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>  },
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>  <span style="color:#06B;font-weight:bold">componentDidMount</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>    <span style="color:#950">this</span>.setInterval(<span style="color:#950">this</span>.tick, <span style="color:#00D">1000</span>); <span style="color:#777">// Call a method on the mixin</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>  },
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  <span style="color:#06B;font-weight:bold">tick</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#950">this</span>.setState({<span style="color:#606">seconds</span>: <span style="color:#950">this</span>.state.seconds + <span style="color:#00D">1</span>});
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  },
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>      <span style="color:#070;font-weight:bold">&lt;p&gt;</span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>        React has been running for {this.state.seconds} seconds.
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>      <span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>    );
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>  }
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>});
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>React.render(
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>  <span style="color:#070;font-weight:bold">&lt;TickTock</span> <span style="color:#070;font-weight:bold">/&gt;</span>,
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>);
+</pre></div>
+</div>
+</div>
 
 <p>A nice feature of mixins is that if a component is using multiple mixins and several mixins define the same lifecycle method (i.e. several mixins want to do some cleanup when the component is destroyed), all of the lifecycle methods are guaranteed to be called. Methods defined on mixins run in the order mixins were listed, followed by a method call on the component.</p>
 
@@ -464,39 +483,43 @@ var SetIntervalMixin = {
 
 <p>You may also define your React classes as a plain JavaScript class. For example using ES6 class syntax:</p>
 
-<p><code>javascript
-class HelloMessage extends React.Component {
-  render() {
-    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
-  }
-}
-React.render(&lt;HelloMessage name="Sebastian" /&gt;, mountNode);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> HelloMessage <span style="color:#080;font-weight:bold">extends</span> React.Component {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  render() {
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;div&gt;</span>Hello {this.props.name}<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  }
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>}
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>React.render(&lt;HelloMessage name=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sebastian</span><span style="color:#710">&quot;</span></span> /&gt;, mountNode);
+</pre></div>
+</div>
+</div>
 
 <p>The API is similar to <code>React.createClass</code> with the exception of <code>getInitialState</code>. Instead of providing a separate <code>getInitialState</code> method, you set up your own <code>state</code> property in the constructor.</p>
 
 <p>Another difference is that <code>propTypes</code> and <code>defaultProps</code> are defined as properties on the constructor instead of in the class body.</p>
 
-<p><code>javascript
-export class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {count: props.initialCount};
-  }
-  tick() {
-    this.setState({count: this.state.count + 1});
-  }
-  render() {
-    return (
-      &lt;div onClick={this.tick.bind(this)}&gt;
-        Clicks: {this.state.count}
-      &lt;/div&gt;
-    );
-  }
-}
-Counter.propTypes = { initialCount: React.PropTypes.number };
-Counter.defaultProps = { initialCount: 0 };
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">export</span> <span style="color:#080;font-weight:bold">class</span> Counter <span style="color:#080;font-weight:bold">extends</span> React.Component {
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  constructor(props) {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">super</span>(props);
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#950">this</span>.state = {<span style="color:#606">count</span>: props.initialCount};
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  }
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  tick() {
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#950">this</span>.setState({<span style="color:#606">count</span>: <span style="color:#950">this</span>.state.count + <span style="color:#00D">1</span>});
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  }
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  render() {
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">onClick</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.tick.bind</span><span style="color:#F00;background-color:#FAA">(</span><span style="color:#b48">this</span><span style="color:#F00;background-color:#FAA">)</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>        Clicks: {this.state.count}
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>      <span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    );
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  }
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>}
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>Counter.propTypes = { <span style="color:#606">initialCount</span>: React.PropTypes.number };
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>Counter.defaultProps = { <span style="color:#606">initialCount</span>: <span style="color:#00D">0</span> };
+</pre></div>
+</div>
+</div>
 
 <h3 id="no-autobinding">No Autobinding</h3>
 

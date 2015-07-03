@@ -2,7 +2,7 @@
 <html>
 
   <head>
-  <title>Cloning ReactElements</title>
+  <title>Clone with Props</title>
   <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <meta name="description" content="© 2015 GitHub Inc. All rights reserved.
@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="stylesheet" href="/help-doc/v007/css/ui.css">
-  <link rel="canonical" href="/help-doc/v007/articles/cloning-reactelements.html">
+  <link rel="canonical" href="/help-doc/v007/articles/clone-with-props.html">
   <link rel="alternate" type="application/rss+xml" title="GitHub Help" href="/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>
 
@@ -78,6 +78,14 @@
       <a href="/help-doc/v007/categories/guides">Guides</a>
     </div>
     <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
       
       <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -281,36 +289,37 @@
 </script>
 
 
-          <h1>Cloning ReactElements</h1>
+          <h1>Clone with Props</h1>
 <p></p>
 
 <blockquote>
-  <p>Note:
+  <p>Note:<br />
 <code>cloneWithProps</code> is deprecated. Use <a href="top-level-api.html#react.cloneelement">React.cloneElement</a> instead.</p>
 </blockquote>
 
 <p>In rare situations, you may want to create a copy of a React element with different props from those of the original element. One example is cloning the elements passed into <code>this.props.children</code> and rendering them with different props:</p>
 
-<p>```js
-var _makeBlue = function(element) {
-  return React.addons.cloneWithProps(element, {style: {color: ‘blue’}});
-};</p>
-
-<p>var Blue = React.createClass({
-  render: function() {
-    var blueChildren = React.Children.map(this.props.children, _makeBlue);
-    return &lt;div&gt;{blueChildren}&lt;/div&gt;;
-  }
-});</p>
-
-<p>React.render(</p>
-<blue>
-    <p>This text is blue.</p>
-  </blue>
-<p>,
-  document.getElementById(‘container’)
-);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> <span style="color:#06B;font-weight:bold">_makeBlue</span> = <span style="color:#080;font-weight:bold">function</span>(element) {
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">return</span> React.addons.cloneWithProps(element, {<span style="color:#606">style</span>: {<span style="color:#606">color</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">blue</span><span style="color:#710">'</span></span>}});
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>};
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">var</span> Blue = React.createClass({
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#080;font-weight:bold">var</span> blueChildren = React.Children.map(<span style="color:#950">this</span>.props.children, _makeBlue);
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;div&gt;</span>{blueChildren}<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>;
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  }
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>});
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>React.render(
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  <span style="color:#070;font-weight:bold">&lt;Blue&gt;</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#070;font-weight:bold">&lt;p&gt;</span>This text is blue.<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#070;font-weight:bold">&lt;/Blue&gt;</span>,
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">container</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>);
+</pre></div>
+</div>
+</div>
 
 <p><code>cloneWithProps</code> does not transfer <code>key</code> or <code>ref</code> to the cloned element. <code>className</code> and <code>style</code> props are automatically merged.</p>
 
@@ -318,7 +327,7 @@ var _makeBlue = function(element) {
 
   
   <h2>
-    prev post: <a href='/help-doc/v007/articles/test-utils.html'>test-utils.html</a>
+    prev post: <a href='/help-doc/v007/articles/test-utilities.html'>test-utilities.html</a>
   </h2>
 
 

@@ -79,6 +79,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -203,11 +211,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -287,15 +295,19 @@
 
 <p>You can use <a href="/react/docs/jsx-spread.html">JSX spread attributes</a> to merge the old props with additional values:</p>
 
-<p><code>javascript
-&lt;Component {...this.props} more="values" /&gt;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;Component</span> <span style="color:#F00;background-color:#FAA">{</span><span style="color:#b48">...this.props</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">more</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">values</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>If you don’t use JSX, you can use any object helper such as ES6 <code>Object.assign</code> or Underscore <code>_.extend</code>:</p>
 
-<p><code>javascript
-React.createElement(Component, Object.assign({}, this.props, { more: 'values' }));
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>React.createElement(Component, Object.assign({}, <span style="color:#950">this</span>.props, { <span style="color:#606">more</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">values</span><span style="color:#710">'</span></span> }));
+</pre></div>
+</div>
+</div>
 
 <p>The rest of this tutorial explains best practices. It uses JSX and experimental ES7 syntax.</p>
 
@@ -303,24 +315,26 @@ React.createElement(Component, Object.assign({}, this.props, { more: 'values' })
 
 <p>Most of the time you should explicitly pass the properties down. That ensures that you only expose a subset of the inner API, one that you know will work.</p>
 
-<p><code>javascript
-var FancyCheckbox = React.createClass({
-  render: function() {
-    var fancyClass = this.props.checked ? 'FancyChecked' : 'FancyUnchecked';
-    return (
-      &lt;div className={fancyClass} onClick={this.props.onClick}&gt;
-        {this.props.children}
-      &lt;/div&gt;
-    );
-  }
-});
-React.render(
-  &lt;FancyCheckbox checked={true} onClick={console.log.bind(console)}&gt;
-    Hello world!
-  &lt;/FancyCheckbox&gt;,
-  document.getElementById('example')
-);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> FancyCheckbox = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">var</span> fancyClass = <span style="color:#950">this</span>.props.checked ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyChecked</span><span style="color:#710">'</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyUnchecked</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>      <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">className</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">fancyClass</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">onClick</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.props.onClick</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>        {this.props.children}
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    );
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  }
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>});
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>React.render(
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#070;font-weight:bold">&lt;FancyCheckbox</span> <span style="color:#b48">checked</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">true</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">onClick</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">console.log.bind</span><span style="color:#F00;background-color:#FAA">(</span><span style="color:#b48">console</span><span style="color:#F00;background-color:#FAA">)</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    Hello world!
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#070;font-weight:bold">&lt;/FancyCheckbox&gt;</span>,
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>);
+</pre></div>
+</div>
+</div>
 
 <p>But what about the <code>name</code> prop? Or the <code>title</code> prop? Or <code>onMouseOver</code>?</p>
 
@@ -336,30 +350,34 @@ React.render(
 
 <p>List out all the properties that you would like to consume, followed by <code>...other</code>.</p>
 
-<p><code>javascript
-var { checked, ...other } = this.props;
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> { checked, ...other } = <span style="color:#950">this</span>.props;
+</pre></div>
+</div>
+</div>
 
 <p>This ensures that you pass down all the props EXCEPT the ones you’re consuming yourself.</p>
 
-<p><code>javascript
-var FancyCheckbox = React.createClass({
-  render: function() {
-    var { checked, ...other } = this.props;
-    var fancyClass = checked ? 'FancyChecked' : 'FancyUnchecked';
-    // `other` contains { onClick: console.log } but not the checked property
-    return (
-      &lt;div {...other} className={fancyClass} /&gt;
-    );
-  }
-});
-React.render(
-  &lt;FancyCheckbox checked={true} onClick={console.log.bind(console)}&gt;
-    Hello world!
-  &lt;/FancyCheckbox&gt;,
-  document.getElementById('example')
-);
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> FancyCheckbox = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">var</span> { checked, ...other } = <span style="color:#950">this</span>.props;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">var</span> fancyClass = checked ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyChecked</span><span style="color:#710">'</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyUnchecked</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#777">// `other` contains { onClick: console.log } but not the checked property</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#F00;background-color:#FAA">{</span><span style="color:#b48">...other</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">className</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">fancyClass</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    );
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  }
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>});
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>React.render(
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#070;font-weight:bold">&lt;FancyCheckbox</span> <span style="color:#b48">checked</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">true</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">onClick</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">console.log.bind</span><span style="color:#F00;background-color:#FAA">(</span><span style="color:#b48">console</span><span style="color:#F00;background-color:#FAA">)</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    Hello world!
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#070;font-weight:bold">&lt;/FancyCheckbox&gt;</span>,
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>);
+</pre></div>
+</div>
+</div>
 
 <blockquote>
   <p>NOTE:</p>
@@ -369,41 +387,45 @@ React.render(
 
 <p>Always use the destructuring pattern when transferring unknown <code>other</code> props.</p>
 
-<p><code>javascript
-var FancyCheckbox = React.createClass({
-  render: function() {
-    var fancyClass = this.props.checked ? 'FancyChecked' : 'FancyUnchecked';
-    // ANTI-PATTERN: `checked` would be passed down to the inner component
-    return (
-      &lt;div {...this.props} className={fancyClass} /&gt;
-    );
-  }
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> FancyCheckbox = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">var</span> fancyClass = <span style="color:#950">this</span>.props.checked ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyChecked</span><span style="color:#710">'</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyUnchecked</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#777">// ANTI-PATTERN: `checked` would be passed down to the inner component</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#F00;background-color:#FAA">{</span><span style="color:#b48">...this.props</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">className</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">fancyClass</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    );
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  }
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>});
+</pre></div>
+</div>
+</div>
 
 <h2 id="consuming-and-transferring-the-same-prop">Consuming and Transferring the Same Prop</h2>
 
 <p>If your component wants to consume a property but also wants to pass it along, you can repass it explicitly with <code>checked={checked}</code>. This is preferable to passing the full <code>this.props</code> object since it’s easier to refactor and lint.</p>
 
-<p><code>javascript
-var FancyCheckbox = React.createClass({
-  render: function() {
-    var { checked, title, ...other } = this.props;
-    var fancyClass = checked ? 'FancyChecked' : 'FancyUnchecked';
-    var fancyTitle = checked ? 'X ' + title : 'O ' + title;
-    return (
-      &lt;label&gt;
-        &lt;input {...other}
-          checked={checked}
-          className={fancyClass}
-          type="checkbox"
-        /&gt;
-        {fancyTitle}
-      &lt;/label&gt;
-    );
-  }
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> FancyCheckbox = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">var</span> { checked, title, ...other } = <span style="color:#950">this</span>.props;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">var</span> fancyClass = checked ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyChecked</span><span style="color:#710">'</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyUnchecked</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">var</span> fancyTitle = checked ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">X </span><span style="color:#710">'</span></span> + title : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">O </span><span style="color:#710">'</span></span> + title;
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#070;font-weight:bold">&lt;label&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#F00;background-color:#FAA">{</span><span style="color:#b48">...other</span><span style="color:#F00;background-color:#FAA">}</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>          <span style="color:#b48">checked</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">checked</span><span style="color:#F00;background-color:#FAA">}</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>          <span style="color:#b48">className</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">fancyClass</span><span style="color:#F00;background-color:#FAA">}</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>          <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">checkbox</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>        <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>        {fancyTitle}
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>      <span style="color:#070;font-weight:bold">&lt;/label&gt;</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    );
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  }
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>});
+</pre></div>
+</div>
+</div>
 
 <blockquote>
   <p>NOTE:</p>
@@ -417,12 +439,14 @@ var FancyCheckbox = React.createClass({
 
 <p>This is an experimental implementation of an <a href="https://github.com/sebmarkbage/ecmascript-rest-spread">ES7 proposal</a>.</p>
 
-<p><code>javascript
-var { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
-x; // 1
-y; // 2
-z; // { a: 3, b: 4 }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> { x, y, ...z } = { <span style="color:#606">x</span>: <span style="color:#00D">1</span>, <span style="color:#606">y</span>: <span style="color:#00D">2</span>, <span style="color:#606">a</span>: <span style="color:#00D">3</span>, <span style="color:#606">b</span>: <span style="color:#00D">4</span> };
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>x; <span style="color:#777">// 1</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>y; <span style="color:#777">// 2</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>z; <span style="color:#777">// { a: 3, b: 4 }</span>
+</pre></div>
+</div>
+</div>
 
 <blockquote>
   <p>Note:</p>
@@ -434,18 +458,20 @@ z; // { a: 3, b: 4 }
 
 <p>If you don’t use JSX, you can use a library to achieve the same pattern. Underscore supports <code>_.omit</code> to filter out properties and <code>_.extend</code> to copy properties onto a new object.</p>
 
-<p><code>javascript
-var FancyCheckbox = React.createClass({
-  render: function() {
-    var checked = this.props.checked;
-    var other = _.omit(this.props, 'checked');
-    var fancyClass = checked ? 'FancyChecked' : 'FancyUnchecked';
-    return (
-      React.DOM.div(_.extend({}, other, { className: fancyClass }))
-    );
-  }
-});
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> FancyCheckbox = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">var</span> checked = <span style="color:#950">this</span>.props.checked;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">var</span> other = _.omit(<span style="color:#950">this</span>.props, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">checked</span><span style="color:#710">'</span></span>);
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">var</span> fancyClass = checked ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyChecked</span><span style="color:#710">'</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FancyUnchecked</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      React.DOM.div(_.extend({}, other, { <span style="color:#606">className</span>: fancyClass }))
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    );
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  }
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>});
+</pre></div>
+</div>
+</div>
 
 
 

@@ -79,6 +79,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -203,11 +211,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -289,46 +297,50 @@
 
 <p>Let’s look at a really simple example. Create a <code>hello-react.html</code> file with the following code:</p>
 
-<p>```html
-&lt;!DOCTYPE html&gt;</p>
-<html>
-  <head>
-    <title>Hello React</title>
-    <script src="https://fb.me/react-.js"></script>
-    <script src="https://fb.me/JSXTransformer-.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/jsx">
-
-      // ** Your code goes here! **
-
-    </script>
-  </body>
-</html>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#34b">&lt;!DOCTYPE html&gt;</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#070;font-weight:bold">&lt;html&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#070;font-weight:bold">&lt;head&gt;</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#070;font-weight:bold">&lt;title&gt;</span>Hello React<span style="color:#070;font-weight:bold">&lt;/title&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">src</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://fb.me/react-.js</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">src</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://fb.me/JSXTransformer-.js</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#070;font-weight:bold">&lt;/head&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#070;font-weight:bold">&lt;body&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">example</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text/jsx</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black"></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">      <span style="color:#777">// ** Your code goes here! **</span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#070;font-weight:bold">&lt;/body&gt;</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#070;font-weight:bold">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>For the rest of the documentation, we’ll just focus on the JavaScript code and assume it’s inserted into a template like the one above. Replace the placeholder comment above with the following JSX:</p>
 
-<p>```javascript
-var HelloWorld = React.createClass({
-  render: function() {
-    return (
-      &lt;p&gt;
-        Hello, <input type="text" placeholder="Your name here" />!
-        It is {this.props.date.toTimeString()}
-      &lt;/p&gt;
-    );
-  }
-});</p>
-
-<p>setInterval(function() {
-  React.render(
-    &lt;HelloWorld date={new Date()} /&gt;,
-    document.getElementById(‘example’)
-  );
-}, 500);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> HelloWorld = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      <span style="color:#070;font-weight:bold">&lt;p&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        Hello, <span style="color:#070;font-weight:bold">&lt;input</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">placeholder</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Your name here</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>!
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>        It is {this.props.date.toTimeString()}
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    );
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  }
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>});
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>setInterval(<span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  React.render(
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#070;font-weight:bold">&lt;HelloWorld</span> <span style="color:#b48">date</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">new</span> <span style="color:#b48">Date</span><span style="color:#F00;background-color:#FAA">(</span><span style="color:#F00;background-color:#FAA">)</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>,
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  );
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>}, <span style="color:#00D">500</span>);
+</pre></div>
+</div>
+</div>
 
 <h2 id="reactive-updates">Reactive Updates</h2>
 
@@ -376,29 +388,35 @@ var HelloWorld = React.createClass({
 
 <p>JSX is completely optional; you don’t have to use JSX with React. You can create React elements in plain JavaScript using <code>React.createElement</code>, which takes a tag name or component, a properties object, and variable number of optional child arguments.</p>
 
-<p><code>javascript
-var child1 = React.createElement('li', null, 'First Text Content');
-var child2 = React.createElement('li', null, 'Second Text Content');
-var root = React.createElement('ul', { className: 'my-list' }, child1, child2);
-React.render(root, document.getElementById('example'));
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> child1 = React.createElement(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">li</span><span style="color:#710">'</span></span>, <span style="color:#069">null</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">First Text Content</span><span style="color:#710">'</span></span>);
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> child2 = React.createElement(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">li</span><span style="color:#710">'</span></span>, <span style="color:#069">null</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Second Text Content</span><span style="color:#710">'</span></span>);
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">var</span> root = React.createElement(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">ul</span><span style="color:#710">'</span></span>, { <span style="color:#606">className</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">my-list</span><span style="color:#710">'</span></span> }, child1, child2);
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>React.render(root, document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>));
+</pre></div>
+</div>
+</div>
 
 <p>For convenience, you can create short-hand factory functions to create elements from custom components.</p>
 
-<p><code>javascript
-var Factory = React.createFactory(ComponentClass);
-...
-var root = Factory({ custom: 'prop' });
-React.render(root, document.getElementById('example'));
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> Factory = React.createFactory(ComponentClass);
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>...
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">var</span> root = Factory({ <span style="color:#606">custom</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">prop</span><span style="color:#710">'</span></span> });
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>React.render(root, document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>));
+</pre></div>
+</div>
+</div>
 
 <p>React already has built-in factories for common HTML tags:</p>
 
-<p><code>javascript
-var root = React.DOM.ul({ className: 'my-list' },
-             React.DOM.li(null, 'Text Content')
-           );
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> root = React.DOM.ul({ <span style="color:#606">className</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">my-list</span><span style="color:#710">'</span></span> },
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>             React.DOM.li(<span style="color:#069">null</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Text Content</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>           );
+</pre></div>
+</div>
+</div>
 
 <ul>
   
@@ -409,13 +427,13 @@ var root = React.DOM.ul({ className: 'my-list' },
 
   
   <h2>
-    prev post: <a href='/help-doc/v007/articles/why-react'>why-react</a>
+    prev post: <a href='/help-doc/v007/articles/why-react.html'>why-react.html</a>
   </h2>
 
 
   
   <h2>
-    next post: <a href='/help-doc/v007/articles/jsx-in-depth'>jsx-in-depth</a>
+    next post: <a href='/help-doc/v007/articles/jsx-in-depth.html'>jsx-in-depth.html</a>
   </h2>
 
 

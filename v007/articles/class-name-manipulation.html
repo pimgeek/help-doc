@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -294,50 +302,56 @@
 
 <p>Here’s a common scenario and its solution without <code>classSet()</code>:</p>
 
-<p><code>javascript
-// inside some `&lt;Message /&gt;` React component
-render: function() {
-  var classString = 'message';
-  if (this.props.isImportant) {
-    classString += ' message-important';
-  }
-  if (this.props.isRead) {
-    classString += ' message-read';
-  }
-  // 'message message-important message-read'
-  return &lt;div className={classString}&gt;Great, I'll be there.&lt;/div&gt;;
-}
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777">// inside some `&lt;Message /&gt;` React component</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">var</span> classString = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">message</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">if</span> (<span style="color:#950">this</span>.props.isImportant) {
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    classString += <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> message-important</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  }
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">if</span> (<span style="color:#950">this</span>.props.isRead) {
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    classString += <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> message-read</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  }
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#777">// 'message message-important message-read'</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">className</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">classString</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>Great, I'll be there.<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>;
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>}
+</pre></div>
+</div>
+</div>
 
 <p>This can quickly get tedious, as assigning class name strings can be hard to read and error-prone. <code>classSet()</code> solves this problem:</p>
 
-<p><code>javascript
-render: function() {
-  var cx = React.addons.classSet;
-  var classes = cx({
-    'message': true,
-    'message-important': this.props.isImportant,
-    'message-read': this.props.isRead
-  });
-  // same final string, but much cleaner
-  return &lt;div className={classes}&gt;Great, I'll be there.&lt;/div&gt;;
-}
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">var</span> cx = React.addons.classSet;
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">var</span> classes = cx({
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#606"><span style="color:#404">'</span><span>message</span><span style="color:#404">'</span></span>: <span style="color:#069">true</span>,
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#606"><span style="color:#404">'</span><span>message-important</span><span style="color:#404">'</span></span>: <span style="color:#950">this</span>.props.isImportant,
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#606"><span style="color:#404">'</span><span>message-read</span><span style="color:#404">'</span></span>: <span style="color:#950">this</span>.props.isRead
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  });
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#777">// same final string, but much cleaner</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">className</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">classes</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>Great, I'll be there.<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>;
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>}
+</pre></div>
+</div>
+</div>
 
 <p>When using <code>classSet()</code>, pass an object with keys of the CSS class names you might or might not need. Truthy values will result in the key being a part of the resulting string.</p>
 
 <p><code>classSet()</code> also lets pass class names in as arguments that are then concatenated for you:</p>
 
-<p><code>javascript
-render: function() {
-  var cx = React.addons.classSet;
-  var importantModifier = 'message-important';
-  var readModifier = 'message-read';
-  var classes = cx('message', importantModifier, readModifier);
-  // Final string is 'message message-important message-read'
-  return &lt;div className={classes}&gt;Great, I'll be there.&lt;/div&gt;;
-}
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">var</span> cx = React.addons.classSet;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">var</span> importantModifier = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">message-important</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">var</span> readModifier = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">message-read</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">var</span> classes = cx(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">message</span><span style="color:#710">'</span></span>, importantModifier, readModifier);
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  <span style="color:#777">// Final string is 'message message-important message-read'</span>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">className</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">classes</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>Great, I'll be there.<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>;
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>}
+</pre></div>
+</div>
+</div>
 
 <p>No more hacky string concatenations!</p>
 
@@ -351,7 +365,7 @@ render: function() {
 
   
   <h2>
-    next post: <a href='/help-doc/v007/articles/test-utils.html'>test-utils.html</a>
+    next post: <a href='/help-doc/v007/articles/test-utilities.html'>test-utilities.html</a>
   </h2>
 
 

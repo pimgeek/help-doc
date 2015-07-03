@@ -80,6 +80,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -204,11 +212,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -294,100 +302,109 @@
 
 <p><code>ReactCSSTransitionGroup</code> is the interface to <code>ReactTransitions</code>. This is a simple element that wraps all of the components you are interested in animating. Here’s an example where we fade list items in and out.</p>
 
-<p>```javascript{28-30}
+<p>```javascript{28-30}<br />
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;</p>
 
-<p>var TodoList = React.createClass({
-  getInitialState: function() {
-    return {items: [‘hello’, ‘world’, ‘click’, ‘me’]};
-  },
-  handleAdd: function() {
-    var newItems =
-      this.state.items.concat([prompt(‘Enter some text’)]);
-    this.setState({items: newItems});
-  },
-  handleRemove: function(i) {
-    var newItems = this.state.items;
-    newItems.splice(i, 1);
-    this.setState({items: newItems});
-  },
-  render: function() {
-    var items = this.state.items.map(function(item, i) {
-      return (
-        &lt;div key={item} onClick={this.handleRemove.bind(this, i)}&gt;
-          {item}
-        &lt;/div&gt;
-      );
-    }.bind(this));
-    return (
-      &lt;div&gt;
-        &lt;button onClick={this.handleAdd}&gt;Add Item&lt;/button&gt;
-        <reactcsstransitiongroup transitionname="example">
-          {items}
-        </reactcsstransitiongroup>
-      &lt;/div&gt;
-    );
-  }
-});
-```
-&gt; Note:
-&gt;
-&gt; You must provide <a href="/react/docs/multiple-components.html#dynamic-children">the <code>key</code> attribute</a> for all children of <code>ReactCSSTransitionGroup</code>, even if rendering a single item. This is how React will determine which children have entered, left, or stayed.</p>
+<p>var TodoList = React.createClass({<br />
+getInitialState: function() {<br />
+return {items: [‘hello’, ‘world’, ‘click’, ‘me’]};<br />
+},<br />
+handleAdd: function() {<br />
+var newItems =<br />
+  this.state.items.concat([prompt(‘Enter some text’)]);<br />
+this.setState({items: newItems});<br />
+},<br />
+handleRemove: function(i) {<br />
+var newItems = this.state.items;<br />
+newItems.splice(i, 1);<br />
+this.setState({items: newItems});<br />
+},<br />
+render: function() {<br />
+var items = this.state.items.map(function(item, i) {<br />
+  return (<br />
+    &lt;div key={item} onClick={this.handleRemove.bind(this, i)}&gt;<br />
+      {item}<br />
+    &lt;/div&gt;<br />
+  );<br />
+}.bind(this));<br />
+return (</p>
+<div>
+    &lt;button onClick={this.handleAdd}&gt;Add Item
+    <reactcsstransitiongroup transitionname="example">
+      {items}
+    </reactcsstransitiongroup>
+  </div>
+<p>);<br />
+}<br />
+});<br />
+```</p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>You must provide <a href="/react/docs/multiple-components.html#dynamic-children">the <code>key</code> attribute</a> for all children of <code>ReactCSSTransitionGroup</code>, even if rendering a single item. This is how React will determine which children have entered, left, or stayed.</p>
+</blockquote>
 
 <p>In this component, when a new item is added to <code>ReactCSSTransitionGroup</code> it will get the <code>example-enter</code> CSS class and the <code>example-enter-active</code> CSS class added in the next tick. This is a convention based on the <code>transitionName</code> prop.</p>
 
 <p>You can use these classes to trigger a CSS animation or transition. For example, try adding this CSS and adding a new list item:</p>
 
-<p>```css
-.example-enter {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
-}</p>
-
-<p>.example-enter.example-enter-active {
-  opacity: 1;
-}
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#B06;font-weight:bold">.example-enter</span> {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#606">opacity</span>: <span style="color:#60E">0.01</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#606">transition</span>: <span style="color:#088">opacity</span> <span style="color:#60E">.5s</span> <span style="color:#088">ease-in</span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>}
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#B06;font-weight:bold">.example-enter</span><span style="color:#B06;font-weight:bold">.example-enter-active</span> {
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#606">opacity</span>: <span style="color:#60E">1</span>;
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>}
+</pre></div>
+</div>
+</div>
 
 <p>You’ll notice that when you try to remove an item <code>ReactCSSTransitionGroup</code> keeps it in the DOM. If you’re using an unminified build of React with add-ons you’ll see a warning that React was expecting an animation or transition to occur. That’s because <code>ReactCSSTransitionGroup</code> keeps your DOM elements on the page until the animation completes. Try adding this CSS:</p>
 
-<p>```css
-.example-leave {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}</p>
-
-<p>.example-leave.example-leave-active {
-  opacity: 0.01;
-}
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#B06;font-weight:bold">.example-leave</span> {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#606">opacity</span>: <span style="color:#60E">1</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#606">transition</span>: <span style="color:#088">opacity</span> <span style="color:#60E">.5s</span> <span style="color:#088">ease-in</span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>}
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#B06;font-weight:bold">.example-leave</span><span style="color:#B06;font-weight:bold">.example-leave-active</span> {
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#606">opacity</span>: <span style="color:#60E">0.01</span>;
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>}
+</pre></div>
+</div>
+</div>
 
 <h3 id="animate-initial-mounting">Animate Initial Mounting</h3>
 
 <p><code>ReactCSSTransitionGroup</code> provides the optional prop <code>transitionAppear</code>, to add an extra transition phase at the initial mount of the component. There is generally no transition phase at the initial mount as the default value of <code>transitionAppear</code> is <code>false</code>. Following an example which passes the prop <code>transitionAppear</code> with the value <code>true</code>.</p>
 
 <p><code>javascript{3-5}
-  render: function() {
-    return (
-      &lt;ReactCSSTransitionGroup transitionName="example" transitionAppear={true}&gt;
-        &lt;h1&gt;Fading at Initial Mount&lt;/h1&gt;
-      &lt;/ReactCSSTransitionGroup&gt;
-    );
-  }
+render: function() {
+return (
+  &lt;ReactCSSTransitionGroup transitionName="example" transitionAppear={true}&gt;
+    &lt;h1&gt;Fading at Initial Mount&lt;/h1&gt;
+  &lt;/ReactCSSTransitionGroup&gt;
+);
+}
 </code></p>
 
 <p>During the initial mount <code>ReactCSSTransitionGroup</code> will get the <code>example-appear</code> CSS class and the <code>example-appear-active</code> CSS class added in the next tick.</p>
 
-<p>```css
-.example-appear {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
-}</p>
-
-<p>.example-appear.example-appear-active {
-  opacity: 1;
-}
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#B06;font-weight:bold">.example-appear</span> {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#606">opacity</span>: <span style="color:#60E">0.01</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#606">transition</span>: <span style="color:#088">opacity</span> <span style="color:#60E">.5s</span> <span style="color:#088">ease-in</span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>}
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#B06;font-weight:bold">.example-appear</span><span style="color:#B06;font-weight:bold">.example-appear-active</span> {
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#606">opacity</span>: <span style="color:#60E">1</span>;
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>}
+</pre></div>
+</div>
+</div>
 
 <p>At the initial mount, all children of the <code>ReactCSSTransitionGroup</code> will <code>appear</code> but not <code>enter</code>. However, all children later added to an existing <code>ReactCSSTransitionGroup</code> will <code>enter</code> but not <code>appear</code>.</p>
 
@@ -401,47 +418,47 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;</p>
 
 <p>In order for it to apply transitions to its children, the <code>ReactCSSTransitionGroup</code> must already be mounted in the DOM or the prop <code>transitionAppear</code> must be set to <code>true</code>. The example below would not work, because the <code>ReactCSSTransitionGroup</code> is being mounted along with the new item, instead of the new item being mounted within it. Compare this to the <a href="#getting-started">Getting Started</a> section above to see the difference.</p>
 
-<p><code>javascript{12-15}
-  render: function() {
-    var items = this.state.items.map(function(item, i) {
-      return (
-        &lt;div key={item} onClick={this.handleRemove.bind(this, i)}&gt;
-          &lt;ReactCSSTransitionGroup transitionName="example"&gt;
-            {item}
-          &lt;/ReactCSSTransitionGroup&gt;
-        &lt;/div&gt;
-      );
-    }, this);
-    return (
-      &lt;div&gt;
-        &lt;button onClick={this.handleAdd}&gt;Add Item&lt;/button&gt;
-        {items}
-      &lt;/div&gt;
-    );
-  }
-</code></p>
+<p>```javascript{12-15}<br />
+render: function() {<br />
+var items = this.state.items.map(function(item, i) {<br />
+  return (<br />
+    &lt;div key={item} onClick={this.handleRemove.bind(this, i)}&gt;<br />
+      <reactcsstransitiongroup transitionname="example">
+        {item}
+      </reactcsstransitiongroup><br />
+    &lt;/div&gt;<br />
+  );<br />
+}, this);<br />
+return (</p>
+<div>
+    &lt;button onClick={this.handleAdd}&gt;Add Item
+    {items}
+  </div>
+<p>);<br />
+}<br />
+```</p>
 
 <h3 id="animating-one-or-zero-items">Animating One or Zero Items</h3>
 
 <p>In the example above, we rendered a list of items into <code>ReactCSSTransitionGroup</code>. However, the children of <code>ReactCSSTransitionGroup</code> can also be one or zero items. This makes it possible to animate a single element entering or leaving. Similarly, you can animate a new element replacing the current element. For example, we can implement a simple image carousel like this:</p>
 
-<p>```javascript{10-12}
+<p>```javascript{10-12}<br />
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;</p>
 
-<p>var ImageCarousel = React.createClass({
-  propTypes: {
-    imageSrc: React.PropTypes.string.isRequired
-  },
-  render: function() {
-    return (
-      &lt;div&gt;
-        <reactcsstransitiongroup transitionname="carousel">
-          &lt;img src={this.props.imageSrc} key={this.props.imageSrc} /&gt;
-        </reactcsstransitiongroup>
-      &lt;/div&gt;
-    );
-  }
-});
+<p>var ImageCarousel = React.createClass({<br />
+propTypes: {<br />
+imageSrc: React.PropTypes.string.isRequired<br />
+},<br />
+render: function() {<br />
+return (</p>
+<div>
+    <reactcsstransitiongroup transitionname="carousel">
+      &lt;img src={this.props.imageSrc} key={this.props.imageSrc} /&gt;
+    </reactcsstransitiongroup>
+  </div>
+<p>);<br />
+}<br />
+});<br />
 ```</p>
 
 <h3 id="disabling-animations">Disabling Animations</h3>
@@ -488,25 +505,22 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;</p>
 
 <p>```javascript{1}</p>
 <reacttransitiongroup component="ul">
-  ...
+...
 </reacttransitiongroup>
-<p>```</p>
+<pre><code>
+Every DOM component that React can render is available for use. However, `component` does not need to be a DOM component. It can be any React component you want; even ones you've written yourself!
 
-<p>Every DOM component that React can render is available for use. However, <code>component</code> does not need to be a DOM component. It can be any React component you want; even ones you’ve written yourself!</p>
+&gt; Note:
+&gt;
+&gt; Prior to v0.12, when using DOM components, the `component` prop needed to be a reference to `React.DOM.*`. Since the component is simply passed to `React.createElement`, it must now be a string. Composite components must pass the factory.
 
-<blockquote>
-  <p>Note:</p>
+Any additional, user-defined, properties will become properties of the rendered component. For example, here's how you would render a `&lt;ul&gt;` with css class:
 
-  <p>Prior to v0.12, when using DOM components, the <code>component</code> prop needed to be a reference to <code>React.DOM.*</code>. Since the component is simply passed to <code>React.createElement</code>, it must now be a string. Composite components must pass the factory.</p>
-</blockquote>
-
-<p>Any additional, user-defined, properties will become properties of the rendered component. For example, here’s how you would render a <code>&lt;ul&gt;</code> with css class:</p>
-
-<p>```javascript{1}</p>
-<reacttransitiongroup component="ul" classname="animated-list">
-  ...
-</reacttransitiongroup>
-<p>```</p>
+```javascript{1}
+&lt;ReactTransitionGroup component="ul" className="animated-list"&gt;
+...
+&lt;/ReactTransitionGroup&gt;
+</code></pre>
 
 
 

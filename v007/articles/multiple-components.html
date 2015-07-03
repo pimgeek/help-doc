@@ -79,6 +79,14 @@
     <div class='articles'>
       
       <div class='article'>
+        <a class="post-link" href="/help-doc/v007/articles/github-flavored-markdown.html">GFM</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
         <a class="post-link" href="/help-doc/v007/articles/why-react.html">Why React?</a>
         <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
         
@@ -203,11 +211,11 @@
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/cloning-reactelements.html">Cloning ReactElements</a>
+      <a class="post-link" href="/help-doc/v007/articles/clone-with-props.html">Clone with Props</a>
     </li>
   
     <li>
-      <a class="post-link" href="/help-doc/v007/articles/keyed-fragments.html">Keyed Fragments</a>
+      <a class="post-link" href="/help-doc/v007/articles/create-fragment.html">Create Fragment</a>
     </li>
   
     <li>
@@ -293,42 +301,43 @@
 
 <p>Let’s create a simple Avatar component which shows a profile picture and username using the Facebook Graph API.</p>
 
-<p>```javascript
-var Avatar = React.createClass({
-  render: function() {
-    return (
-      &lt;div&gt;
-        &lt;ProfilePic username={this.props.username} /&gt;
-        &lt;ProfileLink username={this.props.username} /&gt;
-      &lt;/div&gt;
-    );
-  }
-});</p>
-
-<p>var ProfilePic = React.createClass({
-  render: function() {
-    return (
-      &lt;img src={‘https://graph.facebook.com/’ + this.props.username + ‘/picture’} /&gt;
-    );
-  }
-});</p>
-
-<p>var ProfileLink = React.createClass({
-  render: function() {
-    return (
-      &lt;a href={‘https://www.facebook.com/’ + this.props.username}&gt;
-        {this.props.username}
-      &lt;/a&gt;
-    );
-  }
-});</p>
-
-<p>React.render(</p>
-<avatar username="pwh" />
-<p>,
-  document.getElementById(‘example’)
-);
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> Avatar = React.createClass({
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      <span style="color:#070;font-weight:bold">&lt;div&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        <span style="color:#070;font-weight:bold">&lt;ProfilePic</span> <span style="color:#b48">username</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.props.username</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>        <span style="color:#070;font-weight:bold">&lt;ProfileLink</span> <span style="color:#b48">username</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.props.username</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#070;font-weight:bold">/&gt;</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    );
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  }
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>});
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#080;font-weight:bold">var</span> ProfilePic = React.createClass({
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>      &lt;img src={<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">https://graph.facebook.com/</span><span style="color:#710">'</span></span> + <span style="color:#950">this</span>.props.username + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/picture</span><span style="color:#710">'</span></span>} /&gt;
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    );
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>  }
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>});
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="color:#080;font-weight:bold">var</span> ProfileLink = React.createClass({
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>      <span style="color:#070;font-weight:bold">&lt;a</span> <span style="color:#b48">href</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">https://www.facebook.com/</span><span style="color:#710">'</span></span> <span style="color:#F00;background-color:#FAA">+</span> <span style="color:#b48">this.props.username</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>        {this.props.username}
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>      <span style="color:#070;font-weight:bold">&lt;/a&gt;</span>
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>    );
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>  }
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>});
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>React.render(
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>  <span style="color:#070;font-weight:bold">&lt;Avatar</span> <span style="color:#b48">username</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pwh</span><span style="color:#710">&quot;</span></span> <span style="color:#070;font-weight:bold">/&gt;</span>,
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>  document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>);
+</pre></div>
+</div>
+</div>
 
 <h2 id="ownership">Ownership</h2>
 
@@ -340,9 +349,11 @@ var Avatar = React.createClass({
 
 <p>When you create a React component instance, you can include additional React components or JavaScript expressions between the opening and closing tags like this:</p>
 
-<p>```javascript</p>
-<parent><child /></parent>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;Parent&gt;</span><span style="color:#070;font-weight:bold">&lt;Child</span> <span style="color:#070;font-weight:bold">/&gt;</span><span style="color:#070;font-weight:bold">&lt;/Parent&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p><code>Parent</code> can read its children by accessing the special <code>this.props.children</code> prop. <strong><code>this.props.children</code> is an opaque data structure:</strong> use the <a href="/react/docs/top-level-api.html#react.children">React.Children utilities</a> to manipulate them.</p>
 
@@ -350,17 +361,19 @@ var Avatar = React.createClass({
 
 <p><strong>Reconciliation is the process by which React updates the DOM with each new render pass.</strong> In general, children are reconciled according to the order in which they are rendered. For example, suppose two render passes generate the following respective markup:</p>
 
-<p>```html
-// Render Pass 1</p>
-<card>
-  <p>Paragraph 1</p>
-  <p>Paragraph 2</p>
-</card>
-<p>// Render Pass 2</p>
-<card>
-  <p>Paragraph 2</p>
-</card>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>// Render Pass 1
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#070;font-weight:bold">&lt;Card&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#070;font-weight:bold">&lt;p&gt;</span>Paragraph 1<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#070;font-weight:bold">&lt;p&gt;</span>Paragraph 2<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#070;font-weight:bold">&lt;/Card&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>// Render Pass 2
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#070;font-weight:bold">&lt;Card&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#070;font-weight:bold">&lt;p&gt;</span>Paragraph 2<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#070;font-weight:bold">&lt;/Card&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <p>Intuitively, <code>&lt;p&gt;Paragraph 1&lt;/p&gt;</code> was removed. Instead, React will reconcile the DOM by changing the text content of the first child and destroying the last child. React reconciles according to the <em>order</em> of the children.</p>
 
@@ -370,77 +383,83 @@ var Avatar = React.createClass({
 
 <p>In most cases, this can be sidestepped by hiding elements instead of destroying them:</p>
 
-<p>```html
-// Render Pass 1</p>
-<card>
-  <p>Paragraph 1</p>
-  <p>Paragraph 2</p>
-</card>
-<p>// Render Pass 2</p>
-<card>
-  &lt;p style={{display: 'none'}}&gt;Paragraph 1
-  <p>Paragraph 2</p>
-</card>
-<p>```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>// Render Pass 1
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#070;font-weight:bold">&lt;Card&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#070;font-weight:bold">&lt;p&gt;</span>Paragraph 1<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#070;font-weight:bold">&lt;p&gt;</span>Paragraph 2<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#070;font-weight:bold">&lt;/Card&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>// Render Pass 2
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#070;font-weight:bold">&lt;Card&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#070;font-weight:bold">&lt;p</span> <span style="color:#b48">style</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">display:</span> <span style="color:#F00;background-color:#FAA">'</span><span style="color:#b48">none</span><span style="color:#F00;background-color:#FAA">'</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>Paragraph 1<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#070;font-weight:bold">&lt;p&gt;</span>Paragraph 2<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#070;font-weight:bold">&lt;/Card&gt;</span>
+</pre></div>
+</div>
+</div>
 
 <h3 id="dynamic-children">Dynamic Children</h3>
 
 <p>The situation gets more complicated when the children are shuffled around (as in search results) or if new components are added onto the front of the list (as in streams). In these cases where the identity and state of each child must be maintained across render passes, you can uniquely identify each child by assigning it a <code>key</code>:</p>
 
-<p><code>javascript
-  render: function() {
-    var results = this.props.results;
-    return (
-      &lt;ol&gt;
-        {results.map(function(result) {
-          return &lt;li key={result.id}&gt;{result.text}&lt;/li&gt;;
-        })}
-      &lt;/ol&gt;
-    );
-  }
-</code></p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">var</span> results = <span style="color:#950">this</span>.props.results;
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      <span style="color:#070;font-weight:bold">&lt;ol&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        {results.map(function(result) {
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>          return <span style="color:#070;font-weight:bold">&lt;li</span> <span style="color:#b48">key</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">result.id</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>{result.text}<span style="color:#070;font-weight:bold">&lt;/li&gt;</span>;
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        })}
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span style="color:#070;font-weight:bold">&lt;/ol&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    );
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  }
+</pre></div>
+</div>
+</div>
 
 <p>When React reconciles the keyed children, it will ensure that any child with <code>key</code> will be reordered (instead of clobbered) or destroyed (instead of reused).</p>
 
 <p>The <code>key</code> should <em>always</em> be supplied directly to the components in the array, not to the container HTML child of each component in the array:</p>
 
-<p>```javascript
-// WRONG!
-var ListItemWrapper = React.createClass({
-  render: function() {
-    return &lt;li key={this.props.data.id}&gt;{this.props.data.text}&lt;/li&gt;;
-  }
-});
-var MyComponent = React.createClass({
-  render: function() {
-    return (
-      &lt;ul&gt;
-        {this.props.results.map(function(result) {
-          return &lt;ListItemWrapper data={result}/&gt;;
-        })}
-      &lt;/ul&gt;
-    );
-  }
-});</p>
-
-<p>// Correct :)
-var ListItemWrapper = React.createClass({
-  render: function() {
-    return &lt;li&gt;{this.props.data.text}&lt;/li&gt;;
-  }
-});
-var MyComponent = React.createClass({
-  render: function() {
-    return (
-      &lt;ul&gt;
-        {this.props.results.map(function(result) {
-           return &lt;ListItemWrapper key={result.id} data={result}/&gt;;
-        })}
-      &lt;/ul&gt;
-    );
-  }
-});
-```</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777">// WRONG!</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">var</span> ListItemWrapper = React.createClass({
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;li</span> <span style="color:#b48">key</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">this.props.data.id</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">&gt;</span>{this.props.data.text}<span style="color:#070;font-weight:bold">&lt;/li&gt;</span>;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  }
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>});
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">var</span> MyComponent = React.createClass({
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      <span style="color:#070;font-weight:bold">&lt;ul&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>        {this.props.results.map(function(result) {
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>          return <span style="color:#070;font-weight:bold">&lt;ListItemWrapper</span> <span style="color:#b48">data</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">result</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>        })}
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>      <span style="color:#070;font-weight:bold">&lt;/ul&gt;</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    );
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  }
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>});
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#777">// Correct :)</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="color:#080;font-weight:bold">var</span> ListItemWrapper = React.createClass({
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#070;font-weight:bold">&lt;li&gt;</span>{this.props.data.text}<span style="color:#070;font-weight:bold">&lt;/li&gt;</span>;
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  }
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>});
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="color:#080;font-weight:bold">var</span> MyComponent = React.createClass({
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>  <span style="color:#06B;font-weight:bold">render</span>: <span style="color:#080;font-weight:bold">function</span>() {
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>    <span style="color:#080;font-weight:bold">return</span> (
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>      <span style="color:#070;font-weight:bold">&lt;ul&gt;</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>        {this.props.results.map(function(result) {
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>           return <span style="color:#070;font-weight:bold">&lt;ListItemWrapper</span> <span style="color:#b48">key</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">result.id</span><span style="color:#F00;background-color:#FAA">}</span> <span style="color:#b48">data</span>=<span style="color:#F00;background-color:#FAA">{</span><span style="color:#700">result</span><span style="color:#F00;background-color:#FAA">}</span><span style="color:#070;font-weight:bold">/&gt;</span>;
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>        })}
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>      <span style="color:#070;font-weight:bold">&lt;/ul&gt;</span>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>    );
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>  }
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>});
+</pre></div>
+</div>
+</div>
 
 <p>You can also key children by passing a ReactFragment object. See <a href="create-fragment.html">Keyed Fragments</a> for more details.</p>
 

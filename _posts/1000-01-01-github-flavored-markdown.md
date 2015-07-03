@@ -70,11 +70,10 @@ help-doc/
 - 如何让 Jekyll 输出类似 https://help.github.com/categories/bootcamp/ 这样的分类索引页？
 分多个步骤实现：
   - 在已有的，属于 bootcamp 这一类的帮助文档的 markdown 源码 Front Matter 中增加这段内容：
-
-```categories: ['bootcamp']```
+  ```categories: ['bootcamp']```
   至少要有一篇属于 bootcamp 分类的帮助文档，才能在首页上列出相关的分类。分类名称支持大写字母、小写字母、空格等，但真正存储到 Jekyll 模板系统的内存中时，**貌似**都会变为小写。
   - 编辑 _config.yml 文档，在其中增加这段定义 collection 的内容：
-```yml
+  ```yml
   collections:
     categories:
       output: true
@@ -82,8 +81,7 @@ help-doc/
 ```
   如果不定义这个，仅仅能在首页看到分类索引页的链接，但无法打开目标网页。
   - 在 ```_categories``` 目录下创建一个名为 ```bootcamp.md``` 的文件（文件名采用大写字母还是小写会造成不同效果，要注意），其内容如下：
-
-```markdown
+  ```markdown
 ---
 layout: category
 ---
@@ -95,38 +93,38 @@ layout: category
 ```
   如果不定义这个，或者文件名与分类名不一致，仍然会出现导航中有分类索引页的链接，但实际点不开的情况。如果想定义别的分类，比如 ```manage-organization``` 分类，仍然按这个步骤来做，文件内容不变，只有文件名需要改为 ```manage-organization.md``` 
   - 在 ```_layouts``` 目录下创建一个名为 ```category.html``` 的网页布局文件，其内容如下：
-```html
+  ```html
 ---
 layout: default
 ---
 
-{% assign page-title-array=page.url | split:'/' %}
-{% assign page-title=page-title-array[2] | replace:'-',' ' | capitalize %}
+{{ "{% assign page-title-array=page.url | split:'/' " }}%}
+{{ "{% assign page-title=page-title-array[2] | replace:'-',' ' | capitalize " }}%}
 
-<h1>Category / {{ page-title }}</h1>
+<h1>Category / {{ "{{ page-title" }}}}</h1>
 
-{{ content }}
+{{ "{{ content" }}}}
 ```
   单个分类索引网页需要引用这个网页布局文件。
   - 在 ```_include``` 目录下创建一个名为 ```category-articles.html``` 的包含文件，其内容如下：
-```html
+  ```html
 <ul>
-  {% for post in include.which-cat %}
+  {{ "{% for post in include.which-cat" }}%}
     <li>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+      <a class='post-link' href='{{ "{{ post.url | prepend: site.baseurl | prepend: site.url "}}}}'>{{ "{{ post.title" }}}}</a>
     </li>
-  {% endfor %}
+  {{ "{% endfor" }}%}
 </ul>
 ```
   单个分类索引网页需要引用这个网页包含文件。
-  关于 ```% include tmpl.html var-name=sth %``` 和 ``` include.var-name ``` 这种特殊语法的介绍，请参考 http://jekyllrb.com/docs/templates/ 中的 **ProTip：Use variables as file name**
+  关于 ```{{ "{% include tmpl.html var-name=sth" }}%}``` 和 ```{{ "{{ include.var-name" }}}}``` 这种特殊语法的介绍，请参考 http://jekyllrb.com/docs/templates/ 中的 **ProTip：Use variables as file name**
 
 ----
 
 - 如何利用 Jekyll 输出类似于 https://help.github.com/articles/creating-a-new-organization-account/ 这样的 “子文档列表”？
   首先要在 ```_posts``` 目录下创建一个独立的父帮助文档：```2015-02-10-creating-a-new-organization-account.md```，然后进行下列操作步骤：
   - 修改 ```_config.yml``` 文件内容，增加一个对应的 collection：
-```yml
+  ```yml
 collections:
   categories:
     output: true
@@ -136,7 +134,7 @@ collections:
     permalink: /articles/:title/  # 子文档的超链接，以 /articles/xxx-xxx-xxx/ 的方式输出
 ```
   - 在独立帮助文档 ```2015-02-10-creating-a-new-organization-account.md``` 的 markdown 源码末尾处增加一段获取子文档列表的代码：
-```markdown
+  ```markdown
 ---
 layout: post
 categories: ['Setting up and managing organizations and teams']
@@ -151,14 +149,14 @@ You can create a new organization by either setting up a new organization or con
 ```
   - 在 jekyll 的根目录下创建一个新的 collection 目录： ```_creating_a_new_organization_account``` ，这里单词之间必须用 ```_``` 分隔。
   - 在新创建的 collection 目录下增加一系列子文档，均以 markdown 文档方式给出。
-```
+  ```
 help-doc/
 ├── _creating_a_new_organization_account
 │   ├── 2015-02-08-creating-a-new-organization-from-scratch.md
 │   └── 2015-02-09-about-organizations.md
 ```
   - 在分类索引页的包含文件 ```_include/category-articles.html``` 中增加下列内容
-```html
+  ```html
 <ul>
   {% for post in include.which-cat %}
     <li>
@@ -175,11 +173,11 @@ help-doc/
 </ul>
 ```
   - 在 ```_include``` 目录下增加一个名为 ```sub-articles.html``` 的包含文件，其内容如下
-```html
+  ```html
 <ul>
-  {% for post in include.which-coll %}
-    <li><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></li>
-  {% endfor %}
+  {{ "{% for post in include.which-coll" }}%}
+    <li><a class='post-link' href='{{ "{{ post.url | prepend: site.baseurl | prepend: site.url" }}}}'>{{ "{{ post.title" }}}}</a></li>
+  {{ "{% endfor" }}%}
 </ul>
 ```
   分类索引文件和独立的父文档文件都需要引用这个包含文件。
@@ -189,11 +187,10 @@ help-doc/
 - 如何实现 github help 文档中的 ```conrefs``` 内容复用？
   - 首先在 jekyll 的源码目录下创建一个 ```_data``` 目录
   - 在 ```_data``` 目录下创建 ```conrefs.yml``` 文件，其内容根据实际需要而定
-
-```yml
+  ```yml
 repositories:
   create-new:
-    1. In the upper-right corner of any page, click {{ octicon-plus }}, and then click **New repository**.
+    1. In the upper-right corner of any page, click {{ "{{ octicon-plus" }}}}, and then click **New repository**.
       ![New repository menu](https://help.github.com/assets/images/help/repository/repo-create.png)
 
 wiki:
@@ -202,12 +199,12 @@ wiki:
 ```
   这些就是未来将会被复用的内容片段，只要修改 ```conrefs.yml``` 文件，并且用 jekyll 重新 build 全站文档，就可以做到一处修改多处生效。
   - 在实际的帮助文档的 markdown 源码中引用这些片段：
-```markdown
+  ```markdown
 ### Create a new repository on GitHub                                                                 
 {{ site.data.conrefs.repositories.create-new }}
 2. 
 ![Repository name field](/assets/images/help/repository/create-repository-name.png)Create a short, memorable name for your repository. For example, "hello-world".                                                     
 ```
-
 将会被替换为下图所示的样子
 ![](http://i.teamkn.com/i/qhSuTgON.png)
+
