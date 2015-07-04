@@ -40,3 +40,4 @@ gems:
 - jekyll-redirect-from
 #- jekyll-lunr-js-search
 react_version: 0.14.0-alpha
+exclude: ['archive']
