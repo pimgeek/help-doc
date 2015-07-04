@@ -3,8 +3,8 @@
 	<channel>
 		<title>React</title>
 		<description>A JavaScript library for building user interfaces</description>
-		<link>https://facebook.github.io/react</link>
-		<atom:link href="https://facebook.github.io/react/feed.xml" rel="self" type="application/rss+xml" />
+		<link>/help-doc/v008</link>
+		<atom:link href="/help-doc/v008/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>GFM</title>
@@ -232,8 +232,8 @@ create-new:
 &lt;/ol&gt;
 </description>
 				<pubDate>3000-01-01T00:00:00-08:00</pubDate>
-				<link>https://facebook.github.io/react/blog/3000/01/01/gfm.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/3000/01/01/gfm.html</guid>
+				<link>/help-doc/v008/blog/3000/01/01/gfm.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/3000/01/01/gfm.html</guid>
 			</item>
 		
 			<item>
@@ -257,8 +257,8 @@ create-new:
 &lt;p&gt;We&amp;#39;ll be deprecating JSXTransformer, however the current version will still be available from various CDNs and Bower.&lt;/p&gt;
 </description>
 				<pubDate>2015-06-12T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html</guid>
+				<link>/help-doc/v008/blog/2015/06/12/deprecating-jstransform-and-react-tools.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/06/12/deprecating-jstransform-and-react-tools.html</guid>
 			</item>
 		
 			<item>
@@ -284,8 +284,8 @@ create-new:
 &lt;iframe width=&quot;650&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/mOyoTUETmSM&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 </description>
 				<pubDate>2015-05-22T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/05/22/react-native-release-process.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/05/22/react-native-release-process.html</guid>
+				<link>/help-doc/v008/blog/2015/05/22/react-native-release-process.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/05/22/react-native-release-process.html</guid>
 			</item>
 		
 			<item>
@@ -325,8 +325,8 @@ Minified build for production: &lt;a href=&quot;https://fb.me/react-with-addons-
 &lt;/ul&gt;
 </description>
 				<pubDate>2015-05-08T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/05/08/react-v0.13.3.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/05/08/react-v0.13.3.html</guid>
+				<link>/help-doc/v008/blog/2015/05/08/react-v0.13.3.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/05/08/react-v0.13.3.html</guid>
 			</item>
 		
 			<item>
@@ -419,8 +419,8 @@ Minified build for production: &lt;a href=&quot;https://fb.me/react-with-addons-
 &lt;p&gt;Over the coming months, we will share more technical details about GraphQL, including additional language features, tools that support it, and how it is built and used at Facebook. These posts will culminate in a formal specification of GraphQL to guide implementors across various languages and platforms. We also plan on releasing a reference implementation in the summer, in order to provide a basis for custom deployments and a platform for experimentation. We&amp;#39;re incredibly excited to share this system and work with the open source community to improve it.&lt;/p&gt;
 </description>
 				<pubDate>2015-05-01T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html</guid>
+				<link>/help-doc/v008/blog/2015/05/01/graphql-introduction.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/05/01/graphql-introduction.html</guid>
 			</item>
 		
 			<item>
@@ -471,8 +471,8 @@ Minified build for production: &lt;a href=&quot;https://fb.me/react-with-addons-
 &lt;/ul&gt;
 </description>
 				<pubDate>2015-04-18T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/04/18/react-v0.13.2.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/04/18/react-v0.13.2.html</guid>
+				<link>/help-doc/v008/blog/2015/04/18/react-v0.13.2.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/04/18/react-v0.13.2.html</guid>
 			</item>
 		
 			<item>
@@ -496,8 +496,8 @@ Minified build for production: &lt;a href=&quot;https://fb.me/react-with-addons-
 &lt;p&gt;In addition to supporting pull requests, issues, and general improvements, we&amp;#39;re also working hard on our internal React Native integrations and on React Native for Android.&lt;/p&gt;
 </description>
 				<pubDate>2015-04-17T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/04/17/react-native-v0.4.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/04/17/react-native-v0.4.html</guid>
+				<link>/help-doc/v008/blog/2015/04/17/react-native-v0.4.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/04/17/react-native-v0.4.html</guid>
 			</item>
 		
 			<item>
@@ -559,8 +559,8 @@ Minified build for production: &lt;a href=&quot;https://fb.me/react-with-addons-
 &lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;Wow. Getting started with React Native might have been the smoothest experience I’ve ever had with a new developer product.&lt;/p&gt;&amp;mdash; Andreas Eldh (@eldh) &lt;a href=&quot;https://twitter.com/eldh/status/581186172094980096&quot;&gt;March 26, 2015&lt;/a&gt;&lt;/blockquote&gt;
 </description>
 				<pubDate>2015-03-30T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/03/30/community-roundup-26.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/03/30/community-roundup-26.html</guid>
+				<link>/help-doc/v008/blog/2015/03/30/community-roundup-26.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/03/30/community-roundup-26.html</guid>
 			</item>
 		
 			<item>
@@ -580,8 +580,8 @@ Minified build for production: &lt;a href=&quot;https://fb.me/react-with-addons-
 &lt;p&gt;To learn more, visit the &lt;a href=&quot;https://facebook.github.io/react-native/&quot;&gt;React Native website&lt;/a&gt;.&lt;/p&gt;
 </description>
 				<pubDate>2015-03-26T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/03/26/introducing-react-native.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/03/26/introducing-react-native.html</guid>
+				<link>/help-doc/v008/blog/2015/03/26/introducing-react-native.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/03/26/introducing-react-native.html</guid>
 			</item>
 		
 			<item>
@@ -772,8 +772,8 @@ Minified build for production: &lt;a href=&quot;https://fb.me/react-with-addons-
 &lt;p&gt;But Relay has many more tricks up its sleeve. For example, it&amp;#39;s built from the start to handle reads and writes, allowing for features like optimistic client updates with transactional rollback. Relay can also defer fetching select parts of queries, and it uses a local data store to avoid fetching the same data twice. These are all powerful features that we hope to explore in future posts.&lt;/p&gt;
 </description>
 				<pubDate>2015-03-19T00:00:00-07:00</pubDate>
-				<link>https://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html</link>
-				<guid isPermaLink="true">https://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html</guid>
+				<link>/help-doc/v008/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html</link>
+				<guid isPermaLink="true">/help-doc/v008/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html</guid>
 			</item>
 		
 	</channel>

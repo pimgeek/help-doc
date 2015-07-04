@@ -26,11 +26,3 @@
     title: Complementary Tools
   - id: examples
     title: Examples
-- title: Flux
-  items:
-  - id: flux-overview
-    title: Flux Overview
-    href: https://facebook.github.io/flux/docs/overview.html
-  - id: flux-todo-list
-    title: Flux TodoMVC Tutorial
-    href: https://facebook.github.io/flux/docs/todo-list.html
