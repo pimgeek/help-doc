@@ -1,8 +1,8 @@
 ---
 name: React
 description: A JavaScript library for building user interfaces
-url: https://facebook.github.io
-baseurl: "/react"
+url: https://pimgeek.github.io
+baseurl: "/help-doc/v008"
 source: _src
 destination: v008
 permalink: "/blog/:year/:month/:day/:title.html"
