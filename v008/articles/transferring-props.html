@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Transferring Props | React</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Transferring Props | React">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/help-doc/v008/articles/transferring-props.html">
+  <meta property="og:image" content="/help-doc/v008/img/logo_og.png">
+  <meta property="og:description" content="A JavaScript library for building user interfaces">
+  <meta property="fb:app_id" content="623268441017527">
+
+  <link rel="shortcut icon" href="/help-doc/v008/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="React" href="/help-doc/v008/feed.xml">
+
+  <link rel="stylesheet" href="/help-doc/v008/css/syntax.css">
+  <link rel="stylesheet" href="/help-doc/v008/css/codemirror.css">
+  <link rel="stylesheet" href="/help-doc/v008/css/react.css">
+
+  <script type="text/javascript" src="//use.typekit.net/vqa1hcx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="/help-doc/v008/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/es5-sham.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/help-doc/v008/js/codemirror.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/javascript.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/react.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/JSXTransformer.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/live_editor.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/help-doc/v008/index.html">
+          <img class="nav-logo" src="/help-doc/v008/img/logo.svg" width="36" height="36">
+          React
+        </a>
+        <ul class="nav-site nav-site-internal">
+          <li><a href="/help-doc/v008/docs/getting-started.html">Docs</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    
+
+    <section class="content wrap documentationContent">
+  <div style="float:left">
+
+  
+  <div class='category'>
+    <div class='name'>
+      <a href="/help-doc/v008/categories/guides">Guides</a>
+    </div>
+    <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/why-react.html">Why React?</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/displaying-data.html">Displaying Data</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-in-depth.html">JSX in Depth</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-spread.html">JSX Spread</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-gotchas.html">JSX Gotchas</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/multiple-components.html">Multiple Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/reusable-components.html">Reusable Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/transferring-props.html">Transferring Props</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/forms.html">Forms</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/working-with-the-browser.html">Working with the Browser</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/more-about-refs.html">More About Refs</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/tooling-integration.html">Tooling Integration</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/addons.html">Addons</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/animation.html">Animation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/class-name-manipulation.html">Class Name Manipulation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/test-utilities.html">Test Utilities</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/clone-with-props.html">Clone with Props</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/create-fragment.html">Create Fragment</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/immutability-helpers.html">Immutability Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/pure-render-mixin.html">Pure Render Mixin</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/performance-tools.html">Performance Tools</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/advanced-performance.html">Advanced Performance</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  <div class="inner-content">
+
+    <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v008 前缀 -->
+<div id="search">
+  <h2>
+  <form action="/help-doc/v008/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+  </form>
+  </h2>
+</div>
+<section id="search-results" style="display: none;">
+  <h3>Search results</h3>
+  <div class="entries">
+  </div>
+</section>
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
+<script src="/help-doc/v008/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/help-doc/v008/js/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
+
+
+    <h1>
+      Transferring Props
+      <a class="edit-page-link" href="https://github.com/facebook/react/tree/master/docs/_posts/3006-01-01-transferring-props.md" target="_blank">Edit on GitHub</a>
+    </h1>
+    <div class="subHeader"></div>
+
+    <p>It&#39;s a common pattern in React to wrap a component in an abstraction. The outer component exposes a simple property to do something that might have more complex implementation details.</p>
+
+<p>You can use <a href="/react/docs/jsx-spread.html">JSX spread attributes</a> to merge the old props with additional values:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span> <span class="nx">more</span><span class="o">=</span><span class="s2">&quot;values&quot;</span> <span class="o">/&gt;</span>
+</code></pre></div>
+<p>If you don&#39;t use JSX, you can use any object helper such as ES6 <code>Object.assign</code> or Underscore <code>_.extend</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Component</span><span class="p">,</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span> <span class="p">{</span> <span class="nx">more</span><span class="o">:</span> <span class="s1">&#39;values&#39;</span> <span class="p">}));</span>
+</code></pre></div>
+<p>The rest of this tutorial explains best practices. It uses JSX and experimental ES7 syntax.</p>
+<h2><a class="anchor" name="manual-transfer"></a>Manual Transfer <a class="hash-link" href="#manual-transfer">#</a></h2>
+<p>Most of the time you should explicitly pass the properties down. That ensures that you only expose a subset of the inner API, one that you know will work.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onClick</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">FancyCheckbox</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">)}</span><span class="o">&gt;</span>
+    <span class="nx">Hello</span> <span class="nx">world</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="err">/FancyCheckbox&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>But what about the <code>name</code> prop? Or the <code>title</code> prop? Or <code>onMouseOver</code>?</p>
+<h2><a class="anchor" name="transferring-with-...-in-jsx"></a>Transferring with <code>...</code> in JSX <a class="hash-link" href="#transferring-with-...-in-jsx">#</a></h2>
+<blockquote>
+<p>NOTE:</p>
+
+<p>In the example below, the <code>--harmony</code> flag is required as this syntax is an experimental ES7 syntax. If using the in-browser JSX transformer, simply open your script with <code>&lt;script type=&quot;text/jsx;harmony=true&quot;&gt;</code>. See the <a href="/react/docs/transferring-props.html#rest-and-spread-properties-...">Rest and Spread Properties ...</a> section below for more details.</p>
+</blockquote>
+
+<p>Sometimes it&#39;s fragile and tedious to pass every property along. In that case you can use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">destructuring assignment</a> with rest properties to extract a set of unknown properties.</p>
+
+<p>List out all the properties that you would like to consume, followed by <code>...other</code>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="p">{</span> <span class="nx">checked</span><span class="p">,</span> <span class="p">...</span><span class="nx">other</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+</code></pre></div>
+<p>This ensures that you pass down all the props EXCEPT the ones you&#39;re consuming yourself.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="p">{</span> <span class="nx">checked</span><span class="p">,</span> <span class="p">...</span><span class="nx">other</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="c1">// `other` contains { onClick: console.log } but not the checked property</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="p">{...</span><span class="nx">other</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span> <span class="o">/&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">FancyCheckbox</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">)}</span><span class="o">&gt;</span>
+    <span class="nx">Hello</span> <span class="nx">world</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="err">/FancyCheckbox&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>NOTE:</p>
+
+<p>In the example above, the <code>checked</code> prop is also a valid DOM attribute. If you didn&#39;t use destructuring in this way you might inadvertently pass it along.</p>
+</blockquote>
+
+<p>Always use the destructuring pattern when transferring unknown <code>other</code> props.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="c1">// ANTI-PATTERN: `checked` would be passed down to the inner component</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span> <span class="o">/&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div><h2><a class="anchor" name="consuming-and-transferring-the-same-prop"></a>Consuming and Transferring the Same Prop <a class="hash-link" href="#consuming-and-transferring-the-same-prop">#</a></h2>
+<p>If your component wants to consume a property but also wants to pass it along, you can repass it explicitly with <code>checked={checked}</code>. This is preferable to passing the full <code>this.props</code> object since it&#39;s easier to refactor and lint.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="p">{</span> <span class="nx">checked</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="p">...</span><span class="nx">other</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">fancyTitle</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;X &#39;</span> <span class="o">+</span> <span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;O &#39;</span> <span class="o">+</span> <span class="nx">title</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="p">{...</span><span class="nx">other</span><span class="p">}</span>
+          <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">checked</span><span class="p">}</span>
+          <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span>
+          <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span>
+        <span class="o">/&gt;</span>
+        <span class="p">{</span><span class="nx">fancyTitle</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/label&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>NOTE:</p>
+
+<p>Order matters. By putting the <code>{...other}</code> before your JSX props you ensure that the consumer of your component can&#39;t override them. In the example above we have guaranteed that the input will be of type <code>&quot;checkbox&quot;</code>.</p>
+</blockquote>
+<h2><a class="anchor" name="rest-and-spread-properties-..."></a>Rest and Spread Properties <code>...</code> <a class="hash-link" href="#rest-and-spread-properties-...">#</a></h2>
+<p>Rest properties allow you to extract the remaining properties from an object into a new object. It excludes every other property listed in the destructuring pattern.</p>
+
+<p>This is an experimental implementation of an <a href="https://github.com/sebmarkbage/ecmascript-rest-spread">ES7 proposal</a>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="p">...</span><span class="nx">z</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">a</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mi">4</span> <span class="p">};</span>
+<span class="nx">x</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="nx">y</span><span class="p">;</span> <span class="c1">// 2</span>
+<span class="nx">z</span><span class="p">;</span> <span class="c1">// { a: 3, b: 4 }</span>
+</code></pre></div>
+<blockquote>
+<p>Note:</p>
+
+<p>Use the <a href="https://www.npmjs.com/package/react-tools">JSX command-line tool</a> with the <code>--harmony</code> flag to activate the experimental ES7 syntax.</p>
+</blockquote>
+<h2><a class="anchor" name="transferring-with-underscore"></a>Transferring with Underscore <a class="hash-link" href="#transferring-with-underscore">#</a></h2>
+<p>If you don&#39;t use JSX, you can use a library to achieve the same pattern. Underscore supports <code>_.omit</code> to filter out properties and <code>_.extend</code> to copy properties onto a new object.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">checked</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">other</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">omit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span> <span class="s1">&#39;checked&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="nx">other</span><span class="p">,</span> <span class="p">{</span> <span class="nx">className</span><span class="o">:</span> <span class="nx">fancyClass</span> <span class="p">}))</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+
+    <div class="docs-prevnext">
+      
+      
+        <a class="docs-next" href="/react/docs/{"layout"=>"post", "categories"=>["guides"], "title"=>"Forms", "prev-post"=>"transferring-props.html", "next-post"=>"working-with-the-browser.html", "url"=>"/articles/forms.html", "dir"=>"/articles", "date"=>3007-01-01 00:00:00 -0800, "id"=>"/articles/forms", "next"=><Post: /articles/working-with-the-browser>, "previous"=><Post: /articles/transferring-props>, "tags"=>[], "path"=>"_posts/3007-01-01-forms.md", "content"=>"Form components such as `<input>`, `<textarea>`, and `<option>` differ from other native components because they can be mutated via user interactions. These components provide interfaces that make it easier to manage forms in response to user interactions.\n\nFor information on events on `<form>` see [Form Events](/react/docs/events.html#form-events).\n\n## Interactive Props\n\nForm components support a few props that are affected via user interactions:\n\n* `value`, supported by `<input>` and `<textarea>` components.\n* `checked`, supported by `<input>` components of type `checkbox` or `radio`.\n* `selected`, supported by `<option>` components.\n\nIn HTML, the value of `<textarea>` is set via children. In React, you should use `value` instead.\n\nForm components allow listening for changes by setting a callback to the `onChange` prop. The `onChange` prop works across browsers to fire in response to user interactions when:\n\n* The `value` of `<input>` or `<textarea>` changes.\n* The `checked` state of `<input>` changes.\n* The `selected` state of `<option>` changes.\n\nLike all DOM events, the `onChange` prop is supported on all native components and can be used to listen to bubbled change events.\n\n> Note:\n>\n> For `<input>` and `<textarea>`, `onChange` supersedes — and should generally be used instead of — the DOM's built-in [`oninput`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput) event handler.\n\n\n## Controlled Components\n\nAn `<input>` with `value` set is a *controlled* component. In a controlled `<input>`, the value of the rendered element will always reflect the `value` prop. For example:\n\n```javascript\n  render: function() {\n    return <input type=\"text\" value=\"Hello!\" />;\n  }\n```\n\nThis will render an input that always has a value of `Hello!`. Any user input will have no effect on the rendered element because React has declared the value to be `Hello!`. If you wanted to update the value in response to user input, you could use the `onChange` event:\n\n```javascript\n  getInitialState: function() {\n    return {value: 'Hello!'};\n  },\n  handleChange: function(event) {\n    this.setState({value: event.target.value});\n  },\n  render: function() {\n    var value = this.state.value;\n    return <input type=\"text\" value={value} onChange={this.handleChange} />;\n  }\n```\n\nIn this example, we are simply accepting the newest value provided by the user and updating the `value` prop of the `<input>` component. This pattern makes it easy to implement interfaces that respond to or validate user interactions. For example:\n\n```javascript\n  handleChange: function(event) {\n    this.setState({value: event.target.value.substr(0, 140)});\n  }\n```\n\nThis would accept user input but truncate the value to the first 140 characters.\n\n\n## Uncontrolled Components\n\nAn `<input>` that does not supply a `value` (or sets it to `null`) is an *uncontrolled* component. In an uncontrolled `<input>`, the value of the rendered element will reflect the user's input. For example:\n\n```javascript\n  render: function() {\n    return <input type=\"text\" />;\n  }\n```\n\nThis will render an input that starts off with an empty value. Any user input will be immediately reflected by the rendered element. If you wanted to listen to updates to the value, you could use the `onChange` event just like you can with controlled components.\n\nIf you want to initialize the component with a non-empty value, you can supply a `defaultValue` prop. For example:\n\n```javascript\n  render: function() {\n    return <input type=\"text\" defaultValue=\"Hello!\" />;\n  }\n```\n\nThis example will function much like the **Controlled Components** example above.\n\nLikewise, `<input>` supports `defaultChecked` and `<select>` supports `defaultValue`.\n\n\n## Advanced Topics\n\n\n### Why Controlled Components?\n\nUsing form components such as `<input>` in React presents a challenge that is absent when writing traditional form HTML. For example, in HTML:\n\n```html\n  <input type=\"text\" name=\"title\" value=\"Untitled\" />\n```\n\nThis renders an input *initialized* with the value, `Untitled`. When the user updates the input, the node's value *property* will change. However, `node.getAttribute('value')` will still return the value used at initialization time, `Untitled`.\n\nUnlike HTML, React components must represent the state of the view at any point in time and not only at initialization time. For example, in React:\n\n```javascript\n  render: function() {\n    return <input type=\"text\" name=\"title\" value=\"Untitled\" />;\n  }\n```\n\nSince this method describes the view at any point in time, the value of the text input should *always* be `Untitled`.\n\n\n### Why Textarea Value?\n\nIn HTML, the value of `<textarea>` is usually set using its children:\n\n```html\n  <!-- counterexample: DO NOT DO THIS! -->\n  <textarea name=\"description\">This is the description.</textarea>\n```\n\nFor HTML, this easily allows developers to supply multiline values. However, since React is JavaScript, we do not have string limitations and can use `\\n` if we want newlines. In a world where we have `value` and `defaultValue`, it is ambiguous what role children play. For this reason, you should not use children when setting `<textarea>` values:\n\n```javascript\n  <textarea name=\"description\" value=\"This is a description.\" />\n```\n\nIf you *do* decide to use children, they will behave like `defaultValue`.\n\n\n### Why Select Value?\n\nThe selected `<option>` in an HTML `<select>` is normally specified through that option's `selected` attribute. In React, in order to make components easier to manipulate, the following format is adopted instead:\n\n```javascript\n  <select value=\"B\">\n    <option value=\"A\">Apple</option>\n    <option value=\"B\">Banana</option>\n    <option value=\"C\">Cranberry</option>\n  </select>\n```\n\nTo make an uncontrolled component, `defaultValue` is used instead.\n\n> Note:\n>\n> You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag: `<select multiple={true} value={['B', 'C']}>`.\n", "excerpt"=>"<p>Form components such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;option&gt;</code> differ from other native components because they can be mutated via user interactions. These components provide interfaces that make it easier to manage forms in response to user interactions.</p>\n"}">Next &rarr;</a>
+      
+    </div>
+  </div>
+</section>
+
+
+
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br>
+        <a href="/help-doc/v008/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;2015 Facebook Inc.<br>
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

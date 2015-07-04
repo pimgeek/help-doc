@@ -1,0 +1,24 @@
+<div style="float:left">
+{% for cat in site.categories reversed %}
+  {% assign cat_str = cat[0] %}
+  <div class='category'>
+    <div class='name'>
+      <a href="{{ cat_str | downcase | replace:' ','-' | prepend:'/categories/' | prepend: site.baseurl | prepend: site.url}}">{{ cat_str | capitalize }}</a>
+    </div>
+    <div class='articles'>
+      {% for post in site.categories[cat_str] reversed %}
+      <div class='article'>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        {% assign post-id = post.title | replace:' ','_' | downcase %}
+        {% if site.collections[post-id].label == post-id %}
+          {% assign coll-obj = site.collections[post-id].docs %}
+          {% include sub-articles.html which-coll=coll-obj %}
+        {% endif %}
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+</div>

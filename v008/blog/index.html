@@ -59,25 +59,25 @@
     <h3>Recent posts</h3>
     <ul>
       
-        <li><a href="/react/blog/3000/01/01/gfm.html">GFM</a></li>
+        <li><a href="/react/articles/advanced-performance.html">Advanced Performance</a></li>
       
-        <li><a href="/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html">Deprecating JSTransform and react-tools</a></li>
+        <li><a href="/react/articles/addons.html">Addons</a></li>
       
-        <li><a href="/react/blog/2015/05/22/react-native-release-process.html">React Native Release Process</a></li>
+        <li><a href="/react/articles/tooling-integration.html">Tooling Integration</a></li>
       
-        <li><a href="/react/blog/2015/05/08/react-v0.13.3.html">React v0.13.3</a></li>
+        <li><a href="/react/articles/working-with-the-browser.html">Working with the Browser</a></li>
       
-        <li><a href="/react/blog/2015/05/01/graphql-introduction.html">GraphQL Introduction</a></li>
+        <li><a href="/react/articles/forms.html">Forms</a></li>
       
-        <li><a href="/react/blog/2015/04/18/react-v0.13.2.html">React v0.13.2</a></li>
+        <li><a href="/react/articles/transferring-props.html">Transferring Props</a></li>
       
-        <li><a href="/react/blog/2015/04/17/react-native-v0.4.html">React Native v0.4</a></li>
+        <li><a href="/react/articles/reusable-components.html">Reusable Components</a></li>
       
-        <li><a href="/react/blog/2015/03/30/community-roundup-26.html">Community Round-up #26</a></li>
+        <li><a href="/react/articles/multiple-components.html">Multiple Components</a></li>
       
-        <li><a href="/react/blog/2015/03/26/introducing-react-native.html">Introducing React Native</a></li>
+        <li><a href="/react/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a></li>
       
-        <li><a href="/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html">Building The Facebook News Feed With Relay</a></li>
+        <li><a href="/react/articles/displaying-data.html">Displaying Data</a></li>
       
       <li><a href="/react/blog/all.html">All posts ...</a></li>
     </ul>
@@ -92,12 +92,12 @@
 
 <h1>
 
-  <a href="/react/blog/3000/01/01/gfm.html">GFM</a>
+  <a href="/react/articles/advanced-performance.html">Advanced Performance</a>
 
 </h1>
 
 <p class="meta">
-  January  1, 3000
+  January  1, 3011
   by
   
     
@@ -107,495 +107,547 @@
 <hr>
 
 <div class="post">
-  <p>jekyll + lunrjs 的调通方法已经在 #2 中描述过，所以这里只讲实现 github help 站点文档结构的步骤。</p>
-<h3><a class="anchor" name="jekyll-"></a>jekyll 环境说明 <a class="hash-link" href="#jekyll-">#</a></h3>
-<ul>
-<li>若无特别说明，所有形如 <code>YYYY-MM-DD-article-title.md</code> 文档的 Front Matter 中均含有 <code>title: Article Title</code>，而且 Front Matter 中的 title 与 <em>.md 文件名中的 title 严格对应（不区分大小写），</em>.md 中的 <code>-</code> 严格替换为 <code></code>。</li>
-<li>我使用的 jekyll 文件夹名为 <code>help-doc</code></li>
-<li>我使用的 jekyll 模板结构大概如下图所示
-<code>
-help-doc/
-├── _categories
-│   ├── bootcamp.md
-│   └── setting-up-and-managing-organizations-and-teams.md
-├── _creating_a_new_organization_account
-│   ├── 2015-02-08-creating-a-new-organization-from-scratch.md
-│   └── 2015-02-09-about-organizations.md
-├── css
-│   └── ...
-├── _data
-│   └── conrefs.yml
-├── fonts
-│   └── ...
-├── _includes
-│   ├── category-articles.html
-│   ├── footer.html
-│   ├── header.html
-│   ├── head.html
-│   ├── search.html
-│   ├── sidebar.html
-│   └── sub-articles.html
-├── _layouts
-│   ├── category.html
-│   ├── default.html
-│   ├── page.html
-│   └── post.html
-├── _posts
-│   ├── 2015-02-10-creating-a-new-organization-account.md
-│   ├── 2015-01-01-set-up-git.md
-│   └── 2015-01-02-create-a-repo.md
-├── _sass
-│   └── ...
-├── search
-│   └── index.html
-├── about.md
-├── _config.yml
-├── feed.xml
-└── index.html
-</code></li>
-</ul>
-<h3><a class="anchor" name="-jekyll--github-help-"></a>利用 jekyll 构建 github help 站点文档结构的步骤描述 <a class="hash-link" href="#-jekyll--github-help-">#</a></h3>
-<ul>
-<li>帮助文档的 markdown 源码要放在哪里，才能通过 Jekyll 输出到前端？
-先编写文档内容，然后按照 YYYY-MM-DD-help-topic.md 的文件格式命名，最后根据实际情况放进以下两个位置：
-
-<ul>
-<li>对于独立的帮助文档，直接放在 <code>_posts</code> 目录下</li>
-<li>对于“隶属于”某个独立父帮助文档的“子文档”，根据子文档的实际分类，放在形如 <code>_category_name</code> 这样的目录下</li>
-</ul></li>
-</ul>
-
-<hr>
-
-<ul>
-<li>如何让 Jekyll 输出类似 https://help.github.com/articles/set-up-git/ 这样的网址？
-编辑 _config.yml 文档，增加/修改这一行：
-<code>permalink: /articles/:title/</code></li>
-</ul>
-
-<hr>
-
-<ul>
-<li>如何让 Jekyll 输出类似 https://help.github.com/categories/bootcamp/ 这样的分类索引页？
-分多个步骤实现：
-
-<ul>
-<li>在已有的，属于 bootcamp 这一类的帮助文档的 markdown 源码 Front Matter 中增加这段内容：
-<code>categories: [&#39;bootcamp&#39;]</code>
-至少要有一篇属于 bootcamp 分类的帮助文档，才能在首页上列出相关的分类。分类名称支持大写字母、小写字母、空格等，但真正存储到 Jekyll 模板系统的内存中时，<strong>貌似</strong>都会变为小写。</li>
-<li>编辑 _config.yml 文档，在其中增加这段定义 collection 的内容：
-<code>yml
-collections:
-categories:
-output: true
-permalink: /categories/:path/
-</code>
-如果不定义这个，仅仅能在首页看到分类索引页的链接，但无法打开目标网页。</li>
-<li>在 <code>_categories</code> 目录下创建一个名为 <code>bootcamp.md</code> 的文件（文件名采用大写字母还是小写会造成不同效果，要注意），其内容如下：
-```markdown
----
-layout: category
----</li>
-</ul></li>
-</ul>
-
-<p>{% assign cat-title-array=page.url | split:&#39;/&#39;%}
-{% assign cat-title=cat-title-array[2] | replace:&#39;-&#39;,&#39; &#39;%}
-{% assign cat-obj=site.categories[cat-title]%}
-{% include category-articles.html which-cat=cat-obj%}<br>
-<code>
-  如果不定义这个，或者文件名与分类名不一致，仍然会出现导航中有分类索引页的链接，但实际点不开的情况。如果想定义别的分类，比如</code>manage-organization<code>分类，仍然按这个步骤来做，文件内容不变，只有文件名需要改为</code>manage-organization.md<code>
-  - 在</code>_layouts<code>目录下创建一个名为</code>category.html``` 的网页布局文件，其内容如下：</p>
-<h2><a class="anchor" name="-html"></a>  ```html <a class="hash-link" href="#-html">#</a></h2><h2><a class="anchor" name="layout-default"></a>layout: default <a class="hash-link" href="#layout-default">#</a></h2>
-<p>{% assign page-title-array=page.url | split:&#39;/&#39;%}
-{% assign page-title=page-title-array[2] | replace:&#39;-&#39;,&#39; &#39; | capitalize%}</p>
-
-<h1>Category / {{ page-title}}</h1>
-    
-
-<p>{{ content}}
-<code>
-  单个分类索引网页需要引用这个网页布局文件。
-  - 在</code>_include<code>目录下创建一个名为</code>category-articles.html<code>的包含文件，其内容如下：
-</code>html
-<ul>
-  {% for post in include.which-cat%}
-    <li>
-      <a class='post-link' href='{{ post.url | prepend: site.baseurl | prepend: site.url}}'>{{ post.title}}</a>
-    </li>
-  {% endfor%}
-</ul>
-<code>
-  单个分类索引网页需要引用这个网页包含文件。
-  关于</code>{% include tmpl.html var-name=sth%}<code>和</code>{{ include.var-name}}``` 这种特殊语法的介绍，请参考 http://jekyllrb.com/docs/templates/ 中的 <strong>ProTip：Use variables as file name</strong></p>
-
-<hr>
-
-<ul>
-<li>如何利用 Jekyll 输出类似于 https://help.github.com/articles/creating-a-new-organization-account/ 这样的 “子文档列表”？
-首先要在 <code>_posts</code> 目录下创建一个独立的父帮助文档：<code>2015-02-10-creating-a-new-organization-account.md</code>，然后进行下列操作步骤：
-
-<ul>
-<li>修改 <code>_config.yml</code> 文件内容，增加一个对应的 collection：
-<code>yml
-collections:
-categories:
-output: true
-permalink: /categories/:path/
-creating_a_new_organization_account:  # 这里是新增加的 collection，单词之间必须用</code>_<code>分隔
-output: true
-permalink: /articles/:title/  # 子文档的超链接，以 /articles/xxx-xxx-xxx/ 的方式输出
-</code></li>
-<li>在独立帮助文档 <code>2015-02-10-creating-a-new-organization-account.md</code> 的 markdown 源码末尾处增加一段获取子文档列表的代码：
-```markdown
----
-layout: post
-categories: [&#39;Setting up and managing organizations and teams&#39;]
----</li>
-</ul></li>
-</ul>
-
-<p>You can create a new organization by either setting up a new organization or converting an existing personal account into an organization.</p>
-
-<p>{% assign coll-title-array=page.url | split:&#39;/&#39;%}
-{% assign coll-title=coll-title-array[2] | replace:&#39;-&#39;,&#39;<em>&#39; | downcase%}
-{% assign coll-obj = site.collections[coll-title].docs%}
-{% include sub-articles.html which-coll=coll-obj%}
-<code>
-  - 在 jekyll 的根目录下创建一个新的 collection 目录：</code></em>creating<em>a</em>new<em>organization</em>account<code>，这里单词之间必须用</code><em><code>分隔。
-  - 在新创建的 collection 目录下增加一系列子文档，均以 markdown 文档方式给出。
-</code>
-help-doc/
-├── _creating</em>a<em>new</em>organization<em>account
-│   ├── 2015-02-08-creating-a-new-organization-from-scratch.md
-│   └── 2015-02-09-about-organizations.md
-<code>
-  - 在分类索引页的包含文件</code></em>include/category-articles.html<code>中增加下列内容
-</code>html
-<ul>
-  {% for post in include.which-cat%}
-    <li>
-      <a class='post-link' href='{{ post.url | prepend: site.baseurl | prepend: site.url}}'>{{ post.title}}</a>
-        &lt;!-- 如果当前文章有下属的子文章，就顺便列出它们 --&gt;
-        {% assign post-id = post.title | replace:&#39; &#39;,&#39;<em>&#39; | downcase%}
-        {% if site.collections[post-id].label == post-id%}
-          {% assign coll-obj = site.collections[post-id].docs%}
-          {% include sub-articles.html which-coll=coll-obj%}
-        {% endif%}
-       &lt;!-- 子文档列表功能 增加的代码部分结束 --&gt;
-    </li>
-  {% endfor%}
-</ul>
-<code>
-  - 在</code></em>include<code>目录下增加一个名为</code>sub-articles.html<code>的包含文件，其内容如下
-</code>html
-<ul>
-  {% for post in include.which-coll%}
-    <li><a class='post-link' href='{{ post.url | prepend: site.baseurl | prepend: site.url}}'>{{ post.title}}</a></li>
-  {% endfor%}
-</ul>
-```
-  分类索引文件和独立的父文档文件都需要引用这个包含文件。</p>
-
-<hr>
-
-<ul>
-<li>如何实现 github help 文档中的 <code>conrefs</code> 内容复用？
-
-<ul>
-<li>首先在 jekyll 的源码目录下创建一个 <code>_data</code> 目录</li>
-<li>在 <code>_data</code> 目录下创建 <code>conrefs.yml</code> 文件，其内容根据实际需要而定
-```yml
-repositories:
-create-new:
-1. In the upper-right corner of any page, click {{ octicon-plus}}, and then click <strong>New repository</strong>.
-<img src="https://help.github.com/assets/images/help/repository/repo-create.png" alt="New repository menu"></li>
-</ul></li>
-</ul>
-
-<p>wiki:
-  click-profile:
-    1. <img src="/assets/images/help/profile/top_right_avatar.png" alt="Profile photo">In the top right corner of any page, click your profile photo, then click <strong>Your profile</strong>.<br>
-<code>
-  这些就是未来将会被复用的内容片段，只要修改</code>conrefs.yml<code>文件，并且用 jekyll 重新 build 全站文档，就可以做到一处修改多处生效。
-  - 在实际的帮助文档的 markdown 源码中引用这些片段：
-</code>markdown</p>
-<h3><a class="anchor" name="create-a-new-repository-on-github"></a>Create a new repository on GitHub <a class="hash-link" href="#create-a-new-repository-on-github">#</a></h3>
-<ol>
-<li>In the upper-right corner of any page, click {{ octicon-plus&quot; }}, and then click <strong>New repository</strong>. <img src="https://help.github.com/assets/images/help/repository/repo-create.png" alt="New repository menu"></li>
-<li>
-<img src="/assets/images/help/repository/create-repository-name.png" alt="Repository name field">Create a short, memorable name for your repository. For example, &quot;hello-world&quot;.<br>
-```
-将会被替换为下图所示的样子
-<img src="http://i.teamkn.com/i/qhSuTgON.png" alt=""></li>
-</ol>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-
-<h1>
-
-  <a href="/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html">Deprecating JSTransform and react-tools</a>
-
-</h1>
-
-<p class="meta">
-  June 12, 2015
-  by
-  
-    <a href="https://twitter.com/zpao">Paul O’Shannessy</a>
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>Today we&#39;re announcing the deprecation of react-tools and JSTransform.</p>
-
-<p>As many people have noticed already, React and React Native have both switched their respective build systems to make use of <a href="http://babeljs.io/">Babel</a>. This replaced <a href="https://github.com/facebook/jstransform">JSTransform</a>, the source transformation tool that we wrote at Facebook. JSTransform has been really good for us over the past several years, however as the JavaScript language continues to evolve, the architecture we used has begun to show its age. We&#39;ve faced maintenance issues and lagged behind implementing new language features. Last year, Babel (previously 6to5) exploded onto the scene, implementing new features at an amazing pace. Since then it has evolved a solid plugin API, and implemented some of our non-standard language features (JSX and Flow type annotations).</p>
-
-<p>react-tools has always been a very thin wrapper around JSTransform. It has served as a great tool for the community to get up and running, but at this point we&#39;re ready to <a href="https://www.youtube.com/watch?v=moSFlvxnbgk">let it go</a>. We won&#39;t ship a new version for v0.14.</p>
-<h2><a class="anchor" name="migrating-to-babel"></a>Migrating to Babel <a class="hash-link" href="#migrating-to-babel">#</a></h2>
-<p>Many people in the React and broader JavaScript community have already adopted Babel. It has <a href="http://babeljs.io/docs/setup/">integrations with a number of tools</a>. Depending on your tool, you&#39;ll want to read up on the instructions.</p>
-
-<p>We&#39;ve been working with the Babel team as we started making use of it and we&#39;re confident that it will be the right tool to use with React.</p>
-<h2><a class="anchor" name="other-deprecations"></a>Other Deprecations <a class="hash-link" href="#other-deprecations">#</a></h2><h3><a class="anchor" name="esprima-fb"></a>esprima-fb <a class="hash-link" href="#esprima-fb">#</a></h3>
-<p>As a result of no longer maintaining JSTransform, we no longer have a need to maintain our Esprima fork (<a href="https://github.com/facebook/esprima/">esprima-fb</a>). The upstream Esprima and other esprima-based forks, like Espree, have been doing an excellent job of supporting new language features recently. If you have a need of an esprima-based parser, we encourage you to look into using one of those.</p>
-
-<p>Alternatively, if you need to parse JSX, take a look at <a href="https://github.com/marijnh/acorn">acorn</a> parser in combination with <a href="https://github.com/RReverser/acorn-jsx">acorn-jsx</a> plugin which is used inside of Babel and thus always supports the latest syntax.</p>
-<h3><a class="anchor" name="jsxtransformer"></a>JSXTransformer <a class="hash-link" href="#jsxtransformer">#</a></h3>
-<p>JSXTransformer is another tool we built specifically for consuming JSX in the browser. It was always intended as a quick way to prototype code before setting up a build process. It would look for <code>&lt;script&gt;</code> tags with <code>type=&quot;text/jsx&quot;</code> and then transform and run. This ran the same code that react-tools ran on the server. Babel ships with <a href="https://babeljs.io/docs/usage/browser/">a nearly identical tool</a>, which has already been integrated into <a href="https://jsbin.com/">JS Bin</a>.</p>
-
-<p>We&#39;ll be deprecating JSXTransformer, however the current version will still be available from various CDNs and Bower.</p>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-
-<h1>
-
-  <a href="/react/blog/2015/05/22/react-native-release-process.html">React Native Release Process</a>
-
-</h1>
-
-<p class="meta">
-  May 22, 2015
-  by
-  
-    <a href="https://twitter.com/vjeux">Vjeux</a>
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>The React Native release process have been a bit chaotic since we open sourced. It was unclear when new code was released, there was no changelog, we bumped the minor and patch version inconsistently and we often had to submit updates right after a release to fix a bad bug. In order to <em>move fast with stable infra</em>, we are introducing a real release process with a two-week release schedule.</p>
-
-<p>To explain how it works, let me walk you through an example. Today, Friday, we took the current state of master and put it on the 0.5-stable branch. We <a href="https://github.com/facebook/react-native/releases/tag/v0.5.0-rc">published 0.5.0-rc</a>, an RC (Release Candidate) when we cut the branch. For two weeks, we&#39;re going to let it stabilize and only cherry-pick critical bug fixes from master.</p>
-
-<p>Friday in two weeks, we&#39;re going to publish the 0.5.0 release, create the 0.6-stable branch and publish 0.6.0-rc as well.</p>
-
-<p>The release process is synchronized with Facebook&#39;s mobile release process. This means that everything in the open source release is also being shipped as part of all the Facebook apps that use React Native!</p>
-
-<p>You now have three ways to get React Native. You should chose the one you want based on the amount of risk you tolerate:</p>
-
-<ul>
-<li><strong>master</strong>: You have updates as soon as they are committed. This is if you want to live on the bleeding edge or want to submit pull requests.</li>
-<li><strong>rc</strong>: If you don&#39;t want to update every day and deal with many instabilities but want to have recent updates, this is your best shot.</li>
-<li><strong>release</strong>: This is the most stable version we offer. The trade-off is that it contains commits that are up to a month old.</li>
-</ul>
-
-<p>If you want more details, I highly recommend this video that explains how Facebook mobile release process works and why it was setup this way.</p>
-
-<iframe width="650" height="300" src="https://www.youtube.com/embed/mOyoTUETmSM" frameborder="0" allowfullscreen></iframe>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-
-<h1>
-
-  <a href="/react/blog/2015/05/08/react-v0.13.3.html">React v0.13.3</a>
-
-</h1>
-
-<p class="meta">
-  May  8, 2015
-  by
-  
-    <a href="https://twitter.com/zpao">Paul O’Shannessy</a>
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>Today we&#39;re sharing another patch release in the v0.13 branch. There are only a few small changes, with a couple to address some issues that arose around that undocumented feature so many of you are already using: <code>context</code>. We also improved developer ergonomics just a little bit, making some warnings better.</p>
-
-<p>The release is now available for download:</p>
-
-<ul>
-<li><strong>React</strong><br>
-Dev build with warnings: <a href="https://fb.me/react-0.13.3.js">https://fb.me/react-0.13.3.js</a><br>
-Minified build for production: <a href="https://fb.me/react-0.13.3.min.js">https://fb.me/react-0.13.3.min.js</a><br></li>
-<li><strong>React with Add-Ons</strong><br>
-Dev build with warnings: <a href="https://fb.me/react-with-addons-0.13.3.js">https://fb.me/react-with-addons-0.13.3.js</a><br>
-Minified build for production: <a href="https://fb.me/react-with-addons-0.13.3.min.js">https://fb.me/react-with-addons-0.13.3.min.js</a><br></li>
-<li><strong>In-Browser JSX transformer</strong><br>
-<a href="https://fb.me/JSXTransformer-0.13.3.js">https://fb.me/JSXTransformer-0.13.3.js</a></li>
-</ul>
-
-<p>We&#39;ve also published version <code>0.13.3</code> of the <code>react</code> and <code>react-tools</code> packages on npm and the <code>react</code> package on bower.</p>
-
-<hr>
-<h2><a class="anchor" name="changelog"></a>Changelog <a class="hash-link" href="#changelog">#</a></h2><h3><a class="anchor" name="react-core"></a>React Core <a class="hash-link" href="#react-core">#</a></h3><h4><a class="anchor" name="new-features"></a>New Features <a class="hash-link" href="#new-features">#</a></h4>
-<ul>
-<li>Added <code>clipPath</code> element and attribute for SVG</li>
-<li>Improved warnings for deprecated methods in plain JS classes</li>
-</ul>
-<h4><a class="anchor" name="bug-fixes"></a>Bug Fixes <a class="hash-link" href="#bug-fixes">#</a></h4>
-<ul>
-<li>Loosened <code>dangerouslySetInnerHTML</code> restrictions so <code>{__html: undefined}</code> will no longer throw</li>
-<li>Fixed extraneous context warning with non-pure <code>getChildContext</code></li>
-<li>Ensure <code>replaceState(obj)</code> retains prototype of <code>obj</code></li>
-</ul>
-<h3><a class="anchor" name="react-with-add-ons"></a>React with Add-ons <a class="hash-link" href="#react-with-add-ons">#</a></h3><h3><a class="anchor" name="bug-fixes"></a>Bug Fixes <a class="hash-link" href="#bug-fixes">#</a></h3>
-<ul>
-<li>Test Utils: Ensure that shallow rendering works when components define <code>contextTypes</code></li>
-</ul>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-
-<h1>
-
-  <a href="/react/blog/2015/05/01/graphql-introduction.html">GraphQL Introduction</a>
-
-</h1>
-
-<p class="meta">
-  May  1, 2015
-  by
-  
-    <a href="https://twitter.com/schrockn">Nick Schrock</a>
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>At the React.js conference in late January 2015, we revealed our next major technology in the React family: <a href="http://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html">Relay</a>. </p>
-
-<p>Relay is a new way of structuring client applications that co-locates data-fetching requirements and React components. Instead of placing data fetching logic in some other part of the client application – or embedding this logic in a custom endpoint on the server – we instead co-locate a <em>declarative</em> data-fetching specification alongside the React component. The language of this declarative specification is GraphQL.</p>
-
-<p>GraphQL was not invented to enable Relay. In fact, GraphQL predates Relay by nearly three years. It was invented during the move from Facebook&#39;s HTML5-driven mobile applications to purely native applications. It is a query language for graph data that powers the lion&#39;s share of interactions in the Facebook Android and iOS applications. Any user of the native iOS or Android app in the last two years has used an app powered by GraphQL.</p>
-
-<p>We plan to open-source a reference implementation of a GraphQL server and publish a language specification in the coming months. Our goal is to evolve GraphQL to adapt to a wide range of backends, so that projects and companies can use this technology to access their own data. We believe that this is a compelling way to structure servers and to provide powerful abstractions, frameworks and tools – including, but not exclusively, Relay – for product developers.</p>
-<h2><a class="anchor" name="what-is-graphql"></a>What is GraphQL? <a class="hash-link" href="#what-is-graphql">#</a></h2>
-<p>A GraphQL query is a string interpreted by a server that returns data in a specified format. Here is an example query: </p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="nx">user</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">3500401</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="p">,</span>
-    <span class="nx">name</span><span class="p">,</span>
-    <span class="nx">isViewerFriend</span><span class="p">,</span>
-    <span class="nx">profilePicture</span><span class="p">(</span><span class="nx">size</span><span class="o">:</span> <span class="mi">50</span><span class="p">)</span>  <span class="p">{</span>
-      <span class="nx">uri</span><span class="p">,</span>
-      <span class="nx">width</span><span class="p">,</span>
-      <span class="nx">height</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+  <p>One of the first questions people ask when considering React for a project is whether their application will be as fast and responsive as an equivalent non-React version. The idea of re-rendering an entire subtree of components in response to every state change makes people wonder whether this process negatively impacts performance. React uses several clever techniques to minimize the number of costly DOM operations required to update the UI.</p>
+<h2><a class="anchor" name="avoiding-reconciling-the-dom"></a>Avoiding reconciling the DOM <a class="hash-link" href="#avoiding-reconciling-the-dom">#</a></h2>
+<p>React makes use of a <em>virtual DOM</em>, which is a descriptor of a DOM subtree rendered in the browser. This parallel representation allows React to avoid creating DOM nodes and accessing existing ones, which is slower than operations on JavaScript objects. When a component&#39;s props or state change, React decides whether an actual DOM update is necessary by constructing a new virtual DOM and comparing it to the old one. Only in the case they are not equal, will React <a href="/react/docs/reconciliation.html">reconcile</a> the DOM, applying as few mutations as possible.</p>
+
+<p>On top of this, React provides a component lifecycle function, <code>shouldComponentUpdate</code>, which is triggered before the re-rendering process starts (virtual DOM comparison and possible eventual DOM reconciliation), giving the developer the ability to short circuit this process. The default implementation of this function returns <code>true</code>, leaving React to perform the update:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">shouldComponentUpdate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>(Note: this syntax is slightly different from previous GraphQL examples. We&#39;ve recently been making improvements to the language.)</p>
+<p>Keep in mind that React will invoke this function pretty often, so the implementation has to be fast.</p>
 
-<p>And here is the response to that query.</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;user&quot;</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3500401</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Jing Chen&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;isViewerFriend&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;profilePicture&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;http://someurl.cdn/pic.jpg&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-      <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">50</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<p>Say you have a messaging application with several chat threads. Suppose only one of the threads has changed. If we implement <code>shouldComponentUpdate</code> on the <code>ChatThread</code> component, React can skip the rendering step for the other threads:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">shouldComponentUpdate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: return whether or not current chat thread is</span>
+  <span class="c1">// different to former one.</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>We will dig into the syntax and semantics of GraphQL in a later post, but even a simple example shows many of its design principles:</p>
+<p>So, in summary, React avoids carrying out expensive DOM operations required to reconcile subtrees of the DOM by allowing the user to short circuit the process using <code>shouldComponentUpdate</code>, and, for those which should update, by comparing virtual DOMs.</p>
+<h2><a class="anchor" name="shouldcomponentupdate-in-action"></a>shouldComponentUpdate in action <a class="hash-link" href="#shouldcomponentupdate-in-action">#</a></h2>
+<p>Here&#39;s a subtree of components. For each one is indicated what <code>shouldComponentUpdate</code> returned and whether or not the virtual DOMs were equivalent. Finally, the circle&#39;s color indicates whether the component had to be reconciled or not.</p>
+
+<figure><img src="/react/img/docs/should-component-update.png" /></figure>
+
+<p>In the example above, since <code>shouldComponentUpdate</code> returned <code>false</code> for the subtree rooted at C2, React had no need to generate the new virtual DOM, and therefore, it neither needed to reconcile the DOM. Note that React didn&#39;t even have to invoke <code>shouldComponentUpdate</code> on C4 and C5.</p>
+
+<p>For C1 and C3 <code>shouldComponentUpdate</code> returned <code>true</code>, so React had to go down to the leaves and check them. For C6 it returned <code>true</code>; since the virtual DOMs weren&#39;t equivalent it had to reconcile the DOM.
+The last interesting case is C8. For this node React had to compute the virtual DOM, but since it was equal to the old one, it didn&#39;t have to reconcile it&#39;s DOM.</p>
+
+<p>Note that React only had to do DOM mutations for C6, which was inevitable. For C8, it bailed out by comparing the virtual DOMs, and for C2&#39;s subtree and C7, it didn&#39;t even have to compute the virtual DOM as we bailed out on <code>shouldComponentUpdate</code>.</p>
+
+<p>So, how should we implement <code>shouldComponentUpdate</code>? Say that you have a component that just renders a string value:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="o">&lt;</span><span class="err">/div&gt;;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>We could easily implement <code>shouldComponentUpdate</code> as follow:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">shouldComponentUpdate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="nx">nextProps</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So far so good, dealing with such simple props/state structures is easy. We could even generalize an implementation based on shallow equality and mix it into components. In fact, React already provides such implementation: <a href="/react/docs/pure-render-mixin.html">PureRenderMixin</a>.</p>
+
+<p>But what if your components&#39; props or state are mutable data structures?. Say the prop the component receives, instead of being a string like <code>&#39;bar&#39;</code>, is a Javascript object that contains a string such as, <code>{ foo: &#39;bar&#39; }</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">isRequired</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">foo</span><span class="o">&lt;</span><span class="err">/div&gt;;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>The implementation of <code>shouldComponentUpdate</code> we had before wouldn&#39;t always work as expected:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// assume this.props.value is { foo: &#39;bar&#39; }</span>
+<span class="c1">// assume nextProps.value is { foo: &#39;bar&#39; },</span>
+<span class="c1">// but this reference is different to this.props.value</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="nx">nextProps</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="c1">// true</span>
+</code></pre></div>
+<p>The problem is <code>shouldComponentUpdate</code> will return <code>true</code> when the prop actually didn&#39;t change. To fix this, we could come up with this alternative implementation:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">shouldComponentUpdate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">foo</span> <span class="o">!==</span> <span class="nx">nextProps</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Basically, we ended up doing a deep comparison to make sure we properly track changes. In terms of performance, this approach is pretty expensive. It doesn&#39;t scale as we would have to write different deep equality code for each model. On top of that, it might not even work if we don&#39;t carefully manage object references. Say this component is used by a parent:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="nx">value</span><span class="o">:</span> <span class="p">{</span> <span class="nx">foo</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span> <span class="p">}</span> <span class="p">};</span>
+  <span class="p">},</span>
+
+  <span class="nx">onClick</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="nx">value</span><span class="p">.</span><span class="nx">foo</span> <span class="o">+=</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span> <span class="c1">// ANTI-PATTERN!</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span> <span class="p">});</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">InnerComponent</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onClick</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">me</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>The first time the inner component gets rendered, it will have <code>{ foo: &#39;bar&#39; }</code> as the value prop. If the user clicks on the anchor, the parent component&#39;s state will get updated to <code>{ value: { foo: &#39;barbar&#39; } }</code>, triggering the re-rendering process of the inner component, which will receive <code>{ foo: &#39;barbar&#39; }</code> as the new value for the prop.</p>
+
+<p>The problem is that since the parent and inner components share a reference to the same object, when the object gets mutated on line 2 of the <code>onClick</code> function, the prop the inner component had will change. So, when the re-rendering process starts, and <code>shouldComponentUpdate</code> gets invoked, <code>this.props.value.foo</code> will be equal to <code>nextProps.value.foo</code>, because in fact, <code>this.props.value</code> references the same object as <code>nextProps.value</code>.</p>
+
+<p>Consequently, since we&#39;ll miss the change on the prop and short circuit the re-rendering process, the UI won&#39;t get updated from <code>&#39;bar&#39;</code> to <code>&#39;barbar&#39;</code>.</p>
+<h2><a class="anchor" name="immutable-js-to-the-rescue"></a>Immutable-js to the rescue <a class="hash-link" href="#immutable-js-to-the-rescue">#</a></h2>
+<p><a href="https://github.com/facebook/immutable-js">Immutable-js</a> is a Javascript collections library  written by Lee Byron, which Facebook recently open-sourced. It provides <em>immutable persistent</em> collections via <em>structural sharing</em>. Lets see what these properties mean:</p>
 
 <ul>
-<li><strong>Hierarchical:</strong> Most product development today involves the creation and manipulation of view hierarchies. To achieve congruence with the structure of these applications, a GraphQL query itself is a hierarchical set of fields. The query is shaped just like the data it returns. It is a natural way for product engineers to describe data requirements.</li>
-<li><strong>Product-centric:</strong> GraphQL is unapologetically driven by the requirements of views and the front-end engineers that write them. We start with their way of thinking and requirements and build the language and runtime necessary to enable that.</li>
-<li><strong>Client-specified queries:</strong> In GraphQL, the specification for queries are encoded in the <em>client</em> rather than the <em>server</em>. These queries are specified at field-level granularity. In the vast majority of applications written without GraphQL, the server determines the data returned in its various scripted endpoints. A GraphQL query, on the other hand, returns exactly what a client asks for and no more.</li>
-<li><strong>Backwards Compatible:</strong> In a world of deployed native mobile applications with no forced upgrades, backwards compatibility is a challenge. Facebook, for example, releases apps on a two week fixed cycle and pledges to maintain those apps for <em>at least</em> two years. This means there are at a <em>minimum</em> 52 versions of our clients per platform querying our servers at any given time. Client-specified queries simplifies managing our backwards compatibility guarantees.</li>
-<li><strong>Structured, Arbitrary Code:</strong> Query languages with field-level granularity have typically queried storage engines directly, such as SQL. GraphQL instead imposes a structure onto a server, and exposes fields that are backed by <em>arbitrary code</em>. This allows for both server-side flexibility and a uniform, powerful API across the entire surface area of an application.</li>
-<li><strong>Application-Layer Protocol:</strong> GraphQL is an application-layer protocol and does not require a particular transport. It is a string that is parsed and interpreted by a server.</li>
-<li><strong>Strongly-typed:</strong> GraphQL is strongly-typed. Given a query, tooling can ensure that the query is both syntactically correct and valid within the GraphQL type system before execution, i.e. at development time, and the server can make certain guarantees about the shape and nature of the response. This makes it easier to build high quality client tools.</li>
-<li><strong>Introspective:</strong> GraphQL is introspective. Clients and tools can query the type system using the GraphQL syntax itself. This is a powerful platform for building tools and client software, such as automatic parsing of incoming data into strongly-typed interfaces. It is especially useful in statically typed languages such as Swift, Objective-C and Java, as it obviates the need for repetitive and error-prone code to shuffle raw, untyped JSON into strongly-typed business objects.</li>
+<li><em>Immutable</em>: once created, a collection cannot be altered at another point in time.</li>
+<li><em>Persistent</em>: new collections can be created from a previous collection and a mutation such as set. The original collection is still valid after the new collection is created.</li>
+<li><em>Structural Sharing</em>: new collections are created using as much of the same structure as the original collection as possible, reducing copying to a minimum to achieve space efficiency and acceptable performance. If the new collection is equal to the original, the original is often returned.</li>
 </ul>
-<h2><a class="anchor" name="why-invent-something-new"></a>Why invent something new? <a class="hash-link" href="#why-invent-something-new">#</a></h2>
-<p>Obviously GraphQL is not the first system to manage client-server interactions. In today&#39;s world there are two dominant architectural styles for client-server interaction: REST and <em>ad hoc</em> endpoints. </p>
-<h3><a class="anchor" name="rest"></a>REST <a class="hash-link" href="#rest">#</a></h3>
-<p>REST an acronym for Representational State Transfer, which is an architectural style rather than a formal protocol. There is actually much debate about what exactly REST is and is not. We wish to avoid such debates. We are interested in the typical attributes of systems that <em>self-identify</em> as REST, rather than systems which are formally REST.</p>
 
-<p>Objects in a typical REST system are addressable by URI and interacted with using verbs in the HTTP protocol. An HTTP GET to a particular URI fetches an object and returns a server-specified set of fields. An HTTP PUT edits an object; an HTTP DELETE deletes an object; and so on.</p>
+<p>Immutability makes tracking changes cheap; a change will always result in a new object so we only need to check if the reference to the object has changed. For example, in this regular Javascript code:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">foo</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+<span class="nx">y</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="s2">&quot;baz&quot;</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">===</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// true</span>
+</code></pre></div>
+<p>Although <code>y</code> was edited, since it&#39;s a reference to the same object as <code>x</code>, this comparison returns <code>true</code>. However, this code could be written using immutable-js as follows:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">SomeRecord</span> <span class="o">=</span> <span class="nx">Immutable</span><span class="p">.</span><span class="nx">Record</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="kc">null</span> <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SomeRecord</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span>  <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">);</span>
+<span class="nx">x</span> <span class="o">===</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// false</span>
+</code></pre></div>
+<p>In this case, since a new reference is returned when mutating <code>x</code>, we can safely assume that <code>x</code> has changed.</p>
 
-<p>We believe there are a number of weakness in typical REST systems, ones that are particularly problematic in mobile applications:</p>
+<p>Another possible way to track changes could be doing dirty checking by having a flag set by setters. A problem with this approach is that it forces you to use setters and, either write a lot of additional code, or somehow instrument your classes. Alternatively, you could deep copy the object just before the mutations and deep compare to determine whether there was a change or not. A problem with this approach is both deepCopy and deepCompare are expensive operations.</p>
+
+<p>So, Immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement <code>shouldComponentUpdate</code>. Therefore, if we model props and state attributes using the abstractions provided by immutable-js we&#39;ll be able to use <code>PureRenderMixin</code> and get a nice boost in perf.</p>
+<h2><a class="anchor" name="immutable-js-and-flux"></a>Immutable-js and Flux <a class="hash-link" href="#immutable-js-and-flux">#</a></h2>
+<p>If you&#39;re using <a href="https://facebook.github.io/flux/">Flux</a>, you should start writing your stores using immutable-js. Take a look at the <a href="https://facebook.github.io/immutable-js/docs/#/">full API</a>.</p>
+
+<p>Let&#39;s see one possible way to model the thread example using Immutable data structures. First, we need to define a <code>Record</code> for each of the entities we&#39;re trying to model. Records are just immutable containers that hold values for a specific set of fields:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="nx">Immutable</span><span class="p">.</span><span class="nx">Record</span><span class="p">({</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+  <span class="nx">email</span><span class="o">:</span> <span class="kc">undefined</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">Message</span> <span class="o">=</span> <span class="nx">Immutable</span><span class="p">.</span><span class="nx">Record</span><span class="p">({</span>
+  <span class="nx">timestamp</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+  <span class="nx">sender</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+  <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>The <code>Record</code> function receives an object that defines the fields the object has and its default values.</p>
+
+<p>The messages <em>store</em> could keep track of the users and messages using two lists:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="nx">Immutable</span><span class="p">.</span><span class="nx">List</span><span class="p">();</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="nx">Immutable</span><span class="p">.</span><span class="nx">List</span><span class="p">();</span>
+</code></pre></div>
+<p>It should be pretty straightforward to implement functions to process each <em>payload</em> type. For instance, when the store sees a payload representing a new message,  we can just create a new record and append it to the messages list:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">Message</span><span class="p">({</span>
+  <span class="nx">timestamp</span><span class="o">:</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">,</span>
+  <span class="nx">sender</span><span class="o">:</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span>
+  <span class="nx">text</span><span class="o">:</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">text</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Note that since the data structures are immutable, we need to assign the result of the push function to <code>this.messages</code>.</p>
+
+<p>On the React side, if we also use immutable-js data structures to hold the components&#39; state, we could mix <code>PureRenderMixin</code> into all our components and short circuit the re-rendering process.</p>
+
+</div>
+
+
+
+      </div>
+    
+      <div class="post-list-item">
+        
+
+
+<h1>
+
+  <a href="/react/articles/addons.html">Addons</a>
+
+</h1>
+
+<p class="meta">
+  January  1, 3010
+  by
+  
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p><code>React.addons</code> is where we park some useful utilities for building React apps. <strong>These should be considered experimental</strong> but will eventually be rolled into core or a blessed utilities library:</p>
 
 <ul>
-<li>Fetching complicated object graphs require multiple round trips between the client and server to render single views. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.</li>
-<li>Invariably fields and additional data are added to REST endpoints as the system requirements change. However, old clients also receive this additional data as well, because the data fetching specification is encoded on the server rather than the client. As result, these payloads tend to grow over time for all clients. When this becomes a problem for a system, one solution is to overlay a versioning system onto the REST endpoints. Versioning also complicates a server, and results in code duplication, spaghetti code, or a sophisticated, hand-rolled infrastructure to manage it. Another solution to limit over-fetching is to provide multiple views – such as “compact” vs “full” – of the same REST endpoint, however this coarse granularity often does not offer adequate flexibility.</li>
-<li>REST endpoints are usually weakly-typed and lack machine-readable metadata. While there is much debate about the merits of strong- versus weak-typing in distributed systems, we believe in strong typing because of the correctness guarantees and tooling opportunities it provides. Developer deal with systems that lack this metadata by inspecting frequently out-of-date documentation and then writing code against the documentation.</li>
-<li>Many of these attributes are linked to the fact that “REST is intended for long-lived network-based applications that span multiple organizations” <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">according to its inventor</a>. This is not a requirement for APIs that serve a client app built within the same organization.</li>
+<li><a href="animation.html"><code>TransitionGroup</code> and <code>CSSTransitionGroup</code></a>, for dealing with animations and transitions that are usually not simple to implement, such as before a component&#39;s removal.</li>
+<li><a href="two-way-binding-helpers.html"><code>LinkedStateMixin</code></a>, to simplify the coordination between user&#39;s form input data and the component&#39;s state.</li>
+<li><a href="clone-with-props.html"><code>cloneWithProps</code></a>, to make shallow copies of React components and change their props.</li>
+<li><a href="create-fragment.html"><code>createFragment</code></a>, to create a set of externally-keyed children.</li>
+<li><a href="update.html"><code>update</code></a>, a helper function that makes dealing with immutable data in JavaScript easier.</li>
+<li><a href="pure-render-mixin.html"><code>PureRenderMixin</code></a>, a performance booster under certain situations.</li>
 </ul>
 
-<p>Nearly all externally facing REST APIs we know of trend or end up in these non-ideal states, as well as nearly all <em>internal</em> REST APIs. The consequences of opaqueness and over-fetching are more severe in internal APIs since their velocity of change and level of usage is almost always higher.</p>
-
-<p>Because of multiple round-trips and over-fetching, applications built in the REST style inevitably end up building <em>ad hoc</em> endpoints that are superficially in the REST style. These actually couple the data to a particular view which explicitly violates one of REST&#39;s major goals. Most REST systems of any complexity end up as a continuum of endpoints that span from “traditional” REST to <em>ad hoc</em> endpoints.</p>
-<h3><a class="anchor" name="ad-hoc-endpoints"></a>Ad Hoc Endpoints <a class="hash-link" href="#ad-hoc-endpoints">#</a></h3>
-<p>Many applications have no formalized client-server contract. Product developers access server capabilities through <em>ad hoc</em> endpoints and write custom code to fetch the data they need. Servers define procedures, and they return data. This approach has the virtue of simplicity, but can often become untenable as systems age.</p>
+<p>The add-ons below are in the development (unminified) version of React only:</p>
 
 <ul>
-<li>These systems typically define a custom endpoint per view. For systems with a wide surface area this can quickly grow into a maintenance nightmare of orphaned endpoints, inconsistent tooling, and massive server code duplication. Disciplined engineering organizations can mitigate these issues with great engineering practices, high quality abstractions, and custom tooling. However, given our experience we believe that custom endpoints tend to lead to entropic server codebases.</li>
-<li>Much like REST, the payloads of custom endpoints grow monotonically (even with mitigation from versioning systems) as the server evolves. Deployed clients cannot break, and, with rapid release cycles and backwards compatibility guarantees, distributed applications will have large numbers of extant versions. Under these constraints it is difficult remove data from a custom endpoint.</li>
-<li>Custom endpoints tend to – for a client developer – create a clunky, multi-language, multi-environment development process. No matter if the data has been accessed before in a different view, they are required to first change the custom endpoint, then deploy that code to a server accessible from a mobile device, and only then change the client to utilize that data. In GraphQL  – unless the data in the view is completely new to the entire system  – a product developer adds a field to a GraphQL query and the work on the client continues unabated.</li>
-<li>Much like REST, most systems with custom endpoints do not have a formalized type system, which eliminates the possibility for the tools and guarantees that introspective type systems can provide. Some custom-endpoint-driven systems do use a strongly typed serialization scheme, such as Protocol Buffers, Thrift, or XML. Those do allow for direct parsing of responses into typed classes and eliminating boilerplate shuffling from JSON into handwritten classes. These systems are as not as expressive and flexible as GraphQL, and the other downsides of <em>ad hoc</em> endpoints remain.</li>
+<li><a href="test-utils.html"><code>TestUtils</code></a>, simple helpers for writing test cases (unminified build only).</li>
+<li><a href="perf.html"><code>Perf</code></a>, for measuring performance and giving you hint where to optimize.</li>
 </ul>
 
-<p>We believe that GraphQL represents a novel way of structuring the client-server contract. Servers publish a type system specific to their application, and GraphQL provides a unified language to query data within the constraints of that type system. That language allows product developers to express data requirements in a form natural to them: a declarative and hierarchal one.</p>
+<p>To get the add-ons, use <code>react-with-addons.js</code> (and its minified counterpart) rather than the common <code>react.js</code>.</p>
 
-<p>This is a liberating platform for product developers. With GraphQL, no more contending with <em>ad hoc</em> endpoints or object retrieval with multiple roundtrips to access server data; instead an elegant, hierarchical, declarative query dispatched to a single endpoint. No more  frequent jumps between client and server development environments to do experimentation or to change or create views of existing data; instead experiments are done and new views built within a native, client development environment exclusively. No more shuffling unstructured data from <em>ad hoc</em> endpoints into business objects; instead a powerful, introspective type system that serves as a platform for tool building.</p>
+<p>When using the react package from npm, simply <code>require(&#39;react/addons&#39;)</code> instead of <code>require(&#39;react&#39;)</code> to get React with all of the add-ons.</p>
 
-<p>Product developers are free to focus on their client software and requirements while rarely leaving their development environment; they can more confidently support shipped clients as a system evolves; and they are using a protocol designed to operate well within the constraints of mobile applications. Product developers can query for exactly what they want, in the way they think about it, across their entire application&#39;s data model. </p>
-<h2><a class="anchor" name="whats-next"></a>What&#39;s next? <a class="hash-link" href="#whats-next">#</a></h2>
-<p>Over the coming months, we will share more technical details about GraphQL, including additional language features, tools that support it, and how it is built and used at Facebook. These posts will culminate in a formal specification of GraphQL to guide implementors across various languages and platforms. We also plan on releasing a reference implementation in the summer, in order to provide a basis for custom deployments and a platform for experimentation. We&#39;re incredibly excited to share this system and work with the open source community to improve it.</p>
+<ul>
+  
+</ul>
+
+</div>
+
+
+
+      </div>
+    
+      <div class="post-list-item">
+        
+
+
+<h1>
+
+  <a href="/react/articles/tooling-integration.html">Tooling Integration</a>
+
+</h1>
+
+<p class="meta">
+  January  1, 3009
+  by
+  
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>Every project uses a different system for building and deploying JavaScript. We&#39;ve tried to make React as environment-agnostic as possible.</p>
+<h2><a class="anchor" name="react"></a>React <a class="hash-link" href="#react">#</a></h2><h3><a class="anchor" name="cdn-hosted-react"></a>CDN-hosted React <a class="hash-link" href="#cdn-hosted-react">#</a></h3>
+<p>We provide CDN-hosted versions of React <a href="/react/downloads.html">on our download page</a>. These prebuilt files use the UMD module format. Dropping them in with a simple <code>&lt;script&gt;</code> tag will inject a <code>React</code> global into your environment. It should also work out-of-the-box in CommonJS and AMD environments.</p>
+<h3><a class="anchor" name="using-master"></a>Using master <a class="hash-link" href="#using-master">#</a></h3>
+<p>We have instructions for building from <code>master</code> <a href="https://github.com/facebook/react">in our GitHub repository</a>. We build a tree of CommonJS modules under <code>build/modules</code> which you can drop into any environment or packaging tool that supports CommonJS.</p>
+<h2><a class="anchor" name="jsx"></a>JSX <a class="hash-link" href="#jsx">#</a></h2><h3><a class="anchor" name="in-browser-jsx-transform"></a>In-browser JSX Transform <a class="hash-link" href="#in-browser-jsx-transform">#</a></h3>
+<p>If you like using JSX, we provide an in-browser JSX transformer for development <a href="/react/downloads.html">on our download page</a>. Simply include a <code>&lt;script type=&quot;text/jsx&quot;&gt;</code> tag to engage the JSX transformer.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p>The in-browser JSX transformer is fairly large and results in extraneous computation client-side that can be avoided. Do not use it in production — see the next section.</p>
+</blockquote>
+<h3><a class="anchor" name="productionizing-precompiled-jsx"></a>Productionizing: Precompiled JSX <a class="hash-link" href="#productionizing-precompiled-jsx">#</a></h3>
+<p>If you have <a href="https://www.npmjs.com/">npm</a>, you can simply run <code>npm install -g react-tools</code> to install our command-line <code>jsx</code> tool. This tool will translate files that use JSX syntax to plain JavaScript files that can run directly in the browser. It will also watch directories for you and automatically transform files when they are changed; for example: <code>jsx --watch src/ build/</code>.</p>
+
+<p>By default JSX files with a <code>.js</code> extension are transformed. Use <code>jsx --extension jsx src/ build/</code> to transform files with a <code>.jsx</code> extension.</p>
+
+<p>Run <code>jsx --help</code> for more information on how to use this tool.</p>
+<h3><a class="anchor" name="helpful-open-source-projects"></a>Helpful Open-Source Projects <a class="hash-link" href="#helpful-open-source-projects">#</a></h3>
+<p>The open-source community has built tools that integrate JSX with several editors and build systems. See <a href="https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations">JSX integrations</a> for the full list.</p>
+
+</div>
+
+
+
+      </div>
+    
+      <div class="post-list-item">
+        
+
+
+<h1>
+
+  <a href="/react/articles/working-with-the-browser.html">Working with the Browser</a>
+
+</h1>
+
+<p class="meta">
+  January  1, 3008
+  by
+  
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>React provides powerful abstractions that free you from touching the DOM directly in most cases, but sometimes you simply need to access the underlying API, perhaps to work with a third-party library or existing code.</p>
+<h2><a class="anchor" name="the-virtual-dom"></a>The Virtual DOM <a class="hash-link" href="#the-virtual-dom">#</a></h2>
+<p>React is so fast because it never talks to the DOM directly. React maintains a fast in-memory representation of the DOM. <code>render()</code> methods return a <em>description</em> of the DOM, and React can diff this description with the in-memory representation to compute the fastest way to update the browser.</p>
+
+<p>Additionally, React implements a full synthetic event system such that all event objects are guaranteed to conform to the W3C spec despite browser quirks, and everything bubbles consistently and efficiently across browsers. You can even use some HTML5 events in IE8!</p>
+
+<p>Most of the time you should stay within React&#39;s &quot;faked browser&quot; world since it&#39;s more performant and easier to reason about. However, sometimes you simply need to access the underlying API, perhaps to work with a third-party library like a jQuery plugin. React provides escape hatches for you to use the underlying DOM API directly.</p>
+<h2><a class="anchor" name="refs-and-finddomnode"></a>Refs and findDOMNode() <a class="hash-link" href="#refs-and-finddomnode">#</a></h2>
+<p>To interact with the browser, you&#39;ll need a reference to a DOM node. React has a <code>React.findDOMNode(component)</code> function which you can call to get a reference to the component&#39;s DOM node.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p><code>findDOMNode()</code> only works on mounted components (that is, components that have been placed in the DOM). If you try to call this on a component that has not been mounted yet (like calling <code>findDOMNode()</code> in <code>render()</code> on a component that has yet to be created) an exception will be thrown.</p>
+</blockquote>
+
+<p>In order to get a reference to a React component, you can either use <code>this</code> to get the current React component, or you can use refs to refer to a component you own. They work like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">handleClick</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Explicitly focus the text input using the raw DOM API.</span>
+    <span class="nx">React</span><span class="p">.</span><span class="nx">findDOMNode</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">refs</span><span class="p">.</span><span class="nx">myTextInput</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// The ref attribute adds a reference to the component to</span>
+    <span class="c1">// this.refs when the component is mounted.</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">ref</span><span class="o">=</span><span class="s2">&quot;myTextInput&quot;</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span>
+          <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;Focus the text input&quot;</span>
+          <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">}</span>
+        <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div><h2><a class="anchor" name="more-about-refs"></a>More About Refs <a class="hash-link" href="#more-about-refs">#</a></h2>
+<p>To learn more about refs, including ways to use them effectively, see our <a href="/react/docs/more-about-refs.html">more about refs</a> documentation.</p>
+<h2><a class="anchor" name="component-lifecycle"></a>Component Lifecycle <a class="hash-link" href="#component-lifecycle">#</a></h2>
+<p>Components have three main parts of their lifecycle:</p>
+
+<ul>
+<li><strong>Mounting:</strong> A component is being inserted into the DOM.</li>
+<li><strong>Updating:</strong> A component is being re-rendered to determine if the DOM should be updated.</li>
+<li><strong>Unmounting:</strong> A component is being removed from the DOM.</li>
+</ul>
+
+<p>React provides lifecycle methods that you can specify to hook into this process. We provide <strong>will</strong> methods, which are called right before something happens, and <strong>did</strong> methods which are called right after something happens.</p>
+<h3><a class="anchor" name="mounting"></a>Mounting <a class="hash-link" href="#mounting">#</a></h3>
+<ul>
+<li><code>getInitialState(): object</code> is invoked before a component is mounted. Stateful components should implement this and return the initial state data.</li>
+<li><code>componentWillMount()</code> is invoked immediately before mounting occurs.</li>
+<li><code>componentDidMount()</code> is invoked immediately after mounting occurs. Initialization that requires DOM nodes should go here.</li>
+</ul>
+<h3><a class="anchor" name="updating"></a>Updating <a class="hash-link" href="#updating">#</a></h3>
+<ul>
+<li><code>componentWillReceiveProps(object nextProps)</code> is invoked when a mounted component receives new props. This method should be used to compare <code>this.props</code> and <code>nextProps</code> to perform state transitions using <code>this.setState()</code>.</li>
+<li><code>shouldComponentUpdate(object nextProps, object nextState): boolean</code> is invoked when a component decides whether any changes warrant an update to the DOM. Implement this as an optimization to compare <code>this.props</code> with <code>nextProps</code> and <code>this.state</code> with <code>nextState</code> and return false if React should skip updating.</li>
+<li><code>componentWillUpdate(object nextProps, object nextState)</code> is invoked immediately before updating occurs. You cannot call <code>this.setState()</code> here.</li>
+<li><code>componentDidUpdate(object prevProps, object prevState)</code> is invoked immediately after updating occurs.</li>
+</ul>
+<h3><a class="anchor" name="unmounting"></a>Unmounting <a class="hash-link" href="#unmounting">#</a></h3>
+<ul>
+<li><code>componentWillUnmount()</code> is invoked immediately before a component is unmounted and destroyed. Cleanup should go here.</li>
+</ul>
+<h3><a class="anchor" name="mounted-methods"></a>Mounted Methods <a class="hash-link" href="#mounted-methods">#</a></h3>
+<p><em>Mounted</em> composite components also support the following methods:</p>
+
+<ul>
+<li><code>findDOMNode(): DOMElement</code> can be invoked on any mounted component in order to obtain a reference to its rendered DOM node.</li>
+<li><code>forceUpdate()</code> can be invoked on any mounted component when you know that some deeper aspect of the component&#39;s state has changed without using <code>this.setState()</code>.</li>
+</ul>
+<h2><a class="anchor" name="browser-support-and-polyfills"></a>Browser Support and Polyfills <a class="hash-link" href="#browser-support-and-polyfills">#</a></h2>
+<p>At Facebook, we support older browsers, including IE8. We&#39;ve had polyfills in place for a long time to allow us to write forward-thinking JS. This means we don&#39;t have a bunch of hacks scattered throughout our codebase and we can still expect our code to &quot;just work&quot;. For example, instead of seeing <code>+new Date()</code>, we can just write <code>Date.now()</code>. Since the open source React is the same as what we use internally, we&#39;ve carried over this philosophy of using forward thinking JS.</p>
+
+<p>In addition to that philosophy, we&#39;ve also taken the stance that we, as authors of a JS library, should not be shipping polyfills as a part of our library. If every library did this, there&#39;s a good chance you&#39;d be sending down the same polyfill multiple times, which could be a sizable chunk of dead code. If your product needs to support older browsers, chances are you&#39;re already using something like <a href="https://github.com/es-shims/es5-shim">es5-shim</a>.</p>
+<h3><a class="anchor" name="polyfills-needed-to-support-older-browsers"></a>Polyfills Needed to Support Older Browsers <a class="hash-link" href="#polyfills-needed-to-support-older-browsers">#</a></h3>
+<p><code>es5-shim.js</code> from <a href="https://github.com/es-shims/es5-shim">kriskowal&#39;s es5-shim</a> provides the following that React needs:</p>
+
+<ul>
+<li><code>Array.isArray</code></li>
+<li><code>Array.prototype.every</code></li>
+<li><code>Array.prototype.forEach</code></li>
+<li><code>Array.prototype.indexOf</code></li>
+<li><code>Array.prototype.map</code></li>
+<li><code>Date.now</code></li>
+<li><code>Function.prototype.bind</code></li>
+<li><code>Object.keys</code></li>
+<li><code>String.prototype.split</code></li>
+<li><code>String.prototype.trim</code></li>
+</ul>
+
+<p><code>es5-sham.js</code>, also from <a href="https://github.com/es-shims/es5-shim">kriskowal&#39;s es5-shim</a>, provides the following that React needs:</p>
+
+<ul>
+<li><code>Object.create</code></li>
+<li><code>Object.freeze</code></li>
+</ul>
+
+<p>The unminified build of React needs the following from <a href="https://github.com/paulmillr/console-polyfill">paulmillr&#39;s console-polyfill</a>.</p>
+
+<ul>
+<li><code>console.*</code></li>
+</ul>
+
+<p>When using HTML5 elements in IE8 including <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code>, it&#39;s also necessary to include <a href="https://github.com/aFarkas/html5shiv">html5shiv</a> or a similar script.</p>
+<h3><a class="anchor" name="cross-browser-issues"></a>Cross-browser Issues <a class="hash-link" href="#cross-browser-issues">#</a></h3>
+<p>Although React is pretty good at abstracting browser differences, some browsers are limited or present quirky behaviors that we couldn&#39;t find a workaround for.</p>
+<h4><a class="anchor" name="onscroll-event-on-ie8"></a>onScroll event on IE8 <a class="hash-link" href="#onscroll-event-on-ie8">#</a></h4>
+<p>On IE8 the <code>onScroll</code> event doesn&#39;t bubble and IE8 doesn&#39;t have an API to define handlers to the capturing phase of an event, meaning there is no way for React to listen to these events.
+Currently a handler to this event is ignored on IE8.</p>
+
+<p>See the <a href="https://github.com/facebook/react/issues/631">onScroll doesn&#39;t work in IE8</a> GitHub issue for more information.</p>
+
+<ul>
+  
+</ul>
+
+</div>
+
+
+
+      </div>
+    
+      <div class="post-list-item">
+        
+
+
+<h1>
+
+  <a href="/react/articles/forms.html">Forms</a>
+
+</h1>
+
+<p class="meta">
+  January  1, 3007
+  by
+  
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>Form components such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;option&gt;</code> differ from other native components because they can be mutated via user interactions. These components provide interfaces that make it easier to manage forms in response to user interactions.</p>
+
+<p>For information on events on <code>&lt;form&gt;</code> see <a href="/react/docs/events.html#form-events">Form Events</a>.</p>
+<h2><a class="anchor" name="interactive-props"></a>Interactive Props <a class="hash-link" href="#interactive-props">#</a></h2>
+<p>Form components support a few props that are affected via user interactions:</p>
+
+<ul>
+<li><code>value</code>, supported by <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> components.</li>
+<li><code>checked</code>, supported by <code>&lt;input&gt;</code> components of type <code>checkbox</code> or <code>radio</code>.</li>
+<li><code>selected</code>, supported by <code>&lt;option&gt;</code> components.</li>
+</ul>
+
+<p>In HTML, the value of <code>&lt;textarea&gt;</code> is set via children. In React, you should use <code>value</code> instead.</p>
+
+<p>Form components allow listening for changes by setting a callback to the <code>onChange</code> prop. The <code>onChange</code> prop works across browsers to fire in response to user interactions when:</p>
+
+<ul>
+<li>The <code>value</code> of <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code> changes.</li>
+<li>The <code>checked</code> state of <code>&lt;input&gt;</code> changes.</li>
+<li>The <code>selected</code> state of <code>&lt;option&gt;</code> changes.</li>
+</ul>
+
+<p>Like all DOM events, the <code>onChange</code> prop is supported on all native components and can be used to listen to bubbled change events.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p>For <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code>, <code>onChange</code> supersedes — and should generally be used instead of — the DOM&#39;s built-in <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput"><code>oninput</code></a> event handler.</p>
+</blockquote>
+<h2><a class="anchor" name="controlled-components"></a>Controlled Components <a class="hash-link" href="#controlled-components">#</a></h2>
+<p>An <code>&lt;input&gt;</code> with <code>value</code> set is a <em>controlled</em> component. In a controlled <code>&lt;input&gt;</code>, the value of the rendered element will always reflect the <code>value</code> prop. For example:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>This will render an input that always has a value of <code>Hello!</code>. Any user input will have no effect on the rendered element because React has declared the value to be <code>Hello!</code>. If you wanted to update the value in response to user input, you could use the <code>onChange</code> event:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">};</span>
+  <span class="p">},</span>
+  <span class="nx">handleChange</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">value</span><span class="o">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>In this example, we are simply accepting the newest value provided by the user and updating the <code>value</code> prop of the <code>&lt;input&gt;</code> component. This pattern makes it easy to implement interfaces that respond to or validate user interactions. For example:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">handleChange</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">value</span><span class="o">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">140</span><span class="p">)});</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>This would accept user input but truncate the value to the first 140 characters.</p>
+<h2><a class="anchor" name="uncontrolled-components"></a>Uncontrolled Components <a class="hash-link" href="#uncontrolled-components">#</a></h2>
+<p>An <code>&lt;input&gt;</code> that does not supply a <code>value</code> (or sets it to <code>null</code>) is an <em>uncontrolled</em> component. In an uncontrolled <code>&lt;input&gt;</code>, the value of the rendered element will reflect the user&#39;s input. For example:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>This will render an input that starts off with an empty value. Any user input will be immediately reflected by the rendered element. If you wanted to listen to updates to the value, you could use the <code>onChange</code> event just like you can with controlled components.</p>
+
+<p>If you want to initialize the component with a non-empty value, you can supply a <code>defaultValue</code> prop. For example:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">defaultValue</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>This example will function much like the <strong>Controlled Components</strong> example above.</p>
+
+<p>Likewise, <code>&lt;input&gt;</code> supports <code>defaultChecked</code> and <code>&lt;select&gt;</code> supports <code>defaultValue</code>.</p>
+<h2><a class="anchor" name="advanced-topics"></a>Advanced Topics <a class="hash-link" href="#advanced-topics">#</a></h2><h3><a class="anchor" name="why-controlled-components"></a>Why Controlled Components? <a class="hash-link" href="#why-controlled-components">#</a></h3>
+<p>Using form components such as <code>&lt;input&gt;</code> in React presents a challenge that is absent when writing traditional form HTML. For example, in HTML:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">value=</span><span class="s">&quot;Untitled&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>This renders an input <em>initialized</em> with the value, <code>Untitled</code>. When the user updates the input, the node&#39;s value <em>property</em> will change. However, <code>node.getAttribute(&#39;value&#39;)</code> will still return the value used at initialization time, <code>Untitled</code>.</p>
+
+<p>Unlike HTML, React components must represent the state of the view at any point in time and not only at initialization time. For example, in React:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;title&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>Since this method describes the view at any point in time, the value of the text input should <em>always</em> be <code>Untitled</code>.</p>
+<h3><a class="anchor" name="why-textarea-value"></a>Why Textarea Value? <a class="hash-link" href="#why-textarea-value">#</a></h3>
+<p>In HTML, the value of <code>&lt;textarea&gt;</code> is usually set using its children:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">  <span class="c">&lt;!-- counterexample: DO NOT DO THIS! --&gt;</span>
+  <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>This is the description.<span class="nt">&lt;/textarea&gt;</span>
+</code></pre></div>
+<p>For HTML, this easily allows developers to supply multiline values. However, since React is JavaScript, we do not have string limitations and can use <code>\n</code> if we want newlines. In a world where we have <code>value</code> and <code>defaultValue</code>, it is ambiguous what role children play. For this reason, you should not use children when setting <code>&lt;textarea&gt;</code> values:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="o">&lt;</span><span class="nx">textarea</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;description&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;This is a description.&quot;</span> <span class="o">/&gt;</span>
+</code></pre></div>
+<p>If you <em>do</em> decide to use children, they will behave like <code>defaultValue</code>.</p>
+<h3><a class="anchor" name="why-select-value"></a>Why Select Value? <a class="hash-link" href="#why-select-value">#</a></h3>
+<p>The selected <code>&lt;option&gt;</code> in an HTML <code>&lt;select&gt;</code> is normally specified through that option&#39;s <code>selected</code> attribute. In React, in order to make components easier to manipulate, the following format is adopted instead:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="o">&lt;</span><span class="nx">select</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">option</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="o">&gt;</span><span class="nx">Apple</span><span class="o">&lt;</span><span class="err">/option&gt;</span>
+    <span class="o">&lt;</span><span class="nx">option</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="o">&gt;</span><span class="nx">Banana</span><span class="o">&lt;</span><span class="err">/option&gt;</span>
+    <span class="o">&lt;</span><span class="nx">option</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="o">&gt;</span><span class="nx">Cranberry</span><span class="o">&lt;</span><span class="err">/option&gt;</span>
+  <span class="o">&lt;</span><span class="err">/select&gt;</span>
+</code></pre></div>
+<p>To make an uncontrolled component, <code>defaultValue</code> is used instead.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p>You can pass an array into the <code>value</code> attribute, allowing you to select multiple options in a <code>select</code> tag: <code>&lt;select multiple={true} value={[&#39;B&#39;, &#39;C&#39;]}&gt;</code>.</p>
+</blockquote>
 
 </div>
 

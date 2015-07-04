@@ -59,25 +59,25 @@
     <h3>Recent posts</h3>
     <ul>
       
-        <li><a href="/react/blog/3000/01/01/gfm.html">GFM</a></li>
+        <li><a href="/react/articles/advanced-performance.html">Advanced Performance</a></li>
       
-        <li><a href="/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html">Deprecating JSTransform and react-tools</a></li>
+        <li><a href="/react/articles/addons.html">Addons</a></li>
       
-        <li><a href="/react/blog/2015/05/22/react-native-release-process.html">React Native Release Process</a></li>
+        <li><a href="/react/articles/tooling-integration.html">Tooling Integration</a></li>
       
-        <li><a href="/react/blog/2015/05/08/react-v0.13.3.html">React v0.13.3</a></li>
+        <li><a href="/react/articles/working-with-the-browser.html">Working with the Browser</a></li>
       
-        <li><a href="/react/blog/2015/05/01/graphql-introduction.html">GraphQL Introduction</a></li>
+        <li><a href="/react/articles/forms.html">Forms</a></li>
       
-        <li><a href="/react/blog/2015/04/18/react-v0.13.2.html">React v0.13.2</a></li>
+        <li><a href="/react/articles/transferring-props.html">Transferring Props</a></li>
       
-        <li><a href="/react/blog/2015/04/17/react-native-v0.4.html">React Native v0.4</a></li>
+        <li><a href="/react/articles/reusable-components.html">Reusable Components</a></li>
       
-        <li><a href="/react/blog/2015/03/30/community-roundup-26.html">Community Round-up #26</a></li>
+        <li><a href="/react/articles/multiple-components.html">Multiple Components</a></li>
       
-        <li><a href="/react/blog/2015/03/26/introducing-react-native.html">Introducing React Native</a></li>
+        <li><a href="/react/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a></li>
       
-        <li><a href="/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html">Building The Facebook News Feed With Relay</a></li>
+        <li><a href="/react/articles/displaying-data.html">Displaying Data</a></li>
       
       <li><a href="/react/blog/all.html">All posts ...</a></li>
     </ul>
@@ -92,234 +92,361 @@
 
 <h1>
 
-  <a href="/react/blog/2015/04/18/react-v0.13.2.html">React v0.13.2</a>
+  <a href="/react/articles/transferring-props.html">Transferring Props</a>
 
 </h1>
 
 <p class="meta">
-  April 18, 2015
+  January  1, 3006
   by
   
-    <a href="https://twitter.com/zpao">Paul O’Shannessy</a>
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>Yesterday the <a href="/react/blog/2015/04/17/react-native-v0.4.html">React Native team shipped v0.4</a>. Those of us working on the web team just a few feet away couldn&#39;t just be shown up like that so we&#39;re shipping v0.13.2 today as well! This is a bug fix release to address a few things while we continue to work towards v0.14.</p>
-
-<p>The release is now available for download:</p>
-
-<ul>
-<li><strong>React</strong><br>
-Dev build with warnings: <a href="https://fb.me/react-0.13.2.js">https://fb.me/react-0.13.2.js</a><br>
-Minified build for production: <a href="https://fb.me/react-0.13.2.min.js">https://fb.me/react-0.13.2.min.js</a><br></li>
-<li><strong>React with Add-Ons</strong><br>
-Dev build with warnings: <a href="https://fb.me/react-with-addons-0.13.2.js">https://fb.me/react-with-addons-0.13.2.js</a><br>
-Minified build for production: <a href="https://fb.me/react-with-addons-0.13.2.min.js">https://fb.me/react-with-addons-0.13.2.min.js</a><br></li>
-<li><strong>In-Browser JSX transformer</strong><br>
-<a href="https://fb.me/JSXTransformer-0.13.2.js">https://fb.me/JSXTransformer-0.13.2.js</a></li>
-</ul>
-
-<p>We&#39;ve also published version <code>0.13.2</code> of the <code>react</code> and <code>react-tools</code> packages on npm and the <code>react</code> package on bower.</p>
-
-<hr>
-<h2><a class="anchor" name="changelog"></a>Changelog <a class="hash-link" href="#changelog">#</a></h2><h3><a class="anchor" name="react-core"></a>React Core <a class="hash-link" href="#react-core">#</a></h3><h4><a class="anchor" name="new-features"></a>New Features <a class="hash-link" href="#new-features">#</a></h4>
-<ul>
-<li>Added <code>strokeDashoffset</code>, <code>flexPositive</code>, <code>flexNegative</code> to the list of unitless CSS properties</li>
-<li>Added support for more DOM properties:
-
-<ul>
-<li><code>scoped</code> - for <code>&lt;style&gt;</code> elements</li>
-<li><code>high</code>, <code>low</code>, <code>optimum</code> - for <code>&lt;meter&gt;</code> elements</li>
-<li><code>unselectable</code> - IE-specific property to prevent user selection</li>
-</ul></li>
-</ul>
-<h4><a class="anchor" name="bug-fixes"></a>Bug Fixes <a class="hash-link" href="#bug-fixes">#</a></h4>
-<ul>
-<li>Fixed a case where re-rendering after rendering null didn&#39;t properly pass context</li>
-<li>Fixed a case where re-rendering after rendering with <code>style={null}</code> didn&#39;t properly update <code>style</code></li>
-<li>Update <code>uglify</code> dependency to prevent a bug in IE8</li>
-<li>Improved warnings</li>
-</ul>
-<h3><a class="anchor" name="react-with-add-ons"></a>React with Add-Ons <a class="hash-link" href="#react-with-add-ons">#</a></h3><h4><a class="anchor" name="bug-fixes"></a>Bug Fixes <a class="hash-link" href="#bug-fixes">#</a></h4>
-<ul>
-<li>Immutabilty Helpers: Ensure it supports <code>hasOwnProperty</code> as an object key</li>
-</ul>
-<h3><a class="anchor" name="react-tools"></a>React Tools <a class="hash-link" href="#react-tools">#</a></h3>
-<ul>
-<li>Improve documentation for new options</li>
-</ul>
-
-</div>
-
-
-
-      </div>
     
-      <div class="post-list-item">
-        
-
-
-<h1>
-
-  <a href="/react/blog/2015/04/17/react-native-v0.4.html">React Native v0.4</a>
-
-</h1>
-
-<p class="meta">
-  April 17, 2015
-  by
-  
-    <a href="https://twitter.com/vjeux">Vjeux</a>
   
 </p>
 
 <hr>
 
 <div class="post">
-  <p>It&#39;s been three weeks since we open sourced React Native and there&#39;s been some insane amount of activity already: over 12.5k stars, 1000 commits, 500 issues, 380 pull requests, and 100 contributors, plus <a href="http://react.parts/native-ios">35 plugins</a> and <a href="http://herman.asia/building-a-flashcard-app-with-react-native">1 app in the app store</a>! We were expecting some buzz around the project but this is way beyond anything we imagined. Thank you!</p>
+  <p>It&#39;s a common pattern in React to wrap a component in an abstraction. The outer component exposes a simple property to do something that might have more complex implementation details.</p>
 
-<p>I&#39;d especially like to thank community members Brent Vatne and James Ide who have both already contributed meaningfully to the project and have been extremely helpful on IRC and with issues and pull requests</p>
-<h2><a class="anchor" name="changelog"></a>Changelog <a class="hash-link" href="#changelog">#</a></h2>
-<p>The main focus of the past few weeks has been to make React Native the best possible experience for people outside of Facebook. Here&#39;s a high level summary of what&#39;s happened since we open sourced:</p>
-
-<ul>
-<li><strong>Error messages and documentation</strong>: We want React Native to be the absolute best developer experience for building mobile apps. We&#39;ve added a lot of warnings, improved the documentation, and fixed many bugs. If you encounter anything, and I really mean anything, that is not expected or clear, please create an issue - we want to hear about it and fix it.</li>
-<li><strong>NPM modules compatibility</strong>: There are a lot of libraries on NPM that do not depend on node/browser internals that would be really useful in React Native, such as superagent, underscore, parse, and many others.  The packager is now a lot more faithful to node/browserify/webpack dependency resolution. If your favorite library doesn&#39;t work out of the box, please open up an issue.</li>
-<li><strong>Infrastructure</strong>: We are refactoring the internals of React Native to make it easier to plug in to existing iOS codebases, as well as improve performance by removing redundant views and shadow views, supporting multiple root views and manually registering classes to reduce startup time.</li>
-<li><strong>Components</strong>: The API for a lot of UI components and APIs, especially the ones we&#39;re not using heavily inside of Facebook, has dramatically improved thanks to many of your pull requests.</li>
-<li><strong>Tests</strong>: We ported JavaScript tests, iOS Snapshot tests, and End to End tests to Travis CI. We have broken GitHub master a couple of times (whoops!) when syncing and we hope that with this growing suite of tests it&#39;s going to become harder and harder to do so.</li>
-<li><strong>Patent Grant</strong>: Many of you had concerns and questions around the PATENTS file. We pushed <a href="https://code.facebook.com/posts/1639473982937255/updating-our-open-source-patent-grant/">a new version of the grant</a>.</li>
-<li><strong>Per commit history</strong>: In order to synchronize from Facebook to GitHub, we used to do one giant commit every few days. We improved our tooling and now have per commit history that maintains author information (both internal and external from pull requests), and we retroactively applied this to historical diffs to provide proper attribution.</li>
-</ul>
-<h2><a class="anchor" name="where-are-we-going"></a>Where are we going? <a class="hash-link" href="#where-are-we-going">#</a></h2>
-<p>In addition to supporting pull requests, issues, and general improvements, we&#39;re also working hard on our internal React Native integrations and on React Native for Android.</p>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-
-<h1>
-
-  <a href="/react/blog/2015/03/30/community-roundup-26.html">Community Round-up #26</a>
-
-</h1>
-
-<p class="meta">
-  March 30, 2015
-  by
-  
-    <a href="https://twitter.com/vjeux">Vjeux</a>
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>We open sourced React Native last week and the community reception blew away all our expectations! So many of you tried it, made cool stuff with it, raised many issues and even submitted pull requests to fix them! The entire team wants to say thank you!</p>
-
-<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/hashtag/reactnative?src=hash">#reactnative</a> is like when you get a new expansion pack, and everybody is running around clueless about which NPC to talk to for the quests</p>&mdash; Ryan Florence (@ryanflorence) <a href="https://twitter.com/ryanflorence/status/581810423554543616">March 28, 2015</a></blockquote>
-<h2><a class="anchor" name="when-is-react-native-android-coming"></a>When is React Native Android coming? <a class="hash-link" href="#when-is-react-native-android-coming">#</a></h2>
-<p><strong>Give us 6 months</strong>. At Facebook, we strive to only open-source projects that we are using in production. While the Android backend for React Native is starting to work (see video below at 37min), it hasn&#39;t been shipped to any users yet. There&#39;s a lot of work that goes into open-sourcing a project, and we want to do it right so that you have a great experience when using it.</p>
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X6YbAKiLCLU?start=2220" frameborder="0" allowfullscreen></iframe>
-<h2><a class="anchor" name="ray-wenderlich---property-finder"></a>Ray Wenderlich - Property Finder <a class="hash-link" href="#ray-wenderlich---property-finder">#</a></h2>
-<p>If you are getting started with React Native, you should absolutely <a href="http://www.raywenderlich.com/99473/introducing-react-native-building-apps-javascript">use this tutorial</a> from Colin Eberhardt. It goes through all the steps to make a reasonably complete app.</p>
-
-<p><center>
-<a href="http://www.raywenderlich.com/99473/introducing-react-native-building-apps-javascript"><img src="/react/img/blog/property-finder.png" alt=""></a>
-</center></p>
-
-<p>Colin also <a href="http://blog.scottlogic.com/2015/03/26/react-native-retrospective.html">blogged about his experience using React Native</a> for a few weeks and gives his thoughts on why you would or wouldn&#39;t use it.</p>
-<h2><a class="anchor" name="the-changelog"></a>The Changelog <a class="hash-link" href="#the-changelog">#</a></h2>
-<p>Spencer Ahrens and I had the great pleasure to talk about React Native on <a href="https://thechangelog.com/149/">The Changelog</a> podcast. It was really fun to chat for an hour, I hope that you&#39;ll enjoy listening to it. :)</p>
-
-<audio src="http://fdlyr.co/d/changelog/cdn.5by5.tv/audio/broadcasts/changelog/2015/changelog-149.mp3" controls="controls" style="width: 100%"></audio>
-<h2><a class="anchor" name="hacker-news"></a>Hacker News <a class="hash-link" href="#hacker-news">#</a></h2>
-<p>Less than 24 hours after React Native was open sourced, Simarpreet Singh built an <a href="https://github.com/iSimar/HackerNews-React-Native">Hacker News reader app from scratch</a>. It&#39;s unbelievable how fast he was able to pull it off!</p>
-
-<p><center>
-<a href="https://github.com/iSimar/HackerNews-React-Native"><img src="/react/img/blog/hacker-news-react-native.png" alt=""></a>
-</center></p>
-<h2><a class="anchor" name="parse--react"></a>Parse + React <a class="hash-link" href="#parse--react">#</a></h2>
-<p>There&#39;s a huge ecosystem of JavaScript modules on npm and React Native was designed to work well with the ones that don&#39;t have DOM dependencies. Parse is a great example; you can <code>npm install parse</code> on your React Native project and it&#39;ll work as is. :) We still have <a href="https://github.com/facebook/react-native/issues/406">a</a> <a href="https://github.com/facebook/react-native/issues/370">few</a> <a href="https://github.com/facebook/react-native/issues/316">issues</a> to solve; please create an issue if your favorite library doesn&#39;t work out of the box.</p>
-
-<p><center>
-<a href="http://blog.parse.com/2015/03/25/parse-and-react-shared-chemistry/"><img src="/react/img/blog/parse-react.jpg" alt=""></a>
-</center></p>
-<h2><a class="anchor" name="tcomb-form-native"></a>tcomb-form-native <a class="hash-link" href="#tcomb-form-native">#</a></h2>
-<p>Giulio Canti is the author of the <a href="https://github.com/gcanti/tcomb-form">tcomb-form library</a> for React. He already <a href="https://github.com/gcanti/tcomb-form-native">ported it to React Native</a> and it looks great!</p>
-
-<p><center>
-<a href="https://github.com/gcanti/tcomb-form-native"><img src="/react/img/blog/tcomb-react-native.png" alt=""></a>
-</center></p>
-<h2><a class="anchor" name="facebook-login-with-react-native"></a>Facebook Login with React Native <a class="hash-link" href="#facebook-login-with-react-native">#</a></h2>
-<p>One of the reason we built React Native is to be able to use all the libraries in the native ecosystem. Brent Vatne leads the way and explains <a href="http://brentvatne.ca/facebook-login-with-react-native/">how to use Facebook Login with React Native</a>.</p>
-<h2><a class="anchor" name="modus-create"></a>Modus Create <a class="hash-link" href="#modus-create">#</a></h2>
-<p>Jay Garcia spent a lot of time during the beta working on a NES music player with React Native. He wrote a blog post to share his experience and explains some code snippets.</p>
-
-<p><center>
-<a href="http://moduscreate.com/react-native-has-landed/"><img src="/react/img/blog/modus-create.gif" alt=""></a>
-</center></p>
-<h2><a class="anchor" name="react-native-with-babel-and-webpack"></a>React Native with Babel and Webpack <a class="hash-link" href="#react-native-with-babel-and-webpack">#</a></h2>
-<p>React Native ships with a custom packager and custom ES6 transforms instead of using what the open source community settled on such as Webpack and Babel. The main reason for this is performance – we couldn&#39;t get those tools to have sub-second reload time on a large codebase.</p>
-
-<p>Roman Liutikov found a way to <a href="https://github.com/roman01la/react-native-babel">use Webpack and Babel to run on React Native</a>! In the future, we want to work with those projects to provide cleaner extension mechanisms.</p>
-<h2><a class="anchor" name="a-dynamic-crazy-native-mobile-futurepowered-by-javascript"></a>A Dynamic, Crazy, Native Mobile Future—Powered by JavaScript <a class="hash-link" href="#a-dynamic-crazy-native-mobile-futurepowered-by-javascript">#</a></h2>
-<p>Clay Allsopp wrote a post about <a href="https://medium.com/@clayallsopp/a-dynamic-crazy-native-mobile-future-powered-by-javascript-70f2d56b1987">all the crazy things you could do with a JavaScript engine that renders native views</a>. What about native embeds, seamless native browser, native search engine or even app generation...</p>
-<h2><a class="anchor" name="random-tweet"></a>Random Tweet <a class="hash-link" href="#random-tweet">#</a></h2>
-<p>We&#39;ve spent a lot of efforts getting the onboarding as easy as possible and we&#39;re really happy that people noticed. We still have a lot of work to do on documentation, stay tuned!</p>
-
-<blockquote class="twitter-tweet" lang="en"><p>Wow. Getting started with React Native might have been the smoothest experience I’ve ever had with a new developer product.</p>&mdash; Andreas Eldh (@eldh) <a href="https://twitter.com/eldh/status/581186172094980096">March 26, 2015</a></blockquote>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-
-<h1>
-
-  <a href="/react/blog/2015/03/26/introducing-react-native.html">Introducing React Native</a>
-
-</h1>
-
-<p class="meta">
-  March 26, 2015
-  by
-  
-    <a href="http://benalpert.com">Ben Alpert</a>
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>In January at React.js Conf, we announced React Native, a new framework for building native apps using React. We&#39;re happy to announce that we&#39;re open-sourcing React Native and you can start building your apps with it today.</p>
-
-<p>For more details, see <a href="https://code.facebook.com/posts/1014532261909640/react-native-bringing-modern-web-techniques-to-mobile/">Tom Occhino&#39;s post on the Facebook Engineering blog</a>:</p>
-
+<p>You can use <a href="/react/docs/jsx-spread.html">JSX spread attributes</a> to merge the old props with additional values:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span> <span class="nx">more</span><span class="o">=</span><span class="s2">&quot;values&quot;</span> <span class="o">/&gt;</span>
+</code></pre></div>
+<p>If you don&#39;t use JSX, you can use any object helper such as ES6 <code>Object.assign</code> or Underscore <code>_.extend</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Component</span><span class="p">,</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span> <span class="p">{</span> <span class="nx">more</span><span class="o">:</span> <span class="s1">&#39;values&#39;</span> <span class="p">}));</span>
+</code></pre></div>
+<p>The rest of this tutorial explains best practices. It uses JSX and experimental ES7 syntax.</p>
+<h2><a class="anchor" name="manual-transfer"></a>Manual Transfer <a class="hash-link" href="#manual-transfer">#</a></h2>
+<p>Most of the time you should explicitly pass the properties down. That ensures that you only expose a subset of the inner API, one that you know will work.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onClick</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">FancyCheckbox</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">)}</span><span class="o">&gt;</span>
+    <span class="nx">Hello</span> <span class="nx">world</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="err">/FancyCheckbox&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>But what about the <code>name</code> prop? Or the <code>title</code> prop? Or <code>onMouseOver</code>?</p>
+<h2><a class="anchor" name="transferring-with-...-in-jsx"></a>Transferring with <code>...</code> in JSX <a class="hash-link" href="#transferring-with-...-in-jsx">#</a></h2>
 <blockquote>
-<p><em>What we really want is the user experience of the native mobile platforms, combined with the developer experience we have when building with React on the web.</em></p>
+<p>NOTE:</p>
 
-<p><em>With a bit of work, we can make it so the exact same React that&#39;s on GitHub can power truly native mobile applications. The only difference in the mobile environment is that instead of running React in the browser and rendering to divs and spans, we run it an embedded instance of JavaScriptCore inside our apps and render to higher-level platform-specific components.</em></p>
-
-<p><em>It&#39;s worth noting that we&#39;re not chasing “write once, run anywhere.” Different platforms have different looks, feels, and capabilities, and as such, we should still be developing discrete apps for each platform, but the same set of engineers should be able to build applications for whatever platform they choose, without needing to learn a fundamentally different set of technologies for each. We call this approach “learn once, write anywhere.”</em></p>
+<p>In the example below, the <code>--harmony</code> flag is required as this syntax is an experimental ES7 syntax. If using the in-browser JSX transformer, simply open your script with <code>&lt;script type=&quot;text/jsx;harmony=true&quot;&gt;</code>. See the <a href="/react/docs/transferring-props.html#rest-and-spread-properties-...">Rest and Spread Properties ...</a> section below for more details.</p>
 </blockquote>
 
-<p>To learn more, visit the <a href="https://facebook.github.io/react-native/">React Native website</a>.</p>
+<p>Sometimes it&#39;s fragile and tedious to pass every property along. In that case you can use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">destructuring assignment</a> with rest properties to extract a set of unknown properties.</p>
+
+<p>List out all the properties that you would like to consume, followed by <code>...other</code>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="p">{</span> <span class="nx">checked</span><span class="p">,</span> <span class="p">...</span><span class="nx">other</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+</code></pre></div>
+<p>This ensures that you pass down all the props EXCEPT the ones you&#39;re consuming yourself.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="p">{</span> <span class="nx">checked</span><span class="p">,</span> <span class="p">...</span><span class="nx">other</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="c1">// `other` contains { onClick: console.log } but not the checked property</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="p">{...</span><span class="nx">other</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span> <span class="o">/&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">FancyCheckbox</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">)}</span><span class="o">&gt;</span>
+    <span class="nx">Hello</span> <span class="nx">world</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="err">/FancyCheckbox&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>NOTE:</p>
+
+<p>In the example above, the <code>checked</code> prop is also a valid DOM attribute. If you didn&#39;t use destructuring in this way you might inadvertently pass it along.</p>
+</blockquote>
+
+<p>Always use the destructuring pattern when transferring unknown <code>other</code> props.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="c1">// ANTI-PATTERN: `checked` would be passed down to the inner component</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span> <span class="o">/&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div><h2><a class="anchor" name="consuming-and-transferring-the-same-prop"></a>Consuming and Transferring the Same Prop <a class="hash-link" href="#consuming-and-transferring-the-same-prop">#</a></h2>
+<p>If your component wants to consume a property but also wants to pass it along, you can repass it explicitly with <code>checked={checked}</code>. This is preferable to passing the full <code>this.props</code> object since it&#39;s easier to refactor and lint.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="p">{</span> <span class="nx">checked</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="p">...</span><span class="nx">other</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">fancyTitle</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;X &#39;</span> <span class="o">+</span> <span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;O &#39;</span> <span class="o">+</span> <span class="nx">title</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="p">{...</span><span class="nx">other</span><span class="p">}</span>
+          <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">checked</span><span class="p">}</span>
+          <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">fancyClass</span><span class="p">}</span>
+          <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span>
+        <span class="o">/&gt;</span>
+        <span class="p">{</span><span class="nx">fancyTitle</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/label&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>NOTE:</p>
+
+<p>Order matters. By putting the <code>{...other}</code> before your JSX props you ensure that the consumer of your component can&#39;t override them. In the example above we have guaranteed that the input will be of type <code>&quot;checkbox&quot;</code>.</p>
+</blockquote>
+<h2><a class="anchor" name="rest-and-spread-properties-..."></a>Rest and Spread Properties <code>...</code> <a class="hash-link" href="#rest-and-spread-properties-...">#</a></h2>
+<p>Rest properties allow you to extract the remaining properties from an object into a new object. It excludes every other property listed in the destructuring pattern.</p>
+
+<p>This is an experimental implementation of an <a href="https://github.com/sebmarkbage/ecmascript-rest-spread">ES7 proposal</a>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="p">...</span><span class="nx">z</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">a</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mi">4</span> <span class="p">};</span>
+<span class="nx">x</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="nx">y</span><span class="p">;</span> <span class="c1">// 2</span>
+<span class="nx">z</span><span class="p">;</span> <span class="c1">// { a: 3, b: 4 }</span>
+</code></pre></div>
+<blockquote>
+<p>Note:</p>
+
+<p>Use the <a href="https://www.npmjs.com/package/react-tools">JSX command-line tool</a> with the <code>--harmony</code> flag to activate the experimental ES7 syntax.</p>
+</blockquote>
+<h2><a class="anchor" name="transferring-with-underscore"></a>Transferring with Underscore <a class="hash-link" href="#transferring-with-underscore">#</a></h2>
+<p>If you don&#39;t use JSX, you can use a library to achieve the same pattern. Underscore supports <code>_.omit</code> to filter out properties and <code>_.extend</code> to copy properties onto a new object.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">FancyCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">checked</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">other</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">omit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span> <span class="s1">&#39;checked&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">fancyClass</span> <span class="o">=</span> <span class="nx">checked</span> <span class="o">?</span> <span class="s1">&#39;FancyChecked&#39;</span> <span class="o">:</span> <span class="s1">&#39;FancyUnchecked&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="nx">other</span><span class="p">,</span> <span class="p">{</span> <span class="nx">className</span><span class="o">:</span> <span class="nx">fancyClass</span> <span class="p">}))</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+
+
+
+      </div>
+    
+      <div class="post-list-item">
+        
+
+
+<h1>
+
+  <a href="/react/articles/reusable-components.html">Reusable Components</a>
+
+</h1>
+
+<p class="meta">
+  January  1, 3005
+  by
+  
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>When designing interfaces, break down the common design elements (buttons, form fields, layout components, etc.) into reusable components with well-defined interfaces. That way, the next time you need to build some UI, you can write much less code. This means faster development time, fewer bugs, and fewer bytes down the wire.</p>
+<h2><a class="anchor" name="prop-validation"></a>Prop Validation <a class="hash-link" href="#prop-validation">#</a></h2>
+<p>As your app grows it&#39;s helpful to ensure that your components are used correctly. We do this by allowing you to specify <code>propTypes</code>. <code>React.PropTypes</code> exports a range of validators that can be used to make sure the data you receive is valid. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. Note that for performance reasons <code>propTypes</code> is only checked in development mode. Here is an example documenting the different validators provided:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// You can declare that a prop is a specific JS primitive. By default, these</span>
+    <span class="c1">// are all optional.</span>
+    <span class="nx">optionalArray</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">array</span><span class="p">,</span>
+    <span class="nx">optionalBool</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
+    <span class="nx">optionalFunc</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
+    <span class="nx">optionalNumber</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
+    <span class="nx">optionalObject</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">,</span>
+    <span class="nx">optionalString</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+
+    <span class="c1">// Anything that can be rendered: numbers, strings, elements or an array</span>
+    <span class="c1">// (or fragment) containing these types.</span>
+    <span class="nx">optionalNode</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span><span class="p">,</span>
+
+    <span class="c1">// A React element.</span>
+    <span class="nx">optionalElement</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span>
+
+    <span class="c1">// You can also declare that a prop is an instance of a class. This uses</span>
+    <span class="c1">// JS&#39;s instanceof operator.</span>
+    <span class="nx">optionalMessage</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">instanceOf</span><span class="p">(</span><span class="nx">Message</span><span class="p">),</span>
+
+    <span class="c1">// You can ensure that your prop is limited to specific values by treating</span>
+    <span class="c1">// it as an enum.</span>
+    <span class="nx">optionalEnum</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">oneOf</span><span class="p">([</span><span class="s1">&#39;News&#39;</span><span class="p">,</span> <span class="s1">&#39;Photos&#39;</span><span class="p">]),</span>
+
+    <span class="c1">// An object that could be one of many types</span>
+    <span class="nx">optionalUnion</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">oneOfType</span><span class="p">([</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">instanceOf</span><span class="p">(</span><span class="nx">Message</span><span class="p">)</span>
+    <span class="p">]),</span>
+
+    <span class="c1">// An array of a certain type</span>
+    <span class="nx">optionalArrayOf</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">arrayOf</span><span class="p">(</span><span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">),</span>
+
+    <span class="c1">// An object with property values of a certain type</span>
+    <span class="nx">optionalObjectOf</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">objectOf</span><span class="p">(</span><span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">),</span>
+
+    <span class="c1">// An object taking on a particular shape</span>
+    <span class="nx">optionalObjectWithShape</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">shape</span><span class="p">({</span>
+      <span class="nx">color</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+      <span class="nx">fontSize</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span>
+    <span class="p">}),</span>
+
+    <span class="c1">// You can chain any of the above with `isRequired` to make sure a warning</span>
+    <span class="c1">// is shown if the prop isn&#39;t provided.</span>
+    <span class="nx">requiredFunc</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+
+    <span class="c1">// A value of any data type</span>
+    <span class="nx">requiredAny</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">any</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+
+    <span class="c1">// You can also specify a custom validator. It should return an Error</span>
+    <span class="c1">// object if the validation fails. Don&#39;t `console.warn` or throw, as this</span>
+    <span class="c1">// won&#39;t work inside `oneOfType`.</span>
+    <span class="nx">customProp</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="nx">propName</span><span class="p">,</span> <span class="nx">componentName</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="sr">/matchme/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">props</span><span class="p">[</span><span class="nx">propName</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Validation failed!&#39;</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre></div><h2><a class="anchor" name="default-prop-values"></a>Default Prop Values <a class="hash-link" href="#default-prop-values">#</a></h2>
+<p>React lets you define default values for your <code>props</code> in a very declarative way:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">ComponentWithDefaultProps</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">getDefaultProps</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;default value&#39;</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>The result of <code>getDefaultProps()</code> will be cached and used to ensure that <code>this.props.value</code> will have a value if it was not specified by the parent component. This allows you to safely just use your props without having to write repetitive and fragile code to handle that yourself.</p>
+<h2><a class="anchor" name="transferring-props-a-shortcut"></a>Transferring Props: A Shortcut <a class="hash-link" href="#transferring-props-a-shortcut">#</a></h2>
+<p>A common type of React component is one that extends a basic HTML element in a simple way. Often you&#39;ll want to copy any HTML attributes passed to your component to the underlying HTML element to save typing. You can use the JSX <em>spread</em> syntax to achieve this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">CheckLink</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// This takes any props passed to CheckLink and copies them to &lt;a&gt;</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="s1">&#39;√ &#39;</span><span class="p">}{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/a&gt;;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">CheckLink</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;/checked.html&quot;</span><span class="o">&gt;</span>
+    <span class="nx">Click</span> <span class="nx">here</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="err">/CheckLink&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div><h2><a class="anchor" name="single-child"></a>Single Child <a class="hash-link" href="#single-child">#</a></h2>
+<p>With <code>React.PropTypes.element</code> you can specify that only a single child can be passed to
+a component as children.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">isRequired</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span> <span class="c1">// This must be exactly one element or it will throw.</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">});</span>
+</code></pre></div><h2><a class="anchor" name="mixins"></a>Mixins <a class="hash-link" href="#mixins">#</a></h2>
+<p>Components are the best way to reuse code in React, but sometimes very different components may share some common functionality. These are sometimes called <a href="https://en.wikipedia.org/wiki/Cross-cutting_concern">cross-cutting concerns</a>. React provides <code>mixins</code> to solve this problem.</p>
+
+<p>One common use case is a component wanting to update itself on a time interval. It&#39;s easy to use <code>setInterval()</code>, but it&#39;s important to cancel your interval when you don&#39;t need it anymore to save memory. React provides <a href="/react/docs/working-with-the-browser.html#component-lifecycle">lifecycle methods</a> that let you know when a component is about to be created or destroyed. Let&#39;s create a simple mixin that uses these methods to provide an easy <code>setInterval()</code> function that will automatically get cleaned up when your component is destroyed.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">SetIntervalMixin</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">componentWillMount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">intervals</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="p">},</span>
+  <span class="nx">setInterval</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">intervals</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">setInterval</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">));</span>
+  <span class="p">},</span>
+  <span class="nx">componentWillUnmount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">intervals</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">clearInterval</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">TickTock</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">mixins</span><span class="o">:</span> <span class="p">[</span><span class="nx">SetIntervalMixin</span><span class="p">],</span> <span class="c1">// Use the mixin</span>
+  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nx">seconds</span><span class="o">:</span> <span class="mi">0</span><span class="p">};</span>
+  <span class="p">},</span>
+  <span class="nx">componentDidMount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setInterval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tick</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span> <span class="c1">// Call a method on the mixin</span>
+  <span class="p">},</span>
+  <span class="nx">tick</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">seconds</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">seconds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+        <span class="nx">React</span> <span class="nx">has</span> <span class="nx">been</span> <span class="nx">running</span> <span class="k">for</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">seconds</span><span class="p">}</span> <span class="nx">seconds</span><span class="p">.</span>
+      <span class="o">&lt;</span><span class="err">/p&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">TickTock</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>A nice feature of mixins is that if a component is using multiple mixins and several mixins define the same lifecycle method (i.e. several mixins want to do some cleanup when the component is destroyed), all of the lifecycle methods are guaranteed to be called. Methods defined on mixins run in the order mixins were listed, followed by a method call on the component.</p>
+<h2><a class="anchor" name="es6-classes"></a>ES6 Classes <a class="hash-link" href="#es6-classes">#</a></h2>
+<p>You may also define your React classes as a plain JavaScript class. For example using ES6 class syntax:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">HelloMessage</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">HelloMessage</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Sebastian&quot;</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nx">mountNode</span><span class="p">);</span>
+</code></pre></div>
+<p>The API is similar to <code>React.createClass</code> with the exception of <code>getInitialState</code>. Instead of providing a separate <code>getInitialState</code> method, you set up your own <code>state</code> property in the constructor.</p>
+
+<p>Another difference is that <code>propTypes</code> and <code>defaultProps</code> are defined as properties on the constructor instead of in the class body.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Counter</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span><span class="nx">count</span><span class="o">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">initialCount</span><span class="p">};</span>
+  <span class="p">}</span>
+  <span class="nx">tick</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">count</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">tick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)}</span><span class="o">&gt;</span>
+        <span class="nx">Clicks</span><span class="o">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">Counter</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">initialCount</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span> <span class="p">};</span>
+<span class="nx">Counter</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">initialCount</span><span class="o">:</span> <span class="mi">0</span> <span class="p">};</span>
+</code></pre></div><h3><a class="anchor" name="no-autobinding"></a>No Autobinding <a class="hash-link" href="#no-autobinding">#</a></h3>
+<p>Methods follow the same semantics as regular ES6 classes, meaning that they don&#39;t automatically bind <code>this</code> to the instance. You&#39;ll have to explicitly use <code>.bind(this)</code> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow functions</a> <code>=&gt;</code>.</p>
+<h3><a class="anchor" name="no-mixins"></a>No Mixins <a class="hash-link" href="#no-mixins">#</a></h3>
+<p>Unfortunately ES6 launched without any mixin support. Therefore, there is no support for mixins when you use React with ES6 classes. Instead, we&#39;re working on making it easier to support such use cases without resorting to mixins.</p>
 
 </div>
 
@@ -333,205 +460,363 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.13.2.m
 
 <h1>
 
-  <a href="/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html">Building The Facebook News Feed With Relay</a>
+  <a href="/react/articles/multiple-components.html">Multiple Components</a>
 
 </h1>
 
 <p class="meta">
-  March 19, 2015
+  January  1, 3004
   by
   
-    <a href="https://twitter.com/en_JS">Joseph Savona</a>
+    
   
 </p>
 
 <hr>
 
 <div class="post">
-  <p>At React.js Conf in January we gave a preview of Relay, a new framework for building data-driven applications in React. In this post, we&#39;ll describe the process of creating a Relay application. This post assumes some familiarity with the concepts of Relay and GraphQL, so if you haven&#39;t already we recommend reading <a href="/react/blog/2015/02/20/introducing-relay-and-graphql.html">our introductory blog post</a> or watching <a href="https://www.youtube-nocookie.com/watch?v=9sc8Pyc51uU">the conference talk</a>.</p>
-
-<p>We&#39;re working hard to prepare GraphQL and Relay for public release. In the meantime, we&#39;ll continue to provide information about what you can expect.</p>
-
-<p><br/></p>
-<h2><a class="anchor" name="the-relay-architecture"></a>The Relay Architecture <a class="hash-link" href="#the-relay-architecture">#</a></h2>
-<p>The diagram below shows the main parts of the Relay architecture on the client and the server:</p>
-
-<p><img src="/react/img/blog/relay-components/relay-architecture.png" alt="Relay Architecture" width="650" /></p>
-
-<p>The main pieces are as follows:</p>
-
-<ul>
-<li>Relay Components: React components annotated with declarative data descriptions.</li>
-<li>Actions: Descriptions of how data should change in response to user actions.</li>
-<li>Relay Store: A client-side data store that is fully managed by the framework.</li>
-<li>Server: An HTTP server with GraphQL endpoints (one for reads, one for writes) that respond to GraphQL queries.</li>
-</ul>
-
-<p>This post will focus on <strong>Relay components</strong> that describe encapsulated units of UI and their data dependencies. These components form the majority of a Relay application.</p>
-
-<p><br/></p>
-<h2><a class="anchor" name="a-relay-application"></a>A Relay Application <a class="hash-link" href="#a-relay-application">#</a></h2>
-<p>To see how components work and can be composed, let&#39;s implement a basic version of the Facebook News Feed in Relay. Our application will have two components: a <code>&lt;NewsFeed&gt;</code> that renders a list of <code>&lt;Story&gt;</code> items. We&#39;ll introduce the plain React version of each component first and then convert it to a Relay component. The goal is something like the following:</p>
-
-<p><img src="/react/img/blog/relay-components/sample-newsfeed.png" alt="Sample News Feed" width="360" /></p>
-
-<p><br/></p>
-<h2><a class="anchor" name="the-ltstorygt-begins"></a>The <code>&lt;Story&gt;</code> Begins <a class="hash-link" href="#the-ltstorygt-begins">#</a></h2>
-<p>The first step is a React <code>&lt;Story&gt;</code> component that accepts a <code>story</code> prop with the story&#39;s text and author information. Note that all examples uses ES6 syntax and elide presentation details to focus on the pattern of data access.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Story.react.js</span>
-<span class="kr">class</span> <span class="nx">Story</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">story</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">story</span><span class="p">;</span>
+  <p>So far, we&#39;ve looked at how to write a single component to display data and handle user input. Next let&#39;s examine one of React&#39;s finest features: composability.</p>
+<h2><a class="anchor" name="motivation-separation-of-concerns"></a>Motivation: Separation of Concerns <a class="hash-link" href="#motivation-separation-of-concerns">#</a></h2>
+<p>By building modular components that reuse other components with well-defined interfaces, you get much of the same benefits that you get by using functions or classes. Specifically you can <em>separate the different concerns</em> of your app however you please simply by building new components. By building a custom component library for your application, you are expressing your UI in a way that best fits your domain.</p>
+<h2><a class="anchor" name="composition-example"></a>Composition Example <a class="hash-link" href="#composition-example">#</a></h2>
+<p>Let&#39;s create a simple Avatar component which shows a profile picture and username using the Facebook Graph API.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Avatar</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">View</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Image</span> <span class="nx">uri</span><span class="o">=</span><span class="p">{</span><span class="nx">story</span><span class="p">.</span><span class="nx">author</span><span class="p">.</span><span class="nx">profile_picture</span><span class="p">.</span><span class="nx">uri</span><span class="p">}</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">story</span><span class="p">.</span><span class="nx">author</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">story</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ProfilePic</span> <span class="nx">username</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ProfileLink</span> <span class="nx">username</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Story</span><span class="p">;</span>
-</code></pre></div>
-<p><br/></p>
-<h2><a class="anchor" name="whats-the-ltstorygt"></a>What&#39;s the <code>&lt;Story&gt;</code>? <a class="hash-link" href="#whats-the-ltstorygt">#</a></h2>
-<p>Relay automates the process of fetching data for components by wrapping existing React components in Relay containers (themselves React components):</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Story.react.js</span>
-<span class="kr">class</span> <span class="nx">Story</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Relay</span><span class="p">.</span><span class="nx">createContainer</span><span class="p">(</span><span class="nx">Story</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">queries</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">story</span><span class="o">:</span> <span class="cm">/* TODO */</span>
-  <span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div>
-<p>Before adding the GraphQL query, let&#39;s look at the component hierarchy this creates:</p>
 
-<p><img src="/react/img/blog/relay-components/relay-containers.png" width="397" alt="React Container Data Flow" /></p>
-
-<p>Most props will be passed through from the container to the original component. However, Relay will return the query results for a prop whenever a query is defined. In this case we&#39;ll add a GraphQL query for <code>story</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Story.react.js</span>
-<span class="kr">class</span> <span class="nx">Story</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Relay</span><span class="p">.</span><span class="nx">createContainer</span><span class="p">(</span><span class="nx">Story</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">queries</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">story</span><span class="o">:</span> <span class="nx">graphql</span><span class="err">`</span>
-      <span class="nx">Story</span> <span class="p">{</span>
-        <span class="nx">author</span> <span class="p">{</span>
-          <span class="nx">name</span><span class="p">,</span>
-          <span class="nx">profile_picture</span> <span class="p">{</span>
-            <span class="nx">uri</span>
-          <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nx">text</span>
-      <span class="p">}</span>
-    <span class="err">`</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</code></pre></div>
-<p>Queries use ES6 template literals tagged with the <code>graphql</code> function. Similar to how JSX transpiles to plain JavaScript objects and function calls, these template literals transpile to plain objects that describe queries. Note that the query&#39;s structure closely matches the object structure that we expected in <code>&lt;Story&gt;</code>&#39;s render function.</p>
-
-<p><br/></p>
-<h2><a class="anchor" name="ltstorygts-on-demand"></a><code>&lt;Story&gt;</code>s on Demand <a class="hash-link" href="#ltstorygts-on-demand">#</a></h2>
-<p>We can render a Relay component by providing Relay with the component (<code>&lt;Story&gt;</code>) and the ID of the data (a story ID). Given this information, Relay will first fetch the results of the query and then <code>render()</code> the component. The value of <code>props.story</code> will be a plain JavaScript object such as the following:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
-  <span class="nx">author</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Greg&quot;</span><span class="p">,</span>
-    <span class="nx">profile_picture</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">uri</span><span class="o">:</span> <span class="s2">&quot;https://…&quot;</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nx">text</span><span class="o">:</span> <span class="s2">&quot;The first Relay blog post is up…&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Relay guarantees that all data required to render a component will be available before it is rendered. This means that <code>&lt;Story&gt;</code> does not need to handle a loading state; the <code>story</code> is <em>guaranteed</em> to be available before <code>render()</code> is called. We have found that this invariant simplifies our application code <em>and</em> improves the user experience. Of course, Relay also has options to delay the fetching of some parts of our queries.</p>
-
-<p>The diagram below shows how Relay containers make data available to our React components:</p>
-
-<p><img src="/react/img/blog/relay-components/relay-containers-data-flow.png" width="650" alt="Relay Container Data Flow" /></p>
-
-<p><br/></p>
-<h2><a class="anchor" name="ltnewsfeedgt-worthy"></a><code>&lt;NewsFeed&gt;</code> Worthy <a class="hash-link" href="#ltnewsfeedgt-worthy">#</a></h2>
-<p>Now that the <code>&lt;Story&gt;</code> is over we can continue with the <code>&lt;NewsFeed&gt;</code> component. Again, we&#39;ll start with a React version:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// NewsFeed.react.js</span>
-<span class="kr">class</span> <span class="nx">NewsFeed</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">stories</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">stories</span><span class="p">;</span> <span class="c1">// `viewer` is the active user</span>
+<span class="kd">var</span> <span class="nx">ProfilePic</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">View</span><span class="o">&gt;</span>
-        <span class="p">{</span><span class="nx">stories</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">story</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">Story</span> <span class="nx">story</span><span class="o">=</span><span class="p">{</span><span class="nx">story</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">)}</span>
-        <span class="o">&lt;</span><span class="nx">Button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">loadMore</span><span class="p">()}</span><span class="o">&gt;</span><span class="nx">Load</span> <span class="nx">More</span><span class="o">&lt;</span><span class="err">/Button&gt;</span>
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
+      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;https://graph.facebook.com/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span> <span class="o">+</span> <span class="s1">&#39;/picture&#39;</span><span class="p">}</span> <span class="o">/&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
+<span class="p">});</span>
 
-  <span class="nx">loadMore</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// TODO: fetch more stories</span>
+<span class="kd">var</span> <span class="nx">ProfileLink</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;https://www.facebook.com/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/a&gt;</span>
+    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">});</span>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">NewsFeed</span><span class="p">;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Avatar</span> <span class="nx">username</span><span class="o">=</span><span class="s2">&quot;pwh&quot;</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div><h2><a class="anchor" name="ownership"></a>Ownership <a class="hash-link" href="#ownership">#</a></h2>
+<p>In the above example, instances of <code>Avatar</code> <em>own</em> instances of <code>ProfilePic</code> and <code>ProfileLink</code>. In React, <strong>an owner is the component that sets the <code>props</code> of other components</strong>. More formally, if a component <code>X</code> is created in component <code>Y</code>&#39;s <code>render()</code> method, it is said that <code>X</code> is <em>owned by</em> <code>Y</code>. As discussed earlier, a component cannot mutate its <code>props</code> — they are always consistent with what its owner sets them to. This key property leads to UIs that are guaranteed to be consistent.</p>
+
+<p>It&#39;s important to draw a distinction between the owner-ownee relationship and the parent-child relationship. The owner-ownee relationship is specific to React, while the parent-child relationship is simply the one you know and love from the DOM. In the example above, <code>Avatar</code> owns the <code>div</code>, <code>ProfilePic</code> and <code>ProfileLink</code> instances, and <code>div</code> is the <strong>parent</strong> (but not owner) of the <code>ProfilePic</code> and <code>ProfileLink</code> instances.</p>
+<h2><a class="anchor" name="children"></a>Children <a class="hash-link" href="#children">#</a></h2>
+<p>When you create a React component instance, you can include additional React components or JavaScript expressions between the opening and closing tags like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">Parent</span><span class="o">&gt;&lt;</span><span class="nx">Child</span> <span class="o">/&gt;&lt;</span><span class="err">/Parent&gt;</span>
 </code></pre></div>
-<p><br/></p>
-<h2><a class="anchor" name="all-the-news-fit-to-be-relayed"></a>All the News Fit to be Relayed <a class="hash-link" href="#all-the-news-fit-to-be-relayed">#</a></h2>
-<p><code>&lt;NewsFeed&gt;</code> has two new requirements: it composes <code>&lt;Story&gt;</code> and requests more data at runtime.</p>
+<p><code>Parent</code> can read its children by accessing the special <code>this.props.children</code> prop. <strong><code>this.props.children</code> is an opaque data structure:</strong> use the <a href="/react/docs/top-level-api.html#react.children">React.Children utilities</a> to manipulate them.</p>
+<h3><a class="anchor" name="child-reconciliation"></a>Child Reconciliation <a class="hash-link" href="#child-reconciliation">#</a></h3>
+<p><strong>Reconciliation is the process by which React updates the DOM with each new render pass.</strong> In general, children are reconciled according to the order in which they are rendered. For example, suppose two render passes generate the following respective markup:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">// Render Pass 1
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+// Render Pass 2
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+</code></pre></div>
+<p>Intuitively, <code>&lt;p&gt;Paragraph 1&lt;/p&gt;</code> was removed. Instead, React will reconcile the DOM by changing the text content of the first child and destroying the last child. React reconciles according to the <em>order</em> of the children.</p>
+<h3><a class="anchor" name="stateful-children"></a>Stateful Children <a class="hash-link" href="#stateful-children">#</a></h3>
+<p>For most components, this is not a big deal. However, for stateful components that maintain data in <code>this.state</code> across render passes, this can be very problematic.</p>
 
-<p>Just as React views can be nested, Relay queries can compose queries from child components. Composition in GraphQL uses ES6 template literal substitution: <code>${Component.getQuery(&#39;prop&#39;)}</code>. Pagination can be accomplished with a query parameter, specified with <code>&lt;param&gt;</code> (as in <code>stories(first: &lt;count&gt;)</code>):</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// NewsFeed.react.js</span>
-<span class="kr">class</span> <span class="nx">NewsFeed</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<p>In most cases, this can be sidestepped by hiding elements instead of destroying them:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">// Render Pass 1
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+// Render Pass 2
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">{{display:</span> <span class="err">&#39;</span><span class="na">none</span><span class="err">&#39;}}</span><span class="nt">&gt;</span>Paragraph 1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+</code></pre></div><h3><a class="anchor" name="dynamic-children"></a>Dynamic Children <a class="hash-link" href="#dynamic-children">#</a></h3>
+<p>The situation gets more complicated when the children are shuffled around (as in search results) or if new components are added onto the front of the list (as in streams). In these cases where the identity and state of each child must be maintained across render passes, you can uniquely identify each child by assigning it a <code>key</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">results</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">ol</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">result</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;;</span>
+        <span class="p">})}</span>
+      <span class="o">&lt;</span><span class="err">/ol&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>When React reconciles the keyed children, it will ensure that any child with <code>key</code> will be reordered (instead of clobbered) or destroyed (instead of reused).</p>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Relay</span><span class="p">.</span><span class="nx">createContainer</span><span class="p">(</span><span class="nx">NewsFeed</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">queryParams</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">count</span><span class="o">:</span> <span class="mi">3</span>                             <span class="cm">/* default to 3 stories */</span>
-  <span class="p">},</span>
-  <span class="nx">queries</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">viewer</span><span class="o">:</span> <span class="nx">graphql</span><span class="err">`</span>
-      <span class="nx">Viewer</span> <span class="p">{</span>
-        <span class="nx">stories</span><span class="p">(</span><span class="nx">first</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">count</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>        <span class="cm">/* fetch viewer&#39;s stories */</span>
-          <span class="nx">edges</span> <span class="p">{</span>                        <span class="cm">/* traverse the graph */</span>
-            <span class="nx">node</span> <span class="p">{</span>
-              <span class="nx">$</span><span class="p">{</span><span class="nx">Story</span><span class="p">.</span><span class="nx">getQuery</span><span class="p">(</span><span class="s1">&#39;story&#39;</span><span class="p">)}</span> <span class="cm">/* compose child query */</span>
-            <span class="p">}</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="err">`</span>
+<p>The <code>key</code> should <em>always</em> be supplied directly to the components in the array, not to the container HTML child of each component in the array:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// WRONG!</span>
+<span class="kd">var</span> <span class="nx">ListItemWrapper</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="kd">var</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ListItemWrapper</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">/&gt;</span><span class="p">;</span>
+        <span class="p">})}</span>
+      <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Correct :)</span>
+<span class="kd">var</span> <span class="nx">ListItemWrapper</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="kd">var</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ListItemWrapper</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">/&gt;</span><span class="p">;</span>
+        <span class="p">})}</span>
+      <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+    <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>Whenever <code>&lt;NewsFeed&gt;</code> is rendered, Relay will recursively expand all the composed queries and fetch them in a single trip to the server. In this case, the <code>text</code> and <code>author</code> data will be fetched for each of the 3 story nodes.</p>
+<p>You can also key children by passing a ReactFragment object. See <a href="create-fragment.html">Keyed Fragments</a> for more details.</p>
+<h2><a class="anchor" name="data-flow"></a>Data Flow <a class="hash-link" href="#data-flow">#</a></h2>
+<p>In React, data flows from owner to owned component through <code>props</code> as discussed above. This is effectively one-way data binding: owners bind their owned component&#39;s props to some value the owner has computed based on its <code>props</code> or <code>state</code>. Since this process happens recursively, data changes are automatically reflected everywhere they are used.</p>
+<h2><a class="anchor" name="a-note-on-performance"></a>A Note on Performance <a class="hash-link" href="#a-note-on-performance">#</a></h2>
+<p>You may be thinking that it&#39;s expensive to change data if there are a large number of nodes under an owner. The good news is that JavaScript is fast and <code>render()</code> methods tend to be quite simple, so in most applications this is extremely fast. Additionally, the bottleneck is almost always the DOM mutation and not JS execution. React will optimize this for you using batching and change detection.</p>
 
-<p>Query parameters are available to components as <code>props.queryParams</code> and can be modified with <code>props.setQueryParams(nextParams)</code>. We can use these to implement pagination:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// NewsFeed.react.js</span>
-<span class="kr">class</span> <span class="nx">NewsFeed</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<p>However, sometimes you really want to have fine-grained control over your performance. In that case, simply override <code>shouldComponentUpdate()</code> to return false when you want React to skip processing of a subtree. See <a href="/react/docs/component-specs.html">the React reference docs</a> for more information.</p>
 
-  <span class="nx">loadMore</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// read current params</span>
-    <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">queryParams</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span>
-    <span class="c1">// update params</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">setQueryParams</span><span class="p">({</span>
-      <span class="nx">count</span><span class="o">:</span> <span class="nx">count</span> <span class="o">+</span> <span class="mi">5</span>
-    <span class="p">});</span>
+<blockquote>
+<p>Note:</p>
+
+<p>If <code>shouldComponentUpdate()</code> returns false when data has actually changed, React can&#39;t keep your UI in sync. Be sure you know what you&#39;re doing while using it, and only use this function when you have a noticeable performance problem. Don&#39;t underestimate how fast JavaScript is relative to the DOM.</p>
+</blockquote>
+
+</div>
+
+
+
+      </div>
+    
+      <div class="post-list-item">
+        
+
+
+<h1>
+
+  <a href="/react/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a>
+
+</h1>
+
+<p class="meta">
+  January  1, 3003
+  by
+  
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>You&#39;ve already <a href="/react/docs/displaying-data.html">learned how to display data</a> with React. Now let&#39;s look at how to make our UIs interactive.</p>
+<h2><a class="anchor" name="a-simple-example"></a>A Simple Example <a class="hash-link" href="#a-simple-example">#</a></h2><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">LikeButton</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nx">liked</span><span class="o">:</span> <span class="kc">false</span><span class="p">};</span>
+  <span class="p">},</span>
+  <span class="nx">handleClick</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">liked</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="o">?</span> <span class="s1">&#39;like&#39;</span> <span class="o">:</span> <span class="s1">&#39;haven\&#39;t liked&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="nx">You</span> <span class="p">{</span><span class="nx">text</span><span class="p">}</span> <span class="k">this</span><span class="p">.</span> <span class="nx">Click</span> <span class="nx">to</span> <span class="nx">toggle</span><span class="p">.</span>
+      <span class="o">&lt;</span><span class="err">/p&gt;</span>
+    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Now when <code>loadMore()</code> is called, Relay will send a GraphQL request for the additional five stories. When these stories are fetched, the component will re-render with the new stories available in <code>props.viewer.stories</code> and the updated count reflected in <code>props.queryParams.count</code>.</p>
+<span class="p">});</span>
 
-<p><br/></p>
-<h2><a class="anchor" name="in-conclusion"></a>In Conclusion <a class="hash-link" href="#in-conclusion">#</a></h2>
-<p>These two components form a solid core for our application. With the use of Relay containers and GraphQL queries, we&#39;ve enabled the following benefits:</p>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">LikeButton</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div><h2><a class="anchor" name="event-handling-and-synthetic-events"></a>Event Handling and Synthetic Events <a class="hash-link" href="#event-handling-and-synthetic-events">#</a></h2>
+<p>With React you simply pass your event handler as a camelCased prop similar to how you&#39;d do it in normal HTML. React ensures that all events behave identically in IE8 and above by implementing a synthetic event system. That is, React knows how to bubble and capture events according to the spec, and the events passed to your event handler are guaranteed to be consistent with <a href="http://www.w3.org/TR/DOM-Level-3-Events/">the W3C spec</a>, regardless of which browser you&#39;re using.</p>
+<h2><a class="anchor" name="under-the-hood-autobinding-and-event-delegation"></a>Under the Hood: Autobinding and Event Delegation <a class="hash-link" href="#under-the-hood-autobinding-and-event-delegation">#</a></h2>
+<p>Under the hood, React does a few things to keep your code performant and easy to understand.</p>
+
+<p><strong>Autobinding:</strong> When creating callbacks in JavaScript, you usually need to explicitly bind a method to its instance such that the value of <code>this</code> is correct. With React, every method is automatically bound to its component instance. React caches the bound method such that it&#39;s extremely CPU and memory efficient. It&#39;s also less typing!</p>
+
+<p><strong>Event delegation:</strong> React doesn&#39;t actually attach event handlers to the nodes themselves. When React starts up, it starts listening for all events at the top level using a single event listener. When a component is mounted or unmounted, the event handlers are simply added or removed from an internal mapping. When an event occurs, React knows how to dispatch it using this mapping. When there are no event handlers left in the mapping, React&#39;s event handlers are simple no-ops. To learn more about why this is fast, see <a href="http://davidwalsh.name/event-delegate">David Walsh&#39;s excellent blog post</a>.</p>
+<h2><a class="anchor" name="components-are-just-state-machines"></a>Components are Just State Machines <a class="hash-link" href="#components-are-just-state-machines">#</a></h2>
+<p>React thinks of UIs as simple state machines. By thinking of a UI as being in various states and rendering those states, it&#39;s easy to keep your UI consistent.</p>
+
+<p>In React, you simply update a component&#39;s state, and then render a new UI based on this new state. React takes care of updating the DOM for you in the most efficient way.</p>
+<h2><a class="anchor" name="how-state-works"></a>How State Works <a class="hash-link" href="#how-state-works">#</a></h2>
+<p>A common way to inform React of a data change is by calling <code>setState(data, callback)</code>. This method merges <code>data</code> into <code>this.state</code> and re-renders the component. When the component finishes re-rendering, the optional <code>callback</code> is called. Most of the time you&#39;ll never need to provide a <code>callback</code> since React will take care of keeping your UI up-to-date for you.</p>
+<h2><a class="anchor" name="what-components-should-have-state"></a>What Components Should Have State? <a class="hash-link" href="#what-components-should-have-state">#</a></h2>
+<p>Most of your components should simply take some data from <code>props</code> and render it. However, sometimes you need to respond to user input, a server request or the passage of time. For this you use state.</p>
+
+<p><strong>Try to keep as many of your components as possible stateless.</strong> By doing this you&#39;ll isolate the state to its most logical place and minimize redundancy, making it easier to reason about your application.</p>
+
+<p>A common pattern is to create several stateless components that just render data, and have a stateful component above them in the hierarchy that passes its state to its children via <code>props</code>. The stateful component encapsulates all of the interaction logic, while the stateless components take care of rendering data in a declarative way.</p>
+<h2><a class="anchor" name="what-should-go-in-state"></a>What <em>Should</em> Go in State? <a class="hash-link" href="#what-should-go-in-state">#</a></h2>
+<p><strong>State should contain data that a component&#39;s event handlers may change to trigger a UI update.</strong> In real apps this data tends to be very small and JSON-serializable. When building a stateful component, think about the minimal possible representation of its state, and only store those properties in <code>this.state</code>. Inside of <code>render()</code> simply compute any other information you need based on this state. You&#39;ll find that thinking about and writing applications in this way tends to lead to the most correct application, since adding redundant or computed values to state means that you need to explicitly keep them in sync rather than rely on React computing them for you.</p>
+<h2><a class="anchor" name="what-shouldnt-go-in-state"></a>What <em>Shouldn’t</em> Go in State? <a class="hash-link" href="#what-shouldnt-go-in-state">#</a></h2>
+<p><code>this.state</code> should only contain the minimal amount of data needed to represent your UI&#39;s state. As such, it should not contain:</p>
 
 <ul>
-<li>Automatic and efficient pre-fetching of data for an entire view hierarchy in a single network request.</li>
-<li>Trivial pagination with automatic optimizations to fetch only the additional items.</li>
-<li>View composition and reusability, so that <code>&lt;Story&gt;</code> can be used on its own or within <code>&lt;NewsFeed&gt;</code>, without any changes to either component.</li>
-<li>Automatic subscriptions, so that components will re-render if their data changes. Unaffected components will not re-render unnecessarily.</li>
-<li>Exactly <em>zero</em> lines of imperative data fetching logic. Relay takes full advantage of React&#39;s declarative component model.</li>
+<li><strong>Computed data:</strong> Don&#39;t worry about precomputing values based on state — it&#39;s easier to ensure that your UI is consistent if you do all computation within <code>render()</code>. For example, if you have an array of list items in state and you want to render the count as a string, simply render <code>this.state.listItems.length + &#39; list items&#39;</code> in your <code>render()</code> method rather than storing it on state.</li>
+<li><strong>React components:</strong> Build them in <code>render()</code> based on underlying props and state.</li>
+<li><strong>Duplicated data from props:</strong> Try to use props as the source of truth where possible. One valid use to store props in state is to be able to know its previous values, because props can change over time.</li>
 </ul>
 
-<p>But Relay has many more tricks up its sleeve. For example, it&#39;s built from the start to handle reads and writes, allowing for features like optimistic client updates with transactional rollback. Relay can also defer fetching select parts of queries, and it uses a local data store to avoid fetching the same data twice. These are all powerful features that we hope to explore in future posts.</p>
+</div>
+
+
+
+      </div>
+    
+      <div class="post-list-item">
+        
+
+
+<h1>
+
+  <a href="/react/articles/displaying-data.html">Displaying Data</a>
+
+</h1>
+
+<p class="meta">
+  January  1, 3002
+  by
+  
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>The most basic thing you can do with a UI is display some data. React makes it easy to display data and automatically keeps the interface up-to-date when the data changes.</p>
+<h2><a class="anchor" name="getting-started"></a>Getting Started <a class="hash-link" href="#getting-started">#</a></h2>
+<p>Let&#39;s look at a really simple example. Create a <code>hello-react.html</code> file with the following code:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Hello React<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://fb.me/react-0.14.0-alpha.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://fb.me/JSXTransformer-0.14.0-alpha.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/jsx&quot;</span><span class="nt">&gt;</span>
+
+      <span class="c1">// ** Your code goes here! **</span>
+
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>For the rest of the documentation, we&#39;ll just focus on the JavaScript code and assume it&#39;s inserted into a template like the one above. Replace the placeholder comment above with the following JSX:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">HelloWorld</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+        <span class="nx">Hello</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Your name here&quot;</span> <span class="o">/&gt;!</span>
+        <span class="nx">It</span> <span class="nx">is</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">toTimeString</span><span class="p">()}</span>
+      <span class="o">&lt;</span><span class="err">/p&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">HelloWorld</span> <span class="nx">date</span><span class="o">=</span><span class="p">{</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()}</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+</code></pre></div><h2><a class="anchor" name="reactive-updates"></a>Reactive Updates <a class="hash-link" href="#reactive-updates">#</a></h2>
+<p>Open <code>hello-react.html</code> in a web browser and type your name into the text field. Notice that React is only changing the time string in the UI — any input you put in the text field remains, even though you haven&#39;t written any code to manage this behavior. React figures it out for you and does the right thing.</p>
+
+<p>The way we are able to figure this out is that React does not manipulate the DOM unless it needs to. <strong>It uses a fast, internal mock DOM to perform diffs and computes the most efficient DOM mutation for you.</strong></p>
+
+<p>The inputs to this component are called <code>props</code> — short for &quot;properties&quot;. They&#39;re passed as attributes in JSX syntax. You should think of these as immutable within the component, that is, <strong>never write to <code>this.props</code></strong>.</p>
+<h2><a class="anchor" name="components-are-just-like-functions"></a>Components are Just Like Functions <a class="hash-link" href="#components-are-just-like-functions">#</a></h2>
+<p>React components are very simple. You can think of them as simple functions that take in <code>props</code> and <code>state</code> (discussed later) and render HTML. With this in mind, components are easy to reason about.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p><strong>One limitation</strong>: React components can only render a single root node. If you want to return multiple nodes they <em>must</em> be wrapped in a single root.</p>
+</blockquote>
+<h2><a class="anchor" name="jsx-syntax"></a>JSX Syntax <a class="hash-link" href="#jsx-syntax">#</a></h2>
+<p>We strongly believe that components are the right way to separate concerns rather than &quot;templates&quot; and &quot;display logic.&quot; We think that markup and the code that generates it are intimately tied together. Additionally, display logic is often very complex and using template languages to express it becomes cumbersome.</p>
+
+<p>We&#39;ve found that the best solution for this problem is to generate HTML and component trees directly from the JavaScript code such that you can use all of the expressive power of a real programming language to build UIs.</p>
+
+<p>In order to make this easier, we&#39;ve added a very simple, <strong>optional</strong> HTML-like syntax to create these React tree nodes.</p>
+
+<p><strong>JSX lets you create JavaScript objects using HTML syntax.</strong> To generate a link in React using pure JavaScript you&#39;d write:</p>
+
+<p><code>React.createElement(&#39;a&#39;, {href: &#39;https://facebook.github.io/react/&#39;}, &#39;Hello!&#39;)</code></p>
+
+<p>With JSX this becomes:</p>
+
+<p><code>&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;Hello!&lt;/a&gt;</code></p>
+
+<p>We&#39;ve found this has made building React apps easier and designers tend to prefer the syntax, but everyone has their own workflow, so <strong>JSX is not required to use React.</strong></p>
+
+<p>JSX is very small. To learn more about it, see <a href="/react/docs/jsx-in-depth.html">JSX in depth</a>. Or see the transform in action in <a href="/react/jsx-compiler.html">our live JSX compiler</a>.</p>
+
+<p>JSX is similar to HTML, but not exactly the same. See <a href="/react/docs/jsx-gotchas.html">JSX gotchas</a> for some key differences.</p>
+
+<p>The easiest way to get started with JSX is to use the in-browser <code>JSXTransformer</code>. We strongly recommend that you don&#39;t use this in production. You can precompile your code using our command-line <a href="https://www.npmjs.com/package/react-tools">react-tools</a> package.</p>
+<h2><a class="anchor" name="react-without-jsx"></a>React without JSX <a class="hash-link" href="#react-without-jsx">#</a></h2>
+<p>JSX is completely optional; you don&#39;t have to use JSX with React. You can create React elements in plain JavaScript using <code>React.createElement</code>, which takes a tag name or component, a properties object, and variable number of optional child arguments.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">child1</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s1">&#39;First Text Content&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">child2</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s1">&#39;Second Text Content&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">className</span><span class="o">:</span> <span class="s1">&#39;my-list&#39;</span> <span class="p">},</span> <span class="nx">child1</span><span class="p">,</span> <span class="nx">child2</span><span class="p">);</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">));</span>
+</code></pre></div>
+<p>For convenience, you can create short-hand factory functions to create elements from custom components.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Factory</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createFactory</span><span class="p">(</span><span class="nx">ComponentClass</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">Factory</span><span class="p">({</span> <span class="nx">custom</span><span class="o">:</span> <span class="s1">&#39;prop&#39;</span> <span class="p">});</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">));</span>
+</code></pre></div>
+<p>React already has built-in factories for common HTML tags:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">ul</span><span class="p">({</span> <span class="nx">className</span><span class="o">:</span> <span class="s1">&#39;my-list&#39;</span> <span class="p">},</span>
+             <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">li</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="s1">&#39;Text Content&#39;</span><span class="p">)</span>
+           <span class="p">);</span>
+</code></pre></div>
+<ul>
+  
+</ul>
 
 </div>
 

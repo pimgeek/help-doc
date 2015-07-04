@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Interactivity and Dynamic UIs | React</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Interactivity and Dynamic UIs | React">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/help-doc/v008/articles/interactivity-and-dynamic-uis.html">
+  <meta property="og:image" content="/help-doc/v008/img/logo_og.png">
+  <meta property="og:description" content="A JavaScript library for building user interfaces">
+  <meta property="fb:app_id" content="623268441017527">
+
+  <link rel="shortcut icon" href="/help-doc/v008/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="React" href="/help-doc/v008/feed.xml">
+
+  <link rel="stylesheet" href="/help-doc/v008/css/syntax.css">
+  <link rel="stylesheet" href="/help-doc/v008/css/codemirror.css">
+  <link rel="stylesheet" href="/help-doc/v008/css/react.css">
+
+  <script type="text/javascript" src="//use.typekit.net/vqa1hcx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="/help-doc/v008/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/es5-sham.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/help-doc/v008/js/codemirror.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/javascript.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/react.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/JSXTransformer.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/live_editor.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/help-doc/v008/index.html">
+          <img class="nav-logo" src="/help-doc/v008/img/logo.svg" width="36" height="36">
+          React
+        </a>
+        <ul class="nav-site nav-site-internal">
+          <li><a href="/help-doc/v008/docs/getting-started.html">Docs</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    
+
+    <section class="content wrap documentationContent">
+  <div style="float:left">
+
+  
+  <div class='category'>
+    <div class='name'>
+      <a href="/help-doc/v008/categories/guides">Guides</a>
+    </div>
+    <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/why-react.html">Why React?</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/displaying-data.html">Displaying Data</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-in-depth.html">JSX in Depth</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-spread.html">JSX Spread</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-gotchas.html">JSX Gotchas</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/multiple-components.html">Multiple Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/reusable-components.html">Reusable Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/transferring-props.html">Transferring Props</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/forms.html">Forms</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/working-with-the-browser.html">Working with the Browser</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/more-about-refs.html">More About Refs</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/tooling-integration.html">Tooling Integration</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/addons.html">Addons</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/animation.html">Animation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/class-name-manipulation.html">Class Name Manipulation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/test-utilities.html">Test Utilities</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/clone-with-props.html">Clone with Props</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/create-fragment.html">Create Fragment</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/immutability-helpers.html">Immutability Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/pure-render-mixin.html">Pure Render Mixin</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/performance-tools.html">Performance Tools</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/advanced-performance.html">Advanced Performance</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  <div class="inner-content">
+
+    <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v008 前缀 -->
+<div id="search">
+  <h2>
+  <form action="/help-doc/v008/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+  </form>
+  </h2>
+</div>
+<section id="search-results" style="display: none;">
+  <h3>Search results</h3>
+  <div class="entries">
+  </div>
+</section>
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
+<script src="/help-doc/v008/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/help-doc/v008/js/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
+
+
+    <h1>
+      Interactivity and Dynamic UIs
+      <a class="edit-page-link" href="https://github.com/facebook/react/tree/master/docs/_posts/3003-01-01-interactivity-and-dynamic-uis.md" target="_blank">Edit on GitHub</a>
+    </h1>
+    <div class="subHeader"></div>
+
+    <p>You&#39;ve already <a href="/react/docs/displaying-data.html">learned how to display data</a> with React. Now let&#39;s look at how to make our UIs interactive.</p>
+<h2><a class="anchor" name="a-simple-example"></a>A Simple Example <a class="hash-link" href="#a-simple-example">#</a></h2><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">LikeButton</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nx">liked</span><span class="o">:</span> <span class="kc">false</span><span class="p">};</span>
+  <span class="p">},</span>
+  <span class="nx">handleClick</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">liked</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="o">?</span> <span class="s1">&#39;like&#39;</span> <span class="o">:</span> <span class="s1">&#39;haven\&#39;t liked&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="nx">You</span> <span class="p">{</span><span class="nx">text</span><span class="p">}</span> <span class="k">this</span><span class="p">.</span> <span class="nx">Click</span> <span class="nx">to</span> <span class="nx">toggle</span><span class="p">.</span>
+      <span class="o">&lt;</span><span class="err">/p&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">LikeButton</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div><h2><a class="anchor" name="event-handling-and-synthetic-events"></a>Event Handling and Synthetic Events <a class="hash-link" href="#event-handling-and-synthetic-events">#</a></h2>
+<p>With React you simply pass your event handler as a camelCased prop similar to how you&#39;d do it in normal HTML. React ensures that all events behave identically in IE8 and above by implementing a synthetic event system. That is, React knows how to bubble and capture events according to the spec, and the events passed to your event handler are guaranteed to be consistent with <a href="http://www.w3.org/TR/DOM-Level-3-Events/">the W3C spec</a>, regardless of which browser you&#39;re using.</p>
+<h2><a class="anchor" name="under-the-hood-autobinding-and-event-delegation"></a>Under the Hood: Autobinding and Event Delegation <a class="hash-link" href="#under-the-hood-autobinding-and-event-delegation">#</a></h2>
+<p>Under the hood, React does a few things to keep your code performant and easy to understand.</p>
+
+<p><strong>Autobinding:</strong> When creating callbacks in JavaScript, you usually need to explicitly bind a method to its instance such that the value of <code>this</code> is correct. With React, every method is automatically bound to its component instance. React caches the bound method such that it&#39;s extremely CPU and memory efficient. It&#39;s also less typing!</p>
+
+<p><strong>Event delegation:</strong> React doesn&#39;t actually attach event handlers to the nodes themselves. When React starts up, it starts listening for all events at the top level using a single event listener. When a component is mounted or unmounted, the event handlers are simply added or removed from an internal mapping. When an event occurs, React knows how to dispatch it using this mapping. When there are no event handlers left in the mapping, React&#39;s event handlers are simple no-ops. To learn more about why this is fast, see <a href="http://davidwalsh.name/event-delegate">David Walsh&#39;s excellent blog post</a>.</p>
+<h2><a class="anchor" name="components-are-just-state-machines"></a>Components are Just State Machines <a class="hash-link" href="#components-are-just-state-machines">#</a></h2>
+<p>React thinks of UIs as simple state machines. By thinking of a UI as being in various states and rendering those states, it&#39;s easy to keep your UI consistent.</p>
+
+<p>In React, you simply update a component&#39;s state, and then render a new UI based on this new state. React takes care of updating the DOM for you in the most efficient way.</p>
+<h2><a class="anchor" name="how-state-works"></a>How State Works <a class="hash-link" href="#how-state-works">#</a></h2>
+<p>A common way to inform React of a data change is by calling <code>setState(data, callback)</code>. This method merges <code>data</code> into <code>this.state</code> and re-renders the component. When the component finishes re-rendering, the optional <code>callback</code> is called. Most of the time you&#39;ll never need to provide a <code>callback</code> since React will take care of keeping your UI up-to-date for you.</p>
+<h2><a class="anchor" name="what-components-should-have-state"></a>What Components Should Have State? <a class="hash-link" href="#what-components-should-have-state">#</a></h2>
+<p>Most of your components should simply take some data from <code>props</code> and render it. However, sometimes you need to respond to user input, a server request or the passage of time. For this you use state.</p>
+
+<p><strong>Try to keep as many of your components as possible stateless.</strong> By doing this you&#39;ll isolate the state to its most logical place and minimize redundancy, making it easier to reason about your application.</p>
+
+<p>A common pattern is to create several stateless components that just render data, and have a stateful component above them in the hierarchy that passes its state to its children via <code>props</code>. The stateful component encapsulates all of the interaction logic, while the stateless components take care of rendering data in a declarative way.</p>
+<h2><a class="anchor" name="what-should-go-in-state"></a>What <em>Should</em> Go in State? <a class="hash-link" href="#what-should-go-in-state">#</a></h2>
+<p><strong>State should contain data that a component&#39;s event handlers may change to trigger a UI update.</strong> In real apps this data tends to be very small and JSON-serializable. When building a stateful component, think about the minimal possible representation of its state, and only store those properties in <code>this.state</code>. Inside of <code>render()</code> simply compute any other information you need based on this state. You&#39;ll find that thinking about and writing applications in this way tends to lead to the most correct application, since adding redundant or computed values to state means that you need to explicitly keep them in sync rather than rely on React computing them for you.</p>
+<h2><a class="anchor" name="what-shouldnt-go-in-state"></a>What <em>Shouldn’t</em> Go in State? <a class="hash-link" href="#what-shouldnt-go-in-state">#</a></h2>
+<p><code>this.state</code> should only contain the minimal amount of data needed to represent your UI&#39;s state. As such, it should not contain:</p>
+
+<ul>
+<li><strong>Computed data:</strong> Don&#39;t worry about precomputing values based on state — it&#39;s easier to ensure that your UI is consistent if you do all computation within <code>render()</code>. For example, if you have an array of list items in state and you want to render the count as a string, simply render <code>this.state.listItems.length + &#39; list items&#39;</code> in your <code>render()</code> method rather than storing it on state.</li>
+<li><strong>React components:</strong> Build them in <code>render()</code> based on underlying props and state.</li>
+<li><strong>Duplicated data from props:</strong> Try to use props as the source of truth where possible. One valid use to store props in state is to be able to know its previous values, because props can change over time.</li>
+</ul>
+
+
+    <div class="docs-prevnext">
+      
+      
+        <a class="docs-next" href="/react/docs/{"layout"=>"post", "categories"=>["guides"], "title"=>"Multiple Components", "prev-post"=>"interactivity-and-dynamic-uis.html", "next-post"=>"reusable-components.html", "url"=>"/articles/multiple-components.html", "dir"=>"/articles", "date"=>3004-01-01 00:00:00 -0800, "id"=>"/articles/multiple-components", "next"=><Post: /articles/reusable-components>, "previous"=><Post: /articles/interactivity-and-dynamic-uis>, "tags"=>[], "path"=>"_posts/3004-01-01-multiple-components.md", "content"=>"So far, we've looked at how to write a single component to display data and handle user input. Next let's examine one of React's finest features: composability.\n\n\n## Motivation: Separation of Concerns\n\nBy building modular components that reuse other components with well-defined interfaces, you get much of the same benefits that you get by using functions or classes. Specifically you can *separate the different concerns* of your app however you please simply by building new components. By building a custom component library for your application, you are expressing your UI in a way that best fits your domain.\n\n\n## Composition Example\n\nLet's create a simple Avatar component which shows a profile picture and username using the Facebook Graph API.\n\n```javascript\nvar Avatar = React.createClass({\n  render: function() {\n    return (\n      <div>\n        <ProfilePic username={this.props.username} />\n        <ProfileLink username={this.props.username} />\n      </div>\n    );\n  }\n});\n\nvar ProfilePic = React.createClass({\n  render: function() {\n    return (\n      <img src={'https://graph.facebook.com/' + this.props.username + '/picture'} />\n    );\n  }\n});\n\nvar ProfileLink = React.createClass({\n  render: function() {\n    return (\n      <a href={'https://www.facebook.com/' + this.props.username}>\n        {this.props.username}\n      </a>\n    );\n  }\n});\n\nReact.render(\n  <Avatar username=\"pwh\" />,\n  document.getElementById('example')\n);\n```\n\n\n## Ownership\n\nIn the above example, instances of `Avatar` *own* instances of `ProfilePic` and `ProfileLink`. In React, **an owner is the component that sets the `props` of other components**. More formally, if a component `X` is created in component `Y`'s `render()` method, it is said that `X` is *owned by* `Y`. As discussed earlier, a component cannot mutate its `props` — they are always consistent with what its owner sets them to. This key property leads to UIs that are guaranteed to be consistent.\n\nIt's important to draw a distinction between the owner-ownee relationship and the parent-child relationship. The owner-ownee relationship is specific to React, while the parent-child relationship is simply the one you know and love from the DOM. In the example above, `Avatar` owns the `div`, `ProfilePic` and `ProfileLink` instances, and `div` is the **parent** (but not owner) of the `ProfilePic` and `ProfileLink` instances.\n\n\n## Children\n\nWhen you create a React component instance, you can include additional React components or JavaScript expressions between the opening and closing tags like this:\n\n```javascript\n<Parent><Child /></Parent>\n```\n\n`Parent` can read its children by accessing the special `this.props.children` prop. **`this.props.children` is an opaque data structure:** use the [React.Children utilities](/react/docs/top-level-api.html#react.children) to manipulate them.\n\n\n### Child Reconciliation\n\n**Reconciliation is the process by which React updates the DOM with each new render pass.** In general, children are reconciled according to the order in which they are rendered. For example, suppose two render passes generate the following respective markup:\n\n```html\n// Render Pass 1\n<Card>\n  <p>Paragraph 1</p>\n  <p>Paragraph 2</p>\n</Card>\n// Render Pass 2\n<Card>\n  <p>Paragraph 2</p>\n</Card>\n```\n\nIntuitively, `<p>Paragraph 1</p>` was removed. Instead, React will reconcile the DOM by changing the text content of the first child and destroying the last child. React reconciles according to the *order* of the children.\n\n\n### Stateful Children\n\nFor most components, this is not a big deal. However, for stateful components that maintain data in `this.state` across render passes, this can be very problematic.\n\nIn most cases, this can be sidestepped by hiding elements instead of destroying them:\n\n```html\n// Render Pass 1\n<Card>\n  <p>Paragraph 1</p>\n  <p>Paragraph 2</p>\n</Card>\n// Render Pass 2\n<Card>\n  <p style={{'{{'}}display: 'none'}}>Paragraph 1</p>\n  <p>Paragraph 2</p>\n</Card>\n```\n\n\n### Dynamic Children\n\nThe situation gets more complicated when the children are shuffled around (as in search results) or if new components are added onto the front of the list (as in streams). In these cases where the identity and state of each child must be maintained across render passes, you can uniquely identify each child by assigning it a `key`:\n\n```javascript\n  render: function() {\n    var results = this.props.results;\n    return (\n      <ol>\n        {results.map(function(result) {\n          return <li key={result.id}>{result.text}</li>;\n        })}\n      </ol>\n    );\n  }\n```\n\nWhen React reconciles the keyed children, it will ensure that any child with `key` will be reordered (instead of clobbered) or destroyed (instead of reused).\n\nThe `key` should *always* be supplied directly to the components in the array, not to the container HTML child of each component in the array:\n\n```javascript\n// WRONG!\nvar ListItemWrapper = React.createClass({\n  render: function() {\n    return <li key={this.props.data.id}>{this.props.data.text}</li>;\n  }\n});\nvar MyComponent = React.createClass({\n  render: function() {\n    return (\n      <ul>\n        {this.props.results.map(function(result) {\n          return <ListItemWrapper data={result}/>;\n        })}\n      </ul>\n    );\n  }\n});\n\n// Correct :)\nvar ListItemWrapper = React.createClass({\n  render: function() {\n    return <li>{this.props.data.text}</li>;\n  }\n});\nvar MyComponent = React.createClass({\n  render: function() {\n    return (\n      <ul>\n        {this.props.results.map(function(result) {\n           return <ListItemWrapper key={result.id} data={result}/>;\n        })}\n      </ul>\n    );\n  }\n});\n```\n\nYou can also key children by passing a ReactFragment object. See [Keyed Fragments](create-fragment.html) for more details.\n\n## Data Flow\n\nIn React, data flows from owner to owned component through `props` as discussed above. This is effectively one-way data binding: owners bind their owned component's props to some value the owner has computed based on its `props` or `state`. Since this process happens recursively, data changes are automatically reflected everywhere they are used.\n\n\n## A Note on Performance\n\nYou may be thinking that it's expensive to change data if there are a large number of nodes under an owner. The good news is that JavaScript is fast and `render()` methods tend to be quite simple, so in most applications this is extremely fast. Additionally, the bottleneck is almost always the DOM mutation and not JS execution. React will optimize this for you using batching and change detection.\n\nHowever, sometimes you really want to have fine-grained control over your performance. In that case, simply override `shouldComponentUpdate()` to return false when you want React to skip processing of a subtree. See [the React reference docs](/react/docs/component-specs.html) for more information.\n\n> Note:\n>\n> If `shouldComponentUpdate()` returns false when data has actually changed, React can't keep your UI in sync. Be sure you know what you're doing while using it, and only use this function when you have a noticeable performance problem. Don't underestimate how fast JavaScript is relative to the DOM.\n", "excerpt"=>"<p>So far, we&#39;ve looked at how to write a single component to display data and handle user input. Next let&#39;s examine one of React&#39;s finest features: composability.</p>\n"}">Next &rarr;</a>
+      
+    </div>
+  </div>
+</section>
+
+
+
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br>
+        <a href="/help-doc/v008/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;2015 Facebook Inc.<br>
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

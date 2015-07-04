@@ -41,3 +41,19 @@ gems:
 #- jekyll-lunr-js-search
 react_version: 0.14.0-alpha
 exclude: ['archive']
+
+collections:
+  categories:
+    output: true
+    permalink: /categories/:path/
+  displaying_data:
+    output: true
+    permalink: /articles/:title.html
+  working_with_the_browser:
+    output: true
+    permalink: /articles/:title.html
+  addons:
+    output: true
+    permalink: /articles/:title.html
+
+permalink: /articles/:title.html

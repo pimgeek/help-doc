@@ -54,7 +54,7 @@
     
 
     <section class="content wrap">
-  <!-- 注意，如果发布到 github pages 时采用了子路径方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v008 前缀 -->
+  <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v008 前缀 -->
 <div id="search">
   <h2>
   <form action="/help-doc/v008/search" method="get">
@@ -72,7 +72,7 @@
   {{#entries}}
     <article>
       <h3>
-        <a href="/help-doc/v008{{url}}">{{title}}</a>
+        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
       </h3>
     </article>
   {{/entries}}

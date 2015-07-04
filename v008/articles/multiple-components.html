@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Multiple Components | React</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Multiple Components | React">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/help-doc/v008/articles/multiple-components.html">
+  <meta property="og:image" content="/help-doc/v008/img/logo_og.png">
+  <meta property="og:description" content="A JavaScript library for building user interfaces">
+  <meta property="fb:app_id" content="623268441017527">
+
+  <link rel="shortcut icon" href="/help-doc/v008/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="React" href="/help-doc/v008/feed.xml">
+
+  <link rel="stylesheet" href="/help-doc/v008/css/syntax.css">
+  <link rel="stylesheet" href="/help-doc/v008/css/codemirror.css">
+  <link rel="stylesheet" href="/help-doc/v008/css/react.css">
+
+  <script type="text/javascript" src="//use.typekit.net/vqa1hcx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="/help-doc/v008/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/es5-sham.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/help-doc/v008/js/codemirror.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/javascript.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/react.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/JSXTransformer.js"></script>
+  <script type="text/javascript" src="/help-doc/v008/js/live_editor.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/help-doc/v008/index.html">
+          <img class="nav-logo" src="/help-doc/v008/img/logo.svg" width="36" height="36">
+          React
+        </a>
+        <ul class="nav-site nav-site-internal">
+          <li><a href="/help-doc/v008/docs/getting-started.html">Docs</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    
+
+    <section class="content wrap documentationContent">
+  <div style="float:left">
+
+  
+  <div class='category'>
+    <div class='name'>
+      <a href="/help-doc/v008/categories/guides">Guides</a>
+    </div>
+    <div class='articles'>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/why-react.html">Why React?</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/displaying-data.html">Displaying Data</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-in-depth.html">JSX in Depth</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-spread.html">JSX Spread</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/jsx-gotchas.html">JSX Gotchas</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/multiple-components.html">Multiple Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/reusable-components.html">Reusable Components</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/transferring-props.html">Transferring Props</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/forms.html">Forms</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/working-with-the-browser.html">Working with the Browser</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/more-about-refs.html">More About Refs</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/tooling-integration.html">Tooling Integration</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/addons.html">Addons</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+          
+          <ul>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/animation.html">Animation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/class-name-manipulation.html">Class Name Manipulation</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/test-utilities.html">Test Utilities</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/clone-with-props.html">Clone with Props</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/create-fragment.html">Create Fragment</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/immutability-helpers.html">Immutability Helpers</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/pure-render-mixin.html">Pure Render Mixin</a>
+    </li>
+  
+    <li>
+      <a class="post-link" href="/help-doc/v008/articles/performance-tools.html">Performance Tools</a>
+    </li>
+  
+</ul>
+
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+      <div class='article'>
+        <a class="post-link" href="/help-doc/v008/articles/advanced-performance.html">Advanced Performance</a>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+        
+        <!-- 子文档列表功能 增加的代码部分结束 -->
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  <div class="inner-content">
+
+    <!-- 注意，如果发布到 github pages 时采用了 gh-pages 方式，那么下列代码中的 /search, /js 等路径需要增加 /help-doc/v008 前缀 -->
+<div id="search">
+  <h2>
+  <form action="/help-doc/v008/search" method="get">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+  </form>
+  </h2>
+</div>
+<section id="search-results" style="display: none;">
+  <h3>Search results</h3>
+  <div class="entries">
+  </div>
+</section>
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        <a href="{{{ site.baseurl }}}{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
+<script src="/help-doc/v008/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/help-doc/v008/js/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
+
+
+    <h1>
+      Multiple Components
+      <a class="edit-page-link" href="https://github.com/facebook/react/tree/master/docs/_posts/3004-01-01-multiple-components.md" target="_blank">Edit on GitHub</a>
+    </h1>
+    <div class="subHeader"></div>
+
+    <p>So far, we&#39;ve looked at how to write a single component to display data and handle user input. Next let&#39;s examine one of React&#39;s finest features: composability.</p>
+<h2><a class="anchor" name="motivation-separation-of-concerns"></a>Motivation: Separation of Concerns <a class="hash-link" href="#motivation-separation-of-concerns">#</a></h2>
+<p>By building modular components that reuse other components with well-defined interfaces, you get much of the same benefits that you get by using functions or classes. Specifically you can <em>separate the different concerns</em> of your app however you please simply by building new components. By building a custom component library for your application, you are expressing your UI in a way that best fits your domain.</p>
+<h2><a class="anchor" name="composition-example"></a>Composition Example <a class="hash-link" href="#composition-example">#</a></h2>
+<p>Let&#39;s create a simple Avatar component which shows a profile picture and username using the Facebook Graph API.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Avatar</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ProfilePic</span> <span class="nx">username</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ProfileLink</span> <span class="nx">username</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">ProfilePic</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;https://graph.facebook.com/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span> <span class="o">+</span> <span class="s1">&#39;/picture&#39;</span><span class="p">}</span> <span class="o">/&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">ProfileLink</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;https://www.facebook.com/&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/a&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Avatar</span> <span class="nx">username</span><span class="o">=</span><span class="s2">&quot;pwh&quot;</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div><h2><a class="anchor" name="ownership"></a>Ownership <a class="hash-link" href="#ownership">#</a></h2>
+<p>In the above example, instances of <code>Avatar</code> <em>own</em> instances of <code>ProfilePic</code> and <code>ProfileLink</code>. In React, <strong>an owner is the component that sets the <code>props</code> of other components</strong>. More formally, if a component <code>X</code> is created in component <code>Y</code>&#39;s <code>render()</code> method, it is said that <code>X</code> is <em>owned by</em> <code>Y</code>. As discussed earlier, a component cannot mutate its <code>props</code> — they are always consistent with what its owner sets them to. This key property leads to UIs that are guaranteed to be consistent.</p>
+
+<p>It&#39;s important to draw a distinction between the owner-ownee relationship and the parent-child relationship. The owner-ownee relationship is specific to React, while the parent-child relationship is simply the one you know and love from the DOM. In the example above, <code>Avatar</code> owns the <code>div</code>, <code>ProfilePic</code> and <code>ProfileLink</code> instances, and <code>div</code> is the <strong>parent</strong> (but not owner) of the <code>ProfilePic</code> and <code>ProfileLink</code> instances.</p>
+<h2><a class="anchor" name="children"></a>Children <a class="hash-link" href="#children">#</a></h2>
+<p>When you create a React component instance, you can include additional React components or JavaScript expressions between the opening and closing tags like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">Parent</span><span class="o">&gt;&lt;</span><span class="nx">Child</span> <span class="o">/&gt;&lt;</span><span class="err">/Parent&gt;</span>
+</code></pre></div>
+<p><code>Parent</code> can read its children by accessing the special <code>this.props.children</code> prop. <strong><code>this.props.children</code> is an opaque data structure:</strong> use the <a href="/react/docs/top-level-api.html#react.children">React.Children utilities</a> to manipulate them.</p>
+<h3><a class="anchor" name="child-reconciliation"></a>Child Reconciliation <a class="hash-link" href="#child-reconciliation">#</a></h3>
+<p><strong>Reconciliation is the process by which React updates the DOM with each new render pass.</strong> In general, children are reconciled according to the order in which they are rendered. For example, suppose two render passes generate the following respective markup:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">// Render Pass 1
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+// Render Pass 2
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+</code></pre></div>
+<p>Intuitively, <code>&lt;p&gt;Paragraph 1&lt;/p&gt;</code> was removed. Instead, React will reconcile the DOM by changing the text content of the first child and destroying the last child. React reconciles according to the <em>order</em> of the children.</p>
+<h3><a class="anchor" name="stateful-children"></a>Stateful Children <a class="hash-link" href="#stateful-children">#</a></h3>
+<p>For most components, this is not a big deal. However, for stateful components that maintain data in <code>this.state</code> across render passes, this can be very problematic.</p>
+
+<p>In most cases, this can be sidestepped by hiding elements instead of destroying them:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">// Render Pass 1
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+// Render Pass 2
+<span class="nt">&lt;Card&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">{{display:</span> <span class="err">&#39;</span><span class="na">none</span><span class="err">&#39;}}</span><span class="nt">&gt;</span>Paragraph 1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Paragraph 2<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/Card&gt;</span>
+</code></pre></div><h3><a class="anchor" name="dynamic-children"></a>Dynamic Children <a class="hash-link" href="#dynamic-children">#</a></h3>
+<p>The situation gets more complicated when the children are shuffled around (as in search results) or if new components are added onto the front of the list (as in streams). In these cases where the identity and state of each child must be maintained across render passes, you can uniquely identify each child by assigning it a <code>key</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">results</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">ol</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">result</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;;</span>
+        <span class="p">})}</span>
+      <span class="o">&lt;</span><span class="err">/ol&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>When React reconciles the keyed children, it will ensure that any child with <code>key</code> will be reordered (instead of clobbered) or destroyed (instead of reused).</p>
+
+<p>The <code>key</code> should <em>always</em> be supplied directly to the components in the array, not to the container HTML child of each component in the array:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// WRONG!</span>
+<span class="kd">var</span> <span class="nx">ListItemWrapper</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="kd">var</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ListItemWrapper</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">/&gt;</span><span class="p">;</span>
+        <span class="p">})}</span>
+      <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Correct :)</span>
+<span class="kd">var</span> <span class="nx">ListItemWrapper</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="kd">var</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ListItemWrapper</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">/&gt;</span><span class="p">;</span>
+        <span class="p">})}</span>
+      <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>You can also key children by passing a ReactFragment object. See <a href="create-fragment.html">Keyed Fragments</a> for more details.</p>
+<h2><a class="anchor" name="data-flow"></a>Data Flow <a class="hash-link" href="#data-flow">#</a></h2>
+<p>In React, data flows from owner to owned component through <code>props</code> as discussed above. This is effectively one-way data binding: owners bind their owned component&#39;s props to some value the owner has computed based on its <code>props</code> or <code>state</code>. Since this process happens recursively, data changes are automatically reflected everywhere they are used.</p>
+<h2><a class="anchor" name="a-note-on-performance"></a>A Note on Performance <a class="hash-link" href="#a-note-on-performance">#</a></h2>
+<p>You may be thinking that it&#39;s expensive to change data if there are a large number of nodes under an owner. The good news is that JavaScript is fast and <code>render()</code> methods tend to be quite simple, so in most applications this is extremely fast. Additionally, the bottleneck is almost always the DOM mutation and not JS execution. React will optimize this for you using batching and change detection.</p>
+
+<p>However, sometimes you really want to have fine-grained control over your performance. In that case, simply override <code>shouldComponentUpdate()</code> to return false when you want React to skip processing of a subtree. See <a href="/react/docs/component-specs.html">the React reference docs</a> for more information.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p>If <code>shouldComponentUpdate()</code> returns false when data has actually changed, React can&#39;t keep your UI in sync. Be sure you know what you&#39;re doing while using it, and only use this function when you have a noticeable performance problem. Don&#39;t underestimate how fast JavaScript is relative to the DOM.</p>
+</blockquote>
+
+
+    <div class="docs-prevnext">
+      
+      
+        <a class="docs-next" href="/react/docs/{"layout"=>"post", "categories"=>["guides"], "title"=>"Reusable Components", "prev-post"=>"multiple-components.html", "next-post"=>"transferring-props.html", "url"=>"/articles/reusable-components.html", "dir"=>"/articles", "date"=>3005-01-01 00:00:00 -0800, "id"=>"/articles/reusable-components", "next"=><Post: /articles/transferring-props>, "previous"=><Post: /articles/multiple-components>, "tags"=>[], "path"=>"_posts/3005-01-01-reusable-components.md", "content"=>"When designing interfaces, break down the common design elements (buttons, form fields, layout components, etc.) into reusable components with well-defined interfaces. That way, the next time you need to build some UI, you can write much less code. This means faster development time, fewer bugs, and fewer bytes down the wire.\n\n\n## Prop Validation\n\nAs your app grows it's helpful to ensure that your components are used correctly. We do this by allowing you to specify `propTypes`. `React.PropTypes` exports a range of validators that can be used to make sure the data you receive is valid. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. Note that for performance reasons `propTypes` is only checked in development mode. Here is an example documenting the different validators provided:\n\n```javascript\nReact.createClass({\n  propTypes: {\n    // You can declare that a prop is a specific JS primitive. By default, these\n    // are all optional.\n    optionalArray: React.PropTypes.array,\n    optionalBool: React.PropTypes.bool,\n    optionalFunc: React.PropTypes.func,\n    optionalNumber: React.PropTypes.number,\n    optionalObject: React.PropTypes.object,\n    optionalString: React.PropTypes.string,\n\n    // Anything that can be rendered: numbers, strings, elements or an array\n    // (or fragment) containing these types.\n    optionalNode: React.PropTypes.node,\n\n    // A React element.\n    optionalElement: React.PropTypes.element,\n\n    // You can also declare that a prop is an instance of a class. This uses\n    // JS's instanceof operator.\n    optionalMessage: React.PropTypes.instanceOf(Message),\n\n    // You can ensure that your prop is limited to specific values by treating\n    // it as an enum.\n    optionalEnum: React.PropTypes.oneOf(['News', 'Photos']),\n\n    // An object that could be one of many types\n    optionalUnion: React.PropTypes.oneOfType([\n      React.PropTypes.string,\n      React.PropTypes.number,\n      React.PropTypes.instanceOf(Message)\n    ]),\n\n    // An array of a certain type\n    optionalArrayOf: React.PropTypes.arrayOf(React.PropTypes.number),\n\n    // An object with property values of a certain type\n    optionalObjectOf: React.PropTypes.objectOf(React.PropTypes.number),\n\n    // An object taking on a particular shape\n    optionalObjectWithShape: React.PropTypes.shape({\n      color: React.PropTypes.string,\n      fontSize: React.PropTypes.number\n    }),\n\n    // You can chain any of the above with `isRequired` to make sure a warning\n    // is shown if the prop isn't provided.\n    requiredFunc: React.PropTypes.func.isRequired,\n\n    // A value of any data type\n    requiredAny: React.PropTypes.any.isRequired,\n\n    // You can also specify a custom validator. It should return an Error\n    // object if the validation fails. Don't `console.warn` or throw, as this\n    // won't work inside `oneOfType`.\n    customProp: function(props, propName, componentName) {\n      if (!/matchme/.test(props[propName])) {\n        return new Error('Validation failed!');\n      }\n    }\n  },\n  /* ... */\n});\n```\n\n\n## Default Prop Values\n\nReact lets you define default values for your `props` in a very declarative way:\n\n```javascript\nvar ComponentWithDefaultProps = React.createClass({\n  getDefaultProps: function() {\n    return {\n      value: 'default value'\n    };\n  }\n  /* ... */\n});\n```\n\nThe result of `getDefaultProps()` will be cached and used to ensure that `this.props.value` will have a value if it was not specified by the parent component. This allows you to safely just use your props without having to write repetitive and fragile code to handle that yourself.\n\n\n## Transferring Props: A Shortcut\n\nA common type of React component is one that extends a basic HTML element in a simple way. Often you'll want to copy any HTML attributes passed to your component to the underlying HTML element to save typing. You can use the JSX _spread_ syntax to achieve this:\n\n```javascript\nvar CheckLink = React.createClass({\n  render: function() {\n    // This takes any props passed to CheckLink and copies them to <a>\n    return <a {...this.props}>{'√ '}{this.props.children}</a>;\n  }\n});\n\nReact.render(\n  <CheckLink href=\"/checked.html\">\n    Click here!\n  </CheckLink>,\n  document.getElementById('example')\n);\n```\n\n## Single Child\n\nWith `React.PropTypes.element` you can specify that only a single child can be passed to\na component as children.\n\n```javascript\nvar MyComponent = React.createClass({\n  propTypes: {\n    children: React.PropTypes.element.isRequired\n  },\n\n  render: function() {\n    return (\n      <div>\n        {this.props.children} // This must be exactly one element or it will throw.\n      </div>\n    );\n  }\n\n});\n```\n\n## Mixins\n\nComponents are the best way to reuse code in React, but sometimes very different components may share some common functionality. These are sometimes called [cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern). React provides `mixins` to solve this problem.\n\nOne common use case is a component wanting to update itself on a time interval. It's easy to use `setInterval()`, but it's important to cancel your interval when you don't need it anymore to save memory. React provides [lifecycle methods](/react/docs/working-with-the-browser.html#component-lifecycle) that let you know when a component is about to be created or destroyed. Let's create a simple mixin that uses these methods to provide an easy `setInterval()` function that will automatically get cleaned up when your component is destroyed.\n\n```javascript\nvar SetIntervalMixin = {\n  componentWillMount: function() {\n    this.intervals = [];\n  },\n  setInterval: function() {\n    this.intervals.push(setInterval.apply(null, arguments));\n  },\n  componentWillUnmount: function() {\n    this.intervals.forEach(clearInterval);\n  }\n};\n\nvar TickTock = React.createClass({\n  mixins: [SetIntervalMixin], // Use the mixin\n  getInitialState: function() {\n    return {seconds: 0};\n  },\n  componentDidMount: function() {\n    this.setInterval(this.tick, 1000); // Call a method on the mixin\n  },\n  tick: function() {\n    this.setState({seconds: this.state.seconds + 1});\n  },\n  render: function() {\n    return (\n      <p>\n        React has been running for {this.state.seconds} seconds.\n      </p>\n    );\n  }\n});\n\nReact.render(\n  <TickTock />,\n  document.getElementById('example')\n);\n```\n\nA nice feature of mixins is that if a component is using multiple mixins and several mixins define the same lifecycle method (i.e. several mixins want to do some cleanup when the component is destroyed), all of the lifecycle methods are guaranteed to be called. Methods defined on mixins run in the order mixins were listed, followed by a method call on the component.\n\n## ES6 Classes\n\nYou may also define your React classes as a plain JavaScript class. For example using ES6 class syntax:\n\n```javascript\nclass HelloMessage extends React.Component {\n  render() {\n    return <div>Hello {this.props.name}</div>;\n  }\n}\nReact.render(<HelloMessage name=\"Sebastian\" />, mountNode);\n```\n\nThe API is similar to `React.createClass` with the exception of `getInitialState`. Instead of providing a separate `getInitialState` method, you set up your own `state` property in the constructor.\n\nAnother difference is that `propTypes` and `defaultProps` are defined as properties on the constructor instead of in the class body.\n\n```javascript\nexport class Counter extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {count: props.initialCount};\n  }\n  tick() {\n    this.setState({count: this.state.count + 1});\n  }\n  render() {\n    return (\n      <div onClick={this.tick.bind(this)}>\n        Clicks: {this.state.count}\n      </div>\n    );\n  }\n}\nCounter.propTypes = { initialCount: React.PropTypes.number };\nCounter.defaultProps = { initialCount: 0 };\n```\n\n### No Autobinding\n\nMethods follow the same semantics as regular ES6 classes, meaning that they don't automatically bind `this` to the instance. You'll have to explicitly use `.bind(this)` or [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) `=>`.\n\n### No Mixins\n\nUnfortunately ES6 launched without any mixin support. Therefore, there is no support for mixins when you use React with ES6 classes. Instead, we're working on making it easier to support such use cases without resorting to mixins.\n", "excerpt"=>"<p>When designing interfaces, break down the common design elements (buttons, form fields, layout components, etc.) into reusable components with well-defined interfaces. That way, the next time you need to build some UI, you can write much less code. This means faster development time, fewer bugs, and fewer bytes down the wire.</p>\n"}">Next &rarr;</a>
+      
+    </div>
+  </div>
+</section>
+
+
+
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br>
+        <a href="/help-doc/v008/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;2015 Facebook Inc.<br>
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
