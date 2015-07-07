@@ -3,6 +3,7 @@ layout: post
 reader-title: 创建新文档
 title: create-new-articles
 prev-post: jekyll-environment-setup.html
+next-post: enable-category-index-page.html
 ---
 
 创建新文档并不是前文所述的 7 种实用 feature 之一，但在创建新文档时，要遵循一定格式，才能激活相关的 feature。考虑到创建文档是文档撰写者最先引起关注的操作，所以首先介绍。
@@ -17,7 +18,7 @@ reader-title: XXX XXXX
 title: article-url-name
 prev-post: previous-article-url-name.html
 next-post: next-article-url-name.html
-----
+---
 
 文档正文
 
