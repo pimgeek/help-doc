@@ -8,7 +8,46 @@ next-post: create-new-articles.html
 
 为了实现 GitHub Help 与 Facebook React Doc 中包含的一系列实用 feature，需要形成大致如下图所示的目录结构：
 
+```
+redo-help-doc/
+├── _src
+│   ├── _categories
+│   │   └── mindpin-docs.md
+│   ├── css
+│   │   └── ...
+│   ├── _css
+│   │   └── ...
+│   ├── _data
+│   │   └── conrefs.yml
+│   ├── _help_doc_research
+│   │   └── yyyy-mm-dd-xxx-xxx-xxx.md
+│   ├── img
+│   │   └── ...
+│   ├── _includes
+│   │   ├── category-links.html
+│   │   ├── coll-selector.html
+│   │   ├── search.html
+│   │   ├── sidebar.html
+│   │   └── sub-articles.html
+│   ├── js
+│   │   ├── jquery.lunr.search.js
+│   │   ├── lunr.min.js
+│   │   └── search.min.js
+│   ├── _layouts
+│   │   ├── category.html
+│   │   ├── default.html
+│   │   ├── page.html
+│   │   └── post.html
+│   ├── _plugins
+│   │   └── jekyll_lunr_js_search.rb
+│   ├── _posts
+│   │   └── yyyy-mm-dd-xx-yyy-zzzz.md
+│   ├── search
+│   │   └── index.html
+│   └── index.md
+└── _config.yml
 
+```
 
 下面将列举出逐项添加这些 feature 的具体操作步骤：
 

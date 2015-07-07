@@ -70,7 +70,7 @@ gems: ['jekyll-lunr-js-search']
 06 - 在需要提供搜索功能的模板中增加下列代码
 
 ```html
-{{ "{% include search.html" }}%}
+{{ "{% include search.html " }}%}
 ```
 
 07 - 创建 search/ 目录并创建搜索页模板 index.html
@@ -81,7 +81,7 @@ layout: page
 title: Search
 ---
 
-{{ "{% include search.html" }}%}
+{{ "{% include search.html " }}%}
 ```
 
 08 - 在 `_posts/` 目录下放置一些 markdown 文档
