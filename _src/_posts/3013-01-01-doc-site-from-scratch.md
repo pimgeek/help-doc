@@ -9,7 +9,8 @@ next-post: jekyll-environment-setup.html
 为了帮助 MINDPIN 团队把团队内的各种文档有效地组织起来，我围绕以下要点进行了一系列调研：
 
 - GitHub Help 站点的内容组织和页面导航
-- GitHub Help 站点的一些独特 feature
+- GitHub Help 与 Facebook React Doc 两个站点的部分实用 feature
+  - GitHub Flavored Markdown
   - 无后端的全文搜索（lunrjs）
   - 为若干篇文档按类别生成独立的索引页
   - 为一篇文档指定前置文档和后继文档

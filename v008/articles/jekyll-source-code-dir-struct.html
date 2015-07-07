@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>设置 Jekyll 运行环境</title>
+  <title>Jekyll 的源码目录结构</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="设置 Jekyll 运行环境 | React">
+  <meta property="og:title" content="Jekyll 的源码目录结构 | React">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="/help-doc/v008/articles/jekyll-environment-setup.html">
+  <meta property="og:url" content="/help-doc/v008/articles/jekyll-source-code-dir-struct.html">
   <meta property="og:image" content="/help-doc/v008/img/logo_og.png">
   <meta property="og:description" content="A JavaScript library for building user interfaces">
   <meta property="fb:app_id" content="623268441017527">
@@ -300,38 +300,199 @@
 </script>
 
 
-    <h1>设置 Jekyll 运行环境</h1>
+    <h1>Jekyll 的源码目录结构</h1>
 
-<p>设置 jekyll 运行环境的大致步骤如下：</p>
+<p>为了实现 GitHub Help 与 Facebook React Doc 的若干项实用 feature，需要形成以下目录结构：</p>
 
-<p>1 gem install jekyll</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">我使用的 Ruby 和 Jekyll 环境如下： Jekyll 2.5.3 , ruby 2.2.0p0 (2014-12-25 revision 49005) [x86_64-linux]）
+<p>下面给出具体操作步骤：</p>
+
+<p>1 从 GitHub 版本库 clone help-doc 示例项目，并切换到 gh-pages 分支</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git clone https://github.com/pimgeek/help-doc
+cd help-doc
+checkout gh-pages
 </code></pre></div>
-<p>2 确保 jekyll 安装无误后，按序进行以下操作</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir redo-help-doc
-mkdir redo-help-doc/_src
-mkdir redo-help-doc/v009
-vim redo-help-doc/_config.yml
+<p>2 返回到新创建的 <code>redo-help-doc/</code> 目录下，严格按顺序执行如下操作，以便大概了解文档源码文件，各个子模板、包含文件、数据文件等组成部分之间的依赖关系。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">jekyll s -H 0.0.0.0 &amp;
+cp ../help-doc/_src/index.md 
+# 此时 jekyll 应提示
+# Build Warning: Layout &#39;default&#39; requested in index.md does not exist
 
-# 修改 `redo-help-doc/_config.yml` 文件的内容，加入以下配置：
-baseurl: &quot;/redo-help-doc&quot;
-source: &quot;_src&quot;
-destination: &quot;v009&quot;
-markdown: redcarpet
-redcarpet:
-  extensions:
-  - fenced_code_blocks
-  - footnotes
-sass:
-  style: :compressed
-  sass_dir: _css
+mkdir ../help-doc/_src/_layouts
+cp ../help-doc/_src/_layouts/default.html _src/_layouts/
+# 此时 jekyll 应提示
+# Liquid Exception: Included file &#39;_includes/sidebar.html&#39; not found in _layouts/default.html
+
+mkdir ../help-doc/_src/_includes
+cp ../help-doc/_src/_includes/sidebar.html _src/_includes/
+# 此时 jekyll 应提示
+# Liquid Exception: Included file &#39;_includes/search.html&#39; not found in _layouts/default.html
+
+cp ../help-doc/_src/_includes/search.html _src/_includes/
+vim _src/_includes/search.html
+# 修改其中的这一行，把其中的 &quot;/help-doc/v008&quot; 改为当前 jekyll
+# _config.yml 中指定的 &quot;/redo-help-doc/v009&quot;：
+
+&lt;h3&gt;
+  &lt;!-- 下列代码中的 /help-doc/v008 部分应与
+       _config.yml 中定义的 baseurl 保持一致--&gt;
+  &lt;a href=&quot;/help-doc/v008&lt;/a&gt;
+&lt;/h3&gt;
+
+# 此时 jekyll 无错误提示
+# 可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果
+
+mkdir _src/_posts
+cp ../help-doc/_src/_posts/3012-01-01-help-doc-research.md _src/_posts
+# 此时 jekyll 应提示
+# Build Warning: Layout &#39;post&#39; requested in _posts/3012-01-01-help-doc-research.md does not exist.
+# Liquid Exception: Included file &#39;_includes/coll-selector.html&#39; not found in not found in _includes/sidebar.html, included in _layouts/default.html
+
+cp ../help-doc/_src/_layouts/post.html _src/_layouts/
+cp ../help-doc/_src/_includes/coll-selector.html _src/_includes
+# 此时 jekyll 无错误提示
+# 可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果
+
+vim _config.yml
+# 修改 _config.yml，在文档末尾追加以下内容
+
+# 为了让文档 URL 符合 GitHub 的 /articles/xxx.html 形式
+permalink: /articles/:title.html
+
+collections:
+  # 为了实现分类汇总而设置 category collection
+  categories:
+    output: true
+    permalink: /categories/:path/
+  # 下面这些都是为了呈现子文档列表而设置的
+  help_doc_research:
+    output: true
+    permalink: /articles/:title.html
+
+# 保存修改后，执行下面的命令：
+jobs
+# 接下来，应看到类似如下的提示
+# [1]+  Running                 jekyll s -H 0.0.0.0 &amp;
+#
+# 如果 jekyll 所在的那一行的 Running 前面是 [2]
+# 则把下列命令改为 fg %2，以此类推。
+
+fg %1 
+# 接下来，应看到类似如下的提示
+# jekyll s -H 0.0.0.0
+
+# 点击 Ctrl+C 退出，然后再次执行下列命令
+jekyll s -H 0.0.0.0 &amp;
+# 此时 jekyll 应提示
+# Liquid Exception: Included file &#39;_includes/sub-articles.html&#39; not found in _includes/coll-selector.html, included in _layouts/post.html
+
+cp ../help-doc/_src/_includes/sub-articles.html _src/_includes/
+jekyll s -H 0.0.0.0
+# 此时 jekyll 无错误提示
+# 可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果
+
+cp ../help-doc/_src/_help_doc_research/* _src/_help_doc_research/
+# 此时 jekyll 无错误提示
+# 等待 5 秒钟左右，打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果
+
+# 接下来，尝试在浏览器中打开以下网页
+# http://192.168.1.32:4000/redo-help-doc/v009/categories/mindpin-docs
+# 此时浏览器应提示
+# Not Found
+#
+# `/redo-help-doc/v009/categories/mindpin-docs&#39; not found.
+
+mkdir _src/_categories
+cp ../help-doc/_src/_categories/mindpin-docs.md _src/_categories/
+# 此时 jekyll 应提示
+# Liquid Exception: Included file &#39;_includes/category-links.html&#39; not found in _categories/mindpin-docs.md
+
+cp ../help-doc/_src/_includes/category-links.html _src/_includes/
+# 此时 jekyll 应提示
+# Build Warning: Layout &#39;category&#39; requested in _categories/mindpin-docs.md does not exist.
+
+cp ../help-doc/_src/_layouts/category.html _src/_layouts/
+# 此时 jekyll 无错误提示
+# 接下来等待 5 秒钟左右，再次尝试在浏览器中打开以下网页
+# http://192.168.1.32:4000/redo-help-doc/v009/categories/mindpin-docs
+# 此时应当在网页的右半部分看到如下内容
+# Category / Mindpin docs
+# * Help Doc 相关调研
+#   * 用 Jekyll 实现纯前端搜索
+#   * GitHub Help 内容架构
+#   * 用 Jekyll 模拟 GitHub Help
+#   * conref 使用效果展示
+
+# 接下来，尝试打开下面的网页
+# http://192.168.1.32:4000/redo-help-doc/v009/articles/conref-usage-sample.html
+# 此时应当在网页的右半部分看到如下内容
+# 下列文字使用了 conrefs 引用：
+# ----
+# 子文档列表
+# ----
+# &lt;- prev
+
+mkdir _src/_data
+cp ../help-doc/_src/_data/conrefs.yml _src/_data/
+# 此时 jekyll 无错误提示
+# 接下来等待 5 秒钟左右，再次尝试在浏览器中打开以下网页 http://192.168.1.32:4000/redo-help-doc/v009/articles/conref-usage-sample.html
+# 网页载入完毕后，将能够看到与上一次浏览此页时，明显不一样的内容
+#
+# 下列文字使用了 conrefs 引用：
+# 这段文字来自 jekyll 源码目录下的 _data 目录下的 conrefs.yml。
+# ……
+#
+
+# 接下来，尝试在网页右半部分的搜索框中搜索 facebook 关键字
+# 回车确认后，将打开以下网页超链接：
+# http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook
+# 此时浏览器应显示以下内容：
+# Not Found
+#
+# `/redo-help-doc/v009/search&#39; not found.
+
+mkdir _src/search
+cp ../help-doc/_src/search/index.html _src/search/
+
+# 此时 jekyll 应提示
+# Build Warning: Layout &#39;page&#39; requested in search/index.html does not exist.
+
+cp ../help-doc/_src/_layouts/page.html _src/_layouts/
+mkdir _src/_plugins
+cp ../help-doc/_src/_plugins/jekyll_lunr_js_search.rb _src/_plugins
+mkdir _src/js
+cp ../help-doc/_src/js/jquery.lunr.search.js _src/js/
+cp ../help-doc/_src/js/lunr.min.js _src/js/
+cp ../help-doc/_src/js/search.min.js _src/js/
+
+# 完成上述操作后，执行下面的命令：
+jobs
+# 接下来，应看到类似如下的提示
+# [1]+  Running                 jekyll s -H 0.0.0.0 &amp;
+#
+
+fg %1 
+# 接下来，应看到类似如下的提示
+# jekyll s -H 0.0.0.0
+
+# 点击 Ctrl+C 退出，然后再次执行下列命令
+jekyll s -H 0.0.0.0 &amp;
+
+# 此时 jekyll 无错误提示
+# 接下来等待 5 秒钟左右，再次尝试在网页右半部分的搜索框中
+# 搜索 facebook 关键字。回车确认后，将打开以下网页超链接：
+# http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook
+# 此时浏览器应显示以下内容：
+# Search results
+#
+# help-doc-research
+# 其中，help-doc-research 是一个超链接，点击后
+# 将进入包含 facebook 关键词的文档页面。
 </code></pre></div>
-<p>3 在 <code>redo-help-doc</code> 目录下执行 <code>jekyll s -H 0.0.0.0</code> ，然后打开网址 <code>http://192.168.1.32:4000/redo-help-doc/v009/</code> 进行预览</p>
-<h4><a class="anchor" name=""></a>特别说明 <a class="hash-link" href="#">#</a></h4>
-<ul>
-<li><p>我使用的文档生成方法是在本地 <code>redo-help-doc/v009/</code> 目录下生成所有静态文件，然后直接把静态文件 push 到 github 版本库的 gh-pages 分支。这样做等于绕过了 github pages 内置的 jekyll 源码编译的机制。如果你不希望绕开这个机制，请参考 <a href="https://help.github.com/articles/using-jekyll-with-pages/">GitHub Pages 官方帮助文档</a></p></li>
-<li><p><code>_config.yml</code> 中的 <code>exclude: [&#39;dir&#39;]</code> 设置可以阻止 github pages 输出 <code>dir</code> 目录下的静态网页。利用这个机制，可以把 <code>redo-help-doc/</code> 目录中一些不相干的内容屏蔽，避免输出到 <code>username.github.io/redo-help-doc/...</code> 。</p></li>
-</ul>
+<p>到目前为止，以上操作命令已经把涉及到 <strong>/article/xxx 格式的文档链接，文档分类汇总页，子文档列表页，lunrjs 纯前端搜索，conref 内容复用，GitHub Flavored Markdown 支持</strong> 等 6 项 feature 的代码文件都触及了。</p>
+
+<p>前置和后继文档的功能相对简单，只要在 <code>_config.yml</code> 文件中定义好 permalink 格式，再在模板源码中利用每篇文档的 Front Matter slug —— <code>title</code>, <code>prev-post</code> 和 <code>next-post</code> 等字段动态创建超链接即可实现。</p>
+
+<p>从下一篇文档开始，我将把 7 种 feature 的复现步骤单独列出来，以便读者孤立地复现其中的一部分 feature。</p>
  
 
 <hr />
@@ -349,10 +510,10 @@ sass:
 
 <div class="docs-prevnext">
   
-    <a class="docs-prev" href="doc-site-from-scratch.html">&larr; Prev</a>
+    <a class="docs-prev" href="jekyll-environment-setup.html">&larr; Prev</a>
   
   
-    <a class="docs-next" href="jekyll-source-code-dir-struct.html">Next &rarr;</a>
+    <a class="docs-next" href="create-new-articles.html">Next &rarr;</a>
   
 </div>
 

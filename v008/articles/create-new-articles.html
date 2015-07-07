@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>设置 Jekyll 运行环境</title>
+  <title>创建新文档</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="设置 Jekyll 运行环境 | React">
+  <meta property="og:title" content="创建新文档 | React">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="/help-doc/v008/articles/jekyll-environment-setup.html">
+  <meta property="og:url" content="/help-doc/v008/articles/create-new-articles.html">
   <meta property="og:image" content="/help-doc/v008/img/logo_og.png">
   <meta property="og:description" content="A JavaScript library for building user interfaces">
   <meta property="fb:app_id" content="623268441017527">
@@ -300,38 +300,25 @@
 </script>
 
 
-    <h1>设置 Jekyll 运行环境</h1>
+    <h1>创建新文档</h1>
 
-<p>设置 jekyll 运行环境的大致步骤如下：</p>
-
-<p>1 gem install jekyll</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">我使用的 Ruby 和 Jekyll 环境如下： Jekyll 2.5.3 , ruby 2.2.0p0 (2014-12-25 revision 49005) [x86_64-linux]）
-</code></pre></div>
-<p>2 确保 jekyll 安装无误后，按序进行以下操作</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir redo-help-doc
-mkdir redo-help-doc/_src
-mkdir redo-help-doc/v009
-vim redo-help-doc/_config.yml
-
-# 修改 `redo-help-doc/_config.yml` 文件的内容，加入以下配置：
-baseurl: &quot;/redo-help-doc&quot;
-source: &quot;_src&quot;
-destination: &quot;v009&quot;
-markdown: redcarpet
-redcarpet:
-  extensions:
-  - fenced_code_blocks
-  - footnotes
-sass:
-  style: :compressed
-  sass_dir: _css
-</code></pre></div>
-<p>3 在 <code>redo-help-doc</code> 目录下执行 <code>jekyll s -H 0.0.0.0</code> ，然后打开网址 <code>http://192.168.1.32:4000/redo-help-doc/v009/</code> 进行预览</p>
-<h4><a class="anchor" name=""></a>特别说明 <a class="hash-link" href="#">#</a></h4>
 <ul>
-<li><p>我使用的文档生成方法是在本地 <code>redo-help-doc/v009/</code> 目录下生成所有静态文件，然后直接把静态文件 push 到 github 版本库的 gh-pages 分支。这样做等于绕过了 github pages 内置的 jekyll 源码编译的机制。如果你不希望绕开这个机制，请参考 <a href="https://help.github.com/articles/using-jekyll-with-pages/">GitHub Pages 官方帮助文档</a></p></li>
-<li><p><code>_config.yml</code> 中的 <code>exclude: [&#39;dir&#39;]</code> 设置可以阻止 github pages 输出 <code>dir</code> 目录下的静态网页。利用这个机制，可以把 <code>redo-help-doc/</code> 目录中一些不相干的内容屏蔽，避免输出到 <code>username.github.io/redo-help-doc/...</code> 。</p></li>
+<li><p>不带子文档的文档，直接以 markdown 源码形式放入 <code>help-doc/_posts</code> 下面</p>
+
+<p><code>help-doc/_posts</code> 目录下的 Front Matter 必须遵循以下格式： 其中，reader-title 可以包含中文字符，title 必须是英文数字、字母和连字符组成</p></li>
 </ul>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">post</span>
+<span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&#39;category_name&#39;</span><span class="p-Indicator">]</span>
+<span class="l-Scalar-Plain">reader-title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">XXX XXXX</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">article-url-name</span>
+<span class="l-Scalar-Plain">prev-post</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">previous-article-url-name.html</span>
+<span class="l-Scalar-Plain">next-post</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">next-article-url-name.html</span>
+<span class="l-Scalar-Plain">----</span>
+
+<span class="l-Scalar-Plain">文档正文</span>
+</code></pre></div><h3><a class="anchor" name=""></a>特别说明 <a class="hash-link" href="#">#</a></h3>
+<p>Jekyll 2.5.3 所使用的 Liquid 模板语法在调用变量值时支持使用 filter 例如：<code>{{ var1 = var2 | downcase}}</code>，但有些 filter 存在问题，比如 strip, lstrip, rstrip 三个 filter 工作均不正常。</p>
  
 
 <hr />
@@ -349,10 +336,8 @@ sass:
 
 <div class="docs-prevnext">
   
-    <a class="docs-prev" href="doc-site-from-scratch.html">&larr; Prev</a>
+    <a class="docs-prev" href="jekyll-environment-setup.html">&larr; Prev</a>
   
-  
-    <a class="docs-next" href="jekyll-source-code-dir-struct.html">Next &rarr;</a>
   
 </div>
 
