@@ -1,0 +1,21 @@
+<div style="float:left;padding:12px;">
+{% for cat in site.categories reversed %}
+  {% assign cat_str = cat[0] %}
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="{{ cat_str | downcase | replace:' ','-' | prepend:'/categories/' | prepend: site.baseurl | prepend: site.url}}">{{ cat_str | capitalize }}</a></h4>
+    </div>
+    <div class='articles'>
+      {% for post in site.categories[cat_str] reversed %}
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.reader-title }}</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        {% include coll-selector.html post-url=post.title %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+{% endfor %}
+</div>

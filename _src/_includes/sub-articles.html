@@ -1,0 +1,5 @@
+<ul>
+  {% for post in include.which-coll %}
+    <li><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.reader-title }}</a></li>
+  {% endfor %}
+</ul>

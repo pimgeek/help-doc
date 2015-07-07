@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    {% for post in include.which-cat reversed %}
+      <li>
+        <b><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.reader-title }}</a></b>
+        <!-- 如果 post 对应的文档在 _config.yml 和 _src 目录下
+             有对应的 collection 定义，就把它的子文档列举出来。-->
+        {% include coll-selector.html post-url=post.title %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

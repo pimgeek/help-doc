@@ -1,33 +1,13 @@
 ---
-name: React
-description: A JavaScript library for building user interfaces
+name: Jekyll Doc Site
+description: A Documentation Site Based on Jekyll
 #url: http://pimgeek.github.io
-baseurl: "/help-doc/v008"
-source: _src
-destination: v008
-permalink: "/blog/:year/:month/:day/:title.html"
-paginate_path: "/blog/page:num/"
+baseurl: "/help-doc/v008" # 所有输出网页 URL 都要增加这个前缀
+source: _src              # 从 _src 目录下读取 jekyll 源码
+destination: v008         # 输出的目录从默认的 _site 改为 v008
 relative_permalinks: true
-paginate: 5
-timezone: America/Los_Angeles
 highlighter: pygments
-defaults:
-- scope:
-    path: ''
-    type: post
-  values:
-    layout: post
-- scope:
-    path: docs
-    type: page
-  values:
-    layout: docs
-exclude:
-- Gemfile
-- Gemfile.lock
-- README.md
-- Rakefile
-- vendor/bundle
+
 markdown: redcarpet
 redcarpet:
   extensions:
@@ -36,16 +16,24 @@ redcarpet:
 sass:
   style: :compressed
   sass_dir: _css
-gems:
-- jekyll-redirect-from
-#- jekyll-lunr-js-search
-react_version: 0.14.0-alpha
+
+# 归档文件夹不要输出到 GitHub Pages
 exclude: ['archive']
 
+permalink: /articles/:title.html
+
 collections:
+  # 为了实现分类汇总而设置 category collection
   categories:
     output: true
     permalink: /categories/:path/
+  # 下面这些都是为了呈现子文档列表而设置的 collection
+  doc_site_from_scratch:
+    output: true
+    permalink: /articles/:title.html
+  help_doc_research:
+    output: true
+    permalink: /articles/:title.html
   displaying_data:
     output: true
     permalink: /articles/:title.html
@@ -55,5 +43,3 @@ collections:
   addons:
     output: true
     permalink: /articles/:title.html
-
-permalink: /articles/:title.html
