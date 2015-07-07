@@ -17,3 +17,5 @@ next-post: jekyll-environment-setup.html
   - 为一篇文档指定若干个子文档
   - 在父文档的正文内自动生成子文档列表
   - 多篇不同的文档中引用同一段文字（conref）
+
+接下来的文档将首先介绍在本地 Debian Linux 虚拟机环境下运行的 jekyll 文档站的基本配置。

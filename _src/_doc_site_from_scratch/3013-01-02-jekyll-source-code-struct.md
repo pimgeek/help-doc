@@ -6,9 +6,11 @@ prev-post: jekyll-environment-setup.html
 next-post: create-new-articles.html
 ---
 
-为了实现 GitHub Help 与 Facebook React Doc 的若干项实用 feature，需要形成以下目录结构：
+为了实现 GitHub Help 与 Facebook React Doc 中包含的一系列实用 feature，需要形成大致如下图所示的目录结构：
 
-下面给出具体操作步骤：
+
+
+下面将列举出逐项添加这些 feature 的具体操作步骤：
 
 1 从 GitHub 版本库 clone help-doc 示例项目，并切换到 gh-pages 分支
 
@@ -197,10 +199,20 @@ jekyll s -H 0.0.0.0 &
 # 其中，help-doc-research 是一个超链接，点击后
 # 将进入包含 facebook 关键词的文档页面。
 
+# 最后，把用于提升显示效果的图片与 Sass/CSS 等静态文件复制过来
+
+cp -r ../help-doc/_src/css _src/
+cp -r ../help-doc/_src/_css _src/
+cp -r ../help-doc/_src/img _src/
+
+# 接下来等待 5 秒钟左右，然后打开以下网页超链接：
+# http://192.168.1.32:4000/redo-help-doc/v009/
+# http://192.168.1.32:4000/redo-help-doc/v009/articles/jekyll-frontend-search.html
+# 将会看到增加了皮肤和代码高亮效果的网页
 ```
 
 到目前为止，以上操作命令已经把涉及到 **/article/xxx 格式的文档链接，文档分类汇总页，子文档列表页，lunrjs 纯前端搜索，conref 内容复用，GitHub Flavored Markdown 支持** 等 6 项 feature 的代码文件都触及了。
 
 前置和后继文档的功能相对简单，只要在 `_config.yml` 文件中定义好 permalink 格式，再在模板源码中利用每篇文档的 Front Matter slug —— `title`, `prev-post` 和 `next-post` 等字段动态创建超链接即可实现。
 
-从下一篇文档开始，我将把 7 种 feature 的复现步骤单独列出来，以便读者孤立地复现其中的一部分 feature。
+从下一篇文档开始，我将把上述 7 种 feature 的复现步骤单独列出来，以便阅读者有选择地复现其中的一部分 feature。
