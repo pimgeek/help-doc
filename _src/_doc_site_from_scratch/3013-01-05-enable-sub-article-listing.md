@@ -1,6 +1,6 @@
 ---
 layout: post
-reader-title: 启用分类汇总页
+reader-title: 启用子文章列表
 title: enable-sub-article-listing
 prev-post: enable-category-index-page.html
 next-post: enable-lunrjs-search.html
