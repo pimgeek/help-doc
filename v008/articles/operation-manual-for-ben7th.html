@@ -410,8 +410,9 @@ collections:
 <h3><a class="anchor" name="13--help-doc_src-"></a>13 从 <code>help-doc/_src</code> 目录下复制一系列子文档，以便测试子文档列表的显示是否正常 <a class="hash-link" href="#13--help-doc_src-">#</a></h3><div class="highlight"><pre><code class="language-text" data-lang="text">mkdir _src/_help_doc_research
 cp ../help-doc/_src/_help_doc_research/* _src/_help_doc_research/
 </code></pre></div>
-<p>接下来等待 5 秒钟左右，然后打开以下网页超链接：
-http://192.168.1.32:4000/redo-help-doc/v009/articles/articles/help-doc-research.html</p>
+<p>接下来等待 5 秒钟左右，然后打开以下网页超链接：</p>
+
+<p>http://192.168.1.32:4000/redo-help-doc/v009/articles/articles/help-doc-research.html</p>
 
 <p>在网页右侧将看到如下所示的子文档列表：</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">子文档列表
@@ -424,9 +425,11 @@ cp ../help-doc/_src/_categories/mindpin-docs.md _src/_categories/
 </code></pre></div>
 <p>此时 jekyll 应提示</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">Liquid Exception: Included file &#39;_includes/category-links.html&#39; not found in _categories/mindpin-docs.md
-Build Warning: Layout &#39;category&#39; requested in _categories/mindpin-docs.md does not exist.
 </code></pre></div><h3><a class="anchor" name="15--category-links.html--category.html"></a>15 创建分类索引内容页所依赖的 category-links.html 和 category.html <a class="hash-link" href="#15--category-links.html--category.html">#</a></h3><div class="highlight"><pre><code class="language-text" data-lang="text">cp ../help-doc/_src/_includes/category-links.html _src/_includes/
-cp ../help-doc/_src/_layouts/category.html _src/_layouts/
+</code></pre></div>
+<p>此时 jekyll 应提示</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Build Warning: Layout &#39;category&#39; requested in _categories/mindpin-docs.md does not exist.
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">cp ../help-doc/_src/_layouts/category.html _src/_layouts/
 </code></pre></div>
 <p>此时 jekyll 无错误提示</p>
 

@@ -179,6 +179,7 @@ cp ../help-doc/_src/_help_doc_research/* _src/_help_doc_research/
 ```
 
 接下来等待 5 秒钟左右，然后打开以下网页超链接：
+
 http://192.168.1.32:4000/redo-help-doc/v009/articles/articles/help-doc-research.html
 
 在网页右侧将看到如下所示的子文档列表：
@@ -199,12 +200,20 @@ cp ../help-doc/_src/_categories/mindpin-docs.md _src/_categories/
 此时 jekyll 应提示
 
     Liquid Exception: Included file '_includes/category-links.html' not found in _categories/mindpin-docs.md
-    Build Warning: Layout 'category' requested in _categories/mindpin-docs.md does not exist.
+
+
 
 ### 15 创建分类索引内容页所依赖的 category-links.html 和 category.html
 
 ```
 cp ../help-doc/_src/_includes/category-links.html _src/_includes/
+```
+
+此时 jekyll 应提示
+
+    Build Warning: Layout 'category' requested in _categories/mindpin-docs.md does not exist.
+
+```
 cp ../help-doc/_src/_layouts/category.html _src/_layouts/
 ```
 
