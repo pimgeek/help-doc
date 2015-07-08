@@ -28,7 +28,7 @@ mkdir redo-help-doc/v009
 vim redo-help-doc/_config.yml
 
 # 修改 `redo-help-doc/_config.yml` 文件的内容，加入以下配置：
-baseurl: "/redo-help-doc"
+baseurl: "/redo-help-doc/v009"
 source: "_src"
 destination: "v009"
 markdown: redcarpet
