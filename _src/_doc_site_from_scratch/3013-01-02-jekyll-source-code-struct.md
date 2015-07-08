@@ -6,7 +6,7 @@ prev-post: jekyll-environment-setup.html
 next-post: create-new-articles.html
 ---
 
-为了实现 GitHub Help 与 Facebook React Doc 中包含的一系列实用 feature，需要形成大致如下图所示的目录结构：
+为了实现 GitHub Help 与 Facebook React Doc 中包含的一系列 feature，需要形成大致如下图所示的目录结构：
 
 ```
 redo-help-doc/
@@ -59,13 +59,19 @@ cd help-doc
 checkout gh-pages
 ```
 
-2 返回到新创建的 `redo-help-doc/` 目录下，严格按顺序执行如下操作，以便大概了解文档源码文件，各个子模板、包含文件、数据文件等组成部分之间的依赖关系。
+2 返回到新创建的 `redo-help-doc/` 目录下，严格按顺序执行如下操作：
+
+2.1 创建 index 页
 
 ```
+cd redo-help-doc/
 jekyll s -H 0.0.0.0 &
 cp ../help-doc/_src/index.md 
-# 此时 jekyll 应提示
-# Build Warning: Layout 'default' requested in index.md does not exist
+```
+
+此时 jekyll 应提示:
+
+    Build Warning: Layout 'default' requested in index.md does not exist
 
 mkdir ../help-doc/_src/_layouts
 cp ../help-doc/_src/_layouts/default.html _src/_layouts/
