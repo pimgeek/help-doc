@@ -68,7 +68,7 @@ jekyll s -H 0.0.0.0 &
 cp ../help-doc/_src/index.md _src/
 ```
 
-此时 jekyll 应提示
+后台启动 jekyll 以便继续执行前台操作，此时 jekyll 应提示
 
     Build Warning: Layout 'default' requested in index.md does not exist
 
@@ -157,7 +157,7 @@ collections:
     permalink: /articles/:title.html
 ```
 
-保存修改后，重新启动 jekyll，此时 jekyll 应提示
+保存修改后，重新后台启动 jekyll，此时 jekyll 应提示
 
     Liquid Exception: Included file '_includes/sub-articles.html' not found in _includes/coll-selector.html, included in _layouts/post.html
 
@@ -167,13 +167,14 @@ collections:
 cp ../help-doc/_src/_includes/sub-articles.html _src/_includes/
 ```
 
-此时 jekyll 无错误提示
+操作完毕后，重新后台启动 jekyll，此时 jekyll 无错误提示
 
 可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果
 
 ### 13 从 `help-doc/_src` 目录下复制一系列子文档，以便测试子文档列表的显示是否正常
 
 ```
+mkdir _src/_help_doc_research
 cp ../help-doc/_src/_help_doc_research/* _src/_help_doc_research/
 ```
 

@@ -345,7 +345,7 @@ checkout gh-pages
 jekyll s -H 0.0.0.0 &amp;
 cp ../help-doc/_src/index.md _src/
 </code></pre></div>
-<p>此时 jekyll 应提示</p>
+<p>后台启动 jekyll 以便继续执行前台操作，此时 jekyll 应提示</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">Build Warning: Layout &#39;default&#39; requested in index.md does not exist
 </code></pre></div><h3><a class="anchor" name="6--index.md--default.html"></a>6 创建 index.md 所依赖的 default.html <a class="hash-link" href="#6--index.md--default.html">#</a></h3><div class="highlight"><pre><code class="language-text" data-lang="text">mkdir _src/_layouts
 cp ../help-doc/_src/_layouts/default.html _src/_layouts/
@@ -400,11 +400,11 @@ collections:
     output: true
     permalink: /articles/:title.html
 </code></pre></div>
-<p>保存修改后，重新启动 jekyll，此时 jekyll 应提示</p>
+<p>保存修改后，重新后台启动 jekyll，此时 jekyll 应提示</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">Liquid Exception: Included file &#39;_includes/sub-articles.html&#39; not found in _includes/coll-selector.html, included in _layouts/post.html
 </code></pre></div><h3><a class="anchor" name="12--coll-selector.html--sub-articles.html"></a>12 创建 coll-selector.html 所依赖的 sub-articles.html <a class="hash-link" href="#12--coll-selector.html--sub-articles.html">#</a></h3><div class="highlight"><pre><code class="language-text" data-lang="text">cp ../help-doc/_src/_includes/sub-articles.html _src/_includes/
 </code></pre></div>
-<p>此时 jekyll 无错误提示</p>
+<p>操作完毕后，重新后台启动 jekyll，此时 jekyll 无错误提示</p>
 
 <p>可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果</p>
 <h3><a class="anchor" name="13--help-doc_src-"></a>13 从 <code>help-doc/_src</code> 目录下复制一系列子文档，以便测试子文档列表的显示是否正常 <a class="hash-link" href="#13--help-doc_src-">#</a></h3><div class="highlight"><pre><code class="language-text" data-lang="text">cp ../help-doc/_src/_help_doc_research/* _src/_help_doc_research/
