@@ -30,7 +30,7 @@ vim redo-help-doc/_config.yml
 # 修改 `redo-help-doc/_config.yml` 文件的内容，加入以下配置：
 baseurl: "/redo-help-doc"
 source: "_src"
-destination: "_v009"
+destination: "v009"
 markdown: redcarpet
 redcarpet:
   extensions:
