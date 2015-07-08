@@ -19,9 +19,9 @@ layout: default
 
 <div class="docs-prevnext">
   {% if page.prev-post %}
-    <a class="docs-prev" href="{{ page.prev-post | prepend: baseurl | prepend: url }}">&larr; Prev</a>
+    <a class="docs-prev" href="{{ page.prev-post }}">&larr; Prev</a>
   {% endif %}
   {% if page.next-post %}
-    <a class="docs-next" href="{{ page.next-post | prepend: baseurl | prepend: url }}">Next &rarr;</a>
+    <a class="docs-next" href="{{ page.next-post }}">Next &rarr;</a>
   {% endif %}
 </div>
