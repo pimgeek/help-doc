@@ -175,10 +175,10 @@ cp ../help-doc/_src/_includes/sub-articles.html _src/_includes/
 
 ```
 cp ../help-doc/_src/_help_doc_research/* _src/_help_doc_research/
+```
 
 接下来等待 5 秒钟左右，然后打开以下网页超链接：
 http://192.168.1.32:4000/redo-help-doc/v009/articles/articles/help-doc-research.html
-```
 
 在网页右侧将看到如下所示的子文档列表：
 
@@ -267,7 +267,6 @@ cp ../help-doc/_src/js/search.min.js _src/js/
 
 ### 18 重启 jekyll 并测试搜索页
 
-```
 重启 jekyll s
 
 接下来等待 5 秒钟左右，再次尝试在网页右半部分的搜索框中
@@ -275,7 +274,6 @@ cp ../help-doc/_src/js/search.min.js _src/js/
 搜索 facebook 关键字。回车确认后，将打开以下网页超链接：
 
 http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook
-```
 
 此时浏览器应显示以下内容：
 
@@ -306,11 +304,13 @@ http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook
 cp -r ../help-doc/_src/css _src/
 cp -r ../help-doc/_src/_css _src/
 cp -r ../help-doc/_src/img _src/
+```
 
 接下来等待 5 秒钟左右，然后打开以下网页超链接：
+
 http://192.168.1.32:4000/redo-help-doc/v009/
+
 http://192.168.1.32:4000/redo-help-doc/v009/articles/jekyll-frontend-search.html
-```
 
 将会看到增加了皮肤和代码高亮效果的网页
 

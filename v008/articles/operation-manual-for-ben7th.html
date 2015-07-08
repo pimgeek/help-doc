@@ -408,10 +408,10 @@ collections:
 
 <p>可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果</p>
 <h3><a class="anchor" name="13--help-doc_src-"></a>13 从 <code>help-doc/_src</code> 目录下复制一系列子文档，以便测试子文档列表的显示是否正常 <a class="hash-link" href="#13--help-doc_src-">#</a></h3><div class="highlight"><pre><code class="language-text" data-lang="text">cp ../help-doc/_src/_help_doc_research/* _src/_help_doc_research/
-
-接下来等待 5 秒钟左右，然后打开以下网页超链接：
-http://192.168.1.32:4000/redo-help-doc/v009/articles/articles/help-doc-research.html
 </code></pre></div>
+<p>接下来等待 5 秒钟左右，然后打开以下网页超链接：
+http://192.168.1.32:4000/redo-help-doc/v009/articles/articles/help-doc-research.html</p>
+
 <p>在网页右侧将看到如下所示的子文档列表：</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">子文档列表
 * 用 Jekyll 实现纯前端搜索
@@ -465,14 +465,15 @@ mkdir _src/js
 cp ../help-doc/_src/js/jquery.lunr.search.js _src/js/
 cp ../help-doc/_src/js/lunr.min.js _src/js/
 cp ../help-doc/_src/js/search.min.js _src/js/
-</code></pre></div><h3><a class="anchor" name="18--jekyll-"></a>18 重启 jekyll 并测试搜索页 <a class="hash-link" href="#18--jekyll-">#</a></h3><div class="highlight"><pre><code class="language-text" data-lang="text">重启 jekyll s
+</code></pre></div><h3><a class="anchor" name="18--jekyll-"></a>18 重启 jekyll 并测试搜索页 <a class="hash-link" href="#18--jekyll-">#</a></h3>
+<p>重启 jekyll s</p>
 
-接下来等待 5 秒钟左右，再次尝试在网页右半部分的搜索框中
+<p>接下来等待 5 秒钟左右，再次尝试在网页右半部分的搜索框中</p>
 
-搜索 facebook 关键字。回车确认后，将打开以下网页超链接：
+<p>搜索 facebook 关键字。回车确认后，将打开以下网页超链接：</p>
 
-http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook
-</code></pre></div>
+<p>http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook</p>
+
 <p>此时浏览器应显示以下内容：</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">Search results
 
@@ -497,11 +498,13 @@ help-doc-research
 <div class="highlight"><pre><code class="language-text" data-lang="text">cp -r ../help-doc/_src/css _src/
 cp -r ../help-doc/_src/_css _src/
 cp -r ../help-doc/_src/img _src/
-
-接下来等待 5 秒钟左右，然后打开以下网页超链接：
-http://192.168.1.32:4000/redo-help-doc/v009/
-http://192.168.1.32:4000/redo-help-doc/v009/articles/jekyll-frontend-search.html
 </code></pre></div>
+<p>接下来等待 5 秒钟左右，然后打开以下网页超链接：</p>
+
+<p>http://192.168.1.32:4000/redo-help-doc/v009/</p>
+
+<p>http://192.168.1.32:4000/redo-help-doc/v009/articles/jekyll-frontend-search.html</p>
+
 <p>将会看到增加了皮肤和代码高亮效果的网页</p>
 
 <p>以上操作命令已经把涉及到 <strong>/article/xxx 格式的文档链接，文档分类汇总页，子文档列表页，lunrjs 纯前端搜索，conref 内容复用，GitHub Flavored Markdown 支持</strong> 等 6 项 feature 的代码文件都触及了。</p>
