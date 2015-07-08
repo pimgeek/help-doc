@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>用 Jekyll 模拟 GitHub Help</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="用 Jekyll 模拟 GitHub Help | React">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/help-doc/v009/articles/github-help-doc-clone-with-jekyll.html">
+  <meta property="og:image" content="/help-doc/v009/img/logo_og.png">
+  <meta property="og:description" content="A JavaScript library for building user interfaces">
+  <meta property="fb:app_id" content="623268441017527">
+
+  <link rel="shortcut icon" href="/help-doc/v009/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll 文档站" href="/help-doc/v009/feed.xml">
+
+  <link rel="stylesheet" href="/help-doc/v009/css/syntax.css">
+  <link rel="stylesheet" href="/help-doc/v009/css/codemirror.css">
+  <link rel="stylesheet" href="/help-doc/v009/css/react.css">
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="/help-doc/v009/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v009/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v009/js/es5-sham.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/help-doc/v009/index.html">
+          <img class="nav-logo" src="/help-doc/v009/img/logo.svg" width="36" height="36">
+          React
+        </a>
+      </div>
+    </div>
+
+    <div style="float:left;padding:12px;">
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/jekyll-hack">Jekyll hack</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/doc-site-from-scratch.html">从零开始构建基于 Jekyll 的文档站</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-environment-setup.html">设置 Jekyll 运行环境</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-source-code-dir-struct.html">Jekyll 的源码目录结构</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/create-new-articles.html">创建新文档</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/enable-category-index-page.html">启用分类汇总页</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/enable-sub-article-listing.html">启用子文档列表</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/operation-manual-for-ben7th.html">给宋亮写的操作步骤说明</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/mindpin-docs">Mindpin docs</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/help-doc-research.html">Help Doc 相关调研</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-frontend-search.html">用 Jekyll 实现纯前端搜索</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/github-help-doc-framework.html">GitHub Help 内容架构</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/github-help-doc-clone-with-jekyll.html">用 Jekyll 模拟 GitHub Help</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/conref-usage-sample.html">conref 使用效果展示</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/guides">Guides</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/why-react.html">Why React?</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/displaying-data.html">Displaying Data</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-in-depth.html">JSX in Depth</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-spread.html">JSX Spread</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-gotchas.html">JSX Gotchas</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/multiple-components.html">Multiple Components</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/reusable-components.html">Reusable Components</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/transferring-props.html">Transferring Props</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/forms.html">Forms</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/working-with-the-browser.html">Working with the Browser</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/more-about-refs.html">More About Refs</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/tooling-integration.html">Tooling Integration</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/addons.html">Addons</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/animation.html">Animation</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/class-name-manipulation.html">Class Name Manipulation</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/test-utilities.html">Test Utilities</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/clone-with-props.html">Clone with Props</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/create-fragment.html">Create Fragment</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/immutability-helpers.html">Immutability Helpers</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/pure-render-mixin.html">Pure Render Mixin</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/performance-tools.html">Performance Tools</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/advanced-performance.html">Advanced Performance</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+</div>
+
+
+    <div style="float:left;width:70%;padding:12px;">
+
+    <!-- Search form -->
+<form style="padding:10px;" method="get" action="/help-doc/v009/search" data-search-form>
+  <input style="font-size:18px;" type="search" name="q" id="q" placeholder="请输入搜索关键词" data-search-input />
+  &nbsp;
+  <input style="font-size:18px;" type="submit" value="搜索" />
+</form>
+
+<!-- Search results placeholder -->
+<p data-search-found>
+  找到了 <span data-search-found-count></span> 条包含 &ldquo;<span data-search-found-term></span>&rdquo; 的结果.
+</p>
+<div data-search-results></div>
+
+<!-- Search result template -->
+<script type="text/x-template" id="search-result">
+  <div>
+    <h1><a href="/help-doc/v009##Url##">##Title##</a></h1>
+    <h2><a href="/help-doc/v009##Url##">##Date##</a></h2>
+    <a href="/help-doc/v009##Url##">Read &ldquo;##Title##&rdquo;</a>
+  </div>
+</script>
+
+<!-- jQuery - required but can be moved to the <head> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Search script - Must appear after template -->
+<script src="/help-doc/v009/js/search.js"></script>
+
+
+    <h1>用 Jekyll 模拟 GitHub Help</h1>
+
+<p>jekyll + lunrjs 的调通方法已经在 #2 中描述过，所以这里只讲实现 github help 站点文档结构的步骤。</p>
+<h3><a class="anchor" name="jekyll-"></a>jekyll 环境说明 <a class="hash-link" href="#jekyll-">#</a></h3>
+<ul>
+<li>若无特别说明，所有形如 <code>YYYY-MM-DD-article-title.md</code> 文档的 Front Matter 中均含有 <code>title: Article Title</code>，而且 Front Matter 中的 title 与 <code>*.md</code> 文件名中的 <code>title</code> 严格对应（不区分大小写），<code>*.md</code> 中的 <code>-</code> 严格替换为 <code></code>。</li>
+<li>我使用的 jekyll 文件夹名为 <code>help-doc</code></li>
+<li>我使用的 jekyll 模板结构大概如下图所示</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">help-doc/
+├── _categories
+│   ├── bootcamp.md
+│   └── setting-up-and-managing-organizations-and-teams.md
+├── _creating_a_new_organization_account
+│   ├── 2015-02-08-creating-a-new-organization-from-scratch.md
+│   └── 2015-02-09-about-organizations.md
+├── css
+│   └── ...
+├── _data
+│   └── conrefs.yml
+├── fonts
+│   └── ...
+├── _includes
+│   ├── category-articles.html
+│   ├── footer.html
+│   ├── header.html
+│   ├── head.html
+│   ├── search.html
+│   ├── sidebar.html
+│   └── sub-articles.html
+├── _layouts
+│   ├── category.html
+│   ├── default.html
+│   ├── page.html
+│   └── post.html
+├── _posts
+│   ├── 2015-02-10-creating-a-new-organization-account.md
+│   ├── 2015-01-01-set-up-git.md
+│   └── 2015-01-02-create-a-repo.md
+├── _sass
+│   └── ...
+├── search
+│   └── index.html
+├── about.md
+├── _config.yml
+├── feed.xml
+└── index.html
+</code></pre></div><h3><a class="anchor" name="-jekyll--github-help-"></a>利用 jekyll 构建 github help 站点文档结构的步骤描述 <a class="hash-link" href="#-jekyll--github-help-">#</a></h3>
+<ul>
+<li>帮助文档的 markdown 源码要放在哪里，才能通过 Jekyll 输出到前端？
+先编写文档内容，然后按照 YYYY-MM-DD-help-topic.md 的文件格式命名，最后根据实际情况放进以下两个位置：
+
+<ul>
+<li>对于独立的帮助文档，直接放在 <code>_posts</code> 目录下</li>
+<li>对于“隶属于”某个独立父帮助文档的“子文档”，根据子文档的实际分类，放在形如 <code>_category_name</code> 这样的目录下</li>
+</ul></li>
+</ul>
+
+<hr>
+
+<ul>
+<li>如何让 Jekyll 输出类似 https://help.github.com/articles/set-up-git/ 这样的网址？
+编辑 <code>_config.yml</code> 文档，增加/修改这一行：
+<code>permalink: /articles/:title/</code></li>
+</ul>
+
+<hr>
+
+<ul>
+<li>如何让 Jekyll 输出类似 https://help.github.com/categories/bootcamp/ 这样的分类索引页？
+分多个步骤实现：
+
+<ul>
+<li>在已有的，属于 bootcamp 这一类的帮助文档的 markdown 源码 Front Matter 中增加这段内容：
+<code>categories: [&#39;bootcamp&#39;]</code>
+至少要有一篇属于 bootcamp 分类的帮助文档，才能在首页上列出相关的分类。分类名称支持大写字母、小写字母、空格等，但真正存储到 Jekyll 模板系统的内存中时，<strong>貌似</strong>都会变为小写。</li>
+<li>编辑 <code>_config.yml</code> 文档，在其中增加这段定义 collection 的内容：</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">  <span class="l-Scalar-Plain">collections</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">output</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+      <span class="l-Scalar-Plain">permalink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/categories/:path/</span>
+</code></pre></div>
+<p>如果不定义这个，仅仅能在首页看到分类索引页的链接，但无法打开目标网页。</p>
+
+<ul>
+<li>在 <code>_categories</code> 目录下创建一个名为 <code>bootcamp.md</code> 的文件（文件名采用大写字母还是小写会造成不同效果，要注意），其内容如下：</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">---
+layout: category
+---
+
+{% assign cat-title-array=page.url | split:&#39;/&#39;%}
+{% assign cat-title=cat-title-array[2] | replace:&#39;-&#39;,&#39; &#39;%}
+{% assign cat-obj=site.categories[cat-title]%}
+{% include category-articles.html which-cat=cat-obj%}   
+</code></pre></div>
+<p>如果不定义这个，或者文件名与分类名不一致，仍然会出现导航中有分类索引页的链接，但实际点不开的情况。如果想定义别的分类，比如 <code>manage-organization</code> 分类，仍然按这个步骤来做，文件内容不变，只有文件名需要改为 <code>manage-organization.md</code> 
+  - 在 <code>_layouts</code> 目录下创建一个名为 <code>category.html</code> 的网页布局文件，其内容如下：</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: default
+---
+
+{% assign page-title-array=page.url | split:&#39;/&#39;%}
+{% assign page-title=page-title-array[2] | replace:&#39;-&#39;,&#39; &#39; | capitalize%}
+
+<span class="nt">&lt;h1&gt;</span>Category / {{ page-title}}<span class="nt">&lt;/h1&gt;</span>
+
+{{ content}}
+</code></pre></div>
+<p>单个分类索引网页需要引用这个网页布局文件。
+  - 在 <code>_include</code> 目录下创建一个名为 <code>category-articles.html</code> 的包含文件，其内容如下：</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+  {% for post in include.which-cat%}
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&#39;post-link&#39;</span> <span class="na">href=</span><span class="s">&#39;{{ post.url | prepend: site.baseurl | prepend: site.url}}&#39;</span><span class="nt">&gt;</span>{{ post.title}}<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  {% endfor%}
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
+<p>单个分类索引网页需要引用这个网页包含文件。
+  关于 <code>{% include tmpl.html var-name=sth%}</code> 和 <code>{{ include.var-name}}</code> 这种特殊语法的介绍，请参考 http://jekyllrb.com/docs/templates/ 中的 <strong>ProTip：Use variables as file name</strong></p>
+
+<hr>
+
+<ul>
+<li>如何利用 Jekyll 输出类似于 https://help.github.com/articles/creating-a-new-organization-account/ 这样的 “子文档列表”？
+首先要在 <code>_posts</code> 目录下创建一个独立的父帮助文档：<code>2015-02-10-creating-a-new-organization-account.md</code>，然后进行下列操作步骤：
+
+<ul>
+<li>修改 <code>_config.yml</code> 文件内容，增加一个对应的 collection：</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">collections</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">output</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+    <span class="l-Scalar-Plain">permalink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/categories/:path/</span>
+  <span class="l-Scalar-Plain">creating_a_new_organization_account</span><span class="p-Indicator">:</span>  <span class="c1"># 这里是新增加的 collection，单词之间必须用 `_` 分隔</span>
+    <span class="l-Scalar-Plain">output</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+    <span class="l-Scalar-Plain">permalink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/articles/:title/</span>  <span class="c1"># 子文档的超链接，以 /articles/xxx-xxx-xxx/ 的方式输出</span>
+</code></pre></div>
+<ul>
+<li>在独立帮助文档 <code>2015-02-10-creating-a-new-organization-account.md</code> 的 markdown 源码末尾处增加一段获取子文档列表的代码：</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">---
+layout: post
+categories: [&#39;Setting up and managing organizations and teams&#39;]
+---
+
+You can create a new organization by either setting up a new organization or converting an existing personal account into an organization.
+
+{% assign coll-title-array=page.url | split:&#39;/&#39;%}
+{% assign coll-title=coll-title-array[2] | replace:&#39;-&#39;,&#39;_&#39; | downcase%}
+{% assign coll-obj = site.collections[coll-title].docs%}
+{% include sub-articles.html which-coll=coll-obj%}
+</code></pre></div>
+<ul>
+<li>在 jekyll 的根目录下创建一个新的 collection 目录： <code>_creating_a_new_organization_account</code> ，这里单词之间必须用 <code>_</code> 分隔。</li>
+<li>在新创建的 collection 目录下增加一系列子文档，均以 markdown 文档方式给出。</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">help-doc/
+├── _creating_a_new_organization_account
+│   ├── 2015-02-08-creating-a-new-organization-from-scratch.md
+│   └── 2015-02-09-about-organizations.md
+</code></pre></div>
+<ul>
+<li>在分类索引页的包含文件 <code>_include/category-articles.html</code> 中增加下列内容</li>
+</ul>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+  {% for post in include.which-cat%}
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&#39;post-link&#39;</span> <span class="na">href=</span><span class="s">&#39;{{ post.url | prepend: site.baseurl | prepend: site.url}}&#39;</span><span class="nt">&gt;</span>{{ post.title}}<span class="nt">&lt;/a&gt;</span>
+        <span class="c">&lt;!-- 如果当前文章有下属的子文章，就顺便列出它们 --&gt;</span>
+        {% assign post-id = post.title | replace:&#39; &#39;,&#39;_&#39; | downcase%}
+        {% if site.collections[post-id].label == post-id%}
+          {% assign coll-obj = site.collections[post-id].docs%}
+          {% include sub-articles.html which-coll=coll-obj%}
+        {% endif%}
+       <span class="c">&lt;!-- 子文档列表功能 增加的代码部分结束 --&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  {% endfor%}
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
+<ul>
+<li>在 <code>_include</code> 目录下增加一个名为 <code>sub-articles.html</code> 的包含文件，其内容如下</li>
+</ul>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+  {% for post in include.which-coll%}
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">&#39;post-link&#39;</span> <span class="na">href=</span><span class="s">&#39;{{ post.url | prepend: site.baseurl | prepend: site.url}}&#39;</span><span class="nt">&gt;</span>{{ post.title}}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  {% endfor%}
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
+<p>分类索引文件和独立的父文档文件都需要引用这个包含文件。</p>
+
+<hr>
+
+<ul>
+<li>如何实现 github help 文档中的 <code>conrefs</code> 内容复用？
+
+<ul>
+<li>首先在 jekyll 的源码目录下创建一个 <code>_data</code> 目录</li>
+<li>在 <code>_data</code> 目录下创建 <code>conrefs.yml</code> 文件，其内容根据实际需要而定</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">repositories</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">create-new</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">1. In the upper-right corner of any page, click {{ octicon-plus}}, and then click **New repository**.</span>
+      <span class="l-Scalar-Plain">![New repository menu](https://help.github.com/assets/images/help/repository/repo-create.png)</span>
+
+<span class="l-Scalar-Plain">wiki</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">click-profile</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">1. ![Profile photo](/assets/images/help/profile/top_right_avatar.png)In the top right corner of any page, click your profile photo, then click **Your profile**.</span>           
+</code></pre></div>
+<p>这些就是未来将会被复用的内容片段，只要修改 <code>conrefs.yml</code> 文件，并且用 jekyll 重新 build 全站文档，就可以做到一处修改多处生效。
+  - 在实际的帮助文档的 markdown 源码中引用这些片段：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">### Create a new repository on GitHub                                                                 
+1. In the upper-right corner of any page, click {{ octicon-plus&quot; }}, and then click **New repository**. ![New repository menu](https://help.github.com/assets/images/help/repository/repo-create.png)
+2. 
+![Repository name field](/assets/images/help/repository/create-repository-name.png)Create a short, memorable name for your repository. For example, &quot;hello-world&quot;.                                                     
+</code></pre></div>
+<p>将会被替换为下图所示的样子
+<img src="http://i.teamkn.com/i/qhSuTgON.png" alt=""></p>
+ 
+
+<hr />
+
+<div>
+  <h3>子文档列表</h3>
+  <!-- 如果当前文档在 _config.yml 和 _src 目录下
+       有对应的 collection 定义，就把它的子文档列举出来。-->
+  
+
+
+</div>
+
+<hr />
+
+<div class="docs-prevnext">
+  
+    <a class="docs-prev" href="jekyll-frontend-search.html">&larr; Prev</a>
+  
+  
+    <a class="docs-next" href="conref-usage-sample.html">Next &rarr;</a>
+  
+</div>
+
+
+    </div>
+    <br style="clear:both;" />
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br>
+        <a href="/help-doc/v009/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;2015 Facebook Inc.<br>
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

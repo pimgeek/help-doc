@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JSX in Depth</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="JSX in Depth | React">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/help-doc/v009/articles/jsx-in-depth.html">
+  <meta property="og:image" content="/help-doc/v009/img/logo_og.png">
+  <meta property="og:description" content="A JavaScript library for building user interfaces">
+  <meta property="fb:app_id" content="623268441017527">
+
+  <link rel="shortcut icon" href="/help-doc/v009/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll 文档站" href="/help-doc/v009/feed.xml">
+
+  <link rel="stylesheet" href="/help-doc/v009/css/syntax.css">
+  <link rel="stylesheet" href="/help-doc/v009/css/codemirror.css">
+  <link rel="stylesheet" href="/help-doc/v009/css/react.css">
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="/help-doc/v009/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v009/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v009/js/es5-sham.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/help-doc/v009/index.html">
+          <img class="nav-logo" src="/help-doc/v009/img/logo.svg" width="36" height="36">
+          React
+        </a>
+      </div>
+    </div>
+
+    <div style="float:left;padding:12px;">
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/jekyll-hack">Jekyll hack</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/doc-site-from-scratch.html">从零开始构建基于 Jekyll 的文档站</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-environment-setup.html">设置 Jekyll 运行环境</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-source-code-dir-struct.html">Jekyll 的源码目录结构</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/create-new-articles.html">创建新文档</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/enable-category-index-page.html">启用分类汇总页</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/enable-sub-article-listing.html">启用子文档列表</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/operation-manual-for-ben7th.html">给宋亮写的操作步骤说明</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/mindpin-docs">Mindpin docs</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/help-doc-research.html">Help Doc 相关调研</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-frontend-search.html">用 Jekyll 实现纯前端搜索</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/github-help-doc-framework.html">GitHub Help 内容架构</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/github-help-doc-clone-with-jekyll.html">用 Jekyll 模拟 GitHub Help</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/conref-usage-sample.html">conref 使用效果展示</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/guides">Guides</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/why-react.html">Why React?</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/displaying-data.html">Displaying Data</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-in-depth.html">JSX in Depth</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-spread.html">JSX Spread</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-gotchas.html">JSX Gotchas</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/multiple-components.html">Multiple Components</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/reusable-components.html">Reusable Components</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/transferring-props.html">Transferring Props</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/forms.html">Forms</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/working-with-the-browser.html">Working with the Browser</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/more-about-refs.html">More About Refs</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/tooling-integration.html">Tooling Integration</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/addons.html">Addons</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/animation.html">Animation</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/class-name-manipulation.html">Class Name Manipulation</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/test-utilities.html">Test Utilities</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/clone-with-props.html">Clone with Props</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/create-fragment.html">Create Fragment</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/immutability-helpers.html">Immutability Helpers</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/pure-render-mixin.html">Pure Render Mixin</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/performance-tools.html">Performance Tools</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/advanced-performance.html">Advanced Performance</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+</div>
+
+
+    <div style="float:left;width:70%;padding:12px;">
+
+    <!-- Search form -->
+<form style="padding:10px;" method="get" action="/help-doc/v009/search" data-search-form>
+  <input style="font-size:18px;" type="search" name="q" id="q" placeholder="请输入搜索关键词" data-search-input />
+  &nbsp;
+  <input style="font-size:18px;" type="submit" value="搜索" />
+</form>
+
+<!-- Search results placeholder -->
+<p data-search-found>
+  找到了 <span data-search-found-count></span> 条包含 &ldquo;<span data-search-found-term></span>&rdquo; 的结果.
+</p>
+<div data-search-results></div>
+
+<!-- Search result template -->
+<script type="text/x-template" id="search-result">
+  <div>
+    <h1><a href="/help-doc/v009##Url##">##Title##</a></h1>
+    <h2><a href="/help-doc/v009##Url##">##Date##</a></h2>
+    <a href="/help-doc/v009##Url##">Read &ldquo;##Title##&rdquo;</a>
+  </div>
+</script>
+
+<!-- jQuery - required but can be moved to the <head> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Search script - Must appear after template -->
+<script src="/help-doc/v009/js/search.js"></script>
+
+
+    <h1>JSX in Depth</h1>
+
+<p><a href="https://facebook.github.io/jsx/">JSX</a> is a JavaScript syntax extension that looks similar to XML. You can use a simple JSX syntactic transform with React.</p>
+<h2><a class="anchor" name="why-jsx"></a>Why JSX? <a class="hash-link" href="#why-jsx">#</a></h2>
+<p>You don&#39;t have to use JSX with React. You can just use plain JS. However, we recommend using JSX because it is a concise and familiar syntax for defining tree structures with attributes.</p>
+
+<p>It&#39;s more familiar for casual developers such as designers.</p>
+
+<p>XML has the benefit of balanced opening and closing tags. This helps make large trees easier to read than function calls or object literals.</p>
+
+<p>It doesn&#39;t alter the semantics of JavaScript.</p>
+<h2><a class="anchor" name="html-tags-vs.-react-components"></a>HTML Tags vs. React Components <a class="hash-link" href="#html-tags-vs.-react-components">#</a></h2>
+<p>React can either render HTML tags (strings) or React components (classes).</p>
+
+<p>To render a HTML tag, just use lower-case tag names in JSX:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myDivElement</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;foo&quot;</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">myDivElement</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">));</span>
+</code></pre></div>
+<p>To render a React Component, just create a local variable that starts with an upper-case letter:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span><span class="cm">/*...*/</span><span class="p">});</span>
+<span class="kd">var</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="nx">someProperty</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">myElement</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">));</span>
+</code></pre></div>
+<p>React&#39;s JSX uses the upper vs. lower case convention to distinguish between local component classes and HTML tags.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p>Since JSX is JavaScript, identifiers such as <code>class</code> and <code>for</code> are discouraged
+as XML attribute names. Instead, React DOM components expect DOM property
+names like <code>className</code> and <code>htmlFor</code>, respectively.</p>
+</blockquote>
+<h2><a class="anchor" name="the-transform"></a>The Transform <a class="hash-link" href="#the-transform">#</a></h2>
+<p>React JSX transforms from an XML-like syntax into native JavaScript. XML elements, attributes and children are transformed into arguments that are passed to <code>React.createElement</code>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Nav</span><span class="p">;</span>
+<span class="c1">// Input (JSX):</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Nav</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="c1">// Output (JS):</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Nav</span><span class="p">,</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="s2">&quot;blue&quot;</span><span class="p">});</span>
+</code></pre></div>
+<p>Notice that in order to use <code>&lt;Nav /&gt;</code>, the <code>Nav</code> variable must be in scope.</p>
+
+<p>JSX also allows specifying children using XML syntax:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Nav</span><span class="p">,</span> <span class="nx">Profile</span><span class="p">;</span>
+<span class="c1">// Input (JSX):</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Nav</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="o">&gt;&lt;</span><span class="nx">Profile</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/Profile&gt;&lt;/Nav&gt;;</span>
+<span class="c1">// Output (JS):</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span>
+  <span class="nx">Nav</span><span class="p">,</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="s2">&quot;blue&quot;</span><span class="p">},</span>
+  <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Profile</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;click&quot;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>JSX will infer the class&#39;s <a href="/react/docs/component-specs.html#displayname">displayName</a> from the variable assignment when the displayName is undefined:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Input (JSX):</span>
+<span class="kd">var</span> <span class="nx">Nav</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span> <span class="p">});</span>
+<span class="c1">// Output (JS):</span>
+<span class="kd">var</span> <span class="nx">Nav</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span><span class="nx">displayName</span><span class="o">:</span> <span class="s2">&quot;Nav&quot;</span><span class="p">,</span> <span class="p">});</span>
+</code></pre></div>
+<p>Use the <a href="/react/jsx-compiler.html">JSX Compiler</a> to try out JSX and see how it
+desugars into native JavaScript, and the
+<a href="/react/html-jsx.html">HTML to JSX converter</a> to convert your existing HTML to
+JSX.</p>
+
+<p>If you want to use JSX, the <a href="/react/docs/getting-started.html">Getting Started</a> guide shows how to setup compilation.</p>
+
+<blockquote>
+<p>Note:</p>
+
+<p>The JSX expression always evaluates to a ReactElement. The actual
+implementation details may vary. An optimized mode could inline the
+ReactElement as an object literal to bypass the validation code in
+<code>React.createElement</code>.</p>
+</blockquote>
+<h2><a class="anchor" name="namespaced-components"></a>Namespaced Components <a class="hash-link" href="#namespaced-components">#</a></h2>
+<p>If you are building a component that has many children, like a form, you might end up with something with a lot of variable declarations:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Awkward block of variable declarations</span>
+<span class="kd">var</span> <span class="nx">Form</span> <span class="o">=</span> <span class="nx">MyFormComponent</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">FormRow</span> <span class="o">=</span> <span class="nx">Form</span><span class="p">.</span><span class="nx">Row</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">FormLabel</span> <span class="o">=</span> <span class="nx">Form</span><span class="p">.</span><span class="nx">Label</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">FormInput</span> <span class="o">=</span> <span class="nx">Form</span><span class="p">.</span><span class="nx">Input</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Form</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">FormRow</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">FormLabel</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">FormInput</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="err">/FormRow&gt;</span>
+  <span class="o">&lt;</span><span class="err">/Form&gt;</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>To make it simpler and easier, <em>namespaced components</em> let you use one component that has other components as attributes:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Form</span> <span class="o">=</span> <span class="nx">MyFormComponent</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Form</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Row</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Label</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Input</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="err">/Form.Row&gt;</span>
+  <span class="o">&lt;</span><span class="err">/Form&gt;</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>To do this, you just need to create your <em>&quot;sub-components&quot;</em> as attributes of the main component:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">MyFormComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span> <span class="p">...</span> <span class="p">});</span>
+
+<span class="nx">MyFormComponent</span><span class="p">.</span><span class="nx">Row</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span> <span class="p">...</span> <span class="p">});</span>
+<span class="nx">MyFormComponent</span><span class="p">.</span><span class="nx">Label</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span> <span class="p">...</span> <span class="p">});</span>
+<span class="nx">MyFormComponent</span><span class="p">.</span><span class="nx">Input</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span> <span class="p">...</span> <span class="p">});</span>
+</code></pre></div>
+<p>JSX will handle this properly when compiling your code.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Form</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Row</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Label</span><span class="p">,</span> <span class="kc">null</span><span class="p">),</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Input</span><span class="p">,</span> <span class="kc">null</span><span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Note:</p>
+
+<p>This feature is available in <a href="/react/blog/2014/07/17/react-v0.11.html#jsx">v0.11</a> and above.</p>
+</blockquote>
+<h2><a class="anchor" name="javascript-expressions"></a>JavaScript Expressions <a class="hash-link" href="#javascript-expressions">#</a></h2><h3><a class="anchor" name="attribute-expressions"></a>Attribute Expressions <a class="hash-link" href="#attribute-expressions">#</a></h3>
+<p>To use a JavaScript expression as an attribute value, wrap the expression in a
+pair of curly braces (<code>{}</code>) instead of quotes (<code>&quot;&quot;</code>).</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Input (JSX):</span>
+<span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Person</span> <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nb">window</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">?</span> <span class="nb">window</span><span class="p">.</span><span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="c1">// Output (JS):</span>
+<span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span>
+  <span class="nx">Person</span><span class="p">,</span>
+  <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">?</span> <span class="nb">window</span><span class="p">.</span><span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div><h3><a class="anchor" name="boolean-attributes"></a>Boolean Attributes <a class="hash-link" href="#boolean-attributes">#</a></h3>
+<p>Omitting the value of an attribute causes JSX to treat it as <code>true</code>. To pass <code>false</code> an attribute expression must be used. This often comes up when using HTML form elements, with attributes like <code>disabled</code>, <code>required</code>, <code>checked</code> and <code>readOnly</code>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// These two are equivalent in JSX for disabling a button</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nx">disabled</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+
+<span class="c1">// And these two are equivalent in JSX for not disabling a button</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+</code></pre></div><h3><a class="anchor" name="child-expressions"></a>Child Expressions <a class="hash-link" href="#child-expressions">#</a></h3>
+<p>Likewise, JavaScript expressions may be used to express children:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Input (JSX):</span>
+<span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span><span class="p">{</span><span class="nb">window</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">?</span> <span class="o">&lt;</span><span class="nx">Nav</span> <span class="o">/&gt;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="nx">Login</span> <span class="o">/&gt;</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Container&gt;;</span>
+<span class="c1">// Output (JS):</span>
+<span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span>
+  <span class="nx">Container</span><span class="p">,</span>
+  <span class="kc">null</span><span class="p">,</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">?</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Nav</span><span class="p">)</span> <span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">Login</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div><h3><a class="anchor" name="comments"></a>Comments <a class="hash-link" href="#comments">#</a></h3>
+<p>It&#39;s easy to add comments within your JSX; they&#39;re just JS expressions. You just need to be careful to put <code>{}</code> around the comments when you are within the children section of a tag.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Nav</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="cm">/* child comment, put {} around */</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="nx">Person</span>
+      <span class="cm">/* multi</span>
+<span class="cm">         line</span>
+<span class="cm">         comment */</span>
+      <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nb">window</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">?</span> <span class="nb">window</span><span class="p">.</span><span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span> <span class="c1">// end of line comment</span>
+    <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="err">/Nav&gt;</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>NOTE:</p>
+
+<p>JSX is similar to HTML, but not exactly the same. See <a href="/react/docs/jsx-gotchas.html">JSX gotchas</a> for some key differences.</p>
+</blockquote>
+ 
+
+<hr />
+
+<div>
+  <h3>子文档列表</h3>
+  <!-- 如果当前文档在 _config.yml 和 _src 目录下
+       有对应的 collection 定义，就把它的子文档列举出来。-->
+  
+
+
+</div>
+
+<hr />
+
+<div class="docs-prevnext">
+  
+    <a class="docs-prev" href="displaying-data.html">&larr; Prev</a>
+  
+  
+    <a class="docs-next" href="jsx-spread.html">Next &rarr;</a>
+  
+</div>
+
+
+    </div>
+    <br style="clear:both;" />
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br>
+        <a href="/help-doc/v009/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;2015 Facebook Inc.<br>
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

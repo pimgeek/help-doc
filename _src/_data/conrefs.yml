@@ -1,0 +1,24 @@
+help-doc:
+  sample-conref: |
+    这段文字来自 jekyll 源码目录下的 _data 目录下的 conrefs.yml。
+
+    在 conrefs.yml 文件中，可以用 YAML 语法定义一系列可重复引用的文本段落，比如：
+
+
+    ```yaml
+
+    help-doc:
+      sample-conref: |
+        A quick brown fox jumps over the lazy dog.
+
+    ```
+
+    并且用 Liquid 模板语法引用这段文本，比如：{{ site.data.conrefs.help-doc.sample-conref }}
+repositories:
+  create-new:
+    1. In the upper-right corner of any page, click {{ octicon-plus" }}, and then click **New repository**.
+      ![New repository menu](https://help.github.com/assets/images/help/repository/repo-create.png)
+
+wiki:
+  click-profile:
+    1. ![Profile photo](/assets/images/help/profile/top_right_avatar.png)In the top right corner of any page, click your profile photo, then click **Your profile**.                    

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Jekyll 的源码目录结构</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Jekyll 的源码目录结构 | React">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/help-doc/v009/articles/jekyll-source-code-dir-struct.html">
+  <meta property="og:image" content="/help-doc/v009/img/logo_og.png">
+  <meta property="og:description" content="A JavaScript library for building user interfaces">
+  <meta property="fb:app_id" content="623268441017527">
+
+  <link rel="shortcut icon" href="/help-doc/v009/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll 文档站" href="/help-doc/v009/feed.xml">
+
+  <link rel="stylesheet" href="/help-doc/v009/css/syntax.css">
+  <link rel="stylesheet" href="/help-doc/v009/css/codemirror.css">
+  <link rel="stylesheet" href="/help-doc/v009/css/react.css">
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="/help-doc/v009/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v009/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="/help-doc/v009/js/es5-sham.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/help-doc/v009/index.html">
+          <img class="nav-logo" src="/help-doc/v009/img/logo.svg" width="36" height="36">
+          React
+        </a>
+      </div>
+    </div>
+
+    <div style="float:left;padding:12px;">
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/jekyll-hack">Jekyll hack</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/doc-site-from-scratch.html">从零开始构建基于 Jekyll 的文档站</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-environment-setup.html">设置 Jekyll 运行环境</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-source-code-dir-struct.html">Jekyll 的源码目录结构</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/create-new-articles.html">创建新文档</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/enable-category-index-page.html">启用分类汇总页</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/enable-sub-article-listing.html">启用子文档列表</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/operation-manual-for-ben7th.html">给宋亮写的操作步骤说明</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/mindpin-docs">Mindpin docs</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/help-doc-research.html">Help Doc 相关调研</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jekyll-frontend-search.html">用 Jekyll 实现纯前端搜索</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/github-help-doc-framework.html">GitHub Help 内容架构</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/github-help-doc-clone-with-jekyll.html">用 Jekyll 模拟 GitHub Help</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/conref-usage-sample.html">conref 使用效果展示</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+  
+  <div class='category'>
+    <div class='name'>
+      <h4><a href="/help-doc/v009/categories/guides">Guides</a></h4>
+    </div>
+    <div class='articles'>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/why-react.html">Why React?</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/displaying-data.html">Displaying Data</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-in-depth.html">JSX in Depth</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-spread.html">JSX Spread</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/jsx-gotchas.html">JSX Gotchas</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/interactivity-and-dynamic-uis.html">Interactivity and Dynamic UIs</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/multiple-components.html">Multiple Components</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/reusable-components.html">Reusable Components</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/transferring-props.html">Transferring Props</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/forms.html">Forms</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/working-with-the-browser.html">Working with the Browser</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/more-about-refs.html">More About Refs</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/tooling-integration.html">Tooling Integration</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/addons.html">Addons</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+  
+  <ul>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/animation.html">Animation</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/two-way-binding-helpers.html">Two-Way Binding Helpers</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/class-name-manipulation.html">Class Name Manipulation</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/test-utilities.html">Test Utilities</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/clone-with-props.html">Clone with Props</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/create-fragment.html">Create Fragment</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/immutability-helpers.html">Immutability Helpers</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/pure-render-mixin.html">Pure Render Mixin</a></li>
+  
+    <li><a class="post-link" href="/help-doc/v009/articles/performance-tools.html">Performance Tools</a></li>
+  
+</ul>
+
+
+
+      </div>
+      
+      <div class='article' style="padding-left:15px;"> 
+        <b><a class="post-link" href="/help-doc/v009/articles/advanced-performance.html">Advanced Performance</a></b>
+        <div style="padding:4px;"></div>
+        <!-- 如果当前文章有下属的子文章，就顺便列出它们 -->
+        
+
+
+      </div>
+      
+    </div>
+  </div>
+  <div style="padding-top:15px;padding-bottom:5px;"><hr /></div>
+
+</div>
+
+
+    <div style="float:left;width:70%;padding:12px;">
+
+    <!-- Search form -->
+<form style="padding:10px;" method="get" action="/help-doc/v009/search" data-search-form>
+  <input style="font-size:18px;" type="search" name="q" id="q" placeholder="请输入搜索关键词" data-search-input />
+  &nbsp;
+  <input style="font-size:18px;" type="submit" value="搜索" />
+</form>
+
+<!-- Search results placeholder -->
+<p data-search-found>
+  找到了 <span data-search-found-count></span> 条包含 &ldquo;<span data-search-found-term></span>&rdquo; 的结果.
+</p>
+<div data-search-results></div>
+
+<!-- Search result template -->
+<script type="text/x-template" id="search-result">
+  <div>
+    <h1><a href="/help-doc/v009##Url##">##Title##</a></h1>
+    <h2><a href="/help-doc/v009##Url##">##Date##</a></h2>
+    <a href="/help-doc/v009##Url##">Read &ldquo;##Title##&rdquo;</a>
+  </div>
+</script>
+
+<!-- jQuery - required but can be moved to the <head> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Search script - Must appear after template -->
+<script src="/help-doc/v009/js/search.js"></script>
+
+
+    <h1>Jekyll 的源码目录结构</h1>
+
+<p>为了实现 GitHub Help 与 Facebook React Doc 中包含的一系列 feature，需要形成大致如下图所示的目录结构：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">redo-help-doc/
+├── _src
+│   ├── _categories
+│   │   └── mindpin-docs.md
+│   ├── css
+│   │   └── ...
+│   ├── _css
+│   │   └── ...
+│   ├── _data
+│   │   └── conrefs.yml
+│   ├── _help_doc_research
+│   │   └── yyyy-mm-dd-xxx-xxx-xxx.md
+│   ├── img
+│   │   └── ...
+│   ├── _includes
+│   │   ├── category-links.html
+│   │   ├── coll-selector.html
+│   │   ├── search.html
+│   │   ├── sidebar.html
+│   │   └── sub-articles.html
+│   ├── js
+│   │   ├── jquery.lunr.search.js
+│   │   ├── lunr.min.js
+│   │   └── search.min.js
+│   ├── _layouts
+│   │   ├── category.html
+│   │   ├── default.html
+│   │   ├── page.html
+│   │   └── post.html
+│   ├── _plugins
+│   │   └── jekyll_lunr_js_search.rb
+│   ├── _posts
+│   │   └── yyyy-mm-dd-xx-yyy-zzzz.md
+│   ├── search
+│   │   └── index.html
+│   └── index.md
+└── _config.yml
+</code></pre></div>
+<p>下面将列举出逐项添加这些 feature 的具体操作步骤：</p>
+
+<p>1 从 GitHub 版本库 clone help-doc 示例项目，并切换到 gh-pages 分支</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git clone https://github.com/pimgeek/help-doc
+cd help-doc
+checkout gh-pages
+</code></pre></div>
+<p>2 返回到新创建的 <code>redo-help-doc/</code> 目录下，严格按顺序执行如下操作：</p>
+
+<p>2.1 创建 index 页</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd redo-help-doc/
+jekyll s -H 0.0.0.0 &amp;
+cp ../help-doc/_src/index.md 
+</code></pre></div>
+<p>此时 jekyll 应提示:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Build Warning: Layout &#39;default&#39; requested in index.md does not exist
+</code></pre></div>
+<p>mkdir ../help-doc/<em>src/</em>layouts
+cp ../help-doc/<em>src/</em>layouts/default.html <em>src/</em>layouts/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 应提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="liquid-exception-included-file-_includessidebar.html-not-found-in-_layoutsdefault.html"></a>Liquid Exception: Included file &#39;_includes/sidebar.html&#39; not found in _layouts/default.html <a class="hash-link" href="#liquid-exception-included-file-_includessidebar.html-not-found-in-_layoutsdefault.html">#</a></h1>
+<p>mkdir ../help-doc/<em>src/</em>includes
+cp ../help-doc/<em>src/</em>includes/sidebar.html <em>src/</em>includes/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 应提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="liquid-exception-included-file-_includessearch.html-not-found-in-_layoutsdefault.html"></a>Liquid Exception: Included file &#39;_includes/search.html&#39; not found in _layouts/default.html <a class="hash-link" href="#liquid-exception-included-file-_includessearch.html-not-found-in-_layoutsdefault.html">#</a></h1>
+<p>cp ../help-doc/<em>src/</em>includes/search.html <em>src/</em>includes/
+vim <em>src/</em>includes/search.html</p>
+<h1><a class="anchor" name="-help-docv008--jekyll"></a>修改其中的这一行，把其中的 &quot;/help-doc/v008&quot; 改为当前 jekyll <a class="hash-link" href="#-help-docv008--jekyll">#</a></h1><h1><a class="anchor" name="_config.yml--redo-help-docv009"></a>_config.yml 中指定的 &quot;/redo-help-doc/v009&quot;： <a class="hash-link" href="#_config.yml--redo-help-docv009">#</a></h1>
+<h3>
+  <!-- 下列代码中的 /help-doc/v008 部分应与
+       _config.yml 中定义的 baseurl 保持一致-->
+  <a href="/help-doc/v008</a>
+</h3>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 无错误提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="-http192.168.1.324000redo-help-docv009-"></a>可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果 <a class="hash-link" href="#-http192.168.1.324000redo-help-docv009-">#</a></h1>
+<p>mkdir <em>src/</em>posts
+cp ../help-doc/<em>src/</em>posts/3012-01-01-help-doc-research.md <em>src/</em>posts</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 应提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="build-warning-layout-post-requested-in-_posts3012-01-01-help-doc-research.md-does-not-exist."></a>Build Warning: Layout &#39;post&#39; requested in _posts/3012-01-01-help-doc-research.md does not exist. <a class="hash-link" href="#build-warning-layout-post-requested-in-_posts3012-01-01-help-doc-research.md-does-not-exist.">#</a></h1><h1><a class="anchor" name="liquid-exception-included-file-_includescoll-selector.html-not-found-in-not-found-in-_includessidebar.html-included-in-_layoutsdefault.html"></a>Liquid Exception: Included file &#39;_includes/coll-selector.html&#39; not found in not found in _includes/sidebar.html, included in _layouts/default.html <a class="hash-link" href="#liquid-exception-included-file-_includescoll-selector.html-not-found-in-not-found-in-_includessidebar.html-included-in-_layoutsdefault.html">#</a></h1>
+<p>cp ../help-doc/<em>src/</em>layouts/post.html <em>src/</em>layouts/
+cp ../help-doc/<em>src/</em>includes/coll-selector.html <em>src/</em>includes</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 无错误提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="-http192.168.1.324000redo-help-docv009-"></a>可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果 <a class="hash-link" href="#-http192.168.1.324000redo-help-docv009-">#</a></h1>
+<p>vim _config.yml</p>
+<h1><a class="anchor" name="-_config.yml"></a>修改 _config.yml，在文档末尾追加以下内容 <a class="hash-link" href="#-_config.yml">#</a></h1><h1><a class="anchor" name="-url--github--articlesxxx.html-"></a>为了让文档 URL 符合 GitHub 的 /articles/xxx.html 形式 <a class="hash-link" href="#-url--github--articlesxxx.html-">#</a></h1>
+<p>permalink: /articles/:title.html</p>
+
+<p>collections:
+  # 为了实现分类汇总而设置 category collection
+  categories:
+    output: true
+    permalink: /categories/:path/
+  # 下面这些都是为了呈现子文档列表而设置的
+  help<em>doc</em>research:
+    output: true
+    permalink: /articles/:title.html</p>
+<h1><a class="anchor" name=""></a>保存修改后，执行下面的命令： <a class="hash-link" href="#">#</a></h1>
+<p>jobs</p>
+<h1><a class="anchor" name=""></a>接下来，应看到类似如下的提示 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="1-running-jekyll-s--h-0.0.0.0-amp"></a>[1]+  Running                 jekyll s -H 0.0.0.0 &amp; <a class="hash-link" href="#1-running-jekyll-s--h-0.0.0.0-amp">#</a></h1><h1><a class="anchor" name="-jekyll--running--2"></a>如果 jekyll 所在的那一行的 Running 前面是 [2] <a class="hash-link" href="#-jekyll--running--2">#</a></h1><h1><a class="anchor" name="-fg-2"></a>则把下列命令改为 fg %2，以此类推。 <a class="hash-link" href="#-fg-2">#</a></h1>
+<p>fg %1 </p>
+<h1><a class="anchor" name=""></a>接下来，应看到类似如下的提示 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="jekyll-s--h-0.0.0.0"></a>jekyll s -H 0.0.0.0 <a class="hash-link" href="#jekyll-s--h-0.0.0.0">#</a></h1><h1><a class="anchor" name="-ctrlc-"></a>点击 Ctrl+C 退出，然后再次执行下列命令 <a class="hash-link" href="#-ctrlc-">#</a></h1>
+<p>jekyll s -H 0.0.0.0 &amp;</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 应提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="liquid-exception-included-file-_includessub-articles.html-not-found-in-_includescoll-selector.html-included-in-_layoutspost.html"></a>Liquid Exception: Included file &#39;_includes/sub-articles.html&#39; not found in _includes/coll-selector.html, included in _layouts/post.html <a class="hash-link" href="#liquid-exception-included-file-_includessub-articles.html-not-found-in-_includescoll-selector.html-included-in-_layoutspost.html">#</a></h1>
+<p>cp ../help-doc/<em>src/</em>includes/sub-articles.html <em>src/</em>includes/
+jekyll s -H 0.0.0.0</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 无错误提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="-http192.168.1.324000redo-help-docv009-"></a>可以打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果 <a class="hash-link" href="#-http192.168.1.324000redo-help-docv009-">#</a></h1>
+<p>cp ../help-doc/<em>src/</em>help<em>doc</em>research/* <em>src/</em>help<em>doc</em>research/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 无错误提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="-5--http192.168.1.324000redo-help-docv009-"></a>等待 5 秒钟左右，打开 http://192.168.1.32:4000/redo-help-doc/v009/ 查看效果 <a class="hash-link" href="#-5--http192.168.1.324000redo-help-docv009-">#</a></h1><h1><a class="anchor" name=""></a>接下来，尝试在浏览器中打开以下网页 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="http192.168.1.324000redo-help-docv009categoriesmindpin-docs"></a>http://192.168.1.32:4000/redo-help-doc/v009/categories/mindpin-docs <a class="hash-link" href="#http192.168.1.324000redo-help-docv009categoriesmindpin-docs">#</a></h1><h1><a class="anchor" name=""></a>此时浏览器应提示 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="not-found"></a>Not Found <a class="hash-link" href="#not-found">#</a></h1><h1><a class="anchor" name="redo-help-docv009categoriesmindpin-docs-not-found."></a>`/redo-help-doc/v009/categories/mindpin-docs&#39; not found. <a class="hash-link" href="#redo-help-docv009categoriesmindpin-docs-not-found.">#</a></h1>
+<p>mkdir <em>src/</em>categories
+cp ../help-doc/<em>src/</em>categories/mindpin-docs.md <em>src/</em>categories/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 应提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="liquid-exception-included-file-_includescategory-links.html-not-found-in-_categoriesmindpin-docs.md"></a>Liquid Exception: Included file &#39;_includes/category-links.html&#39; not found in _categories/mindpin-docs.md <a class="hash-link" href="#liquid-exception-included-file-_includescategory-links.html-not-found-in-_categoriesmindpin-docs.md">#</a></h1>
+<p>cp ../help-doc/<em>src/</em>includes/category-links.html <em>src/</em>includes/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 应提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="build-warning-layout-category-requested-in-_categoriesmindpin-docs.md-does-not-exist."></a>Build Warning: Layout &#39;category&#39; requested in _categories/mindpin-docs.md does not exist. <a class="hash-link" href="#build-warning-layout-category-requested-in-_categoriesmindpin-docs.md-does-not-exist.">#</a></h1>
+<p>cp ../help-doc/<em>src/</em>layouts/category.html <em>src/</em>layouts/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 无错误提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="-5-"></a>接下来等待 5 秒钟左右，再次尝试在浏览器中打开以下网页 <a class="hash-link" href="#-5-">#</a></h1><h1><a class="anchor" name="http192.168.1.324000redo-help-docv009categoriesmindpin-docs"></a>http://192.168.1.32:4000/redo-help-doc/v009/categories/mindpin-docs <a class="hash-link" href="#http192.168.1.324000redo-help-docv009categoriesmindpin-docs">#</a></h1><h1><a class="anchor" name=""></a>此时应当在网页的右半部分看到如下内容 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="category--mindpin-docs"></a>Category / Mindpin docs <a class="hash-link" href="#category--mindpin-docs">#</a></h1><h1><a class="anchor" name="-help-doc-"></a>* Help Doc 相关调研 <a class="hash-link" href="#-help-doc-">#</a></h1><h1><a class="anchor" name="--jekyll-"></a>* 用 Jekyll 实现纯前端搜索 <a class="hash-link" href="#--jekyll-">#</a></h1><h1><a class="anchor" name="-github-help-"></a>* GitHub Help 内容架构 <a class="hash-link" href="#-github-help-">#</a></h1><h1><a class="anchor" name="--jekyll--github-help"></a>* 用 Jekyll 模拟 GitHub Help <a class="hash-link" href="#--jekyll--github-help">#</a></h1><h1><a class="anchor" name="-conref-"></a>* conref 使用效果展示 <a class="hash-link" href="#-conref-">#</a></h1><h1><a class="anchor" name=""></a>接下来，尝试打开下面的网页 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="http192.168.1.324000redo-help-docv009articlesconref-usage-sample.html"></a>http://192.168.1.32:4000/redo-help-doc/v009/articles/conref-usage-sample.html <a class="hash-link" href="#http192.168.1.324000redo-help-docv009articlesconref-usage-sample.html">#</a></h1><h1><a class="anchor" name=""></a>此时应当在网页的右半部分看到如下内容 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="-conrefs-"></a>下列文字使用了 conrefs 引用： <a class="hash-link" href="#-conrefs-">#</a></h1><h1><a class="anchor" name="----"></a>---- <a class="hash-link" href="#----">#</a></h1><h1><a class="anchor" name=""></a>子文档列表 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="----"></a>---- <a class="hash-link" href="#----">#</a></h1><h1><a class="anchor" name="lt--prev"></a>&lt;- prev <a class="hash-link" href="#lt--prev">#</a></h1>
+<p>mkdir <em>src/</em>data
+cp ../help-doc/<em>src/</em>data/conrefs.yml <em>src/</em>data/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 无错误提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="-5--http192.168.1.324000redo-help-docv009articlesconref-usage-sample.html"></a>接下来等待 5 秒钟左右，再次尝试在浏览器中打开以下网页 http://192.168.1.32:4000/redo-help-doc/v009/articles/conref-usage-sample.html <a class="hash-link" href="#-5--http192.168.1.324000redo-help-docv009articlesconref-usage-sample.html">#</a></h1><h1><a class="anchor" name=""></a>网页载入完毕后，将能够看到与上一次浏览此页时，明显不一样的内容 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="-conrefs-"></a>下列文字使用了 conrefs 引用： <a class="hash-link" href="#-conrefs-">#</a></h1><h1><a class="anchor" name="-jekyll--_data--conrefs.yml"></a>这段文字来自 jekyll 源码目录下的 _data 目录下的 conrefs.yml。 <a class="hash-link" href="#-jekyll--_data--conrefs.yml">#</a></h1><h1><a class="anchor" name=""></a>…… <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="-facebook-"></a>接下来，尝试在网页右半部分的搜索框中搜索 facebook 关键字 <a class="hash-link" href="#-facebook-">#</a></h1><h1><a class="anchor" name=""></a>回车确认后，将打开以下网页超链接： <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="http192.168.1.324000redo-help-docv009searchqfacebook"></a>http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook <a class="hash-link" href="#http192.168.1.324000redo-help-docv009searchqfacebook">#</a></h1><h1><a class="anchor" name=""></a>此时浏览器应显示以下内容： <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="not-found"></a>Not Found <a class="hash-link" href="#not-found">#</a></h1><h1><a class="anchor" name="redo-help-docv009search-not-found."></a>`/redo-help-doc/v009/search&#39; not found. <a class="hash-link" href="#redo-help-docv009search-not-found.">#</a></h1>
+<p>mkdir <em>src/search
+cp ../help-doc/</em>src/search/index.html _src/search/</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 应提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="build-warning-layout-page-requested-in-searchindex.html-does-not-exist."></a>Build Warning: Layout &#39;page&#39; requested in search/index.html does not exist. <a class="hash-link" href="#build-warning-layout-page-requested-in-searchindex.html-does-not-exist.">#</a></h1>
+<p>cp ../help-doc/<em>src/</em>layouts/page.html <em>src/</em>layouts/
+mkdir <em>src/</em>plugins
+cp ../help-doc/<em>src/</em>plugins/jekyll<em>lunr</em>js<em>search.rb _src/</em>plugins
+mkdir <em>src/js
+cp ../help-doc/</em>src/js/jquery.lunr.search.js <em>src/js/
+cp ../help-doc/</em>src/js/lunr.min.js <em>src/js/
+cp ../help-doc/</em>src/js/search.min.js _src/js/</p>
+<h1><a class="anchor" name=""></a>完成上述操作后，执行下面的命令： <a class="hash-link" href="#">#</a></h1>
+<p>jobs</p>
+<h1><a class="anchor" name=""></a>接下来，应看到类似如下的提示 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="1-running-jekyll-s--h-0.0.0.0-amp"></a>[1]+  Running                 jekyll s -H 0.0.0.0 &amp; <a class="hash-link" href="#1-running-jekyll-s--h-0.0.0.0-amp">#</a></h1>
+<p>fg %1 </p>
+<h1><a class="anchor" name=""></a>接下来，应看到类似如下的提示 <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="jekyll-s--h-0.0.0.0"></a>jekyll s -H 0.0.0.0 <a class="hash-link" href="#jekyll-s--h-0.0.0.0">#</a></h1><h1><a class="anchor" name="-ctrlc-"></a>点击 Ctrl+C 退出，然后再次执行下列命令 <a class="hash-link" href="#-ctrlc-">#</a></h1>
+<p>jekyll s -H 0.0.0.0 &amp;</p>
+<h1><a class="anchor" name="-jekyll-"></a>此时 jekyll 无错误提示 <a class="hash-link" href="#-jekyll-">#</a></h1><h1><a class="anchor" name="-5-"></a>接下来等待 5 秒钟左右，再次尝试在网页右半部分的搜索框中 <a class="hash-link" href="#-5-">#</a></h1><h1><a class="anchor" name="-facebook-"></a>搜索 facebook 关键字。回车确认后，将打开以下网页超链接： <a class="hash-link" href="#-facebook-">#</a></h1><h1><a class="anchor" name="http192.168.1.324000redo-help-docv009searchqfacebook"></a>http://192.168.1.32:4000/redo-help-doc/v009/search?q=facebook <a class="hash-link" href="#http192.168.1.324000redo-help-docv009searchqfacebook">#</a></h1><h1><a class="anchor" name=""></a>此时浏览器应显示以下内容： <a class="hash-link" href="#">#</a></h1><h1><a class="anchor" name="search-results"></a>Search results <a class="hash-link" href="#search-results">#</a></h1><h1><a class="anchor" name="help-doc-research"></a>help-doc-research <a class="hash-link" href="#help-doc-research">#</a></h1><h1><a class="anchor" name="help-doc-research-"></a>其中，help-doc-research 是一个超链接，点击后 <a class="hash-link" href="#help-doc-research-">#</a></h1><h1><a class="anchor" name="-facebook-"></a>将进入包含 facebook 关键词的文档页面。 <a class="hash-link" href="#-facebook-">#</a></h1><h1><a class="anchor" name="-sasscss-"></a>最后，把用于提升显示效果的图片与 Sass/CSS 等静态文件复制过来 <a class="hash-link" href="#-sasscss-">#</a></h1>
+<p>cp -r ../help-doc/<em>src/css _src/
+cp -r ../help-doc/</em>src/<em>css _src/
+cp -r ../help-doc/</em>src/img _src/</p>
+<h1><a class="anchor" name="-5-"></a>接下来等待 5 秒钟左右，然后打开以下网页超链接： <a class="hash-link" href="#-5-">#</a></h1><h1><a class="anchor" name="http192.168.1.324000redo-help-docv009"></a>http://192.168.1.32:4000/redo-help-doc/v009/ <a class="hash-link" href="#http192.168.1.324000redo-help-docv009">#</a></h1><h1><a class="anchor" name="http192.168.1.324000redo-help-docv009articlesjekyll-frontend-search.html"></a>http://192.168.1.32:4000/redo-help-doc/v009/articles/jekyll-frontend-search.html <a class="hash-link" href="#http192.168.1.324000redo-help-docv009articlesjekyll-frontend-search.html">#</a></h1><h1><a class="anchor" name=""></a>将会看到增加了皮肤和代码高亮效果的网页 <a class="hash-link" href="#">#</a></h1><div class="highlight"><pre><code class="language-text" data-lang="text">到目前为止，以上操作命令已经把涉及到 **/article/xxx 格式的文档链接，文档分类汇总页，子文档列表页，lunrjs 纯前端搜索，conref 内容复用，GitHub Flavored Markdown 支持** 等 6 项 feature 的代码文件都触及了。
+
+前置和后继文档的功能相对简单，只要在 `_config.yml` 文件中定义好 permalink 格式，再在模板源码中利用每篇文档的 Front Matter slug —— `title`, `prev-post` 和 `next-post` 等字段动态创建超链接即可实现。
+
+从下一篇文档开始，我将把上述 7 种 feature 的复现步骤单独列出来，以便阅读者有选择地复现其中的一部分 feature。
+</code></pre></div> 
+
+<hr />
+
+<div>
+  <h3>子文档列表</h3>
+  <!-- 如果当前文档在 _config.yml 和 _src 目录下
+       有对应的 collection 定义，就把它的子文档列举出来。-->
+  
+
+
+</div>
+
+<hr />
+
+<div class="docs-prevnext">
+  
+    <a class="docs-prev" href="jekyll-environment-setup.html">&larr; Prev</a>
+  
+  
+    <a class="docs-next" href="create-new-articles.html">Next &rarr;</a>
+  
+</div>
+
+
+    </div>
+    <br style="clear:both;" />
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br>
+        <a href="/help-doc/v009/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;2015 Facebook Inc.<br>
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

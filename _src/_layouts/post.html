@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<h1>{{ page.reader-title }}</h1>
+
+{{ content }} 
+
+<hr />
+
+<div>
+  <h3>子文档列表</h3>
+  <!-- 如果当前文档在 _config.yml 和 _src 目录下
+       有对应的 collection 定义，就把它的子文档列举出来。-->
+  {% include coll-selector.html post-url=page.title %}
+</div>
+
+<hr />
+
+<div class="docs-prevnext">
+  {% if page.prev-post %}
+    <a class="docs-prev" href="{{ page.prev-post }}">&larr; Prev</a>
+  {% endif %}
+  {% if page.next-post %}
+    <a class="docs-next" href="{{ page.next-post }}">Next &rarr;</a>
+  {% endif %}
+</div>

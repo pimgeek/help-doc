@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.reader-title }}</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="{{ page.reader-title }} | React">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/img/logo_og.png">
+  <meta property="og:description" content="A JavaScript library for building user interfaces">
+  <meta property="fb:app_id" content="623268441017527">
+
+  <link rel="shortcut icon" href="{{ site.url }}{{ site.baseurl }}/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}{{ site.baseurl }}/feed.xml">
+
+  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/codemirror.css">
+  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/react.css">
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/js/es5-sham.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="{{ site.url }}{{ site.baseurl }}/index.html">
+          <img class="nav-logo" src="{{ site.url }}{{ site.baseurl }}/img/logo.svg" width="36" height="36">
+          React
+        </a>
+      </div>
+    </div>
+
+    {% include sidebar.html %}
+
+    <div style="float:left;width:70%;padding:12px;">
+
+    {% include search.html %}
+
+    {{ content }}
+
+    </div>
+    <br style="clear:both;" />
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br>
+        <a href="{{ site.url }}{{ site.baseurl }}/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;{{ site.time | date: '%Y' }} Facebook Inc.<br>
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

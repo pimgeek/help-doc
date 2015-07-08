@@ -1,0 +1,45 @@
+---
+name: Jekyll 文档站
+description: 一个基于 Jekyll 的文档站，支持纯前端搜索，支持对 collection 文档索引
+#url: http://pimgeek.github.io
+baseurl: "/help-doc/v009" # 所有输出网页 URL 都要增加这个前缀
+source: _src              # 从 _src 目录下读取 jekyll 源码
+destination: v009
+relative_permalinks: true
+highlighter: pygments
+
+markdown: redcarpet
+redcarpet:
+  extensions:
+  - fenced_code_blocks
+  - footnotes
+sass:
+  style: :compressed
+  sass_dir: _css
+
+# 归档文件夹不要输出到 GitHub Pages
+exclude: ['archive']
+
+permalink: /articles/:title.html
+
+collections:
+  # 为了实现分类汇总而设置 category collection
+  categories:
+    output: true
+    permalink: /categories/:path/
+  # 下面这些都是为了呈现子文档列表而设置的 collection
+  doc_site_from_scratch:
+    output: true
+    permalink: /articles/:title.html
+  help_doc_research:
+    output: true
+    permalink: /articles/:title.html
+  displaying_data:
+    output: true
+    permalink: /articles/:title.html
+  working_with_the_browser:
+    output: true
+    permalink: /articles/:title.html
+  addons:
+    output: true
+    permalink: /articles/:title.html

@@ -1,0 +1,27 @@
+<!-- Search form -->
+<form style="padding:10px;" method="get" action="{{ site.baseurl }}/search" data-search-form>
+  <input style="font-size:18px;" type="search" name="q" id="q" placeholder="请输入搜索关键词" data-search-input />
+  &nbsp;
+  <input style="font-size:18px;" type="submit" value="搜索" />
+</form>
+
+<!-- Search results placeholder -->
+<p data-search-found>
+  找到了 <span data-search-found-count></span> 条包含 &ldquo;<span data-search-found-term></span>&rdquo; 的结果.
+</p>
+<div data-search-results></div>
+
+<!-- Search result template -->
+<script type="text/x-template" id="search-result">
+  <div>
+    <h1><a href="{{ site.baseurl }}##Url##">##Title##</a></h1>
+    <h2><a href="{{ site.baseurl }}##Url##">##Date##</a></h2>
+    <a href="{{ site.baseurl }}##Url##">Read &ldquo;##Title##&rdquo;</a>
+  </div>
+</script>
+
+<!-- jQuery - required but can be moved to the <head> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Search script - Must appear after template -->
+<script src="{{ site.baseurl }}/js/search.js"></script>
