@@ -75,7 +75,7 @@ cp ../help-doc/_src/index.md _src/
 ### 6 创建 index.md 所依赖的 default.html
 
 ```
-mkdir ../help-doc/_src/_layouts
+mkdir _src/_layouts
 cp ../help-doc/_src/_layouts/default.html _src/_layouts/
 ```
 
@@ -86,7 +86,7 @@ cp ../help-doc/_src/_layouts/default.html _src/_layouts/
 ### 7 创建 default.html 所依赖的 sidebar.html
 
 ```
-mkdir ../help-doc/_src/_includes
+mkdir _src/_includes
 cp ../help-doc/_src/_includes/sidebar.html _src/_includes/
 ```
 
