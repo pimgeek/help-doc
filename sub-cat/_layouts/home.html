@@ -1,0 +1,15 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <a href="{{ '/' | prepend: site.baseurl }}"><h1>首页</h1></a>
+    {% for cat in site.data.category %}
+      {% assign key = cat[0] %}
+      {% assign value = cat[1] %}
+        <a href="{{ site.baseurl }}/category/{{ key | downcase | replace:' ','-'}}">{{ value.name }}</a>
+    {% endfor %}
+    <hr />
+    {{ content }}
+  </body>
+</html>
+

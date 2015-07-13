@@ -1,0 +1,27 @@
+---
+layout: home
+---
+
+<h1>分类索引 / {{ page.title }}</h1>
+
+{% for post in site.posts %}
+<ul>
+{% if post.category == page.title %}
+  <li>
+    <a href="{{ site.baseurl }}/category/docs/{{ post.title }}.html">{{ post.title }}</a>
+  </li>
+{% endif %}
+</ul>
+{% endfor %}
+
+<h2>子分类索引</h2>
+
+{% for sub_cat in site.data.sub-category %}
+  {% assign key = sub_cat[0] %}
+  {% assign value = sub_cat[1] %}
+  {% include sub-category.html category=page.title sub-category=key%}
+{% endfor %}
+
+<hr />
+
+{{ content }}

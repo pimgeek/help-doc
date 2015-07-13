@@ -1,0 +1,6 @@
+permalink: category/docs/:title.html
+
+collections:
+  category:
+    output: true
+    permalink: category/:path/index.html

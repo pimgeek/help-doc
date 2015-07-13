@@ -1,0 +1,14 @@
+<div>
+  [{{ include.category }},{{ include.sub-category }}]
+  {% for post in site.posts %}
+  <ul>
+  {% if post.category == include.category %}
+    {% if post.sub-category == include.sub-category %}
+      <li>
+        <a href="{{ site.baseurl }}/category/docs/{{ post.title }}.html">{{ post.title }}</a>
+      </li>
+    {% endif %}
+  {% endif %}
+  </ul>
+  {% endfor %}
+</div>
