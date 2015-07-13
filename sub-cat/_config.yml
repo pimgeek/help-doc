@@ -1,6 +1,9 @@
 permalink: category/docs/:title.html
 
 collections:
+  articles:
+    output: true
+    permalink: articles/:title.html
   category:
     output: true
     permalink: category/:path/index.html

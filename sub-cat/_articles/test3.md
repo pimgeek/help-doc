@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: test3
 category: cases
 sub-category: case-type-1
